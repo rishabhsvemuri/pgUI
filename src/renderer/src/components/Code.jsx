@@ -1,4 +1,10 @@
+import React, { useState, useEffect } from 'react';
+
 function Code(){
-    return(<h1>CODE PAGE</h1>)
+    return(
+    <div>
+    <h1>CODE PAGE</h1>
+    </div>
+);
 }
 export default Code

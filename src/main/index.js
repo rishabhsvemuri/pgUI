@@ -7,11 +7,12 @@ const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
 import { Plot } from '../plot';
+const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nBiocManager::install("plotgardener")\nBiocManager::install("plotgardenerData")'
 
 let mainWindow;
-let savePath;
 let plots = new Map();
-const writePath = path.join(__dirname, '../main/written.R');
+let savePath = path.join(__dirname, '../../resources/temp.pdf');
+const writePath = path.join(__dirname, '../../src/main/written.R');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -81,9 +82,10 @@ app.whenReady().then(() => {
     try {
       console.log('Generating and writing commands');
       await writeScript();
+      console.log('Command generated, running R Script...');
       const command = `Rscript "${writePath}"`;
       exec(command, (error, stdout, stderr) => {
-        console.log('Running R Script');
+        console.log('Done');
         if (error) {
           console.error(`Error executing R script: ${error.message}`);
           return;
@@ -158,7 +160,7 @@ async function writeScript() {
 async function startScript() {
   const width = Number(plots.get('a-0').width)
   const height = Number(plots.get('a-0').height)
-  console.log(width + 2)
+  await fs.appendFile(writePath, `${pgInstall}\n`);
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
   const library = `library(plotgardener)\n`
   const genes = `library(plotgardenerData)\ndata("IMR90_HiC_10kb")\n`
