@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {defaultPlots, updateDefaultPlots} from './Defaults'
 import '.././assets/style.scss';
-import Header from '.././assets/pg-wordmark.png'
 
 function PlotAddition() {
   const [plots, setPlots] = useState([]);
@@ -127,7 +125,6 @@ function PlotAddition() {
 
   return (
     <div id="container">
-      <img className = 'header' src = {Header} ></img>
       <div id="plotListContainer">
         <ul id="plotList">
           {plots.map((plot) => (

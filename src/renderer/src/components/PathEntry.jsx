@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import '.././assets/style.scss';
-import Header from '.././assets/pg-wordmark.png'
 
 function PathEntry() {
 
@@ -89,10 +88,9 @@ function PathEntry() {
 
   return (
     <div id="creator">
-      <img className = 'header' src = {Header} ></img>
       <div id="askPath">
         <h2>Enter path:</h2>
-        <input type="text" id="path" onBlur={handlePathBlur} class = "plot-div" placeholder = "path/file-name.pdf"/>
+        <input type="text" id="path" onBlur={handlePathBlur} class = "path-input" placeholder = "path/file-name.pdf"/>
       </div>
       <div id = "pageCreate">
         <h2>Create a plotgardener page:</h2>

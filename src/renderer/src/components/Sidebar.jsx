@@ -11,6 +11,7 @@ import Nodes from './Nodes';
 import Share from './Share';
 import Logo from '.././assets/PlotgardenerLogo.png';
 import '.././assets/style.scss';
+import Header from '.././assets/pg-wordmark.png'
 
 function Sidebar(){
     const [activeTab, setActiveTab] = useState('PathEntry');
@@ -29,6 +30,7 @@ function Sidebar(){
             </div>
             <div className='page'>
                 <div className='container'>
+                <img className = 'header' src = {Header} ></img>
                     <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
                         <PathEntry />
                     </div>
