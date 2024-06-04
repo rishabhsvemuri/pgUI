@@ -11,7 +11,7 @@ import { Plot } from '../plot';
 let mainWindow;
 let savePath;
 let plots = new Map();
-const writePath = path.join(__dirname, 'written.R');
+const writePath = path.join(__dirname, '../main/written.R');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
