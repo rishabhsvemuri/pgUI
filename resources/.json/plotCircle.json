@@ -1,0 +1,57 @@
+{
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "r": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "lwd": {
+        "type": "numeric",
+        "default": "1",
+        "options": null
+    },
+    "lty": {
+        "type": "numeric",
+        "default": "1",
+        "options": null
+    },
+    "fill": {
+        "type": "character",
+        "default": "NA",
+        "options": null
+    },
+    "alpha": {
+        "type": "value",
+        "default": "1",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

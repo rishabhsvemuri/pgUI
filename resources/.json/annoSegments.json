@@ -1,0 +1,72 @@
+{
+    "x0": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y0": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "x1": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y1": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "plot": {
+        "type": "plotgardener",
+        "default": null,
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "lwd": {
+        "type": "numeric",
+        "default": "1",
+        "options": null
+    },
+    "lty": {
+        "type": "numeric",
+        "default": "1",
+        "options": null
+    },
+    "lineend": {
+        "type": "character",
+        "default": "\"butt\"",
+        "options": null
+    },
+    "linejoin": {
+        "type": "character",
+        "default": "\"mitre\"",
+        "options": null
+    },
+    "arrow": {
+        "type": "list",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

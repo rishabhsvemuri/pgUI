@@ -1,0 +1,27 @@
+{
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "space": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "n": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    }
+}

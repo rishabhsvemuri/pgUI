@@ -1,0 +1,92 @@
+{
+    "legend": {
+        "type": "character",
+        "default": null,
+        "options": null
+    },
+    "fill": {
+        "type": "specified",
+        "default": null,
+        "options": null
+    },
+    "pch": {
+        "type": "plotting",
+        "default": null,
+        "options": null
+    },
+    "lty": {
+        "type": "line",
+        "default": null,
+        "options": null
+    },
+    "orientation": {
+        "type": "string",
+        "default": "\"v\"",
+        "options": null
+    },
+    "title": {
+        "type": "character",
+        "default": null,
+        "options": null
+    },
+    "fontsize": {
+        "type": "numeric",
+        "default": "10",
+        "options": null
+    },
+    "border": {
+        "type": "value",
+        "default": "TRUE",
+        "options": null
+    },
+    "bg": {
+        "type": "value",
+        "default": "NA",
+        "options": null
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "draw": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

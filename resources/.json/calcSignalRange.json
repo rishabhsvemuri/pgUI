@@ -1,0 +1,32 @@
+{
+    "data": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "chrom": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "start",
+        "default": null,
+        "options": null
+    },
+    "chromend": {
+        "type": "end",
+        "default": null,
+        "options": null
+    },
+    "assembly": {
+        "type": "genome",
+        "default": "\"hg38\"",
+        "options": null
+    },
+    "negData": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": null
+    }
+}

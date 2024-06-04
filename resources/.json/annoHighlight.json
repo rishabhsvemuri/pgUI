@@ -1,0 +1,67 @@
+{
+    "plot": {
+        "type": "plot",
+        "default": null,
+        "options": null
+    },
+    "chrom": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "start",
+        "default": null,
+        "options": null
+    },
+    "chromend": {
+        "type": "end",
+        "default": null,
+        "options": null
+    },
+    "fill": {
+        "type": "character",
+        "default": "\"grey\"",
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "NA",
+        "options": null
+    },
+    "alpha": {
+        "type": "value",
+        "default": "0.4",
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "label": {
+        "type": "or",
+        "default": null,
+        "options": null
+    },
+    "fontcolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "fontsize": {
+        "type": "numeric",
+        "default": "12",
+        "options": null
+    },
+    "rot": {
+        "type": "numeric",
+        "default": "0",
+        "options": null
+    },
+    "check.overlap": {
+        "type": "logical",
+        "default": null,
+        "options": null
+    },
+    "plot": {
+        "type": "plotgardener",
+        "default": null,
+        "options": null
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "\"center\"",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

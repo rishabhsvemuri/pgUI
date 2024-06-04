@@ -1,0 +1,92 @@
+{
+    "plot": {
+        "type": "plot",
+        "default": null,
+        "options": null
+    },
+    "fontsize": {
+        "type": "numeric",
+        "default": "10",
+        "options": null
+    },
+    "fontcolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "margin": {
+        "type": "numeric",
+        "default": "unit(1, \"mm\")",
+        "options": null
+    },
+    "scale": {
+        "type": "character",
+        "default": "\"bp\"",
+        "options": null
+    },
+    "commas": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": null
+    },
+    "sequence": {
+        "type": "logical",
+        "default": null,
+        "options": null
+    },
+    "boxWidth": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": null
+    },
+    "axis": {
+        "type": "character",
+        "default": "\"x\"",
+        "options": null
+    },
+    "at": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "tcl": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": null
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

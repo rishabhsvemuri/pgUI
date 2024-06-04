@@ -1,0 +1,87 @@
+{
+    "plot": {
+        "type": "-style",
+        "default": null,
+        "options": null
+    },
+    "orientation": {
+        "type": "string",
+        "default": "\"v\"",
+        "options": null
+    },
+    "fontsize": {
+        "type": "numeric",
+        "default": "8",
+        "options": null
+    },
+    "fontcolor": {
+        "type": "value",
+        "default": "\"dark grey\"",
+        "options": null
+    },
+    "scientific": {
+        "type": "value",
+        "default": "FALSE",
+        "options": null
+    },
+    "digits": {
+        "type": "specifying",
+        "default": "1",
+        "options": null
+    },
+    "ticks": {
+        "type": "value",
+        "default": "FALSE",
+        "options": null
+    },
+    "breaks": {
+        "type": "numeric",
+        "default": "NULL",
+        "options": null
+    },
+    "border": {
+        "type": "value",
+        "default": "FALSE",
+        "options": null
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

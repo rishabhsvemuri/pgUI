@@ -1,0 +1,27 @@
+{
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "linecolor": {
+        "type": "value",
+        "default": "\"grey55\"",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "Genome": {
+        "type": "indicating",
+        "default": null,
+        "options": null
+    },
+    "TxDb": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "OrgDb": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "gene.id.column": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "display.column": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "BSgenome": {
+        "type": "of",
+        "default": null,
+        "options": null
+    }
+}

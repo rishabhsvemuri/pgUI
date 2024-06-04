@@ -1,0 +1,127 @@
+{
+    "data": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "resolution": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "zrange": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "norm": {
+        "type": "character",
+        "default": "\"KR\"",
+        "options": "any character value"
+    },
+    "matrix": {
+        "type": "value",
+        "default": "\"observed\"",
+        "options": "\"observed\", \"oe\", \"log2oe\""
+    },
+    "chrom": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "chromend": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "altchrom": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "altchromstart": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "altchromend": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "assembly": {
+        "type": "string",
+        "default": "\"hg38\"",
+        "options": null
+    },
+    "palette": {
+        "type": "function",
+        "default": null,
+        "options": null
+    },
+    "colorTrans": {
+        "type": "string",
+        "default": "\"linear\"",
+        "options": "\"linear\", \"log\", \"log2\", or \"log10\""
+    },
+    "half": {
+        "type": "character",
+        "default": "\"both\"",
+        "options": "\"top\", \"both\", \"bottom\""
+    },
+    "bg": {
+        "type": "character",
+        "default": "NA",
+        "options": "any character value"
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "just": {
+        "type": "justification",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": "\"inches\", \"centimeters\""
+    },
+    "draw": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": "TRUE, FALSE"
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "quiet": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    }
+}

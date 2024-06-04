@@ -1,0 +1,137 @@
+{
+    "data": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "chrom": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "chromend": {
+        "type": "integer",
+        "default": null,
+        "options": null
+    },
+    "assembly": {
+        "type": "string",
+        "default": "\"hg38\"",
+        "options": null
+    },
+    "fill": {
+        "type": "character",
+        "default": "\"#7ecdbb\"",
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "NA",
+        "options": null
+    },
+    "order": {
+        "type": "character",
+        "default": "\"width\"",
+        "options": null
+    },
+    "collapse": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    },
+    "boxHeight": {
+        "type": "numeric",
+        "default": "unit(2, \"mm\")",
+        "options": null
+    },
+    "spaceWidth": {
+        "type": "numeric",
+        "default": "0.02",
+        "options": "any numeric"
+    },
+    "spaceHeight": {
+        "type": "numeric",
+        "default": "0.3",
+        "options": "any numeric"
+    },
+    "limitLabel": {
+        "type": "logical",
+        "default": null,
+        "options": "TRUE, FALSE"
+    },
+    "strandSplit": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    },
+    "bg": {
+        "type": "character",
+        "default": "NA",
+        "options": null
+    },
+    "baseline": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    },
+    "baseline.color": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "baseline.lwd": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "just": {
+        "type": "string",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": "\"inches\", \"centimeters\""
+    },
+    "draw": {
+        "type": "logical",
+        "default": null,
+        "options": "TRUE, FALSE"
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

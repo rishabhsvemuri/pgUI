@@ -1,0 +1,42 @@
+{
+    "width": {
+        "type": "numeric",
+        "default": "8",
+        "options": null
+    },
+    "height": {
+        "type": "numeric",
+        "default": "11",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "bg": {
+        "type": "value",
+        "default": "NA",
+        "options": null
+    },
+    "xgrid": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": null
+    },
+    "ygrid": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": null
+    },
+    "showGuides": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    }
+}

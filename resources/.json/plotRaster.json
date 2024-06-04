@@ -1,0 +1,52 @@
+{
+    "image": {
+        "type": "R",
+        "default": null,
+        "options": null
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "\"center\"",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "interpolate": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

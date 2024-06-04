@@ -1,0 +1,42 @@
+{
+    "plot": {
+        "type": "object",
+        "default": null,
+        "options": null
+    },
+    "at": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "label": {
+        "type": "logical",
+        "default": null,
+        "options": null
+    },
+    "main": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": null
+    },
+    "scipen": {
+        "type": "integer",
+        "default": "999",
+        "options": null
+    },
+    "axisLine": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

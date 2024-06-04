@@ -1,0 +1,142 @@
+{
+    "data": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "chrom": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "integer",
+        "default": null,
+        "options": "any integer"
+    },
+    "chromend": {
+        "type": "integer",
+        "default": null,
+        "options": "any integer"
+    },
+    "assembly": {
+        "type": "string",
+        "default": "\"hg38\"",
+        "options": null
+    },
+    "style": {
+        "type": "character",
+        "default": "\"2D\"",
+        "options": "\"2D\", \"3D\""
+    },
+    "flip": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    },
+    "curvature": {
+        "type": "numeric",
+        "default": "5",
+        "options": "any numeric"
+    },
+    "archHeight": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "fill": {
+        "type": "character",
+        "default": "#1f4297\"",
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "NA",
+        "options": null
+    },
+    "alpha": {
+        "type": "numeric",
+        "default": "0.4",
+        "options": "any numeric"
+    },
+    "bg": {
+        "type": "character",
+        "default": "NA",
+        "options": null
+    },
+    "clip": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    },
+    "clip.noAnchor": {
+        "type": "logical",
+        "default": null,
+        "options": "TRUE, FALSE"
+    },
+    "range": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "baseline": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": "TRUE, FALSE"
+    },
+    "baseline.color": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "baseline.lwd": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "just": {
+        "type": "string",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": "\"inches\", \"centimeters\""
+    },
+    "draw": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": "TRUE, FALSE"
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

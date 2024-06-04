@@ -1,0 +1,7 @@
+{
+    "Genome": {
+        "type": "indicating",
+        "default": null,
+        "options": null
+    }
+}
