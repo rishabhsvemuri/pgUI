@@ -33,7 +33,7 @@ $ npm install
 $ npm run dev
 ```
 
-### Build
+## Building for Distribution
 
 ```bash
 # For windows
