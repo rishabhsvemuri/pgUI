@@ -10,17 +10,16 @@ An Electron, React app for the plotgardener R package.
 
 ### Install R
 
-Check if your machine has R installed. If it installed, these commands will return where it is installed.
+Check if your machine has R installed. If it is installed, these commands will return where it is installed.
+Install at [cran](https://cran.r-project.org/mirrors.html) if not already on machine.
 
 ```bash
-# For windows
+# For macOS
 $ which R
 
-# For macOS
+# For Windows
 $ where R
 ```
-
-Install at [cran](https://cran.r-project.org/mirrors.html) if not already on machine.
 
 ### Install Node Modules
 
