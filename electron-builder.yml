@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: electron-react-app
+productName: plotgardenerUI
 directories:
   buildResources: build
 files:

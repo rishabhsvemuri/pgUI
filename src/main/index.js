@@ -13,7 +13,6 @@ let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('userData'), 'temp.pdf'); // fix this path so it can be used as a default location to store and pull from
 const writePath = path.join(app.getPath('userData'), 'written.R');
-// process.env.PATH = '/usr/local/bin:' + process.env.PATH
 
 
 
