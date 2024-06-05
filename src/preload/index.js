@@ -12,4 +12,5 @@ contextBridge.exposeInMainWorld('electron', {
   loadJson: (category, id) => ipcRenderer.send('load-json', category, id),
   onjsonGen: (callback, id) => ipcRenderer.on('json-gen', callback, id),
   onCreatePage: (callback, id) => ipcRenderer.on('create-page', callback, id),
+  onMessage: (callback) => ipcRenderer.on('message', callback),
 });

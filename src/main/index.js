@@ -11,8 +11,11 @@ const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstal
 
 let mainWindow;
 let plots = new Map();
-let savePath = path.join(__dirname, '../../resources/temp.pdf');
-const writePath = path.join(__dirname, '../../src/main/written.R');
+let savePath = path.join(app.getPath('userData'), 'temp.pdf'); // fix this path so it can be used as a default location to store and pull from
+const writePath = path.join(app.getPath('userData'), 'written.R');
+// process.env.PATH = '/usr/local/bin:' + process.env.PATH
+
+
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -80,18 +83,20 @@ app.whenReady().then(() => {
     }
 
     try {
-      console.log('Generating and writing commands');
+      mainWindow.webContents.send('message', 'Generating and writing commands');
       await writeScript();
-      console.log('Command generated, running R Script...');
-      const command = `Rscript "${writePath}"`;
-      exec(command, (error, stdout, stderr) => {
+      mainWindow.webContents.send('message', 'Command generated, written to file, running R Script...');
+      const command = `/usr/local/bin/Rscript "${writePath}"`;
+      exec(command, (error, stdout) => {
         console.log('Done');
         if (error) {
           console.error(`Error executing R script: ${error.message}`);
+          mainWindow.webContents.send('message', `Error executing R script: ${error.message}`);
           return;
         }
         if(stdout){
           mainWindow.webContents.send('refresh-pdf', savePath);
+          mainWindow.webContents.send('message', '');
         }
       });
     } catch (err) {
