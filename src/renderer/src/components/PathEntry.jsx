@@ -6,7 +6,7 @@ function PathEntry() {
 
   useEffect(() => {
     const runOnStart = () => {
-      const id = 'a-0';
+      const id = 'a0';
       const category = 'pageCreate';
       window.electron.updateCategory(category, category, id);
       window.electron.loadJson(category, id);
@@ -72,10 +72,6 @@ function PathEntry() {
 
   return (
     <div id="creator">
-      <div id="askPath">
-        <h2>Enter path:</h2>
-        <input type="text" id="path" onBlur={handlePathBlur} className="path-input" placeholder="path/file-name.pdf" />
-      </div>
       <div id="pageCreate">
         <h2>Create a plotgardener page:</h2>
         {generatePageCreate()} {/* Call generatePageCreate here */}

@@ -46,7 +46,7 @@ function PlotAddition() {
       console.log('Please select a category for the last input');
     } else {
       const newPlot = {
-        id: `item-${Date.now()}`,
+        id: `item${Date.now()}`,
         name: inputValue,
         category: 'Select One',
         formData: [],

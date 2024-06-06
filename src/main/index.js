@@ -6,13 +6,12 @@ const { exec } = require('child_process');
 const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
-import { Plot } from '../plot';
 const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nBiocManager::install("plotgardener")\nBiocManager::install("plotgardenerData")'
 
 let mainWindow;
 let plots = new Map();
-let savePath = path.join(app.getPath('userData'), 'temp.pdf'); // fix this path so it can be used as a default location to store and pull from
-const writePath = path.join(app.getPath('userData'), 'written.R');
+let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf'); // use 'desktop' to save directly to desktop
+const writePath = path.join(app.getPath('temp'), 'written.R');
 
 
 
@@ -87,7 +86,6 @@ app.whenReady().then(() => {
       mainWindow.webContents.send('message', 'Command generated, written to file, running R Script...');
       const command = `/usr/local/bin/Rscript "${writePath}"`;
       exec(command, (error, stdout) => {
-        console.log('Done');
         if (error) {
           console.error(`Error executing R script: ${error.message}`);
           mainWindow.webContents.send('message', `Error executing R script: ${error.message}`);
@@ -112,12 +110,13 @@ app.whenReady().then(() => {
   });
 
   ipcMain.on('update-category', (event, itemName, category, itemId) => {
-    plots.set(itemId, new Plot(`${category}(`));
+    plots.set(itemId, new Map());
+    plots.get(itemId).set('maker', `${category}(`);
   });
 
   ipcMain.on('update-item', (event, itemId, field, val) => {
     const curr = plots.get(itemId);
-    curr[field] = val;
+    curr.set(field, val);
   });
 
   ipcMain.on('load-json', async (event, category, id) => {
@@ -162,8 +161,8 @@ async function writeScript() {
 }
 
 async function startScript() {
-  const width = Number(plots.get('a-0').width)
-  const height = Number(plots.get('a-0').height)
+  const width = Number(plots.get('a0').get('width'))
+  const height = Number(plots.get('a0').get('height'))
   await fs.appendFile(writePath, `${pgInstall}\n`);
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
   const library = `library(plotgardener)\n`
@@ -175,10 +174,10 @@ async function startScript() {
 
 async function writeCommands() {
   for (let [id, plot] of plots) {
-    let command = plot.maker.toString();
-    for (const property in plot) {
-      if (plot[property] !== undefined && property.toString() !== 'maker') {
-        const line = `${property} = ${plot[property].toString()}, `;
+    let command = `${id} <- ${plot.get('maker').toString()}`;
+    for (let [variable, value] of plot) {
+      if (value !== undefined && variable !== 'maker') {
+        const line = `${variable} = ${value.toString()}, `;
         command += line;
       }
     }
