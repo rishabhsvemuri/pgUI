@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import '.././assets/style.scss';
+import React, { useEffect, useState, useCallback } from 'react';
+import '../assets/style.scss';
 
 function PlotAddition() {
   const [plots, setPlots] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [inputFields, setInputFields] = useState({});
 
   useEffect(() => {
     const handleJSONGen = (event, jsonData, id) => {
-      setInputFields(jsonData);
-      generateFormInputs(jsonData, id);
+      setPlots((prevPlots) =>
+        prevPlots.map((plot) =>
+          plot.id === id
+            ? { ...plot, formData: generateFormInputs(jsonData, id) }
+            : plot
+        )
+      );
     };
-
+    
     if (window.electron && window.electron.onjsonGen) {
       window.electron.onjsonGen(handleJSONGen);
     } else {
-      console.error('jsongen not defined');
+      console.error('jsonGen not defined');
     }
 
     return () => {
@@ -25,77 +29,28 @@ function PlotAddition() {
     };
   }, []);
 
-  function generateFormInputs (jsonData, id) {
-    // Get the container where the inputs will be appended
-    const container = document.getElementById('plotList');
-    let subcontainer = document.getElementById(`${id}-container`);
-    let append = true;
-    if (subcontainer == null) {
-      subcontainer = document.createElement('div');
-      subcontainer.setAttribute('id', `${id}-container`);
+  const generateFormInputs = (jsonData, id) => {
+    if (!jsonData) {
+      console.log('jsonData not available in PlotAddition');
+      return [];
     }
-    else {
-      subcontainer.innerHTML = '';
-      append = false;
-    }
-    // Check if the container exists
-    if (!container) {
-      console.error('Container element not found in plotaddition');
-      return;
-    }
-    if (jsonData == null) {
-      console.log('jsondata not available in plotaddition')
-    }
-    // existingInputs.forEach(input => input.remove());
-    for (const key in jsonData){
-      if(jsonData.hasOwnProperty(key)){
-        // console.log(`${key}`)
-        const variable = `${key}`
-        const type = `${jsonData[key].type}`
-        // Create a label for the input
-        const label = document.createElement('label');
-        label.setAttribute('for', variable);
-        label.textContent = variable
-        // label.style.color = "white"
-        // Create the input element
-        const input = document.createElement('input');
-        input.setAttribute('id', `${id}-${variable}`);
-        input.setAttribute('name', variable);
-        input.setAttribute('placeholder', type)
-        input.setAttribute('data-plot-id', id);
-        // input.classList.add('plot-div');
-        // Append the label and input to the subcontainer
-        subcontainer.appendChild(label);
-        subcontainer.appendChild(input);
-        subcontainer.classList.add('plot-div');
-        // Add a line break for better readability
-        subcontainer.appendChild(document.createElement('br'));
-      }
-      // apend subcountainer to container if has not been appended before
-      if (append){
-        container.appendChild(subcontainer);
-      }
-    }
-    // Attach a single event listener to the container using event delegation
-    container.addEventListener('blur', function(event) {
-      if (event.target.tagName.toLowerCase() === 'input') {
-        window.electron.updateItemValue(event.target.getAttribute('data-plot-id'), event.target.name, event.target.value)
-      }
-    }, true);
-  }
+    return Object.keys(jsonData).map((key) => ({
+      variable: key,
+      type: jsonData[key].type,
+      id: `${id}-${key}`,
+    }));
+  };
 
   const handleAddPlot = () => {
-    console.log(plots.length);
     if (plots.length > 0 && plots[plots.length - 1].category === 'Select One') {
       console.log('Please select a category for the last input');
-    }
-    else {
+    } else {
       const newPlot = {
         id: `item-${Date.now()}`,
         name: inputValue,
         category: 'Select One',
+        formData: [],
       };
-
       setPlots([...plots, newPlot]);
       setInputValue('');
       window.electron.addItem(newPlot);
@@ -123,12 +78,20 @@ function PlotAddition() {
     window.electron.runScript();
   };
 
+  const handleBlur = useCallback((event) => {
+    if (event.target.tagName.toLowerCase() === 'input') {
+      const { dataset: { plotId }, name, value } = event.target;
+      window.electron.updateItemValue(plotId, name, value);
+    }
+  }, []);
+
   return (
     <div id="container">
-      <div id="plotListContainer">
+      <div id="plotListContainer" onBlur={handleBlur}>
         <ul id="plotList">
           {plots.map((plot) => (
             <li key={plot.id}>
+              <div className='plot-div'>
               {plot.name}
               <select
                 value={plot.category}
@@ -150,6 +113,19 @@ function PlotAddition() {
                 <option value="plotTranscripts">plotTranscripts</option>
                 <option value="plotCircle">plotCircle</option>
               </select>
+              {plot.formData && plot.formData.map((input) => (
+                <div key={input.id} className="plot-div">
+                  <label htmlFor={input.id}>{input.variable}</label>
+                  <input
+                    id={input.id}
+                    name={input.variable}
+                    placeholder={input.type}
+                    data-plot-id={plot.id}
+                  />
+                  <br />
+                </div>
+              ))}
+              </div>
             </li>
           ))}
         </ul>
@@ -171,5 +147,4 @@ function PlotAddition() {
     </div>
   );
 }
-
 export default PlotAddition;
