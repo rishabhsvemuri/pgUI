@@ -1,15 +1,18 @@
 .plot-div {
     background-color: #404040;
     padding: 10px;
+    color: white;
+    
 
     select {
         margin-bottom: 5px;
         border-radius: 0;
-        margin-right: 30px;
+        margin-left: 15px;
+        margin-right: 10px;
         background-color: #232323;
         color: white;
         border: 0;
-        padding: 0px;
+        
     }
 
     .half {
@@ -25,22 +28,19 @@
         font-size: 14px;
         color: white;
         margin-bottom: 5px;
-        padding-right: 5px;
+        padding: 5px;
     }
 
     input {
-        background-color: black;
+        background-color: #232323;
         color: white;
+        border-radius: 0;
+        border-style: none;
         height: 30px;
         margin: 0px;
+        padding-left: 5px;
     }
-}
-
-.path-input {
-    background-color: white;
-    color: black;
-    // height: 30px;
-    // margin: 5px;
+    
 }
 
 select {
@@ -92,9 +92,9 @@ select {
 .icon-images {
     width: 33px;
     height: 33px;
-    color: white;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    color: lightgray;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding: 11px 16px;
     box-sizing: content-box;
     transition: background-color 0.3s;
@@ -125,6 +125,7 @@ select {
     position: fixed;
     padding-left: 20px;
     padding-right: 20px;
+    
     
     
     overflow-y: auto;
@@ -161,4 +162,8 @@ body {
 .rbtn {
     margin-top: 10px;
     margin-bottom: 15px;
+}
+
+#path{
+    color: white;
 }
