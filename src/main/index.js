@@ -7,13 +7,10 @@ const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
 const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nBiocManager::install("plotgardener")\nBiocManager::install("plotgardenerData")'
-
 let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf'); // use 'desktop' to save directly to desktop
 const writePath = path.join(app.getPath('temp'), 'written.R');
-
-
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -110,6 +107,10 @@ app.whenReady().then(() => {
   });
 
   ipcMain.on('update-category', (event, itemName, category, itemId) => {
+    if (category == null && itemName == null) {
+      plots.delete(itemId);
+      return;
+    }
     plots.set(itemId, new Map());
     plots.get(itemId).set('maker', `${category}(`);
   });

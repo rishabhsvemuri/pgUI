@@ -85,6 +85,11 @@ function PlotAddition() {
     }
   }, []);
 
+  const handleDeletePlot = (id) => {
+    setPlots(plots.filter(plot => plot.id !== id));
+    window.electron.updateCategory(null, null, id);
+  };
+
   return (
     <div id="container">
       <div id="plotListContainer" onBlur={handleBlur}>
@@ -103,7 +108,7 @@ function PlotAddition() {
                 <option value="plotHicRectangle">plotHicRectangle</option>
                 <option value="plotHicSquare">plotHicSquare</option>
                 <option value="plotHicTriangle">plotHicTriangle</option>
-                <option value="plotHicIdeogram">plotHicIdeogram</option>
+                <option value="plotIdeogram">plotIdeogram</option>
                 <option value="plotManhattan">plotManhattan</option>
                 <option value="plotPairs">plotPairs</option>
                 <option value="plotPairsArches">plotPairsArches</option>
@@ -112,7 +117,14 @@ function PlotAddition() {
                 <option value="plotMultiSignal">plotMultiSignal</option>
                 <option value="plotTranscripts">plotTranscripts</option>
                 <option value="plotCircle">plotCircle</option>
+                <option value="plotLegend">plotLegend</option>
+                <option value="plotPolygon">plotPolygon</option>
+                <option value="plotRaster">plotRaster</option>
+                <option value="plotRect">plotRect</option>
+                <option value="plotSegments">plotSegments</option>
+                <option value="plotText">plotText</option>
               </select>
+              <button onClick={() => handleDeletePlot(plot.id)}>Delete</button>
               {plot.formData && plot.formData.map((input) => (
                 <div key={input.id} className="plot-div">
                   <label htmlFor={input.id}>{input.variable}</label>
