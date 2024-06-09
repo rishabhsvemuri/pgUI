@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
+import { FaRegTrashCan } from "react-icons/fa6";
+
 import '../assets/style.scss';
 
 function PlotAddition() {
   const [plots, setPlots] = useState([]);
   const [inputValue, setInputValue] = useState('');
+
 
   useEffect(() => {
     const handleJSONGen = (event, jsonData, id) => {
@@ -49,6 +53,7 @@ function PlotAddition() {
         id: `item${Date.now()}`,
         name: inputValue,
         category: 'Select One',
+        showFields: true,
         formData: [],
       };
       setPlots([...plots, newPlot]);
@@ -90,6 +95,17 @@ function PlotAddition() {
     window.electron.updateCategory(null, null, id);
   };
 
+  const handleFieldCollapse = (id) => {
+    const updatedPlots = plots.map((plot) => {
+      if(plot.id === id){
+        const updatedPlot = { ...plot, showFields: !plot.showFields};
+        return updatedPlot;
+      }
+      return plot;
+    });
+    setPlots(updatedPlots);
+  }
+
   return (
     <div id="container">
       <div id="plotListContainer" onBlur={handleBlur}>
@@ -124,7 +140,9 @@ function PlotAddition() {
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
-              <button onClick={() => handleDeletePlot(plot.id)}>Delete</button>
+              <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
+              {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
+              <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
               {plot.formData && plot.formData.map((input) => (
                 <div key={input.id} className="plot-div">
                   <label htmlFor={input.id}>{input.variable}</label>
@@ -135,8 +153,9 @@ function PlotAddition() {
                     data-plot-id={plot.id}
                   />
                   <br />
-                </div>
+                </div>  
               ))}
+              </div>
               </div>
             </li>
           ))}

@@ -7,7 +7,7 @@
     select {
         margin-bottom: 5px;
         border-radius: 0;
-        margin-left: 15px;
+        margin-left: 7.5px;
         margin-right: 10px;
         background-color: #232323;
         color: white;
@@ -166,4 +166,26 @@ body {
 
 #path{
     color: white;
+}
+
+.field-content {
+    display: none;
+}
+
+.field-content.active {
+    display: block;
+}
+
+.collapseButton{
+    margin-left: 10px;
+    &:hover {
+        color: #232323;
+    }
+}
+
+.delete-button{
+    margin-left: 90px;
+    &:hover {
+        color: #232323;
+    }
 }

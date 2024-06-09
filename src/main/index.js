@@ -9,7 +9,7 @@ const fs = require('fs').promises;
 const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nBiocManager::install("plotgardener")\nBiocManager::install("plotgardenerData")'
 let mainWindow;
 let plots = new Map();
-let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf'); // use 'desktop' to save directly to desktop
+let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
 const writePath = path.join(app.getPath('temp'), 'written.R');
 
 function createWindow() {
@@ -150,9 +150,6 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
 
 async function writeScript() {
   await clearPath();
