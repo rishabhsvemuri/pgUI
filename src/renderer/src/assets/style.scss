@@ -169,11 +169,16 @@ body {
 }
 
 .field-content {
-    display: none;
+    // display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
 }
 
 .field-content.active {
-    display: block;
+    // display: block;
+    max-height: 2000px; // Adjust this value based on your content height
+    transition: max-height 0.5s ease;
 }
 
 .collapseButton{
