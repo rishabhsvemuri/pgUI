@@ -1,0 +1,9 @@
+Add annotations to all plots, within the plot. What is properties?
+When one plot is expanded, all others collapsed?
+Make runscript a component so it is fixed on all pages
+Render code on code page
+Get rid of share page for an info page (info on how to use app, fill out plot fields, etc.)
+Node page?
+Input fields should be arranged so they are easier to read
+Grid pane for justification
+Stylize the pdf embed

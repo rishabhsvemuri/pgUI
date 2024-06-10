@@ -73,7 +73,7 @@ function PathEntry() {
   return (
     <div id="creator">
       <div id="pageCreate">
-        <h2>Create a plotgardener page:</h2>
+        <h2>Create a page:</h2>
         {generatePageCreate()} {/* Call generatePageCreate here */}
       </div>
     </div>
