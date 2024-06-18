@@ -51,7 +51,7 @@ function PlotAddition() {
     } else {
       const newPlot = {
         id: `item${Date.now()}`,
-        name: inputValue,
+        name: inputValue === '' ? 'Untitled Plot': inputValue,
         category: 'Select One',
         showFields: true,
         formData: [],
@@ -113,8 +113,13 @@ function PlotAddition() {
           {plots.map((plot) => (
             <li key={plot.id}>
               <div className='plot-div'>
-              {plot.name}
+              <div id='plot-header'>
+              <p id='plot-name'>{plot.name}</p>
+              <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
+              {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
+              </div>
               <select
+                className='full'
                 value={plot.category}
                 onChange={(event) => handleCategoryChange(plot.id, event)}
               >
@@ -140,21 +145,21 @@ function PlotAddition() {
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
-              <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
-              {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
+              {/* <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan> */}
+              {/* {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>} */}
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
-              {plot.formData && plot.formData.map((input) => (
-                <div key={input.id} className="plot-div">
-                  <label htmlFor={input.id}>{input.variable}</label>
-                  <input
-                    id={input.id}
-                    name={input.variable}
-                    placeholder={input.type}
-                    data-plot-id={plot.id}
-                  />
-                  <br />
-                </div>  
-              ))}
+                  {plot.formData && plot.formData.map((input) => (
+                    <div key={input.id} className="plot-div" id='input-field'>
+                      <label htmlFor={input.id}>{input.variable}</label>
+                      <input
+                        className='half'                    
+                        id={input.id}
+                        name={input.variable}
+                        placeholder={input.type}
+                        data-plot-id={plot.id}
+                      />
+                    </div>  
+                  ))}
               </div>
               </div>
             </li>

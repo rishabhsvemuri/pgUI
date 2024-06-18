@@ -134,6 +134,28 @@ app.whenReady().then(() => {
 
   });
 
+  ipcMain.handle('read-written.R', async () => {
+    try {
+        const data = await fs.readFile(writePath, 'utf8');
+        return data;
+    } catch (error) {
+        console.error('Error reading written.R file:', error);
+        return '';
+    }
+  });
+
+  ipcMain.handle('save-written.R', async (event, newContent) => {
+    try {
+      await fs.writeFile(writePath, newContent, 'utf8');
+      return true; // Indicate success
+    } catch (error) {
+      console.error('Error writing to written.R file:', error);
+      return false; // Indicate failure
+    }
+  })
+
+  
+
   protocol.handle('atom', (request) => {
     const filePath = request.url.slice('atom://'.length)
     return net.fetch(url.pathToFileURL(filePath).toString())
