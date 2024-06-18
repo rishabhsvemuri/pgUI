@@ -181,8 +181,8 @@ async function writeScript() {
 }
 
 async function startScript() {
-  const width = Number(plots.get('a0').get('width'))
-  const height = Number(plots.get('a0').get('height'))
+  const width = plots.get('a0').get('width') === undefined ? 8.5 :plots.get('a0').get('width');
+  const height = plots.get('a0').get('height') === undefined ? 11 :plots.get('a0').get('height');
   await fs.appendFile(writePath, `${pgInstall}\n`);
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
   const library = `library(plotgardener)\n`

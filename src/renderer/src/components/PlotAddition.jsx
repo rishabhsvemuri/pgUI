@@ -145,11 +145,12 @@ function PlotAddition() {
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
-              {/* <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan> */}
-              {/* {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>} */}
+
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
+                <ul className='fields-list'>
                   {plot.formData && plot.formData.map((input) => (
-                    <div key={input.id} className="plot-div" id='input-field'>
+                    <li>
+                    <div key={input.id} className='input-field'>
                       <label htmlFor={input.id}>{input.variable}</label>
                       <input
                         className='half'                    
@@ -158,8 +159,10 @@ function PlotAddition() {
                         placeholder={input.type}
                         data-plot-id={plot.id}
                       />
-                    </div>  
+                    </div>
+                    </li>  
                   ))}
+                </ul>
               </div>
               </div>
             </li>
