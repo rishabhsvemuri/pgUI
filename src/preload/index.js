@@ -12,4 +12,6 @@ contextBridge.exposeInMainWorld('electron', {
   onjsonGen: (callback, id) => ipcRenderer.on('json-gen', callback, id),
   onCreatePage: (callback, id) => ipcRenderer.on('create-page', callback, id),
   onMessage: (callback) => ipcRenderer.on('message', callback),
+  readWrittenR: () => ipcRenderer.invoke('read-written.R'),
+  writeWrittenR: (newContent) => ipcRenderer.invoke('write-written.R', newContent),
 });

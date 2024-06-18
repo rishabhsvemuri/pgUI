@@ -134,6 +134,28 @@ app.whenReady().then(() => {
 
   });
 
+  ipcMain.handle('read-written.R', async () => {
+    try {
+        const data = await fs.readFile(writePath, 'utf8');
+        return data;
+    } catch (error) {
+        console.error('Error reading written.R file:', error);
+        return '';
+    }
+  });
+
+  ipcMain.handle('save-written.R', async (event, newContent) => {
+    try {
+      await fs.writeFile(writePath, newContent, 'utf8');
+      return true; // Indicate success
+    } catch (error) {
+      console.error('Error writing to written.R file:', error);
+      return false; // Indicate failure
+    }
+  })
+
+  
+
   protocol.handle('atom', (request) => {
     const filePath = request.url.slice('atom://'.length)
     return net.fetch(url.pathToFileURL(filePath).toString())
@@ -159,8 +181,8 @@ async function writeScript() {
 }
 
 async function startScript() {
-  const width = Number(plots.get('a0').get('width'))
-  const height = Number(plots.get('a0').get('height'))
+  const width = plots.get('a0').get('width') === undefined ? Number(8.5) : Number(plots.get('a0').get('width'));
+  const height = plots.get('a0').get('height') === undefined ? Number(11) : Number(plots.get('a0').get('height'));
   await fs.appendFile(writePath, `${pgInstall}\n`);
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
   const library = `library(plotgardener)\n`
