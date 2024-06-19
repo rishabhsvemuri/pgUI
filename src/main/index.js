@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
-const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nBiocManager::install("plotgardener")\nBiocManager::install("plotgardenerData")'
+const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nif("plotgardener" %in% rownames(installed.packages()) == FALSE) {BiocManager::install("plotgardener")}\nif("plotgardenerData" %in% rownames(installed.packages()) == FALSE) {BiocManager::install("plotgardenerData")}'
 let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
@@ -14,8 +14,8 @@ const writePath = path.join(app.getPath('temp'), 'written.R');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 670,
+    width: 1200,
+    height: 1000,
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),

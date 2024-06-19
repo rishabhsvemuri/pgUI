@@ -15,6 +15,14 @@ import Header from '.././assets/pg-wordmark.png'
 
 function Sidebar(){
     const [activeTab, setActiveTab] = useState('PathEntry');
+    const [numRunScript, setNumRunScript] = useState(0);
+
+    const handleRunScript = () => {
+        window.electron.runScript();
+        console.log('Run Script clicked');
+        setNumRunScript(numRunScript + 1)
+    };
+    
 
     return (
         <>
@@ -30,7 +38,7 @@ function Sidebar(){
             </div>
             <div className='page'>
                 <div className='container'>
-                <img className = 'header' src = {Header} ></img>
+                    <img className = 'header' src = {Header} ></img>
                     <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
                         <PathEntry />
                     </div>
@@ -41,10 +49,14 @@ function Sidebar(){
                         <Nodes />
                     </div>
                     <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
-                        <Code />
+                        <Code nrs={numRunScript}/>
                     </div>
                     <div className={`tab-content ${activeTab === 'Share' ? 'active' : ''}`}>
                         <Share />
+                    </div>
+                    <hr/>
+                    <div>
+                        <button id="rbtn" type="button" onClick={handleRunScript} className='rbtn'>Run Script</button>
                     </div>
                 </div>
             </div>

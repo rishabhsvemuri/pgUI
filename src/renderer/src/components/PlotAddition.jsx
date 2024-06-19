@@ -79,10 +79,6 @@ function PlotAddition() {
     setPlots(updatedPlots);
   };
 
-  const handleRunScript = () => {
-    window.electron.runScript();
-  };
-
   const handleBlur = useCallback((event) => {
     if (event.target.tagName.toLowerCase() === 'input') {
       const { dataset: { plotId }, name, value } = event.target;
@@ -149,7 +145,7 @@ function PlotAddition() {
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 <ul className='fields-list'>
                   {plot.formData && plot.formData.map((input) => (
-                    <li>
+                    <li key={input.id}>
                     <div key={input.id} className='input-field'>
                       <label htmlFor={input.id}>{input.variable}</label>
                       <input
@@ -178,10 +174,6 @@ function PlotAddition() {
           onChange={handleInputChange}
         />
         <button id="addPlot" onClick={handleAddPlot}>Add Plot</button>
-      </div>
-      <hr />
-      <div>
-        <button id="rbtn" type="button" onClick={handleRunScript} className='rbtn'>Run Script</button>
       </div>
     </div>
   );
