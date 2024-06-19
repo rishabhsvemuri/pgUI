@@ -110,7 +110,7 @@ select {
 
 .container {
     background-color: #232323;
-    width: 300px;
+    width: 350px;
     height: 100%;
     top: 0;
     position: fixed;
@@ -247,14 +247,16 @@ body {
     height: 100%;
     width: 100%;
     font-size: 10px;
+    
   
     .CodeMirror {
-      height: 100%;
+      height: 1000%;
       width: 100%;
       font-size: inherit;
       background-color: #2e3440; /* Example background color */
       color: #d8dee9; /* Example text color */
-    //   min-height: 240px;
+    //   min-height: 200px;
+    //   
     }
   
     .CodeMirror-scroll {
