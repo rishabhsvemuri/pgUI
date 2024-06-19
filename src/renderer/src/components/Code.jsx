@@ -22,7 +22,9 @@ function Code() {
     };
   
     return (
-      <div className='code-editor'>
+      <div className='plot-div'>
+        <h2>Generated R Script</h2>
+        <div className='code-editor'>
         <CodeMirror
           value={code}
           options={{
@@ -34,7 +36,9 @@ function Code() {
             handleChange(editor, data, value);
           }}
         />
+        </div>
       </div>
+
     );
   }
   
