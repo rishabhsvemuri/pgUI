@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
-const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nBiocManager::install("plotgardener")\nBiocManager::install("plotgardenerData")'
+const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\nif (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\nif (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")'
 let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
