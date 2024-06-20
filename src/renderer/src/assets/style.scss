@@ -198,21 +198,23 @@ body {
     
 }
 
-.collapseButton{
-    display: inline-block;
-    margin-left: 10px;
-    &:hover {
-        color: #232323;
-    }
-}
-
-.delete-button{
-    // display: inline-block;
-    margin-left: 135px;
-    &:hover {
-        color: #232323;
-    }
-}
+.plot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 8px; /* Adjust as needed */
+  }
+  
+  .delete-button, .collapseButton {
+    cursor: pointer;
+    color: white;
+    margin-left: 10px; /* Adjust margin for spacing */
+  }
+  
+  .delete-button:hover, .collapseButton:hover {
+    color: #232323; /* Adjust hover color */
+  }
+  
 
 #plot-name{
     display: inline-block;
