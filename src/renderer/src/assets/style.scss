@@ -198,21 +198,22 @@ body {
     
 }
 
-.collapseButton{
-    display: inline-block;
-    margin-left: 10px;
-    &:hover {
-        color: #232323;
-    }
-}
-
-.delete-button{
-    // display: inline-block;
-    margin-left: 110px;
-    &:hover {
-        color: #232323;
-    }
-}
+.plot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 8px; /* Adjust as needed */
+  }
+  
+  .delete-button, .collapseButton {
+    cursor: pointer;
+    color: white;
+    margin-left: 10px; /* Adjust margin for spacing */
+  }
+  
+  .delete-button:hover, .collapseButton:hover {
+    color: #232323; /* Adjust hover color */
+  }
 
 #plot-name{
     display: inline-block;
@@ -254,7 +255,7 @@ body {
       font-size: inherit;
       background-color: #2e3440; /* Example background color */
       color: #d8dee9; /* Example text color */
-      min-height: 100px;
+    //   min-height: 100px;
     }
   
     .CodeMirror-scroll {
@@ -304,7 +305,6 @@ body {
 .plot-icon-image{
     display: inline-block;
     width: 25px;
-    margin-right: 15px;
 }
 
 #pdf-text{

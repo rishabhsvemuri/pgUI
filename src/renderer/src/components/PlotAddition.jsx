@@ -149,11 +149,13 @@ function PlotAddition() {
           {plots.map((plot) => (
             <li key={plot.id}>
               <div className='plot-div'>
-              <div id='plot-header'>
-              <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
-              <p id='plot-name'>{plot.name}</p>
-              <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
-              {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
+                <div id='plot-header' className='plot-header'>
+                  <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
+                  <p id='plot-name'>{plot.name}</p>
+                <div>
+                  <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
+                  {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
+                </div>
               </div>
               <select
                 className='full'
