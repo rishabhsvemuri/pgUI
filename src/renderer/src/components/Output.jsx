@@ -53,12 +53,15 @@ function Output() {
 
   return (
     <div className='output-div'>
-      <p>{message}</p>
       {showPdf && pdfPath ? (
         <embed className='pdf' src={pdfPath} type="application/pdf" id="pdf" width="850px" height="1100px" />
       ) : (
-        <p className='pdf'>No PDF Generated</p>
+        <>
+          <p className='pdf' id='pdf-text'>No PDF Generated</p>
+          {message != '' ? <hr id='output-hr'/>: null}
+        </>
       )}
+      <p id='output-text'>{message}</p>
     </div>
   );
 }

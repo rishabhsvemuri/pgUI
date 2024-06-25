@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
-const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE))\ninstall.packages("BiocManager")\nif("plotgardener" %in% rownames(installed.packages()) == FALSE) {BiocManager::install("plotgardener")}\nif("plotgardenerData" %in% rownames(installed.packages()) == FALSE) {BiocManager::install("plotgardenerData")}'
+const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\nif (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\nif (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")'
 let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
@@ -151,6 +151,16 @@ app.whenReady().then(() => {
     } catch (error) {
       console.error('Error writing to written.R file:', error);
       return false; // Indicate failure
+    }
+  })
+
+  ipcMain.on('icon-image-path', (plotcatagory) => {
+    try{
+      const realtive_path = path.join(`../assets/plotIcons/${plotcatagory}.png`);
+      return realtive_path;
+    } catch (error){
+      console.error('Error getting icon image:', error);
+      return false;
     }
   })
 
