@@ -201,7 +201,7 @@ body {
 .plot-header {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Align items vertically in the center */
+    align-items: left; /* Align items vertically in the center */
     margin-bottom: 8px; /* Adjust as needed */
   }
   
@@ -305,6 +305,8 @@ body {
 .plot-icon-image{
     display: inline-block;
     width: 25px;
+    margin-right: -150px;
+    margin-top: -2px;
 }
 
 #pdf-text{

@@ -1,0 +1,11 @@
+var 
+    type
+    default
+    options: null if no options
+    required: bool
+    restrictions
+    info
+
+default value means its requried
+
+formatting: name A type. Default Value is: " ". Options include: bool, just
