@@ -214,7 +214,6 @@ body {
   .delete-button:hover, .collapseButton:hover {
     color: #232323; /* Adjust hover color */
   }
-  
 
 #plot-name{
     display: inline-block;
@@ -257,8 +256,6 @@ body {
       font-size: inherit;
       background-color: #2e3440; /* Example background color */
       color: #d8dee9; /* Example text color */
-    //   min-height: 200px;
-    //   
     }
   
     .CodeMirror-scroll {
@@ -274,3 +271,60 @@ body {
       color: #d8dee9; /* Example line number color */
     }
   }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 75px;
+    background-color: rgb(38, 39, 39);
+    color: #fff;
+    text-align: center;
+    border: 0.1px solid grey;
+    bottom: 30%;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    left: 45%;
+    margin-left: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: .75s;
+}
+
+
+.plot-icon-image{
+    display: inline-block;
+    width: 25px;
+}
+
+#pdf-text{
+    text-align: center;
+    color: #888787;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40vh;
+}
+#output-text{
+    text-align: center;
+    color: #888787;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#output-hr{
+    color: #888787;
+}

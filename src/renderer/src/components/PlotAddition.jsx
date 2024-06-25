@@ -3,11 +3,47 @@ import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 import '../assets/style.scss';
+import plotCirle from '../assets/plotIcons/plotCircle.png'
+import plotGenes from '../assets/plotIcons/plotGenes.png'
+import plotGenomeLabel from '../assets/plotIcons/plotGenomeLabel.png'
+import plotHicRectangle from '../assets/plotIcons/plotHicRectangle.png'
+import plotHicSquare from '../assets/plotIcons/plotHicSquare.png'
+import plotHicTriangle from '../assets/plotIcons/plotHicTriangle.png'
+import plotIdeogram from '../assets/plotIcons/plotIdeogram.png'
+import plotLegend from '../assets/plotIcons/plotLegend.png'
+import plotManhattan from '../assets/plotIcons/plotManhattan.png'
+import plotPairs from '../assets/plotIcons/plotPairs.png'
+import plotPolygon from '../assets/plotIcons/plotPolygon.png'
+import plotRanges from '../assets/plotIcons/plotRanges.png'
+import plotRect from '../assets/plotIcons/plotRect.png'
+import plotSegments from '../assets/plotIcons/plotSegments.png'
+import plotSignal from '../assets/plotIcons/plotSignal.png'
+import plotText from '../assets/plotIcons/plotText.png'
+import plotTranscripts from '../assets/plotIcons/plotTranscripts.png'
 
 function PlotAddition() {
   const [plots, setPlots] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
+  const plotImages = new Map([
+    ["plotCirle", plotCirle],
+    ["plotGenes", plotGenes],
+    ["plotGenomeLabel", plotGenomeLabel],
+    ["plotHicRectangle", plotHicRectangle],
+    ["plotHicSquare", plotHicSquare],
+    ["plotHicTriangle", plotHicTriangle],
+    ["plotIdeogram", plotIdeogram],
+    ["plotLegend", plotLegend],
+    ["plotManhattan", plotManhattan],
+    ["plotPairs", plotPairs],
+    ["plotPolygon", plotPolygon],
+    ["plotRanges", plotRanges],
+    ["plotRect",plotRect],
+    ["plotSegments", plotSegments],
+    ["plotSignal", plotSignal],
+    ["plotText", plotText],
+    ["plotTranscripts", plotTranscripts],
+  ]);
 
   useEffect(() => {
     const handleJSONGen = (event, jsonData, id) => {
@@ -79,10 +115,6 @@ function PlotAddition() {
     setPlots(updatedPlots);
   };
 
-  const handleRunScript = () => {
-    window.electron.runScript();
-  };
-
   const handleBlur = useCallback((event) => {
     if (event.target.tagName.toLowerCase() === 'input') {
       const { dataset: { plotId }, name, value } = event.target;
@@ -106,6 +138,10 @@ function PlotAddition() {
     setPlots(updatedPlots);
   }
 
+  const handleIconImage = async (plotcategory) => {
+    const iconPath = await window.electron.getIconImagePath(plotcategory);
+  }
+
   return (
     <div id="container">
       <div id="plotListContainer" onBlur={handleBlur}>
@@ -114,6 +150,7 @@ function PlotAddition() {
             <li key={plot.id}>
               <div className='plot-div'>
                 <div id='plot-header' className='plot-header'>
+                  <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
                   <p id='plot-name'>{plot.name}</p>
                 <div>
                   <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
@@ -151,7 +188,7 @@ function PlotAddition() {
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 <ul className='fields-list'>
                   {plot.formData && plot.formData.map((input) => (
-                    <li>
+                    <li key={input.id}>
                     <div key={input.id} className='input-field'>
                       <label htmlFor={input.id}>{input.variable}</label>
                       <input
@@ -180,10 +217,6 @@ function PlotAddition() {
           onChange={handleInputChange}
         />
         <button id="addPlot" onClick={handleAddPlot}>Add Plot</button>
-      </div>
-      <hr />
-      <div>
-        <button id="rbtn" type="button" onClick={handleRunScript} className='rbtn'>Run Script</button>
       </div>
     </div>
   );

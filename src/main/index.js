@@ -14,8 +14,8 @@ const writePath = path.join(app.getPath('temp'), 'written.R');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 670,
+    width: 1200,
+    height: 1000,
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
@@ -151,6 +151,16 @@ app.whenReady().then(() => {
     } catch (error) {
       console.error('Error writing to written.R file:', error);
       return false; // Indicate failure
+    }
+  })
+
+  ipcMain.on('icon-image-path', (plotcatagory) => {
+    try{
+      const realtive_path = path.join(`../assets/plotIcons/${plotcatagory}.png`);
+      return realtive_path;
+    } catch (error){
+      console.error('Error getting icon image:', error);
+      return false;
     }
   })
 

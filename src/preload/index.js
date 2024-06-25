@@ -14,4 +14,5 @@ contextBridge.exposeInMainWorld('electron', {
   onMessage: (callback) => ipcRenderer.on('message', callback),
   readWrittenR: () => ipcRenderer.invoke('read-written.R'),
   writeWrittenR: (newContent) => ipcRenderer.invoke('write-written.R', newContent),
+  getIconImagePath: (plotcategory) => ipcRenderer.send('icon-image-path', plotcategory),
 });
