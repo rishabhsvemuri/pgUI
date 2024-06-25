@@ -6,9 +6,7 @@ An Electron, React app for the plotgardener R package.
 
 - [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) -->
 
-## Project Setup
-
-### Install R
+## Install R
 
 Check if your machine has R installed. If it is installed, these commands will return where it is installed.
 Install at [cran](https://cran.r-project.org/mirrors.html) if not already on machine.
@@ -20,6 +18,12 @@ $ which R
 # For Windows
 $ where R
 ```
+
+## Install the app
+
+After project setup run the build command to access the packaged app.
+
+## Project Setup
 
 ### Install Node Modules
 
