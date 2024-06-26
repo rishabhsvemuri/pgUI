@@ -28,23 +28,23 @@ function Sidebar(){
                 <img className='logo-image' src={Logo} alt="Logo" />
                 <nav>
                     <div className="tooltip">
-                        <FaFile className='icon-images' onClick={() => setActiveTab('PathEntry')} style={activeTab === 'PathEntry' ? { backgroundColor: '#151515' } : {}}/>
+                        <FaFile className='icon-images' onClick={() => setActiveTab('PathEntry')} style={activeTab === 'PathEntry' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Create Page</span>
                     </div>
                     <div className="tooltip">
-                        <BsBoundingBoxCircles className='icon-images' onClick={() => setActiveTab('PlotAddition')} style={activeTab === 'PlotAddition' ? { backgroundColor: '#151515' } : {}}/>
+                        <BsBoundingBoxCircles className='icon-images' onClick={() => setActiveTab('PlotAddition')} style={activeTab === 'PlotAddition' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Plot Addition</span>
                     </div>
                     <div className="tooltip">
-                        <LuNetwork className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#151515' } : {}}/>
+                        <LuNetwork className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Nodes</span>
                     </div>
                     <div className="tooltip">
-                        <FaCode className='icon-images' onClick={() => setActiveTab('Code')} style={activeTab === 'Code' ? { backgroundColor: '#151515' } : {}}/>
+                        <FaCode className='icon-images' onClick={() => setActiveTab('Code')} style={activeTab === 'Code' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Code</span>
                     </div>
                     <div className="tooltip">
-                        <MdIosShare className='icon-images' onClick={() => setActiveTab('Share')} style={activeTab === 'Share' ? { backgroundColor: '#151515' } : {}}/>
+                        <MdIosShare className='icon-images' onClick={() => setActiveTab('Share')} style={activeTab === 'Share' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Share</span>
                     </div>
                 </nav>
