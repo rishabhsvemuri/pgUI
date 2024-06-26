@@ -14,7 +14,7 @@ const writePath = path.join(app.getPath('temp'), 'written.R');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1200,
+    width: 1500,
     height: 1000,
     show: false,
     autoHideMenuBar: true,
