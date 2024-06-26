@@ -1,0 +1,14 @@
+var 
+    type
+    default
+    options: null if no options
+    required: bool
+    restrictions
+    info
+
+default value means its requried
+
+formatting: 
+    @param variable_name A(n) type. Default Value is \code{" "}. Options include: logical, just, default.units
+
+Run devtools::document() in console to convert .R to .Rd
