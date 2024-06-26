@@ -9,6 +9,9 @@ var
 default value means its requried
 
 formatting: 
-    @param variable_name A(n) type. Default Value is \code{" "}. Options include: logical, just, default.units
+    @param variable_name A(n) [type] ... Default Value is \code{variable_name = [" "]}. Options include: logical, just, default.units
 
 Run devtools::document() in console to convert .R to .Rd
+
+Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Signal, MultiSignal, Raster, Rect, Segments
+Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Polygon, Text
