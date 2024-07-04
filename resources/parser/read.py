@@ -67,7 +67,7 @@ os.mkdir(texts)
 os.mkdir(os.getcwd() + '/.json')
 
 # clone repo
-Repo.clone_from('GIT REPO GOES HERE', path)
+Repo.clone_from('git@github.com:rishabhsvemuri/plotgardener.git', path)
 # navigate to man folder
 path += '/man' 
 

@@ -6,7 +6,7 @@ var
     restrictions
     info
 
-default value means its requried
+no default value means its requried
 
 formatting: 
     @param variable_name A(n) [type] ... Default Value is \code{variable_name = [" "]}. Options include: logical, just, default.units
