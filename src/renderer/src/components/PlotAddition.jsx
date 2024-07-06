@@ -189,7 +189,6 @@ function PlotAddition() {
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
-
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 <ul>
                   {/*  className='fields-list' */}

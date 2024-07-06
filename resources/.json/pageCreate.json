@@ -12,10 +12,10 @@
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "bg": {
-        "type": "value",
+        "type": "character",
         "default": "NA",
         "options": null
     },
@@ -32,7 +32,7 @@
     "showGuides": {
         "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": "TRUE, FALSE"
     },
     "params": {
         "type": "optional",

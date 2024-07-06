@@ -7,12 +7,12 @@
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": "any integer"
+        "options": null
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": "any integer"
+        "options": null
     },
     "assembly": {
         "type": "string",
@@ -22,17 +22,17 @@
     "fontsize": {
         "type": "numeric",
         "default": "10",
-        "options": "any numeric"
+        "options": null
     },
     "fontcolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": "any character value"
+        "options": null
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": "any character value"
+        "options": null
     },
     "margin": {
         "type": "numeric",
@@ -57,7 +57,7 @@
     "boxWidth": {
         "type": "numeric",
         "default": "0.5",
-        "options": "any numeric"
+        "options": null
     },
     "axis": {
         "type": "character",
@@ -72,32 +72,32 @@
     "tcl": {
         "type": "numeric",
         "default": "0.5",
-        "options": "any numeric"
+        "options": null
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "length": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "params": {
         "type": "optional",

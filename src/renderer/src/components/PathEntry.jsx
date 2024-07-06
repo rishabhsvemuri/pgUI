@@ -32,9 +32,10 @@ function PathEntry() {
     };
   }, []);
 
-  const handlePathBlur = (event) => {
-    const pathText = event.target.value;
-    window.electron.savePath(pathText);
+  const handleInputBlur = (event, id) => {
+    if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'select') {
+      window.electron.updateItemValue(id, event.target.name, event.target.value);
+    }
   };
 
   const generatePageCreate = () => {
@@ -45,29 +46,40 @@ function PathEntry() {
           Object.keys(jsonData).map((key) => {
             const variable = key;
             const type = jsonData[key].type;
+            const defaultArg = jsonData[key].default;
+            const options = jsonData[key].options;
             return (
               <div key={variable} className="plot-div">
                 <label htmlFor={`${id}-${variable}`} style={{ color: 'white' }}>
                   {variable}
                 </label>
-                <input
-                  id={`${id}-${variable}`}
-                  name={variable}
-                  placeholder={type}
-                  data-plot-id={id}
-                  onBlur={(event) => handleInputBlur(event, id)}
-                />
+                {options ? (
+                  <select
+                    id={`${id}-${variable}`}
+                    name={variable}
+                    data-plot-id={id}
+                    onBlur={(event) => handleInputBlur(event, id)}
+                  >
+                    {options.split(',').map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    id={`${id}-${variable}`}
+                    name={variable}
+                    placeholder={defaultArg}
+                    data-plot-id={id}
+                    onBlur={(event) => handleInputBlur(event, id)}
+                  />
+                )}
               </div>
             );
           })}
       </div>
     );
-  };
-
-  const handleInputBlur = (event, id) => {
-    if (event.target.tagName.toLowerCase() === 'input') {
-      window.electron.updateItemValue(id, event.target.name, event.target.value);
-    }
   };
 
   return (
