@@ -42,12 +42,12 @@
     "spaceWidth": {
         "type": "numeric",
         "default": "0.02",
-        "options": "any numeric"
+        "options": null
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
-        "options": "any numeric"
+        "options": null
     },
     "limitLabel": {
         "type": "logical",
@@ -62,7 +62,7 @@
     "fontsize": {
         "type": "numeric",
         "default": "8",
-        "options": "any numeric"
+        "options": null
     },
     "labels": {
         "type": "character",
@@ -72,7 +72,7 @@
     "stroke": {
         "type": "numeric",
         "default": "0.1",
-        "options": "any numeric"
+        "options": null
     },
     "bg": {
         "type": "character",
@@ -82,32 +82,32 @@
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"centimeters\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "draw": {
         "type": "logical",

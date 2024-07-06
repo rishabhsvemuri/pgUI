@@ -204,7 +204,7 @@ function PlotAddition() {
                         </select>
                       ) : (
                         <input
-                          className='half'                    
+                          // className='half'                    
                           id={input.id}
                           name={input.variable}
                           placeholder={input.default}

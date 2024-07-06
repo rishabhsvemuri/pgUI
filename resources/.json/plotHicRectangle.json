@@ -7,7 +7,7 @@
     "resolution": {
         "type": "numeric",
         "default": "\"auto\"",
-        "options": "any numeric"
+        "options": null
     },
     "zrange": {
         "type": "numeric",
