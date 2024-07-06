@@ -1,0 +1,32 @@
+{
+    "plot": {
+        "type": "Hi-C",
+        "default": null,
+        "options": null
+    },
+    "data": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "half": {
+        "type": "character",
+        "default": "\"inherit\"",
+        "options": "\"inherit\", \"both\", \"top\", \"bottom\""
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

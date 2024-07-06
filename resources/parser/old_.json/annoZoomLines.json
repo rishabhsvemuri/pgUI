@@ -1,52 +1,57 @@
 {
-    "x": {
+    "plot": {
+        "type": "plot",
+        "default": null,
+        "options": null
+    },
+    "chrom": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "start",
+        "default": null,
+        "options": null
+    },
+    "chromend": {
+        "type": "end",
+        "default": null,
+        "options": null
+    },
+    "y0": {
         "type": "numeric",
         "default": null,
         "options": null
     },
-    "y": {
+    "x1": {
         "type": "numeric",
         "default": null,
+        "options": null
+    },
+    "y1": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "extend": {
+        "type": "numeric",
+        "default": "0",
         "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": null
     },
     "linecolor": {
         "type": "character",
-        "default": "\"black\"",
-        "options": null
-    },
-    "lwd": {
-        "type": "numeric",
-        "default": "1",
+        "default": "\"grey\"",
         "options": null
     },
     "lty": {
         "type": "numeric",
-        "default": "1",
-        "options": null
-    },
-    "fill": {
-        "type": "character",
-        "default": "NA",
-        "options": null
-    },
-    "alpha": {
-        "type": "value",
-        "default": "1",
-        "options": null
-    },
-    "id": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
-    "id.lengths": {
-        "type": "numeric",
-        "default": null,
+        "default": "2",
         "options": null
     },
     "params": {

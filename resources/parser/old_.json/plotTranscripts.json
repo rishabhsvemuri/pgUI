@@ -1,9 +1,4 @@
 {
-    "data": {
-        "type": "string",
-        "default": null,
-        "options": null
-    },
     "chrom": {
         "type": "string",
         "default": null,
@@ -26,20 +21,15 @@
     },
     "fill": {
         "type": "character",
-        "default": "\"#7ecdbb\"",
+        "default": "c(\"#669fd9\", \"#abcc8e\")",
         "options": null
     },
-    "linecolor": {
-        "type": "character",
-        "default": "NA",
-        "options": null
+    "colorbyStrand": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": "TRUE, FALSE"
     },
-    "order": {
-        "type": "character",
-        "default": "\"width\"",
-        "options": null
-    },
-    "collapse": {
+    "strandSplit": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE"
@@ -52,85 +42,80 @@
     "spaceWidth": {
         "type": "numeric",
         "default": "0.02",
-        "options": null
+        "options": "any numeric"
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
-        "options": null
+        "options": "any numeric"
     },
     "limitLabel": {
         "type": "logical",
         "default": null,
         "options": "TRUE, FALSE"
     },
-    "strandSplit": {
-        "type": "logical",
-        "default": "FALSE",
-        "options": "TRUE, FALSE"
+    "transcriptHighlights": {
+        "type": "two-column",
+        "default": null,
+        "options": null
+    },
+    "fontsize": {
+        "type": "numeric",
+        "default": "8",
+        "options": "any numeric"
+    },
+    "labels": {
+        "type": "character",
+        "default": "\"trancript\"",
+        "options": "NULL, \"transcript\", \"gene\", \"both\""
+    },
+    "stroke": {
+        "type": "numeric",
+        "default": "0.1",
+        "options": "any numeric"
     },
     "bg": {
         "type": "character",
         "default": "NA",
         "options": null
     },
-    "baseline": {
-        "type": "logical",
-        "default": "FALSE",
-        "options": "TRUE, FALSE"
-    },
-    "baseline.color": {
-        "type": "string",
-        "default": null,
-        "options": null
-    },
-    "baseline.lwd": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"centimeters\""
     },
     "draw": {
         "type": "logical",
-        "default": null,
+        "default": "TRUE",
         "options": "TRUE, FALSE"
     },
     "params": {
         "type": "optional",
-        "default": null,
-        "options": null
-    },
-    "...": {
-        "type": "grid",
         "default": null,
         "options": null
     }

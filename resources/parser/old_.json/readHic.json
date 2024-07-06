@@ -1,0 +1,77 @@
+{
+    "file": {
+        "type": "character",
+        "default": null,
+        "options": null
+    },
+    "chrom": {
+        "type": "of",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "start",
+        "default": null,
+        "options": null
+    },
+    "chromend": {
+        "type": "end",
+        "default": null,
+        "options": null
+    },
+    "altchrom": {
+        "type": "chromosome",
+        "default": null,
+        "options": null
+    },
+    "altchromstart": {
+        "type": "chromosome",
+        "default": null,
+        "options": null
+    },
+    "altchromend": {
+        "type": "chromosome",
+        "default": null,
+        "options": null
+    },
+    "assembly": {
+        "type": "genome",
+        "default": "\"hg38\"",
+        "options": null
+    },
+    "resolution": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "res_scale": {
+        "type": "character",
+        "default": "\"BP\"",
+        "options": null
+    },
+    "zrange": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "norm": {
+        "type": "value",
+        "default": "\"KR\"",
+        "options": null
+    },
+    "matrix": {
+        "type": "value",
+        "default": "\"observed\"",
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "quiet": {
+        "type": "logical",
+        "default": null,
+        "options": null
+    }
+}

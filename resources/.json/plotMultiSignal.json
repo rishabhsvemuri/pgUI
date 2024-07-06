@@ -52,12 +52,12 @@
     "ymax": {
         "type": "numeric",
         "default": "1",
-        "options": "any numeric"
+        "options": null
     },
     "range": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "scale": {
         "type": "logical",
@@ -87,7 +87,7 @@
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "orientation": {
         "type": "string",
@@ -97,37 +97,37 @@
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "gapdistance": {
         "type": "numeric",
         "default": "0.2",
-        "options": "any numeric"
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"centimeters\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "draw": {
         "type": "logical",

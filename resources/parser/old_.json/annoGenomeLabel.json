@@ -1,31 +1,6 @@
 {
-    "legend": {
-        "type": "character",
-        "default": null,
-        "options": null
-    },
-    "fill": {
-        "type": "specified",
-        "default": null,
-        "options": null
-    },
-    "pch": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
-    "lty": {
-        "type": "line",
-        "default": null,
-        "options": null
-    },
-    "orientation": {
-        "type": "string",
-        "default": "\"v\"",
-        "options": "\"v\", \"h\""
-    },
-    "title": {
-        "type": "character",
+    "plot": {
+        "type": "plot",
         "default": null,
         "options": null
     },
@@ -34,14 +9,54 @@
         "default": "10",
         "options": null
     },
-    "border": {
+    "fontcolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": null
+    },
+    "margin": {
+        "type": "numeric",
+        "default": "unit(1, \"mm\")",
+        "options": null
+    },
+    "scale": {
+        "type": "character",
+        "default": "\"bp\"",
+        "options": null
+    },
+    "commas": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": null
     },
-    "bg": {
+    "sequence": {
+        "type": "logical",
+        "default": null,
+        "options": null
+    },
+    "boxWidth": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": null
+    },
+    "axis": {
         "type": "character",
-        "default": "NA",
+        "default": "\"x\"",
+        "options": null
+    },
+    "at": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "tcl": {
+        "type": "numeric",
+        "default": "0.5",
         "options": null
     },
     "x": {
@@ -54,30 +69,15 @@
         "default": null,
         "options": null
     },
-    "width": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
-    "height": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
     "just": {
-        "type": "string",
+        "type": "of",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
-    },
-    "draw": {
-        "type": "logical",
-        "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": null
     },
     "params": {
         "type": "optional",

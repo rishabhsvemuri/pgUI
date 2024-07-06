@@ -1,0 +1,17 @@
+{
+    "vector": {
+        "type": "to",
+        "default": null,
+        "options": null
+    },
+    "palette": {
+        "type": "palette",
+        "default": null,
+        "options": null
+    },
+    "range": {
+        "type": "of",
+        "default": null,
+        "options": null
+    }
+}

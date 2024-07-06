@@ -2,7 +2,7 @@
     "data": {
         "type": "string",
         "default": null,
-        "options": ""
+        "options": null
     },
     "chrom": {
         "type": "string",
@@ -12,12 +12,12 @@
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": "any integer"
+        "options": null
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": "any integer"
+        "options": null
     },
     "assembly": {
         "type": "string",
@@ -47,12 +47,12 @@
     "spaceWidth": {
         "type": "numeric",
         "default": "0.02",
-        "options": "any numeric"
+        "options": null
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
-        "options": "any numeric"
+        "options": null
     },
     "limitLabel": {
         "type": "logical",
@@ -72,37 +72,37 @@
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "draw": {
         "type": "logical",

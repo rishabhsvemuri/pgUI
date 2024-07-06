@@ -1,0 +1,7 @@
+{
+    "plot": {
+        "type": "object",
+        "default": null,
+        "options": null
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "plot": {
+        "type": "-C",
+        "default": null,
+        "options": null
+    },
+    "data": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "type": {
+        "type": "value",
+        "default": "\"box\"",
+        "options": null
+    },
+    "half": {
+        "type": "value",
+        "default": "\"inherit\"",
+        "options": null
+    },
+    "shift": {
+        "type": "specifying",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "quiet": {
+        "type": "logical",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

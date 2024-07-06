@@ -1,47 +1,47 @@
 {
-    "legend": {
-        "type": "character",
-        "default": null,
-        "options": null
-    },
-    "fill": {
-        "type": "specified",
-        "default": null,
-        "options": null
-    },
-    "pch": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
-    "lty": {
-        "type": "line",
+    "plot": {
+        "type": "-style",
         "default": null,
         "options": null
     },
     "orientation": {
         "type": "string",
         "default": "\"v\"",
-        "options": "\"v\", \"h\""
-    },
-    "title": {
-        "type": "character",
-        "default": null,
         "options": null
     },
     "fontsize": {
         "type": "numeric",
-        "default": "10",
+        "default": "8",
+        "options": null
+    },
+    "fontcolor": {
+        "type": "value",
+        "default": "\"dark grey\"",
+        "options": null
+    },
+    "scientific": {
+        "type": "value",
+        "default": "FALSE",
+        "options": null
+    },
+    "digits": {
+        "type": "specifying",
+        "default": "1",
+        "options": null
+    },
+    "ticks": {
+        "type": "value",
+        "default": "FALSE",
+        "options": null
+    },
+    "breaks": {
+        "type": "numeric",
+        "default": "NULL",
         "options": null
     },
     "border": {
-        "type": "logical",
-        "default": "TRUE",
-        "options": "TRUE, FALSE"
-    },
-    "bg": {
-        "type": "character",
-        "default": "NA",
+        "type": "value",
+        "default": "FALSE",
         "options": null
     },
     "x": {
@@ -65,19 +65,14 @@
         "options": null
     },
     "just": {
-        "type": "string",
+        "type": "of",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
-    },
-    "draw": {
-        "type": "logical",
-        "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": null
     },
     "params": {
         "type": "optional",

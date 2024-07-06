@@ -12,7 +12,7 @@
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": null
     },
     "linecolor": {
         "type": "character",

@@ -10,7 +10,7 @@
         "options": null
     },
     "pch": {
-        "type": "numeric",
+        "type": "plotting",
         "default": null,
         "options": null
     },
@@ -22,7 +22,7 @@
     "orientation": {
         "type": "string",
         "default": "\"v\"",
-        "options": "\"v\", \"h\""
+        "options": null
     },
     "title": {
         "type": "character",
@@ -35,12 +35,12 @@
         "options": null
     },
     "border": {
-        "type": "logical",
+        "type": "value",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": null
     },
     "bg": {
-        "type": "character",
+        "type": "value",
         "default": "NA",
         "options": null
     },
@@ -65,19 +65,19 @@
         "options": null
     },
     "just": {
-        "type": "string",
+        "type": "of",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": null
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": null
     },
     "params": {
         "type": "optional",

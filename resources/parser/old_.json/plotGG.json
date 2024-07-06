@@ -1,6 +1,6 @@
 {
-    "image": {
-        "type": "R",
+    "plot": {
+        "type": "",
         "default": null,
         "options": null
     },
@@ -25,27 +25,17 @@
         "options": null
     },
     "just": {
-        "type": "string",
-        "default": "\"center\"",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "type": "of",
+        "default": "c(\"left\", \"top\")",
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
-    },
-    "interpolate": {
-        "type": "logical",
-        "default": "TRUE",
         "options": null
     },
     "params": {
         "type": "optional",
-        "default": null,
-        "options": null
-    },
-    "...": {
-        "type": "grid",
         "default": null,
         "options": null
     }

@@ -1,0 +1,12 @@
+{
+    "...": {
+        "type": null,
+        "default": null,
+        "options": null
+    },
+    "recursive": {
+        "type": ".",
+        "default": null,
+        "options": null
+    }
+}

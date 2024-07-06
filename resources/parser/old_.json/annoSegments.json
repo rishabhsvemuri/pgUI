@@ -1,18 +1,33 @@
 {
-    "x": {
+    "x0": {
         "type": "numeric",
         "default": null,
         "options": null
     },
-    "y": {
+    "y0": {
         "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "x1": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "y1": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "plot": {
+        "type": "plotgardener",
         "default": null,
         "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": null
     },
     "linecolor": {
         "type": "character",
@@ -29,23 +44,18 @@
         "default": "1",
         "options": null
     },
-    "fill": {
+    "lineend": {
         "type": "character",
-        "default": "NA",
+        "default": "\"butt\"",
         "options": null
     },
-    "alpha": {
-        "type": "value",
-        "default": "1",
+    "linejoin": {
+        "type": "character",
+        "default": "\"mitre\"",
         "options": null
     },
-    "id": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
-    "id.lengths": {
-        "type": "numeric",
+    "arrow": {
+        "type": "list",
         "default": null,
         "options": null
     },

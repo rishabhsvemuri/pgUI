@@ -4,11 +4,6 @@
         "default": null,
         "options": null
     },
-    "sigVal": {
-        "type": "numeric",
-        "default": "5e-08",
-        "options": null
-    },
     "chrom": {
         "type": "string",
         "default": null,
@@ -31,53 +26,48 @@
     },
     "fill": {
         "type": "character",
-        "default": "\"black\"",
+        "default": "\"#7ecdbb\"",
         "options": null
     },
-    "pch": {
-        "type": "numeric",
-        "default": "19",
+    "linecolor": {
+        "type": "character",
+        "default": "NA",
         "options": null
     },
-    "cex": {
-        "type": "numeric",
-        "default": "0.25",
+    "order": {
+        "type": "character",
+        "default": "\"width\"",
         "options": null
     },
-    "leadSNP": {
-        "type": "list",
-        "default": null,
-        "options": null
-    },
-    "sigLine": {
+    "collapse": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE"
     },
-    "sigCol": {
-        "type": "character",
-        "default": null,
-        "options": null
-    },
-    "trans": {
-        "type": "character",
-        "default": "\"-log10\"",
-        "options": null
-    },
-    "range": {
+    "boxHeight": {
         "type": "numeric",
-        "default": null,
+        "default": "unit(2, \"mm\")",
         "options": null
     },
-    "yscale_reverse": {
+    "spaceWidth": {
+        "type": "numeric",
+        "default": "0.02",
+        "options": "any numeric"
+    },
+    "spaceHeight": {
+        "type": "numeric",
+        "default": "0.3",
+        "options": "any numeric"
+    },
+    "limitLabel": {
+        "type": "logical",
+        "default": null,
+        "options": "TRUE, FALSE"
+    },
+    "strandSplit": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE"
-    },
-    "space": {
-        "type": "numeric",
-        "default": "0.01",
-        "options": null
     },
     "bg": {
         "type": "character",
@@ -90,53 +80,48 @@
         "options": "TRUE, FALSE"
     },
     "baseline.color": {
-        "type": "baseline",
+        "type": "string",
         "default": null,
         "options": null
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
-    },
-    "flip": {
-        "type": "logical",
-        "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": null
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"centimeters\""
     },
     "draw": {
         "type": "logical",
-        "default": "TRUE",
+        "default": null,
         "options": "TRUE, FALSE"
     },
     "params": {

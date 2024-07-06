@@ -1,0 +1,22 @@
+{
+    "column": {
+        "type": "specifying",
+        "default": null,
+        "options": null
+    },
+    "palette": {
+        "type": null,
+        "default": null,
+        "options": null
+    },
+    "range": {
+        "type": null,
+        "default": null,
+        "options": null
+    },
+    "scalePerRegion": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": null
+    }
+}

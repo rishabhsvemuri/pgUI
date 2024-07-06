@@ -1,0 +1,112 @@
+{
+    "chrom": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "chromstart": {
+        "type": "integer",
+        "default": null,
+        "options": "any integer"
+    },
+    "chromend": {
+        "type": "integer",
+        "default": null,
+        "options": "any integer"
+    },
+    "assembly": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "fontsize": {
+        "type": "numeric",
+        "default": "10",
+        "options": "any numeric"
+    },
+    "fontcolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": "any character value"
+    },
+    "linecolor": {
+        "type": "character",
+        "default": "\"black\"",
+        "options": "any character value"
+    },
+    "margin": {
+        "type": "numeric",
+        "default": "unit(1, \"mm\")",
+        "options": null
+    },
+    "scale": {
+        "type": "character",
+        "default": "\"bp\"",
+        "options": "\"bp\", \"Kb\", \"Mb\""
+    },
+    "commas": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": "TRUE, FALSE"
+    },
+    "sequence": {
+        "type": "logical",
+        "default": "TRUE",
+        "options": "TRUE, FALSE"
+    },
+    "boxWidth": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": "any numeric"
+    },
+    "axis": {
+        "type": "character",
+        "default": "\"x\"",
+        "options": "\"x\", \"y\""
+    },
+    "at": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "tcl": {
+        "type": "numeric",
+        "default": "0.5",
+        "options": "any numeric"
+    },
+    "x": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "y": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "length": {
+        "type": "numeric",
+        "default": null,
+        "options": "any numeric"
+    },
+    "just": {
+        "type": "string",
+        "default": "c(\"left\", \"top\")",
+        "options": null
+    },
+    "default.units": {
+        "type": "string",
+        "default": null,
+        "options": null
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "grid",
+        "default": null,
+        "options": null
+    }
+}

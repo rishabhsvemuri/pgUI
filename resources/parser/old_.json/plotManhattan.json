@@ -37,12 +37,12 @@
     "pch": {
         "type": "numeric",
         "default": "19",
-        "options": null
+        "options": "any numeric"
     },
     "cex": {
         "type": "numeric",
         "default": "0.25",
-        "options": null
+        "options": "any numeric"
     },
     "leadSNP": {
         "type": "list",
@@ -77,7 +77,7 @@
     "space": {
         "type": "numeric",
         "default": "0.01",
-        "options": null
+        "options": "any numeric"
     },
     "bg": {
         "type": "character",
@@ -97,32 +97,32 @@
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": "any numeric"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": null
     },
     "flip": {
         "type": "logical",
@@ -132,7 +132,7 @@
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"centimeters\""
     },
     "draw": {
         "type": "logical",

@@ -9,10 +9,25 @@
         "default": null,
         "options": null
     },
+    "width": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "height": {
+        "type": "numeric",
+        "default": null,
+        "options": null
+    },
+    "just": {
+        "type": "of",
+        "default": "\"center\"",
+        "options": null
+    },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": null
     },
     "linecolor": {
         "type": "character",
@@ -37,16 +52,6 @@
     "alpha": {
         "type": "value",
         "default": "1",
-        "options": null
-    },
-    "id": {
-        "type": "numeric",
-        "default": null,
-        "options": null
-    },
-    "id.lengths": {
-        "type": "numeric",
-        "default": null,
         "options": null
     },
     "params": {

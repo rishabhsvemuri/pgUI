@@ -22,7 +22,7 @@
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "linecolor": {
         "type": "character",
@@ -42,7 +42,7 @@
     "lineend": {
         "type": "character",
         "default": "\"butt\"",
-        "options": null
+        "options": "\"round\", \"butt\", \"square\""
     },
     "linejoin": {
         "type": "character",

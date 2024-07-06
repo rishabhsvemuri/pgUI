@@ -74,11 +74,16 @@ function PlotAddition() {
       console.log('jsonData not available in PlotAddition');
       return [];
     }
-    return Object.keys(jsonData).map((key) => ({
-      variable: key,
-      type: jsonData[key].type,
-      id: `${id}-${key}`,
-    }));
+    return Object.keys(jsonData).map((key) => {
+      const options = jsonData[key].options;
+      return {
+        variable: key,
+        type: jsonData[key].type,
+        options: options ? options.split(',') : null,
+        default: jsonData[key].default,
+        id: `${id}-${key}`,
+      };
+    });
   };
 
   const handleAddPlot = () => {
@@ -116,8 +121,8 @@ function PlotAddition() {
   };
 
   const handleBlur = useCallback((event) => {
-    if (event.target.tagName.toLowerCase() === 'input') {
-      const { dataset: { plotId }, name, value } = event.target;
+    const { dataset: { plotId }, name, value } = event.target;
+    if (plotId && name) {
       window.electron.updateItemValue(plotId, name, value);
     }
   }, []);
@@ -144,7 +149,7 @@ function PlotAddition() {
 
   return (
     <div id="container">
-      <div id="plotListContainer" onBlur={handleBlur}>
+      <div id="plotListContainer" onBlur={handleBlur} onChange={handleBlur}>
         <ul id="plotList">
           {plots.map((plot) => (
             <li key={plot.id}>
@@ -186,18 +191,27 @@ function PlotAddition() {
               </select>
 
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
-                <ul className='fields-list'>
+                <ul>
+                  {/*  className='fields-list' */}
                   {plot.formData && plot.formData.map((input) => (
                     <li key={input.id}>
                     <div key={input.id} className='input-field'>
                       <label htmlFor={input.id}>{input.variable}</label>
-                      <input
-                        className='half'                    
-                        id={input.id}
-                        name={input.variable}
-                        placeholder={input.type}
-                        data-plot-id={plot.id}
-                      />
+                      {input.options ? (
+                        <select id={input.id} name={input.variable} data-plot-id={plot.id}>
+                          {input.options.map((option, idx) => (
+                            <option key={idx} value={option}>{option}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <input
+                          className='half'                    
+                          id={input.id}
+                          name={input.variable}
+                          placeholder={input.default}
+                          data-plot-id={plot.id}
+                        />
+                      )}
                     </div>
                     </li>  
                   ))}
@@ -216,9 +230,12 @@ function PlotAddition() {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <button id="addPlot" onClick={handleAddPlot}>Add Plot</button>
+        <button id="addPlotButton" onClick={handleAddPlot}>
+          Add Plot
+        </button>
       </div>
     </div>
   );
 }
+
 export default PlotAddition;

@@ -1,0 +1,22 @@
+{
+    "assembly": {
+        "type": "defining",
+        "default": "\"hg38\"",
+        "options": null
+    },
+    "gene": {
+        "type": null,
+        "default": null,
+        "options": null
+    },
+    "geneBuffer": {
+        "type": null,
+        "default": null,
+        "options": null
+    },
+    "...": {
+        "type": "function",
+        "default": null,
+        "options": null
+    }
+}
