@@ -8,6 +8,7 @@ function PathEntry() {
     const runOnStart = () => {
       const id = 'a0';
       const category = 'pageCreate';
+      window.electron.runScript();
       window.electron.updateCategory(category, category, id);
       window.electron.loadJson(category, id);
     };
