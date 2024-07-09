@@ -190,8 +190,8 @@ function PlotAddition() {
                 <option value="plotText">plotText</option>
               </select>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
-                <ul>
-                  {/*  className='fields-list' */}
+                <ul className='fields-list'>
+                  
                   {plot.formData && plot.formData.map((input) => (
                     <li key={input.id}>
                     <div key={input.id} className='input-field'>
@@ -204,7 +204,7 @@ function PlotAddition() {
                         </select>
                       ) : (
                         <input
-                          // className='half'                    
+                          className='half'                     
                           id={input.id}
                           name={input.variable}
                           placeholder={input.default}
