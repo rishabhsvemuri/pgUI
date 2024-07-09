@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { FaRegTrashCan } from "react-icons/fa6";
+import { BsInfoCircle } from "react-icons/bs";
+
 
 import '../assets/style.scss';
 import plotCirle from '../assets/plotIcons/plotCircle.png'
@@ -166,6 +168,7 @@ function PlotAddition() {
                 className='full'
                 value={plot.category}
                 onChange={(event) => handleCategoryChange(plot.id, event)}
+                
               >
                 <option value="Select One">Select One</option>
                 <option value="plotGenes">plotGenes</option>
@@ -189,6 +192,7 @@ function PlotAddition() {
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
+              <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 <ul className='fields-list'>
                   
