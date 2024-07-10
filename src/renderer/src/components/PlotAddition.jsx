@@ -164,11 +164,11 @@ function PlotAddition() {
                   {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
                 </div>
               </div>
+              <div className='dropdown-container'>
               <select
                 className='full'
                 value={plot.category}
                 onChange={(event) => handleCategoryChange(plot.id, event)}
-                
               >
                 <option value="Select One">Select One</option>
                 <option value="plotGenes">plotGenes</option>
@@ -193,9 +193,9 @@ function PlotAddition() {
                 <option value="plotText">plotText</option>
               </select>
               <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
+              </div>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 <ul className='fields-list'>
-                  
                   {plot.formData && plot.formData.map((input) => (
                     <li key={input.id}>
                     <div key={input.id} className='input-field'>

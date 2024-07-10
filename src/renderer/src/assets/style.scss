@@ -205,7 +205,7 @@ body {
     margin-bottom: 8px; /* Adjust as needed */
   }
   
-  .delete-button, .collapseButton, .infoButton {
+  .delete-button, .collapseButton {
     cursor: pointer;
     color: white;
     margin-left: 10px; /* Adjust margin for spacing */
@@ -331,3 +331,16 @@ body {
 #output-hr{
     color: #888787;
 }
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    .infoButton {
+        color: white;
+        :hover {
+            color: #232323;
+        }
+    }
+  }
+  
