@@ -77,11 +77,18 @@ function PlotAddition() {
       return [];
     }
     return Object.keys(jsonData).map((key) => {
-      const options = jsonData[key].options;
+      let options = jsonData[key].options;
+      if (options != null) {
+        if (options.includes('c(')) {
+          options = options.split(/,(?=(?:[^()"]|\([^()]*\)|"[^"]*")*$)/)
+        } else {
+          options = options.split(',')
+        }
+      }
       return {
         variable: key,
         type: jsonData[key].type,
-        options: options ? options.split(',') : null,
+        options: options,
         default: jsonData[key].default,
         id: `${id}-${key}`,
       };

@@ -15,3 +15,5 @@ Run devtools::document() in console to convert .R to .Rd
 
 Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Signal, MultiSignal, Raster, Rect, Segments
 Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Polygon, Text
+
+If a param has a default value at the top of the file, include in rest of the file. If it does not, do not include it it.
