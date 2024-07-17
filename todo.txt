@@ -5,3 +5,8 @@ Node page?
 Grid pane for justification
 Stylize the pdf embed
 Make the sidebar page larger
+
+file rewrite
+organize params
+grey out output and overlay spinner on runscript
+test out param justification

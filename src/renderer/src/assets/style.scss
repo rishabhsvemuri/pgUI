@@ -324,6 +324,7 @@ body {
     width: 25px;
     margin-right: -150px;
     margin-top: -2px;
+    background-color: white;
 }
 
 #pdf-text{
@@ -381,3 +382,15 @@ $primary-color: lightgray;
     margin-left: 630px;
     margin-top: 400px;
 }
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    .infoButton {
+        color: white;
+        :hover {
+            color: #232323;
+        }
+    }
+  }
