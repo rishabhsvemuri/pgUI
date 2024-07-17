@@ -16,4 +16,9 @@ Run devtools::document() in console to convert .R to .Rd
 Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Signal, MultiSignal, Raster, Rect, Segments
 Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Polygon, Text
 
-If a param has a default value at the top of the file, include in rest of the file. If it does not, do not include it it.
+Add required or optional (i.e. A required string or An options int)
+Each param has to be specified to a class in its description
+
+For each file, compare the top list of params to the @param list. 
+    If a param at the top has an ' = xyz' then the corresponding @param should have a default value specified. 
+    If it does not, then it shouldn't.
