@@ -2,10 +2,8 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { BsInfoCircle } from "react-icons/bs";
-
-
 import '../assets/style.scss';
-import plotCirle from '../assets/plotIcons/plotCircle.png'
+import plotCircle from '../assets/plotIcons/plotCircle.png'
 import plotGenes from '../assets/plotIcons/plotGenes.png'
 import plotGenomeLabel from '../assets/plotIcons/plotGenomeLabel.png'
 import plotHicRectangle from '../assets/plotIcons/plotHicRectangle.png'
@@ -26,9 +24,11 @@ import plotTranscripts from '../assets/plotIcons/plotTranscripts.png'
 function PlotAddition() {
   const [plots, setPlots] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [editingPlotId, setEditingPlotId] = useState(null);
+  const [newPlotName, setNewPlotName] = useState('');
 
   const plotImages = new Map([
-    ["plotCirle", plotCirle],
+    ["plotCircle", plotCircle],
     ["plotGenes", plotGenes],
     ["plotGenomeLabel", plotGenomeLabel],
     ["plotHicRectangle", plotHicRectangle],
@@ -150,11 +150,26 @@ function PlotAddition() {
       return plot;
     });
     setPlots(updatedPlots);
-  }
+  };
 
-  const handleIconImage = async (plotcategory) => {
-    const iconPath = await window.electron.getIconImagePath(plotcategory);
-  }
+  const handlePlotNameDoubleClick = (id, name) => {
+    setEditingPlotId(id);
+    setNewPlotName(name);
+  };
+
+  const handlePlotNameChange = (e) => {
+    setNewPlotName(e.target.value);
+  };
+
+  const handlePlotNameBlur = (id) => {
+    setPlots((prevPlots) =>
+      prevPlots.map((plot) =>
+        plot.id === id ? { ...plot, name: newPlotName } : plot
+      )
+    );
+    window.electron.updateItemValue(id, 'name', newPlotName);
+    setEditingPlotId(null);
+  };
 
   return (
     <div id="container">
@@ -164,8 +179,18 @@ function PlotAddition() {
             <li key={plot.id}>
               <div className='plot-div'>
                 <div id='plot-header' className='plot-header'>
-                  <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
-                  <p id='plot-name'>{plot.name}</p>
+                <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
+                  {editingPlotId === plot.id ? (
+                    <input
+                      type="text"
+                      value={newPlotName}
+                      onChange={handlePlotNameChange}
+                      onBlur={() => handlePlotNameBlur(plot.id)}
+                      autoFocus
+                    />
+                  ) : (
+                    <p id='plot-name' onDoubleClick={() => handlePlotNameDoubleClick(plot.id, plot.name)}>{plot.name}</p>
+                  )}
                 <div>
                   <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
                   {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
