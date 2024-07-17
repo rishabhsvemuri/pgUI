@@ -73,7 +73,7 @@ function Output() {
       </div>
 
       <div className={`pdfOrLoader ${activeTab === 'loader' ? 'active' : ''}`}>
-        <Loader className='loaderIconSpinner' type="ball-clip-rotate-multiple" active />
+        <Loader className='loaderIconSpinner' type="square-spin" active style={{transform: 'scale(2.0)'}}/>
       </div>
     </div>
   );
