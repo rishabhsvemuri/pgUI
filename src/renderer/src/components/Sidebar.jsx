@@ -67,8 +67,8 @@ function Sidebar(){
                     <div className={`tab-content ${activeTab === 'Share' ? 'active' : ''}`}>
                         <Share />
                     </div>
-                    <hr/>
-                    <div>
+                    <div className="rbtn-hr">
+                        <hr/>
                         <button id="rbtn" type="button" onClick={handleRunScript} className='rbtn'>Run Script</button>
                     </div>
                 </div>

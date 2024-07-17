@@ -146,6 +146,19 @@ select {
     justify-content: center;
 }
 
+.pdfOrLoader {
+    display: none;
+}
+
+.pdfOrLoader.active {
+    display: block;
+}
+
+.loaderIconSpinner{
+    margin-left: 500px;
+    margin-top: 400px;
+}
+
 body {
     background-color: #2c2c2c;
 }
@@ -153,6 +166,11 @@ body {
 .rbtn {
     margin-top: 10px;
     margin-bottom: 15px;
+    
+}
+
+.rbtn-hr{
+    position: relative;
 }
 
 #path{
@@ -330,4 +348,22 @@ body {
 
 #output-hr{
     color: #888787;
+}
+
+$primary-color: #29d;
+@import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
 }

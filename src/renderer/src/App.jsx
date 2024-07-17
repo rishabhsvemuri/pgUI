@@ -9,11 +9,7 @@ import Share from "./components/Share";
 
 
 
-function App() {
-  const ipcHandle = () => window.electron.ipcRenderer.send('ping')  
-  
-  
-
+function App() { 
   return (
     <>
       <Sidebar/>
