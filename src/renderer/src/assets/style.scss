@@ -308,6 +308,7 @@ body {
     width: 25px;
     margin-right: -150px;
     margin-top: -2px;
+    background-color: white;
 }
 
 #pdf-text{
@@ -331,3 +332,15 @@ body {
 #output-hr{
     color: #888787;
 }
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    .infoButton {
+        color: white;
+        :hover {
+            color: #232323;
+        }
+    }
+  }

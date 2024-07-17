@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { FaRegTrashCan } from "react-icons/fa6";
-
+import { BsInfoCircle } from "react-icons/bs";
 import '../assets/style.scss';
-import plotCirle from '../assets/plotIcons/plotCircle.png'
+import plotCircle from '../assets/plotIcons/plotCircle.png'
 import plotGenes from '../assets/plotIcons/plotGenes.png'
 import plotGenomeLabel from '../assets/plotIcons/plotGenomeLabel.png'
 import plotHicRectangle from '../assets/plotIcons/plotHicRectangle.png'
@@ -24,9 +24,11 @@ import plotTranscripts from '../assets/plotIcons/plotTranscripts.png'
 function PlotAddition() {
   const [plots, setPlots] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [editingPlotId, setEditingPlotId] = useState(null);
+  const [newPlotName, setNewPlotName] = useState('');
 
   const plotImages = new Map([
-    ["plotCirle", plotCirle],
+    ["plotCircle", plotCircle],
     ["plotGenes", plotGenes],
     ["plotGenomeLabel", plotGenomeLabel],
     ["plotHicRectangle", plotHicRectangle],
@@ -75,11 +77,18 @@ function PlotAddition() {
       return [];
     }
     return Object.keys(jsonData).map((key) => {
-      const options = jsonData[key].options;
+      let options = jsonData[key].options;
+      if (options != null) {
+        if (options.includes('c(')) {
+          options = options.split(/,(?=(?:[^()"]|\([^()]*\)|"[^"]*")*$)/)
+        } else {
+          options = options.split(',')
+        }
+      }
       return {
         variable: key,
         type: jsonData[key].type,
-        options: options ? options.split(',') : null,
+        options: options,
         default: jsonData[key].default,
         id: `${id}-${key}`,
       };
@@ -141,11 +150,26 @@ function PlotAddition() {
       return plot;
     });
     setPlots(updatedPlots);
-  }
+  };
 
-  const handleIconImage = async (plotcategory) => {
-    const iconPath = await window.electron.getIconImagePath(plotcategory);
-  }
+  const handlePlotNameDoubleClick = (id, name) => {
+    setEditingPlotId(id);
+    setNewPlotName(name);
+  };
+
+  const handlePlotNameChange = (e) => {
+    setNewPlotName(e.target.value);
+  };
+
+  const handlePlotNameBlur = (id) => {
+    setPlots((prevPlots) =>
+      prevPlots.map((plot) =>
+        plot.id === id ? { ...plot, name: newPlotName } : plot
+      )
+    );
+    window.electron.updateItemValue(id, 'name', newPlotName);
+    setEditingPlotId(null);
+  };
 
   return (
     <div id="container">
@@ -155,13 +179,24 @@ function PlotAddition() {
             <li key={plot.id}>
               <div className='plot-div'>
                 <div id='plot-header' className='plot-header'>
-                  <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
-                  <p id='plot-name'>{plot.name}</p>
+                <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
+                  {editingPlotId === plot.id ? (
+                    <input
+                      type="text"
+                      value={newPlotName}
+                      onChange={handlePlotNameChange}
+                      onBlur={() => handlePlotNameBlur(plot.id)}
+                      autoFocus
+                    />
+                  ) : (
+                    <p id='plot-name' onDoubleClick={() => handlePlotNameDoubleClick(plot.id, plot.name)}>{plot.name}</p>
+                  )}
                 <div>
                   <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
                   {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
                 </div>
               </div>
+              <div className='dropdown-container'>
               <select
                 className='full'
                 value={plot.category}
@@ -189,9 +224,10 @@ function PlotAddition() {
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
+              <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
+              </div>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 <ul className='fields-list'>
-                  
                   {plot.formData && plot.formData.map((input) => (
                     <li key={input.id}>
                     <div key={input.id} className='input-field'>
