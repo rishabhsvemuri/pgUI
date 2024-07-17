@@ -51,24 +51,25 @@ function Sidebar(){
             </div>
             <div className='page'>
                 <div className='container'>
-                    <img className = 'header' src = {Header} alt="Header"/>
-                    <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
-                        <PathEntry />
+                    <div className="tab-div">
+                        <img className = 'header' src = {Header} alt="Header"/>
+                        <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
+                            <PathEntry />
+                        </div>
+                        <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
+                            <PlotAddition />
+                        </div>
+                        <div className={`tab-content ${activeTab === 'Nodes' ? 'active' : ''}`}>
+                            <Nodes />
+                        </div>
+                        <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
+                            <Code nrs={numRunScript}/>
+                        </div>
+                        <div className={`tab-content ${activeTab === 'Share' ? 'active' : ''}`}>
+                            <Share />
+                        </div>
                     </div>
-                    <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
-                        <PlotAddition />
-                    </div>
-                    <div className={`tab-content ${activeTab === 'Nodes' ? 'active' : ''}`}>
-                        <Nodes />
-                    </div>
-                    <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
-                        <Code nrs={numRunScript}/>
-                    </div>
-                    <div className={`tab-content ${activeTab === 'Share' ? 'active' : ''}`}>
-                        <Share />
-                    </div>
-                    <div className="rbtn-hr">
-                        <hr/>
+                    <div className="rbtn-div">
                         <button id="rbtn" type="button" onClick={handleRunScript} className='rbtn'>Run Script</button>
                     </div>
                 </div>

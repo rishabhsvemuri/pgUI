@@ -131,6 +131,11 @@ select {
     }
 
     /* Tab content styles */
+
+    .tab-div{
+        margin-bottom: 75px;
+    }
+
     .tab-content {
         display: none;
     }
@@ -155,11 +160,15 @@ body {
 .rbtn {
     margin-top: 10px;
     margin-bottom: 15px;
+    width: 350px;
     
 }
 
-.rbtn-hr{
-    position: relative;
+.rbtn-div{
+    position: fixed;
+    bottom: 0;
+    background-color: #232323;
+    width: 350px;
 }
 
 #path{
@@ -340,10 +349,10 @@ body {
 }
 
 $primary-color: lightgray;
-@import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
+// @import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
 @import 'loaders.css/src/animations/square-spin.scss';
-@import 'loaders.css/src/animations/ball-grid-pulse.scss';
-@import 'loaders.css/src/animations/ball-spin-fade-loader.scss';
+// @import 'loaders.css/src/animations/ball-grid-pulse.scss';
+// @import 'loaders.css/src/animations/ball-spin-fade-loader.scss';
 
 .loader-container {
   display: flex;
