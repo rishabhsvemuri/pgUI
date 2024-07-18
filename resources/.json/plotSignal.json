@@ -2,141 +2,197 @@
     "data": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string bigwig file path to be plotted, or a dataframe in BED format, or a\\link[GenomicRanges]{GRanges} object with metadata column \\code{score}.Either one \\code{data} argument or a list of two can be provided, wherethe second \\code{data} will be plotted below the x-axis if positive.The second \\code{data} can also be negative data. Class: Data"
     },
     "binSize": {
         "type": "numeric",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A numeric specifying the length of each databin in basepairs. Default value is \\code{binSize = NA}. Class: Data"
     },
     "binCap": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Data",
+        "description": "A logical value indicating whether the function willlimit the number of data bins to 8,000.Default value is \\code{binCap = TRUE}. Options include: TRUE, FALSE. Class: Data"
     },
     "negData": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Data",
+        "description": "A logical value indicating whether the provided data hasnegative scores. Default value is \\code{negData = FALSE}. Options include: TRUE, FALSE. Class: Data"
     },
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the chromosome of region to be plotted. Class: Data"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer start position on chromosome to be plotted. Class: Data"
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer end position on chromosome to be plotted. Class: Data"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}. Class: Data"
     },
     "linecolor": {
         "type": "character",
         "default": "\"#37a7db\"",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value or vector of length 2 specifying theline color(s) outlining the signal track(s).Default value is \\code{linecolor = \"#37a7db\"}. Class: Aesthetic"
     },
     "fill": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value or vector of length 2 specifyingthe fill color(s) of the signal track(s). Default value is \\code{fill = NA}. Class: Aesthetic"
     },
     "ymax": {
         "type": "numeric",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric specifying the fraction of the max y-valueto set as the height of the plot. Default value is \\code{ymax = 1}. Class: Aesthetic"
     },
     "range": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric vector of length 2 specifying the y-rangeof data to plot (c(min, max)). Class: Aesthetic"
     },
     "scale": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to include a datascale label in the top left corner of the plot. Class: Aesthetic.Default value is \\code{scale = FALSE}. Options include: TRUE, FALSE"
     },
     "label": {
         "type": "optional",
         "default": "NULL",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "An optional character value to conveniently add a text labelto the plot. If \\code{scale = TRUE}, the label will be draw in the top rightof the plot. Otherwise, the label will be drawn in the top left of the plot.For more customizable labels, use \\link[plotgardener]{plotText}.Default value is \\code{label = NULL}. Class: Aesthetic"
     },
     "bg": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value indicating background color.Default value is \\code{bg = NA}. Class: Aesthetic"
     },
     "baseline": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to include abaseline along the x-axis. Default value is \\code{baseline = TRUE}. Options include: TRUE, FALSE. Class: Aesthetic"
     },
     "baseline.color": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A string baseline color.Default value is \\code{baseline.color = \"grey\"}. Class: Aesthetic"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric baseline line width.Default value is \\code{baseline.lwd = 1}. Class: Aesthetic"
     },
     "orientation": {
         "type": "string",
         "default": "\"h\"",
-        "options": "\"h\", \"v\""
+        "options": "\"h\", \"v\"",
+        "class": "Aesthetic",
+        "description": null
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying signal plot x-location. Class: Positional"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying signal plot y-location.The character value willplace the signal plot y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page. Class: Positional"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying signal plot width. Class: Positional"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying signal plot height. Class: Positional"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": "Positional",
+        "description": "A string specifying the justification of signal plot relative to its (x, y) location.If there are two values, the first value specifies horizontal justificationand the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\". Class: Positional"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": "Positional",
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\". Class: Positional"
     },
     "draw": {
         "type": "logical",
         "default": null,
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Positional",
+        "description": "A logical value indicating whether graphics output should beproduced. Default value \\code{draw = TRUE}. Options include: TRUE, FALSE. Class: Positional"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters. Class: Positional"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}. Class: Positional"
     }
 }

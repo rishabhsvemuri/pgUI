@@ -2,26 +2,36 @@
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying x-coordinate of guide"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string indicating the default units to useif \\code{x} is only given as a numeric.Default value is \\code{default.units = \"inches\"}"
     },
     "linecolor": {
         "type": "value",
         "default": "\"grey55\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Character value indicating color of guideline.Default value is \\code{linecolor = \"grey55\"}"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
     }
 }

@@ -25,7 +25,8 @@ def parse_to_JSON(file_path, file_name, root):
     pattern_type = r"\}\{\w+\s*(.*?)\s"
     pattern_default = r"Default value is \\code\{\w+\s*=\s*(.*?)\}"
     pattern_options = r"Options include: \s*(.*?)\."
-    pattern_class = r"Class: \s*(.*?)\."
+    pattern_class = r"Class:\s*(.*?)\."
+    pattern_description = r"\}\{(.*?)\.\}"
     items = {}
     with open(file_path, 'r') as file:
         read = file.readlines()
@@ -35,6 +36,7 @@ def parse_to_JSON(file_path, file_name, root):
         default = None
         options = None
         section = None
+        description = None
         if (re.search(pattern_var, line)):
             var = re.search(pattern_var, line).group(1)
         if (re.search(pattern_type, line)):
@@ -47,13 +49,16 @@ def parse_to_JSON(file_path, file_name, root):
             options = re.search(pattern_options, line).group(1)
         if (re.search(pattern_class, line)):
             section = re.search(pattern_class, line).group(1)
+        if (re.search(pattern_description, line)):
+            description = re.search(pattern_description, line).group(1)
         if (var != None):
             if ("code{" not in var):
                 items[var] = {
                     "type": var_type,
                     "default": default,
                     "options": options,
-                    "class": section
+                    "class": section,
+                    "description": description
                 }
         with open(root + '/.json/' + file_name, "w") as json_file:
             json.dump(items, json_file, indent=4)
