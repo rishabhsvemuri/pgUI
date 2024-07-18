@@ -383,8 +383,10 @@ $primary-color: lightgray;
 .dropdown-container {
     display: flex;
     align-items: center;
-    margin-top: 8px;
+    // margin-top: 8px;
     .infoButton {
+        margin-top: 5px;
+        margin-left: 5px;
         color: white;
         :hover {
             color: #232323;
