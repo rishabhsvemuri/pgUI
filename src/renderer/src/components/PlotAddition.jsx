@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { BsInfoCircle } from "react-icons/bs";
+import { CiCircleQuestion } from "react-icons/ci";
 import '../assets/style.scss';
 import plotCircle from '../assets/plotIcons/plotCircle.png'
 import plotGenes from '../assets/plotIcons/plotGenes.png'
@@ -90,6 +91,7 @@ function PlotAddition() {
         type: jsonData[key].type,
         options: options,
         default: jsonData[key].default,
+        description: jsonData[key].description,
         id: `${id}-${key}`,
       };
     });
@@ -227,7 +229,8 @@ function PlotAddition() {
               <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
               </div>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
-                <ul className='fields-list'>
+                <ul>
+                  {/* className='fields-list' */}
                   {plot.formData && plot.formData.map((input) => (
                     <li key={input.id}>
                     <div key={input.id} className='input-field'>
@@ -247,6 +250,10 @@ function PlotAddition() {
                           data-plot-id={plot.id}
                         />
                       )}
+                    <div className='tooltip'>
+                      <CiCircleQuestion />
+                      <span className="tooltiptext">{input.description}</span>
+                    </div>
                     </div>
                     </li>  
                   ))}

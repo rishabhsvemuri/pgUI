@@ -2,111 +2,155 @@
     "data": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string path to .hic file as a string or a 3-columndataframe of interaction counts in sparse upper triangular format"
     },
     "resolution": {
         "type": "numeric",
         "default": "\"auto\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying the width in basepairs ofeach pixel. For hic files, \"auto\" will attempt to choose aresolution based on the size of the region. Fordataframes, \"auto\" will attempt to detect the resolutionthe dataframe contains. Default value is \\code{resolution = \"auto\"}"
     },
     "zrange": {
         "type": "numeric",
         "default": "NULL",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector of length 2 specifying therange of interaction scores to plot, where extreme valueswill be set to the max or min. Default value is \\code{zrange = NULL}"
     },
     "norm": {
         "type": "character",
         "default": "\"KR\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying hic data normalization method,if giving .hic file. This value must be found in the .hic file.Default value is \\code{norm = \"KR\"}"
     },
     "matrix": {
         "type": "character",
         "default": "\"observed\"",
-        "options": "\"observed\", \"oe\", \"log2oe\""
+        "options": "\"observed\", \"oe\", \"log2oe\"",
+        "class": null,
+        "description": null
     },
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string representing the chromosome of region to be plotted"
     },
     "chromstart": {
         "type": "integer",
         "default": "NULL",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A integer start position on chromosome to be plotted. Default value is \\code{chromstart = NULL}"
     },
     "chromend": {
         "type": "integer",
         "default": "NULL",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A integer end position on chromosome to be plotted. Default value is \\code{chromend = NULL}"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string representing the eefault genome assembly or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}"
     },
     "palette": {
         "type": "function",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A function describing the color palette to use forrepresenting scale of interaction scores. Default value is\\code{palette =  colorRampPalette(brewer.pal(n = 9, \"YlGnBu\"))}"
     },
     "colorTrans": {
         "type": "string",
         "default": "\"linear\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string specifying how to scale Hi-C colors.Default value is \\code{colorTrans = \"linear\"}. Options include \"linear\", \"log\", \"log2\", or \"log10\""
     },
     "flip": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical indicating whether to flip the orientation ofthe Hi-C matrix over the x-axis. Default value is \\code{flip = FALSE}. Options include: TRUE, FALSE"
     },
     "bg": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value indicating background color.Default value is \\code{bg = NA}"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying triangle Hi-C plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying triangle Hi-C plot y-location.The character value willplace the triangle Hi-C plot y relative to the bottom of the mostrecently plotted plot according to the units of the plotgardener page"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying the bottomwidth of the Hi-C plot triangle"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying the height ofthe Hi-C plot triangle"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": null,
+        "description": "A string specifying the justification of triangle Hi-C plot relative toits (x, y) location. If there are two values, the first value specifieshorizontal justification and the second value specifies verticaljustification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical value indicating whether graphics output shouldbe produced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "quiet": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical indicating whether or not to print messages. Default value is \\code{quiet = FALSE}. Options include: TRUE, FALSE.\\end}}\\value{Returns a \\code{hicTriangle} object containing relevantgenomic region, Hi-C data, placement, and \\link[grid]{grob} information"
     }
 }

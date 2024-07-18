@@ -2,26 +2,36 @@
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying the starting row y-position"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying the height of rows"
     },
     "space": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying the space between rows"
     },
     "n": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An integer specifying the number of elements to generate rowpositions for"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string indicating the default units to useif \\code{y}, \\code{h}, or \\code{s} are only given as numerics.Default value is \\code{default.units = \"inches\"}"
     }
 }

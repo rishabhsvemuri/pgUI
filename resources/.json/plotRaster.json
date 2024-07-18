@@ -2,51 +2,71 @@
     "image": {
         "type": "R",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Any R object that can be coerced to a raster object"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying raster x-locations"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector, unit object, or a character vector of valuescontaining a \"b\" combined with a numeric value specifyingraster y-locations.The character vector will place raster y relative to the bottomof the most recently plotted plot according to the unitsof the plotgardener page"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying raster widths"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying raster heights"
     },
     "just": {
         "type": "string",
         "default": "\"center\"",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": null,
+        "description": "A string specifying the justification of text relative to its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and\\code{\"top\"}. Default value is \\code{just = \"center\"}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default unitsto use if \\code{x}, \\code{y}, \\code{width}, or \\code{height}are only given as numerics or numeric vectors.Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "interpolate": {
         "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A logical value indicating whether to linearlyinterpolate the image. Default value is \\code{interpolate = TRUE}"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
     }
 }

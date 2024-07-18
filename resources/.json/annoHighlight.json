@@ -2,66 +2,92 @@
     "plot": {
         "type": "plot",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Input plot on which to annotate genomic region"
     },
     "chrom": {
         "type": "of",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Chromosome of region to be highlighted, as a string"
     },
     "chromstart": {
         "type": "start",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Integer start position on chromosome to be highlighted"
     },
     "chromend": {
         "type": "end",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Integer end position on chromosome to be highlighted"
     },
     "fill": {
         "type": "character",
         "default": "\"grey\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying highlight box fill color.Default value is \\code{fill = \"grey\"}"
     },
     "linecolor": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying highlight box line color.Default value is \\code{linecolor = NA}"
     },
     "alpha": {
         "type": "value",
         "default": "0.4",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Numeric value specifying color transparency.Default value is \\code{alpha = 0.4}"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying square highlight box y-location.The character value will place the highlight box y relative to thebottom of the most recently plotted plot according to theunits of the \\code{plotgardener} page"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying highlight box height"
     },
     "just": {
         "type": "of",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Justification of highlight box relative to its (x, y)location. If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string indicating the default units to use if\\code{y} or \\code{height} are only given as numerics or numeric vectors.Default value is \\code{default.units = \"inches\"}"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
     }
 }

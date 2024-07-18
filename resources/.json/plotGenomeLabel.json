@@ -2,111 +2,155 @@
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string representing the Chromosome of genome labelor a character vector of chromosomes for a whole genome Manhattan plot"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An integer start of genome label"
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An integer end of genome label"
     },
     "assembly": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "fontsize": {
         "type": "numeric",
         "default": "10",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying text fontsize in points.Default value is \\code{fontsize = 10}"
     },
     "fontcolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value indicating the color for text.Default value is \\code{fontcolor = \"black\"}"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value indicating the color ofthe genome label axis. Default value is \\code{linecolor = \"black\"}"
     },
     "margin": {
         "type": "numeric",
         "default": "unit(1, \"mm\")",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": null
     },
     "scale": {
         "type": "character",
         "default": "\"bp\"",
-        "options": "\"bp\", \"Kb\", \"Mb\""
+        "options": "\"bp\", \"Kb\", \"Mb\"",
+        "class": null,
+        "description": null
     },
     "commas": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical value indicating whether to include commas instart and stop labels. Default value is \\code{commas = TRUE}. Options include: TRUE, FALSE"
     },
     "sequence": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical value indicating whether to include sequenceinformation above the label of an x-axis (only at appropriate resolutions). Default value is \\code{sequence = TRUE}. Options include: TRUE, FALSE"
     },
     "boxWidth": {
         "type": "numeric",
         "default": "0.5",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric value indicating the width of the boxesrepresenting sequence information at appropriate resolutions.Default value is \\code{boxWidth = 0.5}"
     },
     "axis": {
         "type": "character",
         "default": "\"x\"",
-        "options": "\"x\", \"y\""
+        "options": "\"x\", \"y\"",
+        "class": null,
+        "description": null
     },
     "at": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector of x-value locations for tick marks"
     },
     "tcl": {
         "type": "numeric",
         "default": "0.5",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying the length of tickmarks as afraction of text height. Default value is \\code{tcl = 0.5}"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying genome label x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying genome label y-location.The character value willplace the genome label y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page"
     },
     "length": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying length ofgenome label axis"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": null,
+        "description": "A string specifying the justification of genome label relative to its (x, y)location. If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"},and \\code{\"top\"}. Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default units touse if \\code{x}, \\code{y}, or \\code{length} are only given as numerics.Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters or digit specifications.See \\link[grid]{gpar} and \\link[base]{formatC}.\\end}}\\value{Returns a \\code{genomeLabel} object containingrelevant genomic region, placement, and \\link[grid]{grob} information"
     }
 }

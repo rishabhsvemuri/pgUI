@@ -2,66 +2,92 @@
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying rectangle x-locations"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector, unit object, or a character vector of valuescontaining a \"b\" combined with a numeric value specifyingrectangle y-locations.The character vector will place rectangle y-locations relative tothe bottom of the most recently plotted plot according tothe units of the plotgardener page"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying rectangle widths"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying rectangle heights"
     },
     "just": {
         "type": "of",
         "default": "\"center\"",
-        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": null,
+        "description": "Justification of rectangle relative to its (x, y) location.If there are two values, the first value specifies horizontal justificationand the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = \"center\"}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, and \\code{height} are only given asnumerics or numeric vectors.Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying rectangle line color.Default value is \\code{linecolor = \"black\"}"
     },
     "lwd": {
         "type": "numeric",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying rectangle line width.Default value is \\code{lwd = 1}"
     },
     "lty": {
         "type": "numeric",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying rectangle line type.Default value is \\code{lty = 1}"
     },
     "fill": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying rectangle fill color.Default value is \\code{fill = NA}"
     },
     "alpha": {
         "type": "value",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Numeric value specifying color transparency.Default value is \\code{alpha = 1}"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
     }
 }

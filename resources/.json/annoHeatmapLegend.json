@@ -2,86 +2,120 @@
     "plot": {
         "type": "-style",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Heatmap-style plot object to add heatmap legend for"
     },
     "orientation": {
         "type": "string",
         "default": "\"v\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": null
     },
     "fontsize": {
         "type": "numeric",
         "default": "8",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying text fontsize in points.Default value is \\code{fontsize = 8}"
     },
     "fontcolor": {
         "type": "value",
         "default": "\"dark grey\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Character value specfying text fontcolor.Default value is \\code{fontcolor = \"dark grey\"}"
     },
     "scientific": {
         "type": "value",
         "default": "FALSE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Logical value specifying if numeric color value labelsshould be encoded in scientific format.Default value is \\code{scientific = FALSE}"
     },
     "digits": {
         "type": "specifying",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Numeric specifying how many significant digits to includeof numeric color value labels. Default value is \\code{digits = 1}"
     },
     "ticks": {
         "type": "value",
         "default": "FALSE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Logical value specifying if tick marks on the heatmapcolorbar should be visible. Default value is \\code{ticks = FALSE}"
     },
     "breaks": {
         "type": "numeric",
         "default": "NULL",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector specifying tick breaks.Default value is \\code{breaks = NULL}"
     },
     "border": {
         "type": "value",
         "default": "FALSE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Logical value indicating whether to add a border aroundheatmap legend. Default value is \\code{border = FALSE}"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying x-location of legend"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying y-location of legend.The character value will place the legend y relative to the bottom of themost recently plotted plot according to the units ofthe plotgardener page"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying width of legend"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying height of legend"
     },
     "just": {
         "type": "of",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Justification of heatmap legend relative toits (x, y) location. If there are two values, the first value specifieshorizontal justification and the second value specifies verticaljustification. Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics. Default value is \\code{default.units = \"inches\"}"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
     }
 }
