@@ -33,8 +33,6 @@
 
 select {
     height: 30px;
-    margin-top: 10px;
-    margin-bottom: 5px;
 }
 
 .header {
@@ -383,7 +381,8 @@ $primary-color: lightgray;
 .dropdown-container {
     display: flex;
     align-items: center;
-    // margin-top: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     .infoButton {
         margin-top: 5px;
         margin-left: 5px;
