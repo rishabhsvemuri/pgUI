@@ -18,7 +18,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector, unit object, or a character vector of valuescontaining a \"b\" combined with a numeric value specifyingraster y-locations.The character vector will place raster y relative to the bottomof the most recently plotted plot according to the unitsof the plotgardener page"
+        "description": "A numeric vector, unit object, or a character vector of valuescontaining a \"b\" combined with a numeric value specifyingraster y-locations"
     },
     "width": {
         "type": "numeric",
@@ -39,21 +39,21 @@
         "default": "\"center\"",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": null,
-        "description": "A string specifying the justification of text relative to its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and\\code{\"top\"}. Default value is \\code{just = \"center\"}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "description": "A string specifying the justification of text relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
-        "description": "A string indicating the default unitsto use if \\code{x}, \\code{y}, \\code{width}, or \\code{height}are only given as numerics or numeric vectors.Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "description": "A string indicating the default unitsto use if \\code{x}, \\code{y}, \\code{width}, or \\code{height}are only given as numerics or numeric vectors"
     },
     "interpolate": {
         "type": "logical",
         "default": "TRUE",
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether to linearlyinterpolate the image. Default value is \\code{interpolate = TRUE}"
+        "description": "A logical value indicating whether to linearlyinterpolate the image"
     },
     "params": {
         "type": "optional",
@@ -67,6 +67,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

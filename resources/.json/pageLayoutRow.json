@@ -32,6 +32,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{y}, \\code{h}, or \\code{s} are only given as numerics.Default value is \\code{default.units = \"inches\"}"
+        "description": "A string indicating the default units to useif \\code{y}, \\code{h}, or \\code{s} are only given as numerics"
     }
 }

@@ -4,7 +4,7 @@
         "default": "\"hg38\"",
         "options": null,
         "class": null,
-        "description": "String defining the genome build.Default value is \\code{assembly = \"hg38\"}"
+        "description": "String defining the genome build"
     },
     "gene": {
         "type": null,
@@ -18,7 +18,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "(optional) Integer base-pairs to extend thestart and end of a gene defined by argument \\code{gene}.Can be one integer or a vector of length 2, where the first integerwill extend the start of the gene and the second integerwill extend the end of the gene"
+        "description": "(optional) Integer base-pairs to extend thestart and end of a gene defined by argument \\code{gene}"
     },
     "...": {
         "type": "function",

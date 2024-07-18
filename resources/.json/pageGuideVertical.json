@@ -11,14 +11,14 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x} is only given as a numeric.Default value is \\code{default.units = \"inches\"}"
+        "description": "A string indicating the default units to useif \\code{x} is only given as a numeric"
     },
     "linecolor": {
         "type": "value",
         "default": "\"grey55\"",
         "options": null,
         "class": null,
-        "description": "Character value indicating color of guideline.Default value is \\code{linecolor = \"grey55\"}"
+        "description": "Character value indicating color of guideline"
     },
     "params": {
         "type": "optional",
@@ -32,6 +32,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

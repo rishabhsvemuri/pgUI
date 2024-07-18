@@ -32,49 +32,49 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the startingy-values of the zoom line segments. If two values are given,the first value will correspond to the left zoom line and thesecond value will correspond to the right zoom line"
+        "description": "A numeric vector or unit object indicating the startingy-values of the zoom line segments"
     },
     "x1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the stoppingx-values of the zoom line segments. If two values are given,the first value will correspond to the left zoom line and thesecond value will correspond to the right zoom line. If NULL,straight lines from zoomed genomic region will be drawn"
+        "description": "A numeric vector or unit object indicating the stoppingx-values of the zoom line segments"
     },
     "y1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the stoppingy-values of the zoom line segments. If two values are given,the first value will correspond to the left zoom line and thesecond value will correspond to the right zoom line"
+        "description": "A numeric vector or unit object indicating the stoppingy-values of the zoom line segments"
     },
     "extend": {
         "type": "numeric",
         "default": "0",
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the lengthto extend straight lines from each endof the zoom line segments. If two values are given, the first valuewill correspond to the top extension lengthand the second value will correspond to the bottom extension length.Default value is \\code{extend = 0}"
+        "description": "A numeric vector or unit object indicating the lengthto extend straight lines from each endof the zoom line segments"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{y0}, \\code{x1}, \\code{y1}, or \\code{extend} are only givenas numerics or numeric vectors.Default value is \\code{default.units = \"inches\"}"
+        "description": "A string indicating the default units to useif \\code{y0}, \\code{x1}, \\code{y1}, or \\code{extend} are only givenas numerics or numeric vectors"
     },
     "linecolor": {
         "type": "character",
         "default": "\"grey\"",
         "options": null,
         "class": null,
-        "description": "A character value specifying zoom line color.Default value is \\code{linecolor = \"grey\"}"
+        "description": "A character value specifying zoom line color"
     },
     "lty": {
         "type": "numeric",
         "default": "2",
         "options": null,
         "class": null,
-        "description": "A numeric specifying zoom line type.Default value is \\code{lty = 2}"
+        "description": "A numeric specifying zoom line type"
     },
     "params": {
         "type": "optional",
@@ -88,6 +88,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

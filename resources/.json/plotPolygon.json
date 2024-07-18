@@ -11,63 +11,63 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector, unit object, or a character vectorof values containing a \"b\" combined with a numeric value specifyingpolygon vertex y-locations.The character vector will place polygon vertex y-locations relativeto the bottom of the most recently plotted plot accordingto the units of the plotgardener page"
+        "description": "A numeric vector, unit object, or a character vectorof values containing a \"b\" combined with a numeric value specifyingpolygon vertex y-locations"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numeric vectors.Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numeric vectors"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": "A character value specifying polygon line color.Default value is \\code{linecolor = \"black\"}"
+        "description": "A character value specifying polygon line color"
     },
     "lwd": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": null,
-        "description": "A numeric specifying polygon line width.Default value is \\code{lwd = 1}"
+        "description": "A numeric specifying polygon line width"
     },
     "lty": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": null,
-        "description": "A numeric specifying polygon line type.Default value is \\code{lty = 1}"
+        "description": "A numeric specifying polygon line type"
     },
     "fill": {
         "type": "character",
         "default": "NA",
         "options": null,
         "class": null,
-        "description": "A character value specifying polygon fill color.Default value is \\code{fill = NA}"
+        "description": "A character value specifying polygon fill color"
     },
     "alpha": {
         "type": "value",
         "default": "1",
         "options": null,
         "class": null,
-        "description": "Numeric value specifying color transparency.Default value is \\code{alpha = 1}"
+        "description": "Numeric value specifying color transparency"
     },
     "id": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector used to separate locations in \\code{x} and\\code{y} into multiple polygons. All locations with the same \\code{id}belong to the same polygon"
+        "description": "A numeric vector used to separate locations in \\code{x} and\\code{y} into multiple polygons"
     },
     "id.lengths": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector used to separate locations in\\code{x} and \\code{y} into multiple polygons. Specifies consecutiveblocks of locations which make up separate polygons"
+        "description": "A numeric vector used to separate locations in\\code{x} and \\code{y} into multiple polygons"
     },
     "params": {
         "type": "optional",
@@ -81,6 +81,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

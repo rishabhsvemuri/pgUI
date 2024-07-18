@@ -32,7 +32,7 @@
         "default": "\"v\"",
         "options": "\"v\", \"h\"",
         "class": null,
-        "description": null
+        "description": "A string specifying legend orientation"
     },
     "title": {
         "type": "character",
@@ -46,21 +46,21 @@
         "default": "10",
         "options": null,
         "class": null,
-        "description": "A numeric specifying text fontsize in points.Default value is \\code{fontsize = 10}"
+        "description": "A numeric specifying text fontsize in points"
     },
     "border": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value indicating whether to add a borderaround heatmap legend. Default value is \\code{border = TRUE}. Options include: TRUE, FALSE"
+        "description": "A logical value indicating whether to add a borderaround heatmap legend"
     },
     "bg": {
         "type": "character",
         "default": "NA",
         "options": null,
         "class": null,
-        "description": "A character value indicating background color.Default value is \\code{bg = NA}"
+        "description": "A character value indicating background color"
     },
     "x": {
         "type": "numeric",
@@ -74,7 +74,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying legend y-location.The character value willplace the legend y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page"
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying legend y-location"
     },
     "width": {
         "type": "numeric",
@@ -95,21 +95,21 @@
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": null,
-        "description": "A string specifying the justification of legend relative to its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "description": "A string specifying the justification of legend relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value indicating whether graphics output shouldbe produced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE"
+        "description": "A logical value indicating whether graphics output shouldbe produced"
     },
     "params": {
         "type": "optional",
@@ -123,6 +123,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

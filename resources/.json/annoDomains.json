@@ -18,14 +18,14 @@
         "default": "\"inherit\"",
         "options": "\"inherit\", \"both\", \"top\", \"bottom\"",
         "class": null,
-        "description": null
+        "description": "A character value specifying which half of hic plotsto annotate"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value specifying the color of the domainannotations"
     },
     "params": {
         "type": "optional",
@@ -39,6 +39,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}.\\end}}\\value{Returns a \\code{domain} object containing relevantgenomic region, placement, and \\link[grid]{grob} information"
+        "description": "Additional grid graphical parameters"
     }
 }

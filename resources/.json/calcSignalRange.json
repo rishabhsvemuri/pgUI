@@ -32,13 +32,13 @@
         "default": "\"hg38\"",
         "options": null,
         "class": null,
-        "description": "Default genome assembly as a string or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}"
+        "description": "Default genome assembly as a string or a\\link[plotgardener]{assembly} object"
     },
     "negData": {
         "type": "logical",
         "default": "FALSE",
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether any of the data has bothpositive and negative scores and the signal range should be adjustedaccordingly. Default value is \\code{negData = FALSE}"
+        "description": "A logical value indicating whether any of the data has bothpositive and negative scores and the signal range should be adjustedaccordingly"
     }
 }

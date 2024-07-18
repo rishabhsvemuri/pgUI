@@ -25,14 +25,14 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "String of the TxDb column name that refers tothe given TxDb gene IDs.Default value is \\code{gene.id.column = \"ENTREZID\"}"
+        "description": "String of the TxDb column name that refers tothe given TxDb gene IDs"
     },
     "display.column": {
         "type": "of",
         "default": null,
         "options": null,
         "class": null,
-        "description": "String of the OrgDb column name that refers tothe type of gene symbol to be displayed in plots.Default value is \\code{display.column = \"SYMBOL\"}"
+        "description": "String of the OrgDb column name that refers tothe type of gene symbol to be displayed in plots"
     },
     "BSgenome": {
         "type": "of",

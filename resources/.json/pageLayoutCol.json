@@ -32,6 +32,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x}, \\code{w}, or \\code{s} are only given as numerics.Default value is \\code{default.units = \"inches\"}}}\\value{Returns a unit vector of page positions"
+        "description": "A string indicating the default units to useif \\code{x}, \\code{w}, or \\code{s} are only given as numerics"
     }
 }

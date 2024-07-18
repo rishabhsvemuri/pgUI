@@ -11,28 +11,28 @@
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": "A character value specifying text fontcolor.Default value is \\code{fontcolor = \"black\"}"
+        "description": "A character value specifying text fontcolor"
     },
     "fontsize": {
         "type": "numeric",
         "default": "12",
         "options": null,
         "class": null,
-        "description": "A numeric specifying text fontsize in points.Default value is \\code{fontsize = 12}"
+        "description": "A numeric specifying text fontsize in points"
     },
     "rot": {
         "type": "numeric",
         "default": "0",
         "options": null,
         "class": null,
-        "description": "A numeric specifying the angle to rotate the text.Default value is \\code{rot = 0}"
+        "description": "A numeric specifying the angle to rotate the text"
     },
     "check.overlap": {
         "type": "logical",
         "default": null,
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value to indicate whether to checkfor and omit overlapping text.Default value is \\code{check.overlap = FALSE}. Options include: TRUE, FALSE"
+        "description": "A logical value to indicate whether to checkfor and omit overlapping text"
     },
     "x": {
         "type": "numeric",
@@ -46,21 +46,21 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector, unit object, or a character vector ofvalues containing a \"b\" combined with a numeric valuespecifying text y-locations.The character vector will place text y-locations relative to thebottom of the most recently plotted plot according to theunits of the plotgardener page"
+        "description": "A numeric vector, unit object, or a character vector ofvalues containing a \"b\" combined with a numeric valuespecifying text y-locations"
     },
     "just": {
         "type": "of",
         "default": "\"center\"",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": null,
-        "description": "Justification of text relative to its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = \"center\"}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "description": "Justification of text relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
-        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors.Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors"
     },
     "params": {
         "type": "optional",
@@ -74,6 +74,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

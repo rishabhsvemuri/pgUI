@@ -32,7 +32,7 @@
         "default": "\"*\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value specifying strand"
     },
     "params": {
         "type": "optional",

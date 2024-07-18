@@ -4,49 +4,49 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A plot to annotate genomic coordinates.Genomic coordinates and assembly will be inherited from \\code{plot}"
+        "description": "A plot to annotate genomic coordinates"
     },
     "fontsize": {
         "type": "numeric",
         "default": "10",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A numeric specifying text fontsize in points"
     },
     "fontcolor": {
         "type": "character",
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value indicating the color for text"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value indicating the color ofthe genome label axis"
     },
     "margin": {
         "type": "numeric",
         "default": "unit(1, \"mm\")",
         "options": null,
         "class": null,
-        "description": "A numeric or unit vector specifying space between axisand coordinate labels. Default value is \\code{margin = unit(1, \"mm\")}"
+        "description": "A numeric or unit vector specifying space between axisand coordinate labels"
     },
     "scale": {
         "type": "character",
         "default": "\"bp\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value indicating the scale of the coordinatesalong the genome label"
     },
     "commas": {
         "type": "logical",
         "default": "TRUE",
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether to include commas instart and stop labels. Default value is \\code{commas = TRUE}"
+        "description": "A logical value indicating whether to include commas instart and stop labels"
     },
     "sequence": {
         "type": "logical",
@@ -60,14 +60,14 @@
         "default": "0.5",
         "options": null,
         "class": null,
-        "description": "A numeric value indicating the width of the boxesrepresenting sequence information at appropriate resolutions.Default value is \\code{boxWidth = 0.5}"
+        "description": "A numeric value indicating the width of the boxesrepresenting sequence information at appropriate resolutions"
     },
     "axis": {
         "type": "character",
         "default": "\"x\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value indicating along which axis toadd genome label"
     },
     "at": {
         "type": "numeric",
@@ -81,7 +81,7 @@
         "default": "0.5",
         "options": null,
         "class": null,
-        "description": "A numeric specifying the length of tickmarks as a fraction oftext height. Default value is \\code{tcl = 0.5}"
+        "description": "A numeric specifying the length of tickmarks as a fraction oftext height"
     },
     "x": {
         "type": "numeric",
@@ -95,21 +95,21 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying genome label y-location.The character value will place the genome label y relative to the bottomof the most recently plotted plot according to the units of theplotgardener page"
+        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying genome label y-location"
     },
     "just": {
         "type": "of",
         "default": "c(\"left\", \"top\")",
         "options": null,
         "class": null,
-        "description": "Justification of genome label relative to its (x, y) location.If there are two values, the first value specifies horizontal justificationand the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"}, \\code{\"centre\"},\\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}"
+        "description": "Justification of genome label relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numerics.Default value is \\code{default.units = \"inches\"}"
+        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numerics"
     },
     "params": {
         "type": "optional",
@@ -123,6 +123,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters or digit specifications.See \\link[grid]{gpar} and \\link[base]{formatC}"
+        "description": "Additional grid graphical parameters or digit specifications"
     }
 }

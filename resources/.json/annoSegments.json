@@ -39,42 +39,42 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x0}, \\code{y0}, \\code{x1}, or \\code{y1} are only givenas numeric vectors. Default value is \\code{default.units = \"native\"}"
+        "description": "A string indicating the default units to useif \\code{x0}, \\code{y0}, \\code{x1}, or \\code{y1} are only givenas numeric vectors"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": "A character value specifying segment line color.Default value is \\code{linecolor = \"black\"}"
+        "description": "A character value specifying segment line color"
     },
     "lwd": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": null,
-        "description": "A numeric specifying segment line width.Default value is \\code{lwd = 1}"
+        "description": "A numeric specifying segment line width"
     },
     "lty": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": null,
-        "description": "A numeric specifying segment line type.Default value is \\code{lty = 1}"
+        "description": "A numeric specifying segment line type"
     },
     "lineend": {
         "type": "character",
         "default": "\"butt\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value specifying line end style"
     },
     "linejoin": {
         "type": "character",
         "default": "\"mitre\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value specifying line join style"
     },
     "arrow": {
         "type": "list",
@@ -95,6 +95,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

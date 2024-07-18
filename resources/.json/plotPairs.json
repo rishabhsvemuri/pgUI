@@ -4,167 +4,167 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string specifying the BEDPE file path, a dataframein BEDPE format specifying data to be plotted, or a\\link[InteractionSet]{GInteractions} object. Class: Data"
+        "description": "A string specifying the BEDPE file path, a dataframein BEDPE format specifying data to be plotted, or a\\link[InteractionSet]{GInteractions} object"
     },
     "chrom": {
         "type": "string",
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string representing the chromosome of region to be plotted. Class: Data"
+        "description": "A string representing the chromosome of region to be plotted"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "An integer start position on chromosome to be plotted. Class: Data"
+        "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "An integer end position on chromosome to be plotted. Class: Data"
+        "description": "An integer end position on chromosome to be plotted"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}. Class: Data"
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "fill": {
         "type": "character",
         "default": "\"#1f4297\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value, a vector, ora \\link[plotgardener]{colorby} object specifying fill colors ofpaired range elements. Default value is \\code{fill = \"#1f4297\"}. Class: Aesthetic"
+        "description": "A character value, a vector, ora \\link[plotgardener]{colorby} object specifying fill colors ofpaired range elements"
     },
     "linecolor": {
         "type": "character",
         "default": "NA",
         "options": "NA, \"fill\"",
         "class": "Aesthetic",
-        "description": null
+        "description": "A  character value, a vector, or a\\link[plotgardener]{colorby} object specifying the color of the linesoutlining paired range elements"
     },
     "bg": {
         "type": "character",
         "default": "NA",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value indicating background color.Default value is \\code{bg = NA}. Class: Aesthetic"
+        "description": "A character value indicating background color"
     },
     "boxHeight": {
         "type": "numeric",
         "default": "unit(2, \"mm\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric or unit object specifying height of boxesat either end of paired range elements.Default value is \\code{boxHeight = unit(2, \"mm\")}. Class: Aesthetic"
+        "description": "A numeric or unit object specifying height of boxesat either end of paired range elements"
     },
     "spaceWidth": {
         "type": "numeric",
         "default": "0.02",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying the width of spacing betweenpaired range elements, as a fraction of the plot's genomic range.Default value is \\code{spaceWidth = 0.02}. Class: Aesthetic"
+        "description": "A numeric specifying the width of spacing betweenpaired range elements, as a fraction of the plot's genomic range"
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying the height of space betweenboxes of paired range elements on different rows.Default value is \\code{spaceHeight = 0.3}. Class: Aesthetic"
+        "description": "A numeric specifying the height of space betweenboxes of paired range elements on different rows"
     },
     "limitLabel": {
         "type": "logical",
         "default": null,
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space. Defaultvalue is \\code{limitLabel = TRUE}. Options include: TRUE, FALSE. Class: Aesthetic"
+        "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space"
     },
     "baseline": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include a baselinealong the x-axis. Default value is \\code{baseline = FALSE}. Options include: TRUE, FALSE. Class: Aesthetic"
+        "description": "A logical value indicating whether to include a baselinealong the x-axis"
     },
     "baseline.color": {
         "type": "string",
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "A string specifying the baseline color.Default value is \\code{baseline.color = \"grey\"}. Class: Aesthetic"
+        "description": "A string specifying the baseline color"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying the baseline line width.Default value is \\code{baseline.lwd = 1}. Class: Aesthetic"
+        "description": "A numeric specifying the baseline line width"
     },
     "x": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying paired range plot x-location. Class: Positional"
+        "description": "A numeric or unit object specifying paired range plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying paired range plot y-location.The character value willplace the paired range plot y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page. Class: Positional"
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying paired range plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying paired range plot width. Class: Positional"
+        "description": "A numeric or unit object specifying paired range plot width"
     },
     "height": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying paired range plot height. Class: Positional"
+        "description": "A numeric or unit object specifying paired range plot height"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the hustification of paired range plot relativeto its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\". Class: Positional"
+        "description": "A string specifying the hustification of paired range plot relativeto its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\". Class: Positional"
+        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphicsoutput should be produced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE. Class: Positional"
+        "description": "A logical value indicating whether graphicsoutput should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters. Class: Positional"
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}. Class: Positional"
+        "description": "Additional grid graphical parameters"
     }
 }

@@ -18,28 +18,28 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether to draw the labels onthe tick marks, or an expression or character vector which specifythe labels to use.If not logical, must be the same length as the \\code{at} argument"
+        "description": "A logical value indicating whether to draw the labels onthe tick marks, or an expression or character vector which specifythe labels to use"
     },
     "main": {
         "type": "logical",
         "default": "TRUE",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A logical value indicating whether to draw the x-axis at thebottom of the plot"
     },
     "scipen": {
         "type": "integer",
         "default": "999",
         "options": null,
         "class": null,
-        "description": "An integer indicating the penalty to be applied whendeciding to print numeric values in fixed or exponential notation.Default value is \\code{scipen = 999}"
+        "description": "An integer indicating the penalty to be applied whendeciding to print numeric values in fixed or exponential notation"
     },
     "axisLine": {
         "type": "logical",
         "default": "FALSE",
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether to show the axis line.Default value is \\code{axisLine = FALSE}"
+        "description": "A logical value indicating whether to show the axis line"
     },
     "params": {
         "type": "optional",
@@ -53,6 +53,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }

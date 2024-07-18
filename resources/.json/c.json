@@ -11,6 +11,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "logical. If \\code{recursive = TRUE}, the functionrecursively descends through lists(and pairlists) combining all their elements into a vector"
+        "description": "logical"
     }
 }

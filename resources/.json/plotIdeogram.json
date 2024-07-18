@@ -4,97 +4,97 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string specifying the chromosome to be plotted. Class: Data"
+        "description": "A string specifying the chromosome to be plotted"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}. Class: Data"
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "data": {
         "type": "cytoband",
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "Custom cytoband data, as a dataframe with the followingcolumns: \"seqnames\", \"start\", \"end\", \"width\", \"strand\",\"name\", \"gieStain\". Class: Data"
+        "description": "Custom cytoband data, as a dataframe with the followingcolumns: \"seqnames\", \"start\", \"end\", \"width\", \"strand\",\"name\", \"gieStain\""
     },
     "orientation": {
         "type": "value",
         "default": "\"h\"",
         "options": "\"v\", \"h\"",
         "class": "Aesthetic",
-        "description": null
+        "description": "Character value indicating the orientationof the ideogram"
     },
     "showBands": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to drawcolored cytobands within ideogram.Default value is \\code{showBands = TRUE}. Options include: TRUE, FALSE. Class: Aesthetic"
+        "description": "A logical value indicating whether to drawcolored cytobands within ideogram"
     },
     "fill": {
         "type": null,
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "(optional) A vector specifying alternate colors for cytobandstains. To change specific gieStain values (i.e. gneg, gpos, etc.) tospecific colors, this vector can be named. This vector must have the samenumber of colors as there are gieStain values for each genome assembly. Class: Aesthetic"
+        "description": "(optional) A vector specifying alternate colors for cytobandstains"
     },
     "x": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying ideogram x-location. Class: Positional"
+        "description": "A numeric or unit object specifying ideogram x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying ideogram y-location.The character value willplace the ideogram y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page. Class: Positional"
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying ideogram y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying ideogram width. Class: Positional"
+        "description": "A numeric or unit object specifying ideogram width"
     },
     "height": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying ideogram height. Class: Positional"
+        "description": "A numeric or unit object specifying ideogram height"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the justification of ideogram relative to its (x, y) location.If there are two values, the first value specifies horizontal justificationand the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\". Class: Positional"
+        "description": "A string specifying the justification of ideogram relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\". Class: Positional"
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output should beproduced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE. Class: Positional"
+        "description": "A logical value indicating whether graphics output should beproduced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters. Class: Positional.\\end}}\\value{Returns a \\code{ideogram} object containing relevantgenomic region, placement, and \\link[grid]{grob} information"
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     }
 }

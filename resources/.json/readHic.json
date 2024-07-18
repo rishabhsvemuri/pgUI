@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A character value specifying the path to the .hic file"
+        "description": "A character value specifying the path to the "
     },
     "chrom": {
         "type": "of",
@@ -53,21 +53,21 @@
         "default": "\"hg38\"",
         "options": null,
         "class": null,
-        "description": "Default genome assembly as a string or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}"
+        "description": "Default genome assembly as a string or a\\link[plotgardener]{assembly} object"
     },
     "resolution": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric specifying the width of each pixel.\"auto\" will attempt to choose a resolution in basepairs based onthe size of the region"
+        "description": "A numeric specifying the width of each pixel"
     },
     "res_scale": {
         "type": "character",
         "default": "\"BP\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "A character value specifying the resolution scale"
     },
     "zrange": {
         "type": "numeric",
@@ -81,14 +81,14 @@
         "default": "\"KR\"",
         "options": null,
         "class": null,
-        "description": "Character value specifying hic data normalization method.This value must be found in the .hic file.Default value is \\code{norm = \"KR\"}"
+        "description": "Character value specifying hic data normalization method"
     },
     "matrix": {
         "type": "value",
         "default": "\"observed\"",
         "options": null,
         "class": null,
-        "description": null
+        "description": "Character value indicating the type of matrix to output"
     },
     "params": {
         "type": "optional",

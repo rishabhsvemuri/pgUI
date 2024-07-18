@@ -4,146 +4,146 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string representing the chromosome region to be plotted. Class: Data"
+        "description": "A string representing the chromosome region to be plotted"
     },
     "chromstart": {
         "type": "int",
         "default": "NULL",
         "options": null,
         "class": "Data",
-        "description": "An int start position on chromosome to be plotted. Default value is \\code{chromstart = NULL}. Class: Data"
+        "description": "An int start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "int",
         "default": "NULL",
         "options": null,
         "class": "Data",
-        "description": "An int end position on chromosome to be plotted. Default value is \\code{chromend = NULL}. Class: Data"
+        "description": "An int end position on chromosome to be plotted"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string represnting the default genome assembly as a string or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}. Class: Data"
+        "description": "A string represnting the default genome assembly as a string or a\\link[plotgardener]{assembly} object"
     },
     "fontsize": {
         "type": "numeric",
         "default": "8",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying text fontsize in points.Default value is \\code{fontsize = 8}. Class: Aesthetic"
+        "description": "A numeric specifying text fontsize in points"
     },
     "fontcolor": {
         "type": "string",
         "default": "c(\"#669fd9\", \"#abcc8e\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string or vector of length 2 indicatingthe fontcolors for the plus strand and minus strand gene labels.The first value will color the plus strand gene labels andthe second value will color the minus strand gene labels.Default value is \\code{fontcolor = c(\"#669fd9\", \"#abcc8e\")}. Class: Aesthetic"
+        "description": "A string or vector of length 2 indicatingthe fontcolors for the plus strand and minus strand gene labels"
     },
     "fill": {
         "type": "string",
         "default": "c(\"#669fd9\", \"#abcc8e\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string or vector of length 2 indicating thestrand fill colors for the plus strand and minus strand plot elements.The first value will color the plus strand plot elements andthe second label will color the minus strand plot elements.Default value is \\code{fill = c(\"#669fd9\", \"#abcc8e\")}. Class: Aesthetic"
+        "description": "A string or vector of length 2 indicating thestrand fill colors for the plus strand and minus strand plot elements"
     },
     "geneOrder": {
         "type": "vector",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A vector (ordered character) of gene names toprioritize when labeling genes. Default value is \\code{geneOrder = NULL}. Class: Aesthetic"
+        "description": "A vector (ordered character) of gene names toprioritize when labeling genes"
     },
     "geneHighlights": {
         "type": "dataframe",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A dataframe of two-columns with a column named \"gene\"containing gene names as strings to highlight and a named column \"color\"containing corresponding highlight colors. Default value is \\code{geneHighlights = NULL}. Class: Aesthetic"
+        "description": "A dataframe of two-columns with a column named \"gene\"containing gene names as strings to highlight and a named column \"color\"containing corresponding highlight colors"
     },
     "geneBackground": {
         "type": "string",
         "default": "\"grey\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string, if \\code{geneHighlights} is given, indicating the color for genes that are not highlighted. Default value is \\code{geneBackground = \"grey\"} Class: Aesthetic"
+        "description": "A string, if \\code{geneHighlights} is given, indicating the color for genes that are not highlighted"
     },
     "strandLabels": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include+ and - strand labels to the left of the gene track. Default value is \\code{strandLabels = TRUE}. Options include: TRUE, FALSE. Class: Aesthetic"
+        "description": "A logical value indicating whether to include+ and - strand labels to the left of the gene track"
     },
     "stroke": {
         "type": "numeric",
         "default": "0.1",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value indicating the stroke width for genebody outlines. Default value is \\code{stroke = 0.1}. Class: Aesthetic"
+        "description": "A numeric value indicating the stroke width for genebody outlines"
     },
     "bg": {
         "type": "string",
         "default": "NA",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string indicating background color.Default value is \\code{bg = NA}.Class: Aesthetic"
+        "description": "A string indicating background color"
     },
     "x": {
         "type": "numeric",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying genes plot x-location. Default value is \\code{x = NULL}. Class: Positional"
+        "description": "A numeric or unit object specifying genes plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying genes plot y-location.The character value willplace the genes plot y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page. Default value is \\code{y = NULL}. Class: Positional"
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying genes plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying genes plot width. Default value is \\code{width = NULL}. Class: Positional"
+        "description": "A numeric or unit object specifying genes plot width"
     },
     "height": {
         "type": "numeric",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying genes plot height. Default value is \\code{height = NULL}. Class: Positional"
+        "description": "A numeric or unit object specifying genes plot height"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string or character vector describing the justification of genes plot relative to its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\". Class: Positional"
+        "description": "A string or character vector describing the justification of genes plot relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics. Default value is \\code{default.units = \"inches\"}.Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\". Class: Positional"
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics outputshould be produced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE. Class: Positional"
+        "description": "A logical value indicating whether graphics outputshould be produced"
     },
     "params": {
         "type": "optional",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters. Default value is \\code{params = NULL}. Class: Positional"
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     }
 }

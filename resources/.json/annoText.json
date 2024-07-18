@@ -11,28 +11,28 @@
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": "A character value specifying text fontcolor.Default value is \\code{fontcolor = \"black\"}"
+        "description": "A character value specifying text fontcolor"
     },
     "fontsize": {
         "type": "numeric",
         "default": "12",
         "options": null,
         "class": null,
-        "description": "A numeric specifying text fontsize in points.Default value is \\code{fontsize = 12}"
+        "description": "A numeric specifying text fontsize in points"
     },
     "rot": {
         "type": "numeric",
         "default": "0",
         "options": null,
         "class": null,
-        "description": "A numeric specifying the angle to rotate the text.Default value is \\code{rot = 0}"
+        "description": "A numeric specifying the angle to rotate the text"
     },
     "check.overlap": {
         "type": "logical",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A logical value to indicate whether to check forand omit overlapping text. Default value is \\code{check.overlap = FALSE}"
+        "description": "A logical value to indicate whether to check forand omit overlapping text"
     },
     "plot": {
         "type": "plotgardener",
@@ -60,14 +60,14 @@
         "default": "\"center\"",
         "options": null,
         "class": null,
-        "description": "Justification of text relative to its (x, y) location.If there are two values, the first value specifies horizontaljustification and the second value specifies vertical justification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = \"center\"}"
+        "description": "Justification of text relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors.Default value is \\code{default.units = \"native\"}"
+        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors"
     },
     "params": {
         "type": "optional",
@@ -81,6 +81,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters. See \\link[grid]{gpar}"
+        "description": "Additional grid graphical parameters"
     }
 }
