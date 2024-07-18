@@ -3,175 +3,175 @@
         "type": "string",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A string path to .hic file as a string or a 3-column dataframe ofinteraction counts in sparse upper triangular format"
+        "class": "Data",
+        "description": "A string path to .hic file as a string or a 3-column dataframe ofinteraction counts in sparse upper triangular format. Class: Data"
     },
     "resolution": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A numeric specifying the width inbasepairs of each pixel. For hic files, \"auto\" will attemptto choose a resolution based on the size of the region. Fordataframes, \"auto\" will attempt to detect the resolution thedataframe contains. Default value \\code{resolution = \"auto\"}"
+        "class": "Data",
+        "description": "A numeric specifying the width inbasepairs of each pixel. For hic files, \"auto\" will attemptto choose a resolution based on the size of the region. Fordataframes, \"auto\" will attempt to detect the resolution thedataframe contains. Default value \\code{resolution = \"auto\"}. Class: Data"
     },
     "zrange": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A numeric vector of length 2 specifying the rangeof interaction scores to plot, where extreme values will be setto the max or min. Default value \\code{resolution = NULL}"
+        "class": "Data",
+        "description": "A numeric vector of length 2 specifying the rangeof interaction scores to plot, where extreme values will be setto the max or min. Default value \\code{resolution = NULL}. Class: Data"
     },
     "norm": {
         "type": "character",
         "default": "\"KR\"",
         "options": null,
-        "class": null,
-        "description": "A character value specifying hic data normalization method,if giving .hic file. This value must be found in the .hic file.Default value is \\code{norm = \"KR\"}"
+        "class": "Data",
+        "description": "A character value specifying hic data normalization method,if giving .hic file. This value must be found in the .hic file.Default value is \\code{norm = \"KR\"}. Class: Data"
     },
     "matrix": {
         "type": "value",
         "default": "\"observed\"",
         "options": "\"observed\", \"oe\", \"log2oe\"",
-        "class": null,
+        "class": "Data",
         "description": null
     },
     "chrom": {
         "type": "string",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A string representing the chromosome of region to be plotted"
+        "class": "Data",
+        "description": "A string representing the chromosome of region to be plotted. Class: Data"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "An integer start position on chromosome to be plotted"
+        "class": "Data",
+        "description": "An integer start position on chromosome to be plotted. Class: Data"
     },
     "chromend": {
         "type": "integer",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "An integer end position on chromosome to be plotted"
+        "class": "Data",
+        "description": "An integer end position on chromosome to be plotted. Class: Data"
     },
     "altchrom": {
         "type": "string",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A string representing the alternate chromosome for off-diagonal plottingor interchromosomal plotting"
+        "class": "Data",
+        "description": "A string representing the alternate chromosome for off-diagonal plottingor interchromosomal plotting. Class: Data"
     },
     "altchromstart": {
         "type": "integer",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "An integer alternate chromosome start positionfor off-diagonal plotting or interchromosomal plotting"
+        "class": "Data",
+        "description": "An integer alternate chromosome start positionfor off-diagonal plotting or interchromosomal plotting. Class: Data"
     },
     "altchromend": {
         "type": "integer",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "An integer alternate chromosome end positionfor off-diagonal plotting or interchromosomal plotting"
+        "class": "Data",
+        "description": "An integer alternate chromosome end positionfor off-diagonal plotting or interchromosomal plotting. Class: Data"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
         "options": null,
-        "class": null,
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}"
+        "class": "Data",
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object.Default value is \\code{assembly = \"hg38\"}. Class: Data"
     },
     "palette": {
         "type": "function",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A function describing the color palette to use forrepresenting scale of interaction scores.Default value is\\code{palette =  colorRampPalette(brewer.pal(n = 9, \"YlGnBu\"))}"
+        "class": "Aesthetic",
+        "description": "A function describing the color palette to use forrepresenting scale of interaction scores.Default value is\\code{palette =  colorRampPalette(brewer.pal(n = 9, \"YlGnBu\"))}. Class: Aesthetic"
     },
     "colorTrans": {
         "type": "string",
         "default": "\"linear\"",
         "options": "\"linear\", \"log\", \"log2\", or \"log10\"",
-        "class": null,
-        "description": "A string specifying how to scale Hi-C colors.Default value is \\code{colorTrans = \"linear\"}. Options include: \"linear\", \"log\", \"log2\", or \"log10\""
+        "class": "Aesthetic",
+        "description": "A string specifying how to scale Hi-C colors.Default value is \\code{colorTrans = \"linear\"}. Options include: \"linear\", \"log\", \"log2\", or \"log10\". Class: Aesthetic"
     },
     "half": {
         "type": "character",
         "default": "\"both\"",
         "options": "\"top\", \"both\", \"bottom\"",
-        "class": null,
+        "class": "Aesthetic",
         "description": null
     },
     "bg": {
         "type": "character",
         "default": "NA",
         "options": null,
-        "class": null,
-        "description": "A character value indicating background color.Default value is \\code{bg = NA}"
+        "class": "Aesthetic",
+        "description": "A character value indicating background color.Default value is \\code{bg = NA}. Class: Aesthetic"
     },
     "x": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A numeric or unit object specifying square Hi-C plot x-location"
+        "class": "Positional",
+        "description": "A numeric or unit object specifying square Hi-C plot x-location. Class: Positional"
     },
     "y": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying square Hi-C plot y-location.The character value willplace the square Hi-C plot y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page"
+        "class": "Positional",
+        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying square Hi-C plot y-location.The character value willplace the square Hi-C plot y relative to the bottom of the most recentlyplotted plot according to the units of the plotgardener page. Class: Positional"
     },
     "width": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A numeric or unit object specifying square Hi-C plot width"
+        "class": "Positional",
+        "description": "A numeric or unit object specifying square Hi-C plot width. Class: Positional"
     },
     "height": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "A numeric or unit object specifying square Hi-C plot height"
+        "class": "Positional",
+        "description": "A numeric or unit object specifying square Hi-C plot height. Class: Positional"
     },
     "just": {
         "type": "justification",
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
-        "class": null,
-        "description": "The justification of square Hi-C plot relative toits (x, y) location. If there are two values, the first value specifieshorizontal justification and the second value specifies verticaljustification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\""
+        "class": "Positional",
+        "description": "The justification of square Hi-C plot relative toits (x, y) location. If there are two values, the first value specifieshorizontal justification and the second value specifies verticaljustification.Possible string values are: \\code{\"left\"}, \\code{\"right\"},\\code{\"centre\"}, \\code{\"center\"}, \\code{\"bottom\"}, and \\code{\"top\"}.Default value is \\code{just = c(\"left\", \"top\")}. Options include: c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\". Class: Positional"
     },
     "default.units": {
         "type": "string",
         "default": null,
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
-        "class": null,
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\""
+        "class": "Positional",
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics. Default value is \\code{default.units = \"inches\"}. Options include: \"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\". Class: Positional"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
-        "class": null,
-        "description": "A logical value indicating whether graphics output should beproduced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE"
+        "class": "Positional",
+        "description": "A logical value indicating whether graphics output should beproduced. Default value is \\code{draw = TRUE}. Options include: TRUE, FALSE. Class: Positional"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
-        "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "class": "Positional",
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters. Class: Positional"
     },
     "quiet": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
-        "class": null,
-        "description": "A logical indicating whether or not to print messages. Default value is \\code{quiet = FALSE}. Options include: TRUE, FALSE.\\end}}\\value{Returns a \\code{hicSquare} object containing relevantgenomic region, Hi-C data, placement, and \\link[grid]{grob} information"
+        "class": "Positional",
+        "description": "A logical indicating whether or not to print messages. Default value is \\code{quiet = FALSE}. Options include: TRUE, FALSE. Class: Positional"
     }
 }
