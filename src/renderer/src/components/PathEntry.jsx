@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '.././assets/style.scss';
+import { BsQuestionCircle } from "react-icons/bs";
 
 function PathEntry() {
   const [pageCreateData, setPageCreateData] = useState({});
@@ -49,6 +50,7 @@ function PathEntry() {
             const type = jsonData[key].type;
             const defaultArg = jsonData[key].default;
             const options = jsonData[key].options;
+            const description = jsonData[key].description;
             return (
               <div key={variable} className="plot-div">
                 <label htmlFor={`${id}-${variable}`} style={{ color: 'white' }}>
@@ -76,6 +78,10 @@ function PathEntry() {
                     onBlur={(event) => handleInputBlur(event, id)}
                   />
                 )}
+                <div className='tooltip'>
+                  <BsQuestionCircle />
+                  <span className="tooltiptext">{description}</span>
+                </div>
               </div>
             );
           })}
