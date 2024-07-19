@@ -8,3 +8,4 @@ Make the sidebar page larger
 
 fix styling of plot image - name - trash- dropdown
 make plot name editable
+better solution for code page (styling and call for output only after run script is called)
