@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '.././assets/style.scss';
 import { BsQuestionCircle } from "react-icons/bs";
+import { BsInfoCircle } from "react-icons/bs";
 
 function PathEntry() {
   const [pageCreateData, setPageCreateData] = useState({});
@@ -91,7 +92,10 @@ function PathEntry() {
   return (
     <div id="creator">
       <div id="pageCreate" className='plot-div'>
-        <h2>Create a page:</h2>
+        <div className='page-create'>
+          <h2>Create a page:</h2>
+          <a href={`https://phanstiellab.github.io/plotgardener/reference/pageCreate.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
+        </div>
         {generatePageCreate()} {/* Call generatePageCreate here */}
       </div>
     </div>

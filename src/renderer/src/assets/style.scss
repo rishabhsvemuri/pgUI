@@ -431,3 +431,23 @@ $primary-color: lightgray;
         }
     }
   }
+
+.page-create {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    .infoButton {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        margin-left: 5px;
+        color: white;
+        :hover {
+            color: #232323;
+        }
+    }
+    h2 {
+        margin: 0;
+    }
+}
