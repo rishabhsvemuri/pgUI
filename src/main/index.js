@@ -116,7 +116,10 @@ app.whenReady().then(() => {
   });
 
   ipcMain.on('update-item', (event, itemId, field, val) => {
-    const curr = plots.get(itemId);
+    let curr = plots.get(itemId);
+    if (curr == null) {
+      curr = plots.set(itemId, null);
+    }
     curr.set(field, val);
   });
 

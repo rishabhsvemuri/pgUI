@@ -192,7 +192,7 @@ function PlotAddition() {
                       autoFocus
                     />
                   ) : (
-                    <p id='plot-name' onDoubleClick={() => handlePlotNameDoubleClick(plot.id, plot.name)}>{plot.name}</p>
+                    <p id='plot-name' className='edit-name' onClick={() => handlePlotNameDoubleClick(plot.id, plot.name)}>{plot.name}</p>
                   )}
                 <div>
                   <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
