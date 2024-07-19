@@ -2,6 +2,7 @@
     background-color: #404040;
     padding: 10px;
     color: white;
+    overflow: visible;
     
 
     select {
@@ -179,11 +180,22 @@ body {
 
 
 .input-field {
-    display: flex; /* Use flexbox for label-input pairs */
-    flex-direction: row; /* Align items in a row */
-    align-items: center; /* Align items vertically in the center */
-    margin-bottom: 10px; /* Add some space between rows of input fields */
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .input-field label {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .input-field select,
+  .input-field input {
+    flex: 2;
+    text-align: center;
+  }
 
 .fields-list {
     display: flex; /* Use flexbox */
@@ -284,34 +296,37 @@ body {
     }
   }
 
-  .tooltip {
+/* Tooltip container */
+.tooltip {
     position: relative;
     display: inline-block;
-}
-
-.tooltip .tooltiptext {
+    cursor: pointer;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
     visibility: hidden;
-    width: 75px;
-    background-color: rgb(38, 39, 39);
+    width: 100px; /* Adjust width as needed */
+    background-color: #555;
     color: #fff;
     text-align: center;
-    border: 0.1px solid grey;
-    bottom: 30%;
-    padding: 5px 0;
+    border-radius: 6px;
+    padding: 5px;
     position: absolute;
-    z-index: 1;
-    left: 45%;
-    margin-left: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
     opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 12px;
-}
-
-.tooltip:hover .tooltiptext {
+    transition: opacity 0.3s ease;
+    /* Adjust tooltip position */
+    left: 100%; /* Position to the right of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Show tooltip text on hover */
+  .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-    transition-delay: .75s;
-}
+  }
 
 
 .plot-icon-image{
