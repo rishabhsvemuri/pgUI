@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Loader from 'react-loaders';
 import '.././assets/style.scss';
+import pgUIStartUp from '.././assets/pgUIOutput.pdf'
 
 function Output() {
   const [pdfPath, setPdfPath] = useState('');
@@ -65,8 +66,9 @@ function Output() {
           <embed className='pdf' src={pdfPath} type="application/pdf" id="pdf" width="850px" height="1100px" />
         ) : (
           <>
-            <p className='pdf' id='pdf-text'>No PDF Generated</p>
-            {message != '' ? <hr id='output-hr'/>: null}
+            <embed className='pdf' src={pgUIStartUp} type="application/pdf" id="pdf" width="850px" height="1100px" />
+            {/* <p className='pdf' id='pdf-text'>No PDF Generated</p>
+            {message != '' ? <hr id='output-hr'/>: null} */}
           </>
         )}
         <p id='output-text'>{message}</p>
