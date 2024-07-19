@@ -259,7 +259,7 @@ function PlotAddition() {
                           )}
                           <div className='tooltip'>
                             <BsQuestionCircle />
-                            <span className="tooltiptext">{input.description}</span>
+                            <span className="tooltipdescription">{input.description}</span>
                           </div>
                         </div>
                       </li>

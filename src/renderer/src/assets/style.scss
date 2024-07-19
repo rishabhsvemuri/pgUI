@@ -321,13 +321,37 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   /* Show tooltip text on hover */
   .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
   }
 
+  /* Tooltip text */
+  .tooltip .tooltipdescription {
+    visibility: hidden;
+    width: 200px; /* Adjust width as needed */
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 3; /* Ensure it's above other elements */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Adjust tooltip position */
+    right: 100%; /* Position to the right of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Show tooltip text on hover */
+  .tooltip:hover .tooltipdescription {
+    visibility: visible;
+    opacity: 1;
+  }
 
 .plot-icon-image{
     display: inline-block;

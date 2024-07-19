@@ -80,7 +80,7 @@ function PathEntry() {
                 )}
                 <div className='tooltip'>
                   <BsQuestionCircle />
-                  <span className="tooltiptext">{description}</span>
+                  <span className="tooltipdescription">{description}</span>
                 </div>
               </div>
             );
