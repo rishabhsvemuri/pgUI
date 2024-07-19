@@ -52,7 +52,7 @@ function PathEntry() {
             const options = jsonData[key].options;
             const description = jsonData[key].description;
             return (
-              <div key={variable} className="plot-div">
+              <div key={variable} className="input-field">
                 <label htmlFor={`${id}-${variable}`} style={{ color: 'white' }}>
                   {variable}
                 </label>
@@ -91,7 +91,7 @@ function PathEntry() {
 
   return (
     <div id="creator">
-      <div id="pageCreate">
+      <div id="pageCreate" className='plot-div'>
         <h2>Create a page:</h2>
         {generatePageCreate()} {/* Call generatePageCreate here */}
       </div>
