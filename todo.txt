@@ -1,12 +1,9 @@
-Add annotations to all plots, within the plot. What is properties?
-Make runscript a component so it is fixed on all pages
-Get rid of share page for an info page (info on how to use app, fill out plot fields, etc.)
-Node page?
-Grid pane for justification
-Stylize the pdf embed
-Make the sidebar page larger
-
-fix styling of plot image - name - trash- dropdown
-make plot name editable
 better solution for code page (styling and call for output only after run script is called)
+Correct class division for params to make sure different instances of classes are merged
+Convert share page to info page
+Add annotations to all plots, within the plot. What is properties?
+Stylize the pdf embed
 convert px to % to account for differing screen sizes
+
+Make the sidebar page larger?
+Node page?
