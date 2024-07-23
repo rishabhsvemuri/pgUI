@@ -182,6 +182,7 @@ function PlotAddition() {
             <li key={plot.id}>
               <div className='plot-div'>
                 <div id='plot-header' className='plot-header'>
+                <div className='left-items'>
                 <img className='plot-icon-image' src={plotImages.get(plot.category)}/>
                   {editingPlotId === plot.id ? (
                     <input
@@ -192,9 +193,10 @@ function PlotAddition() {
                       autoFocus
                     />
                   ) : (
-                    <p id='plot-name' className='edit-name' onClick={() => handlePlotNameDoubleClick(plot.id, plot.name)}>{plot.name}</p>
+                    <p id='plot-name' className='plot-name' onClick={() => handlePlotNameDoubleClick(plot.id, plot.name)}>{plot.name}</p>
                   )}
-                <div>
+                </div>
+                <div className='right-items'>
                   <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
                   {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
                 </div>
