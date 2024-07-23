@@ -1,5 +1,5 @@
 Rewrite shape and basic elements plotting functions to include classes (Class: Data, Aesthetic, or Positional)
-    LOOK AT rewriting_R.txt - line 16 and onwards
+    LOOK AT rewriting_R.txt - line 20 and onwards
 Better solution for code page (styling and call for output only after run script is called)
 Correct class division for params to make sure different instances of classes are merged (look at plotManhattan)
 Convert share page to info page

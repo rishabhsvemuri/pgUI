@@ -13,14 +13,14 @@ formatting:
 
 Run devtools::document() in console to convert .R to .Rd
 
+For each file, compare the top list of params to the @param list. 
+    If a param at the top has an ' = xyz' then the corresponding @param should have a default value specified. 
+    If it does not, then it shouldn't.
+
 TODO:
 Add required or optional (i.e. A required string or An options int)
 Each param has to be specified to a class in its description 
     (Abiye needs to do just the shapes and basic elements, the rest are done)
-
-For each file, compare the top list of params to the @param list. 
-    If a param at the top has an ' = xyz' then the corresponding @param should have a default value specified. 
-    If it does not, then it shouldn't.
 
 Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Signal, MultiSignal, Raster
 Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Polygon, Text, Rect, Segments
