@@ -195,25 +195,12 @@ body {
   .input-field select,
   .input-field input {
     flex: 2;
-    text-align: center;
+    text-align: left;
+    height: 30px;
+    width: 70px;
+    margin: 5px;
+    padding-left: 5px;
   }
-
-.fields-list {
-    display: flex; /* Use flexbox */
-    flex-direction: row; /* Align items in a row */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    margin-right: 20px; /* Adjust spacing if needed */
-    input{
-        height: 30px;
-        width: 70px;
-        margin: 0px;
-        padding-left: 5px;    
-    }
-    li {
-        margin-right: 5px;
-        margin-bottom: 10px; /* Add some space between rows of items */
-    }
-}
 
 .field-content.active {
     // display: block;
