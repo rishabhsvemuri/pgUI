@@ -36,7 +36,11 @@ function Output() {
   useEffect(() => {
     const handleMessage = (event, message) => {
       setMessage(message);
-      setActiveTab('loader')
+      if (message.includes('Error')) {
+        setActiveTab('err')
+      } else {
+        setActiveTab('loader');
+      }
     };
 
     if (window.electron && window.electron.onMessage) {
@@ -71,9 +75,10 @@ function Output() {
             {message != '' ? <hr id='output-hr'/>: null} */}
           </>
         )}
-        <p id='output-text'>{message}</p>
       </div>
-
+      <div className={`pdfOrLoader ${activeTab === 'err' ? 'active' : ''}`}>
+        <p id='pdf-text'>{message}</p>
+      </div>
       <div className={`pdfOrLoader ${activeTab === 'loader' ? 'active' : ''}`}>
         <Loader className='loaderIconSpinner' type="square-spin" active style={{transform: 'scale(2.0)'}}/>
       </div>
