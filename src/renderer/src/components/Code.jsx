@@ -33,7 +33,7 @@ function Code() {
             theme: 'icecoder',
             lineNumbers: true
           }}
-          onChange={(editor, data, value) => {
+          onBeforeChange={(editor, data, value) => {
             handleChange(editor, data, value);
           }}
         />
