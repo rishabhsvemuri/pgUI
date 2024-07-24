@@ -1,0 +1,436 @@
+// Variables
+$primary-bg-color: #333;
+$secondary-bg-color: #444;
+$accent-color: #1abc9c;
+$text-color: #ecf0f1;
+$border-color: #555;
+$hover-bg-color: #555;
+$light-gray: #bdc3c7;
+
+// Mixin for flex centering
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Global styles
+body {
+    background-color: $primary-bg-color;
+    font-family: 'Roboto', sans-serif;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+.plot-div {
+    background-color: $secondary-bg-color;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: $text-color;
+    overflow: visible;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        background-color: darken($secondary-bg-color, 5%);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    select, input {
+        border-radius: 4px;
+        background-color: $hover-bg-color;
+        color: $text-color;
+        border: 1px solid $border-color;
+        padding: 8px;
+        transition: border-color 0.3s, background-color 0.3s;
+
+        &:focus {
+            border-color: $accent-color;
+            background-color: lighten($hover-bg-color, 5%);
+        }
+    }
+
+    label {
+        font-size: 14px;
+        color: $text-color;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+}
+
+select {
+    height: 35px;
+}
+
+.header {
+    width: 240px;
+    height: 90px;
+    margin: 15px 0;
+}
+
+.nav-bar {
+    background: $secondary-bg-color;
+    width: 65px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    min-height: 500px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+    .logo {
+        display: block;
+        padding: 0;
+
+        img {
+            display: block;
+            margin: 8px auto 15px;
+            width: 45px;
+        }
+    }
+
+    nav {
+        display: block;
+        text-align: center;
+        top: 30%;
+        width: 100%;
+    }
+}
+
+.place-holder {
+    width: 50px;
+}
+
+.icon-images {
+    width: 33px;
+    height: 33px;
+    color: $light-gray;
+    margin: 5px 0;
+    padding: 11px 16px;
+    box-sizing: content-box;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        transform: scale(1.1);
+    }
+}
+
+.logo-image {
+    display: block;
+    padding: 0;
+    margin: 8px auto 15px;
+    width: 45px;
+}
+
+.page {
+    margin-left: 65px;
+}
+
+.container {
+    background-color: $secondary-bg-color;
+    width: 350px;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h1, h2, h3, h4, h5 {
+        color: $text-color;
+    }
+
+    p {
+        color: $text-color;
+        margin-bottom: 1px;
+    }
+
+    // Tab content styles
+    .tab-div {
+        margin-bottom: 75px;
+    }
+
+    .tab-content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.output-div {
+    margin-left: 450px;
+    color: $text-color;
+    @include flex-center;
+}
+
+.rbtn {
+    margin: 10px 0 15px;
+    width: 350px;
+}
+
+.rbtn-div {
+    position: fixed;
+    bottom: 0;
+    background-color: $secondary-bg-color;
+    width: 350px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#path {
+    color: $text-color;
+}
+
+.field-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+
+    &.active {
+        max-height: 2000px; // Adjust this value based on your content height
+        transition: max-height 0.5s ease;
+    }
+}
+
+.input-field {
+    @include flex-center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    label {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    select,
+    input {
+        flex: 2;
+        text-align: left;
+        height: 35px;
+        width: 100%;
+        margin: 5px;
+        padding-left: 5px;
+        border-radius: 4px;
+        background-color: $hover-bg-color;
+        color: $text-color;
+        border: 1px solid $border-color;
+        transition: border-color 0.3s, background-color 0.3s;
+
+        &:focus {
+            border-color: $accent-color;
+            background-color: lighten($hover-bg-color, 5%);
+        }
+    }
+}
+
+.plot-header {
+    @include flex-center;
+    justify-content: space-between;
+    margin: 2px 0 4px;
+}
+
+.left-items,
+.right-items {
+    @include flex-center;
+    gap: 10px; // Adjust gap as needed
+}
+
+.plot-name {
+    display: inline-block;
+    margin-left: 0;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-align: left;
+}
+
+.plot-icon-image {
+    display: inline-block;
+    text-align: right;
+    width: 25px;
+    margin-top: -2px;
+    background-color: $text-color;
+    color: black;
+    border: 2px solid $secondary-bg-color;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+        background-color: $secondary-bg-color;
+        border-color: $accent-color;
+    }
+}
+
+.delete-button,
+.collapseButton {
+    cursor: pointer;
+    color: $text-color;
+    transition: color 0.3s;
+
+    &:hover {
+        color: $accent-color; // Adjust hover color
+    }
+}
+
+.half,
+.full {
+    width: 30%;
+    margin-left: 2%;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.full {
+    width: 100%;
+}
+
+.code-editor {
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+
+    .CodeMirror {
+        height: 100%;
+        width: 100%;
+        font-size: inherit;
+        color: #d8dee9;
+        min-height: 100px;
+    }
+
+    .CodeMirror-scroll {
+        height: 100%;
+    }
+
+    .CodeMirror-gutters {
+        background-color: #3b4252;
+        border-right: 1px solid #4c566a;
+    }
+
+    .CodeMirror-linenumber {
+        color: #d8dee9;
+    }
+}
+
+// Tooltip container
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    .tooltiptext,
+    .tooltipdescription {
+        visibility: hidden;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1000; // Ensure it's above other elements
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .tooltiptext {
+        width: 100px; // Adjust width as needed
+        left: 100%; // Position to the right of the icon
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .tooltipdescription {
+        width: 200px; // Adjust width as needed
+        right: 100%; // Position to the left of the icon
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover {
+        .tooltiptext,
+        .tooltipdescription {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+#pdf-text,
+#output-text {
+    @include flex-center;
+    color: #888787;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 40vh;
+}
+
+#output-hr {
+    color: #888787;
+}
+
+// Import loaders
+@import 'loaders.css/src/animations/square-spin.scss';
+
+.loader-container {
+    @include flex-center;
+    height: 100%;
+}
+
+.loader-hidden {
+    display: none;
+}
+
+.loader-active {
+    display: block;
+}
+
+.pdfOrLoader {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.loaderIconSpinner {
+    margin-left: 630px;
+    margin-top: 400px;
+}
+
+.dropdown-container {
+    @include flex-center;
+    margin: 10px 0;
+
+    .infoButton {
+        margin: 5px;
+        color: $text-color;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+.page-create {
+    @include flex-center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .infoButton {
+        @include flex-center;
+        margin: 5px;
+        color: $text-color;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
