@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
+import 'codemirror/theme/icecoder.css';
 import 'codemirror/mode/r/r';
 
 function Code() {
@@ -29,10 +30,10 @@ function Code() {
           value={code}
           options={{
             mode: 'r',
-            theme: 'material',
+            theme: 'icecoder',
             lineNumbers: true
           }}
-          onBeforeChange={(editor, data, value) => {
+          onChange={(editor, data, value) => {
             handleChange(editor, data, value);
           }}
         />
