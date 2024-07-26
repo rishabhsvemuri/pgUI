@@ -317,10 +317,9 @@ function PlotAddition() {
                   ))}
                   <div className='anno-div'>
                     {annotations.map((annotation) => (
-                      <div>
-                        <div className='dropdown-container'> 
+                      <div key={annotation.id}>
+                        <div className='dropdown-container'>
                           <select
-                            key={annotation.id}
                             value={annotation.type}
                             onChange={(event) => handleAnnotationChange(plot.id, annotation.id, event)}
                           >
@@ -361,7 +360,7 @@ function PlotAddition() {
                                     id={input.id}
                                     name={input.variable}
                                     placeholder={input.default}
-                                    data-plot-id={plot.id}
+                                    data-plot-id={annotation.id}
                                   />
                                 )}
                                 <div className='tooltip'>
@@ -374,8 +373,9 @@ function PlotAddition() {
                         ))}
                       </div>
                     ))}
-                    {plot.category !== 'Select One' ?
-                    (<button onClick={() => handleAddAnno(plot.id)}>Add Annotation +</button>) : null}
+                    {plot.category !== 'Select One' ? (
+                      <button onClick={() => handleAddAnno(plot.id)}>Add Annotation +</button>
+                    ) : null}
                   </div>
                 </ul>
               </div>
