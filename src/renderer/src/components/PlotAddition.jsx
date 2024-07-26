@@ -153,11 +153,9 @@ function PlotAddition() {
 
   const handleDeletePlot = (id) => {
     setPlots(plots.filter(plot => plot.id !== id));
-    annotations.map((annotation) => {
-      if (annotation.plot === id) {
-        handleDeleteAnno(annotation.id)
-      }
-      return null;
+    const relatedAnnotations = annotations.filter(annotation => annotation.plot === id);
+    relatedAnnotations.forEach(annotation => {
+      handleDeleteAnno(annotation.id);
     });
     window.electron.updateCategory(null, null, id);
   };
@@ -219,9 +217,9 @@ function PlotAddition() {
   // handle annotation blur and input changes
 
   const handleDeleteAnno = (id) => {
-    setAnnotations(annotations.filter(annotation => annotation.id !== id));
+    setAnnotations(prevAnnotations => prevAnnotations.filter(annotation => annotation.id !== id));
     window.electron.updateCategory(null, null, id);
-  };
+  };  
 
   return (
     <div id="container">
