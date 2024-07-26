@@ -337,13 +337,6 @@ function PlotAddition() {
                           <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)}> </FaRegTrashCan>
                         </div>
                         {annotation.formData && annotation.formData.map((input, idx, arr) => (
-                          <React.Fragment key={input.id}>
-                            {(idx === 0 || input.section !== arr[idx - 1].section) && (
-                              <>
-                                {idx !== 0 && <hr />}
-                                <h3>{input.section}</h3>
-                              </>
-                            )}
                             <li>
                               <div className='input-field'>
                                 <label htmlFor={input.id}>{input.variable}</label>
@@ -368,7 +361,6 @@ function PlotAddition() {
                                 </div>
                               </div>
                             </li>
-                          </React.Fragment>
                         ))}
                       </div>
                     ))}
