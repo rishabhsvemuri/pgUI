@@ -211,6 +211,7 @@ function PlotAddition() {
             window.electron.loadJson(event.target.value, annotationId);
             return { ...annotation, type: event.target.value };
           }
+          return annotation;
         });
         setAnnotations(updatedAnnotations);
   };
