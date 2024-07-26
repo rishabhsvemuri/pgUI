@@ -334,7 +334,7 @@ function PlotAddition() {
                             <option value="annoYaxis">annoYaxis</option>
                             <option value="annoZoomLines">annoZoomLines</option>
                           </select>
-                          <FaRegTrashCan className='infoButton' onClick={() => handleDeleteAnno(annotation.id)}> </FaRegTrashCan>
+                          <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)}> </FaRegTrashCan>
                         </div>
                         {annotation.formData && annotation.formData.map((input, idx, arr) => (
                           <React.Fragment key={input.id}>
