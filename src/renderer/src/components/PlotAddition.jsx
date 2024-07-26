@@ -194,7 +194,7 @@ function PlotAddition() {
   const handleAddAnno = (id) => {
       const newAnno = {
         plot: id,
-        id: `${id}_annotation_${Date.now()}`,
+        id: `${id}annotation${Date.now()}`,
         type: 'Select One',
         formData: [],
       };
@@ -214,7 +214,12 @@ function PlotAddition() {
         setAnnotations(updatedAnnotations);
   };
 
-  // handle annotation blur and input changes
+  const handleAnnoBlur = useCallback((event) => {
+    const { dataset: { annotationId }, name, value } = event.target;
+    if (annotationId && name) {
+      window.electron.updateItemValue(annotationId, name, value);
+    }
+  }, []);
 
   const handleDeleteAnno = (id) => {
     setAnnotations(prevAnnotations => prevAnnotations.filter(annotation => annotation.id !== id));
@@ -315,9 +320,9 @@ function PlotAddition() {
                     </React.Fragment>
                   ))}
                   <div className='anno-div'>
-                    {annotations.map((annotation) => (
-                      <div key={annotation.id}>
-                        <div className='dropdown-container'>
+                    {annotations.map((annotation, index) => (
+                      <div key={annotation.id} >
+                        <div key={index} className='dropdown-container'>
                           <select
                             value={annotation.type}
                             onChange={(event) => handleAnnotationChange(plot.id, annotation.id, event)}
@@ -338,10 +343,10 @@ function PlotAddition() {
                         </div>
                         {annotation.formData && annotation.formData.map((input, idx, arr) => (
                             <li>
-                              <div className='input-field'>
+                              <div className='input-field' onBlur={handleAnnoBlur} onChange={handleAnnoBlur}>
                                 <label htmlFor={input.id}>{input.variable}</label>
                                 {input.options ? (
-                                  <select id={input.id} name={input.variable} data-plot-id={plot.id}>
+                                  <select id={input.id} name={input.variable} data-plot-id={annotation.id}>
                                     {input.options.map((option, idx) => (
                                       <option key={idx} value={option}>{option}</option>
                                     ))}
