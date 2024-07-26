@@ -16,7 +16,7 @@ $light-gray: #bdc3c7;
 
 // Global styles
 body {
-    background-color: $primary-bg-color;
+    background-color: $secondary-bg-color;
     font-family: 'Roboto', sans-serif;
     color: $text-color;
     margin: 0;
@@ -24,7 +24,7 @@ body {
 }
 
 .plot-div {
-    background-color: $secondary-bg-color;
+    background-color: $primary-bg-color;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
 
     &:hover {
-        background-color: darken($secondary-bg-color, 5%);
+        background-color: darken($primary-bg-color, 5%);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 

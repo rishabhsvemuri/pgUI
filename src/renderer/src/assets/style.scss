@@ -3,6 +3,7 @@
     padding: 10px;
     color: white;
     overflow: visible;
+    height: 100%;
 
     select {
         border-radius: 0;
@@ -445,5 +446,17 @@ $primary-color: lightgray;
     }
     h2 {
         margin: 0;
+    }
+}
+
+.anno-div {
+    // display: flex;
+    // align-items: center;
+    select {
+        width: 100%;
+        // margin-bottom: 10px;
+    }
+    button {
+        margin-top: 10px;
     }
 }
