@@ -341,7 +341,7 @@ function PlotAddition() {
                           </select>
                           <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)}> </FaRegTrashCan>
                         </div>
-                        {annotation.formData && annotation.formData.map((input, idx, arr) => (
+                        {annotation.formData && annotation.formData.map((input) => (
                             <li>
                               <div className='input-field' onBlur={handleAnnoBlur} onChange={handleAnnoBlur}>
                                 <label htmlFor={input.id}>{input.variable}</label>
