@@ -9,3 +9,6 @@ convert px to % to account for differing screen sizes
 
 Make the sidebar page larger?
 Node page?
+
+Error: Warning: Each child in a list should have a unique "key" prop.
+Plot param should not be displayed for annotations, plot.id should be attributed to it automatically

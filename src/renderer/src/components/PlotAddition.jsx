@@ -89,7 +89,14 @@ function PlotAddition() {
       console.log('jsonData not available in PlotAddition');
       return [];
     }
+
     return Object.keys(jsonData).map((key) => {
+      if (key === 'plot' && id.includes('annotation')) {
+        const plotid = id.split('annotation')
+        window.electron.updateItemValue(id, key, plotid[0]);
+        return null; // Skip this key
+      }
+      
       let options = jsonData[key].options;
       if (options != null) {
         if (options.includes('c(')) {
@@ -107,7 +114,7 @@ function PlotAddition() {
         section: jsonData[key].class,
         id: `${id}-${key}`,
       };
-    });
+    }).filter(item => item !== null);
   };
 
   const handleAddPlot = () => {
