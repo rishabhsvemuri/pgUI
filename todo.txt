@@ -1,3 +1,4 @@
+Error: Warning: Each child in a list should have a unique "key" prop.
 Rewrite shape and basic elements plotting functions to include classes (Class: Data, Aesthetic, or Positional)
     LOOK AT rewriting_R.txt - line 20 and onwards
 Better solution for code page (styling and call for output only after run script is called)

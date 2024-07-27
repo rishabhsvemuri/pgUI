@@ -3,6 +3,8 @@
     padding: 10px;
     color: white;
     overflow: visible;
+    height: 100%;
+    max-height: none;
 
     select {
         border-radius: 0;
@@ -84,10 +86,11 @@ select {
     margin-bottom: 5px;
     padding: 11px 16px;
     box-sizing: content-box;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 
     &:hover {
         background-color: #232323;
+        transform: scale(1.2);
     }
 }
 
@@ -203,7 +206,7 @@ body {
 
 .field-content.active {
     // display: block;
-    max-height: 2000px; // Adjust this value based on your content height
+    max-height: 100%; // Adjust this value based on your content height
     transition: max-height 0.5s ease;
     
 }
@@ -214,6 +217,7 @@ body {
     align-items: center; /* Vertically center the items */
     margin-top: 2px;
     margin-bottom: 4px;
+    height: 100%;
 }
 
 .left-items {
@@ -445,5 +449,18 @@ $primary-color: lightgray;
     }
     h2 {
         margin: 0;
+    }
+}
+
+.anno-div {
+    // display: flex;
+    // align-items: center;
+    height: 100%;
+    select {
+        width: 100%;
+        // margin-bottom: 10px;
+    }
+    button {
+        margin-top: 10px;
     }
 }
