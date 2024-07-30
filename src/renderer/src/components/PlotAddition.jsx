@@ -328,6 +328,7 @@ function PlotAddition() {
                   ))}
                   <div className='anno-div'>
                     {annotations.map((annotation, index) => (
+                      (plot.id == annotation.plot ? 
                       <div key={annotation.id} >
                         <div key={index} className='dropdown-container'>
                           <select
@@ -374,7 +375,7 @@ function PlotAddition() {
                               </div>
                             </li>
                         ))}
-                      </div>
+                      </div>: null)
                     ))}
                     {plot.category !== 'Select One' ? (
                       <button onClick={() => handleAddAnno(plot.id)}>Add Annotation +</button>
