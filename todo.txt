@@ -1,12 +1,12 @@
 Error: Warning: Each child in a list should have a unique "key" prop.
-Rewrite shape and basic elements plotting functions to include classes (Class: Data, Aesthetic, or Positional)
-    LOOK AT rewriting_R.txt - line 20 and onwards
 Better solution for code page (styling and call for output only after run script is called)
 Correct class division for params to make sure different instances of classes are merged (look at plotManhattan)
 Convert share page to info page
-Add annotations to all plots, within the plot. What is properties?
-Stylize the pdf embed
 convert px to % to account for differing screen sizes
 
-Make the sidebar page larger?
-Node page?
+
+Both: Add required or optional (i.e. A required string or An options int)
+Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Raster, Polygon, Text, Rect
+Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Segments, Signal, MultiSignal
+    Abiye: Add classes to all shape and basic elements plotting functions
+RUN devtools::document() IN CONSOLE TO CONVERT .R to .Rd
