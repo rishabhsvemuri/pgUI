@@ -5,8 +5,8 @@ Convert share page to info page
 convert px to % to account for differing screen sizes
 
 
-Both: Add required or optional (i.e. A required string or An options int)
+Both: Add required or optional (i.e. A required string or An optional int)
 Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Raster, Polygon, Text, Rect
 Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Segments, Signal, MultiSignal
-    Abiye: Add classes to all shape and basic elements plotting functions
+    Abiye: Add classes to all shape and basic elements plotting functions (Class: Data, Aesthetic, Positional)
 RUN devtools::document() IN CONSOLE TO CONVERT .R to .Rd
