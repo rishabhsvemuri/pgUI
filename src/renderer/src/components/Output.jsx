@@ -67,10 +67,10 @@ function Output() {
     <div className='output-div'>
       <div className={`pdfOrLoader ${activeTab === 'pdf' ? 'active' : ''}`}>
         {showPdf && pdfPath ? (
-          <embed className='pdf' src={pdfPath} type="application/pdf" id="pdf" width="100%" height="750px" />
+          <embed className='pdf' src={pdfPath} type="application/pdf" id="pdf" width="95%" height="750px" />
         ) : (
           <>
-            <embed className='pdf' src={pgUIStartUp} type="application/pdf" id="pdf" width="100%" height="750px" />
+            <embed className='pdf' src={pgUIStartUp} type="application/pdf" id="pdf" width="95%" height="750px" />
           </>
         )}
       </div>
