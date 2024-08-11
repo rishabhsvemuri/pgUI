@@ -8,14 +8,14 @@
     },
     "chromstart": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer end position on chromosome to be plotted"
@@ -71,14 +71,14 @@
     },
     "limitLabel": {
         "type": "logical",
-        "default": null,
+        "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
         "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space"
     },
     "transcriptHighlights": {
         "type": "two-column",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Aesthetic",
         "description": "A two-column dataframe with a column named\"transcript\" or \"gene\" containing transcript names or their associated genenames as strings to highlight and a column named \"color\" containingcorresponding highlight colors"
@@ -148,7 +148,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
         "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"

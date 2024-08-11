@@ -2,41 +2,57 @@
     "plot": {
         "type": "object",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Plot object to annotate with x-axis"
     },
     "at": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector of x-value locations for tick marks"
     },
     "label": {
         "type": "logical",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A logical value indicating whether to draw the labels onthe tick marks, or an expression or character vector which specifythe labels to use"
     },
     "main": {
         "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A logical value indicating whether to draw the x-axis at thebottom of the plot"
     },
     "scipen": {
         "type": "integer",
         "default": "999",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An integer indicating the penalty to be applied whendeciding to print numeric values in fixed or exponential notation"
     },
     "axisLine": {
         "type": "logical",
         "default": "FALSE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A logical value indicating whether to show the axis line"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters"
     }
 }

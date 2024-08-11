@@ -15,7 +15,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
         "description": "A string indicating the default units to use if\\code{width} or \\code{height} are only given as numerics"

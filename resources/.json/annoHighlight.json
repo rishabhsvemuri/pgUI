@@ -71,7 +71,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": null,
         "class": null,
         "description": "A string indicating the default units to use if\\code{y} or \\code{height} are only given as numerics or numeric vectors"

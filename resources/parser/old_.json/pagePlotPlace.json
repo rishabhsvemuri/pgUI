@@ -2,46 +2,64 @@
     "plot": {
         "type": "object",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Plot object to be placed, defined by theoutput of a plotgardener plotting function"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying plot width"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying plot height"
     },
     "just": {
         "type": "of",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Justification of plot relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are onlygiven as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A logical value indicating whether graphics outputshould be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     }
 }

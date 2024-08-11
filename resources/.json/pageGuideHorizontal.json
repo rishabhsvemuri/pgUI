@@ -8,7 +8,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": null,
         "class": null,
         "description": "A string indicating the default units to useif \\code{y} is only given as a numeric"

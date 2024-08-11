@@ -2,141 +2,197 @@
     "data": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the BEDPE file path, a dataframein BEDPE format specifying data to be plotted, or a\\link[InteractionSet]{GInteractions} object"
     },
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the chromosome of region to be plotted"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": "any integer"
+        "options": null,
+        "class": "Data",
+        "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": "any integer"
+        "options": null,
+        "class": "Data",
+        "description": "An integer end position on chromosome to be plotted"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "style": {
         "type": "character",
         "default": "\"2D\"",
-        "options": "\"2D\", \"3D\""
+        "options": "\"2D\", \"3D\"",
+        "class": "Aesthetic",
+        "description": "A character value describing the style of arches"
     },
     "flip": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to reflect arches overthe x-axis"
     },
     "curvature": {
         "type": "numeric",
         "default": "5",
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric indicating the number of points along thearch curvature"
     },
     "archHeight": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric value, numeric vector, or column namein data specifying the arch heights"
     },
     "fill": {
         "type": "character",
         "default": "#1f4297\"",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value, a vector, or a\\link[plotgardener]{colorby} object specifying fill colors of arches"
     },
     "linecolor": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": "NA, \u201cfill\u201d",
+        "class": "Aesthetic",
+        "description": "A character value, a vector, or a\\link[plotgardener]{colorby} object specifying the color of the linesoutlining arches"
     },
     "alpha": {
         "type": "numeric",
         "default": "0.4",
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric value specifying transparency"
     },
     "bg": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value indicating background color"
     },
     "clip": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to clip anyarches that get cutoff in the given genomic region"
     },
     "clip.noAnchor": {
         "type": "logical",
         "default": null,
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to clipany arches that overlap the given genomic region but do nothave an anchor in that region"
     },
     "range": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric vector of length 2 specifying the y-rangeof \\code{archHeight} to plot (c(min, max))"
     },
     "baseline": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to includea baseline along the x-axis"
     },
     "baseline.color": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A string baseline color"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric baseline line width"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying pair arches plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying BEDPE arches plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying pair arches plot width"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying pair arches plot height"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": "Positional",
+        "description": "A string specifying the justification of pair arches plot relative to its (x, y)location"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"centimeters\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": "Positional",
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Positional",
+        "description": "A logical value indicating whether graphics output should beproduced"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "Additional grid graphical parameters"
     }
 }

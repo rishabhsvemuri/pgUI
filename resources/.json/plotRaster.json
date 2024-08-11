@@ -43,7 +43,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
         "description": "A string indicating the default unitsto use if \\code{x}, \\code{y}, \\code{width}, or \\code{height}are only given as numerics or numeric vectors"

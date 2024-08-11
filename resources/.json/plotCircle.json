@@ -22,7 +22,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
         "description": "A string indicating the default units to useif \\code{r}, \\code{x}, or \\code{y} are only given as numerics ornumeric vectors"

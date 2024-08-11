@@ -2,136 +2,190 @@
     "data": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string "
     },
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying a chromosome of region to be plotted"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer end position on chromosome to be plotted"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string representing the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "fill": {
         "type": "character",
         "default": "\"#7ecdbb\"",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value, a vector, or a\\link[plotgardener]{colorby} object specifying fill colors of range elements"
     },
     "linecolor": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": "NA, \u201cfill\u201d",
+        "class": "Aesthetic",
+        "description": "A character value, a vector, or a\\link[plotgardener]{colorby} object specifying the color of the linesoutlining range elements"
     },
     "order": {
         "type": "character",
         "default": "\"width\"",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value specifying how to order pileup databefore assigning rows"
     },
     "collapse": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to collapserange elements into a single row, or intotwo rows if \\code{strandSplit = TRUE}"
     },
     "boxHeight": {
         "type": "numeric",
         "default": "unit(2, \"mm\")",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric or unit object specifying height of range elementboxes"
     },
     "spaceWidth": {
         "type": "numeric",
         "default": "0.02",
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric value specifying the width of minimum spacingbetween range element boxes, as a fraction of the plot's genomic range"
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric value specifying the height of spacing betweenrange element boxes on different rows, as a fraction of boxHeight"
     },
     "limitLabel": {
         "type": "logical",
         "default": null,
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space"
     },
     "strandSplit": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether plus andminus-stranded elements should be separated"
     },
     "bg": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value indicating background color"
     },
     "baseline": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to include abaseline along the x-axis"
     },
     "baseline.color": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A string baseline color"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric baseline line width"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying ranges plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying ranges plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying ranges plot width"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying ranges plot height"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": "Positional",
+        "description": "A string specifying the justification of ranges plot relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"centimeters\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": "Positional",
+        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
     },
     "draw": {
         "type": "logical",
         "default": null,
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Positional",
+        "description": "A logical value indicating whether graphics output shouldbe produced"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "Additional grid graphical parameters"
     }
 }

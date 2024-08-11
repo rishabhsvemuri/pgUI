@@ -302,7 +302,7 @@ function PlotAddition() {
                       )}
                       <li>
                         <div className='input-field'>
-                          <label htmlFor={input.id}>{input.required ? `${input.variable}*` : input.variable}</label>
+                          <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id}>
                               {input.options.map((option, idx) => (
@@ -352,7 +352,7 @@ function PlotAddition() {
                         {annotation.formData && annotation.formData.map((input) => (
                             <li>
                               <div className='input-field' onBlur={handleAnnoBlur} onChange={handleAnnoBlur}>
-                                <label htmlFor={input.id}>{input.variable}</label>
+                                <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                                 {input.options ? (
                                   <select id={input.id} name={input.variable} data-plot-id={annotation.id}>
                                     {input.options.map((option, idx) => (

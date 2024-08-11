@@ -2,61 +2,85 @@
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying polygonvertex x-locations"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector, unit object, or a character vectorof values containing a \"b\" combined with a numeric value specifyingpolygon vertex y-locations"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numeric vectors"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying polygon line color"
     },
     "lwd": {
         "type": "numeric",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying polygon line width"
     },
     "lty": {
         "type": "numeric",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying polygon line type"
     },
     "fill": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying polygon fill color"
     },
     "alpha": {
         "type": "value",
         "default": "1",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Numeric value specifying color transparency"
     },
     "id": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector used to separate locations in \\code{x} and\\code{y} into multiple polygons"
     },
     "id.lengths": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector used to separate locations in\\code{x} and \\code{y} into multiple polygons"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters"
     }
 }

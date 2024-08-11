@@ -2,16 +2,22 @@
     "vector": {
         "type": "to",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Vector to map to color"
     },
     "palette": {
         "type": "palette",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Color palette function"
     },
     "range": {
         "type": "of",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Range of values to map for a numerical value"
     }
 }
