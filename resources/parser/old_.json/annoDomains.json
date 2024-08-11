@@ -2,31 +2,43 @@
     "plot": {
         "type": "Hi-C",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A Hi-C plot object from \\code{plotHicSquare} or\\code{plotHicTriangle} on which to annotate pixels"
     },
     "data": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A string specifying the BED file path, a dataframe in BEDformat, or a \\link[GenomicRanges]{GRanges} object specifyingdomain ranges"
     },
     "half": {
         "type": "character",
         "default": "\"inherit\"",
-        "options": "\"inherit\", \"both\", \"top\", \"bottom\""
+        "options": "\"inherit\", \"both\", \"top\", \"bottom\"",
+        "class": null,
+        "description": "A character value specifying which half of hic plotsto annotate"
     },
     "linecolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying the color of the domainannotations"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters"
     }
 }

@@ -22,14 +22,14 @@
     },
     "gene.id.column": {
         "type": "of",
-        "default": null,
+        "default": "\"ENTREZID\"",
         "options": null,
         "class": null,
         "description": "String of the TxDb column name that refers tothe given TxDb gene IDs"
     },
     "display.column": {
         "type": "of",
-        "default": null,
+        "default": "\"SYMBOL\"",
         "options": null,
         "class": null,
         "description": "String of the OrgDb column name that refers tothe type of gene symbol to be displayed in plots"

@@ -8,14 +8,14 @@
     },
     "chromstart": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer start of genome label"
     },
     "chromend": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer end of genome label"
@@ -134,7 +134,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
         "description": "A string indicating the default units touse if \\code{x}, \\code{y}, or \\code{length} are only given as numerics"

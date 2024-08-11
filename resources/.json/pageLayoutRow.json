@@ -29,7 +29,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": null,
         "class": null,
         "description": "A string indicating the default units to useif \\code{y}, \\code{h}, or \\code{s} are only given as numerics"

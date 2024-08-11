@@ -92,28 +92,28 @@
     },
     "x": {
         "type": "numeric",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Positional",
         "description": "A numeric or unit object specifying genes plot x-location"
     },
     "y": {
         "type": "numeric",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Positional",
         "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying genes plot y-location"
     },
     "width": {
         "type": "numeric",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Positional",
         "description": "A numeric or unit object specifying genes plot width"
     },
     "height": {
         "type": "numeric",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Positional",
         "description": "A numeric or unit object specifying genes plot height"
@@ -127,7 +127,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
         "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"

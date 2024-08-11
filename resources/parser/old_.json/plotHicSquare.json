@@ -2,126 +2,176 @@
     "data": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string path to "
     },
     "resolution": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Data",
+        "description": "A numeric specifying the width inbasepairs of each pixel"
     },
     "zrange": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Data",
+        "description": "A numeric vector of length 2 specifying the rangeof interaction scores to plot, where extreme values will be setto the max or min"
     },
     "norm": {
         "type": "character",
         "default": "\"KR\"",
-        "options": "any character value"
+        "options": null,
+        "class": "Data",
+        "description": "A character value specifying hic data normalization method,if giving "
     },
     "matrix": {
         "type": "value",
         "default": "\"observed\"",
-        "options": "\"observed\", \"oe\", \"log2oe\""
+        "options": "\"observed\", \"oe\", \"log2oe\"",
+        "class": "Data",
+        "description": "Character value indicating the type of matrix to output"
     },
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string representing the chromosome of region to be plotted"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer end position on chromosome to be plotted"
     },
     "altchrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string representing the alternate chromosome for off-diagonal plottingor interchromosomal plotting"
     },
     "altchromstart": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer alternate chromosome start positionfor off-diagonal plotting or interchromosomal plotting"
     },
     "altchromend": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer alternate chromosome end positionfor off-diagonal plotting or interchromosomal plotting"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "palette": {
         "type": "function",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A function describing the color palette to use forrepresenting scale of interaction scores"
     },
     "colorTrans": {
         "type": "string",
         "default": "\"linear\"",
-        "options": "\"linear\", \"log\", \"log2\", or \"log10\""
+        "options": "\"linear\", \"log\", \"log2\", or \"log10\"",
+        "class": "Aesthetic",
+        "description": "A string specifying how to scale Hi-C colors"
     },
     "half": {
         "type": "character",
         "default": "\"both\"",
-        "options": "\"top\", \"both\", \"bottom\""
+        "options": "\"top\", \"both\", \"bottom\"",
+        "class": "Aesthetic",
+        "description": "A character value indicating which diagonal regions to plot"
     },
     "bg": {
         "type": "character",
         "default": "NA",
-        "options": "any character value"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value indicating background color"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying square Hi-C plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying square Hi-C plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying square Hi-C plot width"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying square Hi-C plot height"
     },
     "just": {
         "type": "justification",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": "Positional",
+        "description": "The justification of square Hi-C plot relative toits (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"centimeters\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": "Positional",
+        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Positional",
+        "description": "A logical value indicating whether graphics output should beproduced"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "quiet": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Positional",
+        "description": "A logical indicating whether or not to print messages"
     }
 }

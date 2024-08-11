@@ -15,14 +15,14 @@
     },
     "chromstart": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer end position on chromosome to be plotted"
@@ -78,7 +78,7 @@
     },
     "limitLabel": {
         "type": "logical",
-        "default": null,
+        "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
         "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space"
@@ -92,14 +92,14 @@
     },
     "baseline.color": {
         "type": "string",
-        "default": null,
+        "default": "\"grey\"",
         "options": null,
         "class": "Aesthetic",
         "description": "A string specifying the baseline color"
     },
     "baseline.lwd": {
         "type": "numeric",
-        "default": null,
+        "default": "1",
         "options": null,
         "class": "Aesthetic",
         "description": "A numeric specifying the baseline line width"
@@ -141,7 +141,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
         "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"

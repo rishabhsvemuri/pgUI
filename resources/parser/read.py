@@ -23,7 +23,7 @@ def parse_params(file_path, file_name):
 def parse_to_JSON(file_path, file_name, root):
     pattern_var = r"\\item\{(.*?)\}"
     pattern_type = r"\}\{\w+\s*(.*?)\s"
-    pattern_default = r"Default value is \\code\{\w+\s*=\s*(.*?)\}"
+    pattern_default = r"Default value is \\code\{[\w.]+\s*=\s*(.*?)\}"
     pattern_options = r"Options include: \s*(.*?)\."
     pattern_class = r"Class:\s*(.*?)\."
     pattern_description = r"\}\{(.*?)\."

@@ -106,7 +106,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": null,
         "class": null,
         "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numerics"

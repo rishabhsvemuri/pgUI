@@ -2,76 +2,106 @@
     "file": {
         "type": "character",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying the path to the "
     },
     "chrom": {
         "type": "of",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Chromosome of data, as a string"
     },
     "chromstart": {
         "type": "start",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Integer start position on chromosome"
     },
     "chromend": {
         "type": "end",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Integer end position on chromosome"
     },
     "altchrom": {
         "type": "chromosome",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Alternate chromosome for interchromosomal data,as a string"
     },
     "altchromstart": {
         "type": "chromosome",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Alternate chromosome integer start positionfor interchromosomal data"
     },
     "altchromend": {
         "type": "chromosome",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Alternate chromosome integer end positionfor interchromosomal data"
     },
     "assembly": {
         "type": "genome",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Default genome assembly as a string or a\\link[plotgardener]{assembly} object"
     },
     "resolution": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying the width of each pixel"
     },
     "res_scale": {
         "type": "character",
         "default": "\"BP\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying the resolution scale"
     },
     "zrange": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector of length 2 specifying the range ofinteraction scores, where extreme values will be set to the max or min"
     },
     "norm": {
         "type": "value",
         "default": "\"KR\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Character value specifying hic data normalization method"
     },
     "matrix": {
         "type": "value",
         "default": "\"observed\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Character value indicating the type of matrix to output"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "quiet": {
         "type": "logical",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A logical indicating whether or not to print messages"
     }
 }

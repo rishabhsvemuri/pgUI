@@ -2,91 +2,127 @@
     "legend": {
         "type": "character",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character or expression vector to appear in the legend"
     },
     "fill": {
         "type": "specified",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "If specified, this argument will produce boxes filled withthe specified colors to appear beside the legend text"
     },
     "pch": {
-        "type": "plotting",
+        "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector plotting symbols appearing in the legend"
     },
     "lty": {
         "type": "line",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "The line types for lines appearing in the legend"
     },
     "orientation": {
         "type": "string",
         "default": "\"v\"",
-        "options": null
+        "options": "\"v\", \"h\"",
+        "class": null,
+        "description": "A string specifying legend orientation"
     },
     "title": {
         "type": "character",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value giving a title to be placed atthe top of the legend"
     },
     "fontsize": {
         "type": "numeric",
         "default": "10",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying text fontsize in points"
     },
     "border": {
-        "type": "value",
+        "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical value indicating whether to add a borderaround heatmap legend"
     },
     "bg": {
-        "type": "value",
+        "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value indicating background color"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying legend x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying legend y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying legend width"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric or unit object specifying legend height"
     },
     "just": {
-        "type": "of",
+        "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": null,
+        "description": "A string specifying the justification of legend relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical value indicating whether graphics output shouldbe produced"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters"
     }
 }

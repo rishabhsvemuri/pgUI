@@ -36,7 +36,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"native\"",
         "options": null,
         "class": null,
         "description": "A string indicating the default units to useif \\code{x0}, \\code{y0}, \\code{x1}, or \\code{y1} are only givenas numeric vectors"

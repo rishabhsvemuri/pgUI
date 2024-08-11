@@ -15,14 +15,14 @@
     },
     "chromstart": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Data",
         "description": "An integer end position on chromosome to be plotted"
@@ -99,7 +99,7 @@
     },
     "clip.noAnchor": {
         "type": "logical",
-        "default": null,
+        "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
         "description": "A logical value indicating whether to clipany arches that overlap the given genomic region but do nothave an anchor in that region"
@@ -120,14 +120,14 @@
     },
     "baseline.color": {
         "type": "string",
-        "default": null,
+        "default": "\"grey\"",
         "options": null,
         "class": "Aesthetic",
         "description": "A string baseline color"
     },
     "baseline.lwd": {
         "type": "numeric",
-        "default": null,
+        "default": "1",
         "options": null,
         "class": "Aesthetic",
         "description": "A numeric baseline line width"
@@ -169,7 +169,7 @@
     },
     "default.units": {
         "type": "string",
-        "default": null,
+        "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
         "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"

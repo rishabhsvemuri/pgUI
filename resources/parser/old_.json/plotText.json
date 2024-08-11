@@ -2,56 +2,78 @@
     "label": {
         "type": "or",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Character or expression of text to be plotted"
     },
     "fontcolor": {
         "type": "character",
         "default": "\"black\"",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A character value specifying text fontcolor"
     },
     "fontsize": {
         "type": "numeric",
         "default": "12",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying text fontsize in points"
     },
     "rot": {
         "type": "numeric",
         "default": "0",
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric specifying the angle to rotate the text"
     },
     "check.overlap": {
         "type": "logical",
         "default": null,
-        "options": null
+        "options": "TRUE, FALSE",
+        "class": null,
+        "description": "A logical value to indicate whether to checkfor and omit overlapping text"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector or unit object specifying text x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "A numeric vector, unit object, or a character vector ofvalues containing a \"b\" combined with a numeric valuespecifying text y-locations"
     },
     "just": {
         "type": "of",
         "default": "\"center\"",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": null,
+        "description": "Justification of text relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": null,
+        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "Additional grid graphical parameters"
     }
 }

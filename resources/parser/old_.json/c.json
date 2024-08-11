@@ -2,11 +2,15 @@
     "...": {
         "type": null,
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "\\link[plotgardener]{pgParams} objects to be concatenated"
     },
     "recursive": {
         "type": ".",
         "default": null,
-        "options": null
+        "options": null,
+        "class": null,
+        "description": "logical"
     }
 }

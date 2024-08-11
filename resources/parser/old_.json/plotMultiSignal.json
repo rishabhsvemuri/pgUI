@@ -2,146 +2,204 @@
     "data": {
         "type": "of",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "List of data to be plotted as character values specifyingmultiple bigwig file paths, dataframes in BED format, or\\link[GenomicRanges]{GRanges} objects with metadata column \\code{score}"
     },
     "binSize": {
         "type": "numeric",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A numeric specifying the length of each databin in basepairs"
     },
     "binCap": {
         "type": "logical",
         "default": "TRUE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Data",
+        "description": "A logical value indicating whether the function willlimit the number of data bins to 8,000"
     },
     "negData": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Data",
+        "description": "A logical value indicating whether any of the data has bothpositive and negative scores and the y-axis of each signal trackshould be split"
     },
     "chrom": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the chromosome of region to be plotted"
     },
     "chromstart": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "An integer end position on chromosome to be plotted"
     },
     "assembly": {
         "type": "string",
         "default": "\"hg38\"",
-        "options": null
+        "options": null,
+        "class": "Data",
+        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
     },
     "linecolor": {
         "type": "character",
         "default": "\"#37a7db\"",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value or vector of character values specifyingthe line color(s) outlining the signal tracks"
     },
     "fill": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value or vector specifyingthe fill color(s) of the signal tracks"
     },
     "ymax": {
         "type": "numeric",
         "default": "1",
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric specifying the fraction of the max y-valueto set as the height of each plot"
     },
     "range": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric vector of length 2 specifying the y-rangeof data to plot (c(min, max)) in each signal track"
     },
     "scale": {
         "type": "logical",
         "default": "FALSE",
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to include a datascale label in the top left corner of each plot"
     },
     "label": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "An optional character vector to conveniently add text labelsto signal tracks"
     },
     "bg": {
         "type": "character",
         "default": "NA",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A character value indicating background color"
     },
     "baseline": {
         "type": "logical",
         "default": "TRUE",
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A logical value indicating whether to include abaseline along the x-axis"
     },
     "baseline.color": {
         "type": "string",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A string baseline color"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Aesthetic",
+        "description": "A numeric baseline line width"
     },
     "orientation": {
         "type": "string",
         "default": "\"h\"",
-        "options": "\"v\", \"h\""
+        "options": "\"v\", \"h\"",
+        "class": "Aesthetic",
+        "description": "A string specifying signal track orientations"
     },
     "x": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric vector or unit object specifying the overall multisignalx-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying overall multisignal plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying overall multisignal plotwidth"
     },
     "height": {
         "type": "numeric",
         "default": null,
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit object specifying overall multisignal plotheight"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
-        "options": null
+        "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
+        "class": "Positional",
+        "description": "A string specifying the justification of overall multisignal plot relative toits (x, y) location"
     },
     "gapdistance": {
         "type": "numeric",
         "default": "0.2",
-        "options": "any numeric"
+        "options": null,
+        "class": "Positional",
+        "description": "A numeric or unit objectspecifying space between plots"
     },
     "default.units": {
         "type": "string",
         "default": null,
-        "options": "\"inches\", \"centimeters\""
+        "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
+        "class": "Positional",
+        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": null,
-        "options": "TRUE, FALSE"
+        "options": "TRUE, FALSE",
+        "class": "Positional",
+        "description": "A logical value indicating whether graphics output should beproduced"
     },
     "params": {
         "type": "optional",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
-        "options": null
+        "options": null,
+        "class": "Positional",
+        "description": "Additional grid graphical parameters"
     }
 }
