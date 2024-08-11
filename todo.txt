@@ -6,7 +6,7 @@ convert px to % to account for differing screen sizes
 
 
 Both: Add required or optional (i.e. A required string or An optional int)
-Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Raster, Polygon, Text, Rect
-Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Segments, Signal, MultiSignal
+Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Raster
+Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Segments, Signal, MultiSignal, Polygon, Text, Rect
     Abiye: Add classes to all shape and basic elements plotting functions (Class: Data, Aesthetic, Positional)
 RUN devtools::document() IN CONSOLE TO CONVERT .R to .Rd
