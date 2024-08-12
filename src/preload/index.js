@@ -15,4 +15,6 @@ contextBridge.exposeInMainWorld('electron', {
   readWrittenR: () => ipcRenderer.invoke('read-written.R'),
   writeWrittenR: (newContent) => ipcRenderer.invoke('write-written.R', newContent),
   getIconImagePath: (plotcategory) => ipcRenderer.send('icon-image-path', plotcategory),
+  sendCheckValidResponse: (isValid) => ipcRenderer.send('check-valid-response', isValid),
+  onCheckValid: (callback) => ipcRenderer.on('check-valid', (event) => callback()),
 });

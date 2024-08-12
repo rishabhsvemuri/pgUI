@@ -76,8 +76,24 @@ app.whenReady().then(() => {
       console.error('mainWindow is not defined');
       return;
     }
+    await mainWindow.webContents.send('check-valid');
+  
+    // Create a promise to wait for the check-valid response
+    const isValid = await new Promise((resolve) => {
+      ipcMain.once('check-valid-response', (event, isValid) => {
+        console.log(isValid);
+        resolve(isValid); // Resolve the promise with the validity status
+      });
+    });
+  
+    // Check the validity and handle invalid case
+    if (!isValid) {
+      mainWindow.webContents.send('message', 'Error: Invalid inputs');
+      return;
+    }
 
     try {
+      console.log('Generating and writing commands')
       mainWindow.webContents.send('message', 'Generating and writing commands');
       await writeScript();
       mainWindow.webContents.send('message', 'Command generated, written to file, running R Script...');

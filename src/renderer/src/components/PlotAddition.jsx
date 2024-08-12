@@ -28,6 +28,7 @@ function PlotAddition() {
   const [editingPlotId, setEditingPlotId] = useState(null);
   const [newPlotName, setNewPlotName] = useState('');
   const [annotations, setAnnotations] = useState([]);
+  const [valid, setValid] = useState(true);
 
   const plotImages = new Map([
     ["plotCircle", plotCircle],
@@ -123,6 +124,48 @@ function PlotAddition() {
     }).filter(item => item !== null);
   };
 
+  useEffect(() => {
+    const handleCheckValid = () => {
+      const isValid = checkValidInputs(); // Now it returns a boolean
+      setValid(isValid); // Set valid based on the check
+      window.electron.sendCheckValidResponse(isValid); // Send the updated value
+    }
+  
+    if (window.electron && window.electron.onCheckValid) {
+      window.electron.onCheckValid(handleCheckValid);
+    } else {
+      console.error('not defined');
+    }
+  
+    return () => {
+      if (window.electron && window.electron.removeListener) {
+        window.electron.removeListener('check-valid', handleCheckValid);
+      }
+    };
+  }, []);
+  
+  const checkValidInputs = () => {
+    let allValid = true; // Start by assuming all inputs are valid
+    setPlots(prevPlots =>
+      prevPlots.map(plot => {
+        const updatedFormData = plot.formData.map(param => {
+          const isValid = param.default || param.enteredValue; // Check if valid
+          if (!isValid) {
+            allValid = false; // Mark as invalid if any input fails
+            return { ...param, valid: false }; // Return updated param
+          }
+          return param; // Return unchanged param
+        });
+        return {
+          ...plot,
+          formData: updatedFormData,
+        };
+      })
+    );
+    return allValid; // Return whether all inputs are valid
+  };
+  
+
   const handleAddPlot = () => {
     if (plots.length > 0 && plots[plots.length - 1].category === 'Select One') {
       console.log('Please select a category for the last input');
@@ -178,27 +221,6 @@ function PlotAddition() {
       );
     }
   }, []);
-
-  const checkValidInputs = () => {
-    let valid = true;
-    setPlots(prevPlots =>
-      prevPlots.map(plot => {
-        return {
-          ...plot,
-          formData: plot.formData.map(param => 
-            !param.default && !param.enteredValue
-              ? (() => {
-                  valid = false;
-                  return { ...param, valid: false };
-                })()
-              : param
-          ),
-        };
-      })
-    );
-    return valid;
-  };
-  
 
   const handleDeletePlot = (id) => {
     setPlots(plots.filter(plot => plot.id !== id));
