@@ -462,7 +462,6 @@ function PlotAddition() {
         <button id="addPlotButton" onClick={handleAddPlot}>
           Add Plot
         </button>
-        <button onClick={checkValidInputs}>Check Valid Inputs</button>
       </div>
     </div>
   );
