@@ -116,6 +116,8 @@ function PlotAddition() {
         default: jsonData[key].default,
         description: jsonData[key].description,
         section: jsonData[key].class,
+        enteredValue: null,
+        valid: true,
         id: `${id}-${key}`,
       };
     }).filter(item => item !== null);
@@ -159,8 +161,44 @@ function PlotAddition() {
     const { dataset: { plotId }, name, value } = event.target;
     if (plotId && name) {
       window.electron.updateItemValue(plotId, name, value);
+      setPlots(prevPlots =>
+        prevPlots.map(plot => {
+          if (plot.id === plotId) {
+            return {
+              ...plot,
+              formData: plot.formData.map(param => 
+                param.variable === name
+                ? {...param, enteredValue: value, valid: true}
+                : param,
+              ),
+            };
+          }
+          return plot; // Keep other plots unchanged
+        })
+      );
     }
   }, []);
+
+  const checkValidInputs = () => {
+    let valid = true;
+    setPlots(prevPlots =>
+      prevPlots.map(plot => {
+        return {
+          ...plot,
+          formData: plot.formData.map(param => 
+            !param.default && !param.enteredValue
+              ? (() => {
+                  valid = false;
+                  return { ...param, valid: false };
+                })()
+              : param
+          ),
+        };
+      })
+    );
+    return valid;
+  };
+  
 
   const handleDeletePlot = (id) => {
     setPlots(plots.filter(plot => plot.id !== id));
@@ -305,7 +343,7 @@ function PlotAddition() {
                         </>
                       )}
                       <li>
-                        <div className='input-field'>
+                        <div className={input.valid ? 'input-field' : 'invalid-field'}>
                           <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id}>
@@ -314,8 +352,7 @@ function PlotAddition() {
                               ))}
                             </select>
                           ) : (
-                            <input
-                              className='half'                     
+                            <input           
                               id={input.id}
                               name={input.variable}
                               placeholder={input.default}
@@ -403,6 +440,7 @@ function PlotAddition() {
         <button id="addPlotButton" onClick={handleAddPlot}>
           Add Plot
         </button>
+        <button onClick={checkValidInputs}>Check Valid Inputs</button>
       </div>
     </div>
   );
