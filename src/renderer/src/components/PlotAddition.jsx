@@ -96,6 +96,10 @@ function PlotAddition() {
         window.electron.updateItemValue(id, key, plotid[0]);
         return null; // Skip this key
       }
+
+      if (key === 'params' || key === '...') {
+        return null; // skip params and ... params
+      }
       
       let options = jsonData[key].options;
       if (options != null) {
