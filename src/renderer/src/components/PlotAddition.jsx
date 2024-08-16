@@ -302,7 +302,7 @@ function PlotAddition() {
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 {inputSections.map(section =>
                   <div>
-                  {plot.category != 'Select One' ? <><h3>{section}</h3><hr></hr></>:null}
+                  {plot.category != 'Select One' && (plot.formData.filter(formData => formData.section === section).length > 0) ? <><h3>{section}</h3><hr></hr></>:null}
                     <ul>
                     {plot.formData && plot.formData.filter(formData => formData.section === section).map((input) => (
                       <li>
