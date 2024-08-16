@@ -162,6 +162,23 @@ function PlotAddition() {
         };
       })
     );
+    setAnnotations(prevAnnos =>
+      prevAnnos.map(annotation => {
+        const updatedFormData = annotation.formData.map(param => {
+          const isValid = param.default || param.enteredValue; // Check if valid
+          if (!isValid) {
+            allValid = false; // Mark as invalid if any input fails
+            return { ...param, valid: false }; // Return updated param
+          }
+          return param; // Return unchanged param
+        });
+        return {
+          ...annotation,
+          formData: updatedFormData,
+        };
+      })
+    );
+
     return allValid; // Return whether all inputs are valid
   };
   
@@ -289,6 +306,22 @@ function PlotAddition() {
     const { dataset: { annotationId }, name, value } = event.target;
     if (annotationId && name) {
       window.electron.updateItemValue(annotationId, name, value);
+      console.log('reached')
+      setAnnotations(prevAnnos =>
+        prevAnnos.map(annotation => {
+          if (annotation.id === annotationId) {
+            return {
+              ...annotation,
+              formData: annotation.formData.map(param => 
+                param.variable === name
+                ? {...param, enteredValue: value, valid: true}
+                : param,
+              ),
+            };
+          }
+          return annotation;
+        })
+      );
     }
   }, []);
 

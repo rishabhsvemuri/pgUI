@@ -3,70 +3,70 @@
         "type": "R",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "Any R object that can be coerced to a raster object"
     },
     "x": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "A numeric vector or unit object specifying raster x-locations"
     },
     "y": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "A numeric vector, unit object, or a character vector of valuescontaining a \"b\" combined with a numeric value specifyingraster y-locations"
     },
     "width": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "A numeric vector or unit object specifying raster widths"
     },
     "height": {
         "type": "numeric",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "A numeric vector or unit object specifying raster heights"
     },
     "just": {
         "type": "string",
         "default": "\"center\"",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
-        "class": null,
+        "class": "Positional",
         "description": "A string specifying the justification of text relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
-        "class": null,
+        "class": "Positional",
         "description": "A string indicating the default unitsto use if \\code{x}, \\code{y}, \\code{width}, or \\code{height}are only given as numerics or numeric vectors"
     },
     "interpolate": {
         "type": "logical",
         "default": "TRUE",
         "options": null,
-        "class": null,
+        "class": "Aesthetic",
         "description": "A logical value indicating whether to linearlyinterpolate the image"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
-        "class": null,
+        "class": "Positional",
         "description": "Additional grid graphical parameters"
     }
 }
