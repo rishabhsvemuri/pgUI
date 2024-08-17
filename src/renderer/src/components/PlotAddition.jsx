@@ -29,6 +29,7 @@ function PlotAddition() {
   const [newPlotName, setNewPlotName] = useState('');
   const [annotations, setAnnotations] = useState([]);
   const [valid, setValid] = useState(true);
+  const inputSections = ['Data', 'Positional', 'Aesthetic'];
 
   const plotImages = new Map([
     ["plotCircle", plotCircle],
@@ -199,6 +200,10 @@ function PlotAddition() {
       window.electron.addItem(newPlot);
     }
   };
+
+  const inputData = () => {
+    return plot.formData.filter(formData => formData.class === 'Data');
+  }
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -403,8 +408,42 @@ function PlotAddition() {
               <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
               </div>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
+                {inputSections.map(section =>
+                  <div>
+                  {plot.category != 'Select One' && (plot.formData.filter(formData => formData.section === section).length > 0) ? <><h3>{section}</h3><hr></hr></>:null}
+                    <ul>
+                    {plot.formData && plot.formData.filter(formData => formData.section === section).map((input) => (
+                      <li>
+                        <div className='input-field'>
+                          <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
+                          {input.options ? (
+                            <select id={input.id} name={input.variable} data-plot-id={plot.id}>
+                              {input.options.map((option, idx) => (
+                                <option key={idx} value={option}>{option}</option>
+                              ))}
+                            </select>
+                          ) : (
+                            <input
+                              className='half'                     
+                              id={input.id}
+                              name={input.variable}
+                              placeholder={input.default}
+                              data-plot-id={plot.id}
+                            />
+                          )}
+                          <div className='tooltip'>
+                            <BsQuestionCircle />
+                            <span className="tooltipdescription">{input.description}</span>
+                          </div>
+                        </div>
+                      </li>
+  
+                    ))}
+                    </ul>
+                  </div>
+                )}
                 <ul>
-                  {plot.formData && plot.formData.map((input, idx, arr) => (
+                  {/* {plot.formData && plot.formData.map((input, idx, arr) => (
                     <React.Fragment key={input.id}>
                       {(idx === 0 || input.section !== arr[idx - 1].section) && (
                         <>
@@ -436,7 +475,7 @@ function PlotAddition() {
                         </div>
                       </li>
                     </React.Fragment>
-                  ))}
+                  ))} */}
                   <div className='anno-div'>
                     {annotations.map((annotation, index) => (
                       (plot.id == annotation.plot ? 
