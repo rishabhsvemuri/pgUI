@@ -236,6 +236,21 @@ function PlotAddition() {
           return plot; // Keep other plots unchanged
         })
       );
+      setAnnotations(prevAnnos =>
+        prevAnnos.map(annotation => {
+          if (annotation.id === plotId) {
+            return {
+              ...annotation,
+              formData: annotation.formData.map(param => 
+                param.variable === name
+                ? {...param, enteredValue: value, valid: true}
+                : param,
+              ),
+            };
+          }
+          return annotation;
+        })
+      );
     }
   }, []);
 
@@ -447,7 +462,7 @@ function PlotAddition() {
                         </div>
                         {annotation.formData && annotation.formData.map((input) => (
                             <li>
-                              <div className='input-field' onBlur={handleAnnoBlur} onChange={handleAnnoBlur}>
+                              <div className={input.valid ? 'input-field' : 'invalid-field'}>
                                 <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                                 {input.options ? (
                                   <select id={input.id} name={input.variable} data-plot-id={annotation.id}>
