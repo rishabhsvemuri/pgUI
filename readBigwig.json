@@ -1,0 +1,44 @@
+{
+    "file": {
+        "type": "character",
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "A character value specifying the path to the bigwig file"
+    },
+    "chrom": {
+        "type": "of",
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "Chromosome of data as a string, if data for a specificchromosome is desired"
+    },
+    "chromstart": {
+        "type": "start",
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "Integer start position on chromosome"
+    },
+    "chromend": {
+        "type": "end",
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "Integer end position on chromosome"
+    },
+    "strand": {
+        "type": "character",
+        "default": "\"*\"",
+        "options": null,
+        "class": null,
+        "description": "A character value specifying strand"
+    },
+    "params": {
+        "type": "optional",
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+    }
+}

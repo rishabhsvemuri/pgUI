@@ -414,7 +414,7 @@ function PlotAddition() {
                     <ul>
                     {plot.formData && plot.formData.filter(formData => formData.section === section).map((input) => (
                       <li>
-                        <div className='input-field'>
+                        <div className={input.valid ? 'input-field' : 'invalid-field'}>
                           <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id}>
@@ -443,39 +443,6 @@ function PlotAddition() {
                   </div>
                 )}
                 <ul>
-                  {/* {plot.formData && plot.formData.map((input, idx, arr) => (
-                    <React.Fragment key={input.id}>
-                      {(idx === 0 || input.section !== arr[idx - 1].section) && (
-                        <>
-                          {idx !== 0 && <hr />}
-                          <h3>{input.section}</h3>
-                        </>
-                      )}
-                      <li>
-                        <div className={input.valid ? 'input-field' : 'invalid-field'}>
-                          <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
-                          {input.options ? (
-                            <select id={input.id} name={input.variable} data-plot-id={plot.id}>
-                              {input.options.map((option, idx) => (
-                                <option key={idx} value={option}>{option}</option>
-                              ))}
-                            </select>
-                          ) : (
-                            <input           
-                              id={input.id}
-                              name={input.variable}
-                              placeholder={input.default}
-                              data-plot-id={plot.id}
-                            />
-                          )}
-                          <div className='tooltip'>
-                            <BsQuestionCircle />
-                            <span className="tooltipdescription">{input.description}</span>
-                          </div>
-                        </div>
-                      </li>
-                    </React.Fragment>
-                  ))} */}
                   <div className='anno-div'>
                     {annotations.map((annotation, index) => (
                       (plot.id == annotation.plot ? 
