@@ -28,6 +28,7 @@ function PlotAddition() {
   const [editingPlotId, setEditingPlotId] = useState(null);
   const [newPlotName, setNewPlotName] = useState('');
   const [annotations, setAnnotations] = useState([]);
+  const [valid, setValid] = useState(true);
   const inputSections = ['Data', 'Positional', 'Aesthetic'];
 
   const plotImages = new Map([
@@ -117,10 +118,71 @@ function PlotAddition() {
         default: jsonData[key].default,
         description: jsonData[key].description,
         section: jsonData[key].class,
+        enteredValue: null,
+        valid: true,
         id: `${id}-${key}`,
       };
     }).filter(item => item !== null);
   };
+
+  useEffect(() => {
+    const handleCheckValid = () => {
+      const isValid = checkValidInputs(); // Now it returns a boolean
+      setValid(isValid); // Set valid based on the check
+      window.electron.sendCheckValidResponse(isValid); // Send the updated value
+    }
+  
+    if (window.electron && window.electron.onCheckValid) {
+      window.electron.onCheckValid(handleCheckValid);
+    } else {
+      console.error('not defined');
+    }
+  
+    return () => {
+      if (window.electron && window.electron.removeListener) {
+        window.electron.removeListener('check-valid', handleCheckValid);
+      }
+    };
+  }, []);
+  
+  const checkValidInputs = () => {
+    let allValid = true; // Start by assuming all inputs are valid
+    setPlots(prevPlots =>
+      prevPlots.map(plot => {
+        const updatedFormData = plot.formData.map(param => {
+          const isValid = param.default || param.enteredValue; // Check if valid
+          if (!isValid) {
+            allValid = false; // Mark as invalid if any input fails
+            return { ...param, valid: false }; // Return updated param
+          }
+          return param; // Return unchanged param
+        });
+        return {
+          ...plot,
+          formData: updatedFormData,
+        };
+      })
+    );
+    setAnnotations(prevAnnos =>
+      prevAnnos.map(annotation => {
+        const updatedFormData = annotation.formData.map(param => {
+          const isValid = param.default || param.enteredValue; // Check if valid
+          if (!isValid) {
+            allValid = false; // Mark as invalid if any input fails
+            return { ...param, valid: false }; // Return updated param
+          }
+          return param; // Return unchanged param
+        });
+        return {
+          ...annotation,
+          formData: updatedFormData,
+        };
+      })
+    );
+
+    return allValid; // Return whether all inputs are valid
+  };
+  
 
   const handleAddPlot = () => {
     if (plots.length > 0 && plots[plots.length - 1].category === 'Select One') {
@@ -164,6 +226,36 @@ function PlotAddition() {
     const { dataset: { plotId }, name, value } = event.target;
     if (plotId && name) {
       window.electron.updateItemValue(plotId, name, value);
+      setPlots(prevPlots =>
+        prevPlots.map(plot => {
+          if (plot.id === plotId) {
+            return {
+              ...plot,
+              formData: plot.formData.map(param => 
+                param.variable === name
+                ? {...param, enteredValue: value, valid: true}
+                : param,
+              ),
+            };
+          }
+          return plot; // Keep other plots unchanged
+        })
+      );
+      setAnnotations(prevAnnos =>
+        prevAnnos.map(annotation => {
+          if (annotation.id === plotId) {
+            return {
+              ...annotation,
+              formData: annotation.formData.map(param => 
+                param.variable === name
+                ? {...param, enteredValue: value, valid: true}
+                : param,
+              ),
+            };
+          }
+          return annotation;
+        })
+      );
     }
   }, []);
 
@@ -234,6 +326,22 @@ function PlotAddition() {
     const { dataset: { annotationId }, name, value } = event.target;
     if (annotationId && name) {
       window.electron.updateItemValue(annotationId, name, value);
+      console.log('reached')
+      setAnnotations(prevAnnos =>
+        prevAnnos.map(annotation => {
+          if (annotation.id === annotationId) {
+            return {
+              ...annotation,
+              formData: annotation.formData.map(param => 
+                param.variable === name
+                ? {...param, enteredValue: value, valid: true}
+                : param,
+              ),
+            };
+          }
+          return annotation;
+        })
+      );
     }
   }, []);
 
@@ -344,7 +452,7 @@ function PlotAddition() {
                         </>
                       )}
                       <li>
-                        <div className='input-field'>
+                        <div className={input.valid ? 'input-field' : 'invalid-field'}>
                           <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id}>
@@ -353,8 +461,7 @@ function PlotAddition() {
                               ))}
                             </select>
                           ) : (
-                            <input
-                              className='half'                     
+                            <input           
                               id={input.id}
                               name={input.variable}
                               placeholder={input.default}
@@ -394,7 +501,7 @@ function PlotAddition() {
                         </div>
                         {annotation.formData && annotation.formData.map((input) => (
                             <li>
-                              <div className='input-field' onBlur={handleAnnoBlur} onChange={handleAnnoBlur}>
+                              <div className={input.valid ? 'input-field' : 'invalid-field'}>
                                 <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                                 {input.options ? (
                                   <select id={input.id} name={input.variable} data-plot-id={annotation.id}>
