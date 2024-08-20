@@ -5,7 +5,7 @@ import { Routes, Route} from 'react-router-dom';
 import Sidebar from "./components/Sidebar";
 import Code from "./components/Code";
 import Nodes from "./components/Nodes";
-import Share from "./components/Share";
+import Info from "./components/Info";
 
 
 

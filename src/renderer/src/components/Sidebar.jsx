@@ -4,11 +4,12 @@ import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
 import { MdIosShare } from "react-icons/md";
 import { useState } from 'react';
+import { BsInfoCircle } from "react-icons/bs";
 import PathEntry from './PathEntry';
 import PlotAddition from './PlotAddition';
 import Code from './Code';
 import Nodes from './Nodes';
-import Share from './Share';
+import Info from './Info';
 import Logo from '.././assets/PlotgardenerLogo.png';
 import '.././assets/style.scss';
 import Header from '.././assets/pg-wordmark.png'
@@ -44,8 +45,8 @@ function Sidebar(){
                         <span className="tooltiptext">Code</span>
                     </div>
                     <div className="tooltip">
-                        <MdIosShare className='icon-images' onClick={() => setActiveTab('Share')} style={activeTab === 'Share' ? { backgroundColor: '#232323' } : {}}/>
-                        <span className="tooltiptext">Share</span>
+                        <BsInfoCircle className='icon-images' onClick={() => setActiveTab('Info')} style={activeTab === 'Info' ? { backgroundColor: '#232323' } : {}}/>
+                        <span className="tooltiptext">Info</span>
                     </div>
                 </nav>
             </div>
@@ -65,8 +66,8 @@ function Sidebar(){
                         <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
                             <Code nrs={numRunScript}/>
                         </div>
-                        <div className={`tab-content ${activeTab === 'Share' ? 'active' : ''}`}>
-                            <Share />
+                        <div className={`tab-content ${activeTab === 'Info' ? 'active' : ''}`}>
+                            <Info />
                         </div>
                     </div>
                     <div className="rbtn-div">
