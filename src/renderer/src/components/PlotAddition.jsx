@@ -201,10 +201,6 @@ function PlotAddition() {
     }
   };
 
-  const inputData = () => {
-    return plot.formData.filter(formData => formData.class === 'Data');
-  }
-
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
