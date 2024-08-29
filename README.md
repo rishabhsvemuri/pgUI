@@ -6,6 +6,11 @@ An Electron, React app for the plotgardener R package.
 
 - [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) -->
 
+
+## For testing plotgardener
+
+Follow steps in [Install R] (#Install-R), [Install Node Modules] (#Install-Node-Modules), [Building for Distribution] (#Building-for-Distribution), and [Accessing Installers] (#Accessing-Installers)
+
 ## Install R
 
 Check if your machine has R installed. If it is installed, these commands will return where it is installed.
@@ -18,10 +23,6 @@ $ which R
 # For Windows
 $ where R
 ```
-
-## Install the app
-
-After project setup run the build command to access the packaged app.
 
 ## Project Setup
 
@@ -39,6 +40,8 @@ $ npm run dev
 
 ## Building for Distribution
 
+Run the command corresponding with your OS.
+
 ```bash
 # For windows
 $ npm run build:win
@@ -49,3 +52,6 @@ $ npm run build:mac
 # For Linux
 $ npm run build:linux
 ```
+
+## Accessing Installers
+Within the cloned pgUI repo, navigate to pgUI/dist/plotgardener-1.0.0.(dmg or exe)
