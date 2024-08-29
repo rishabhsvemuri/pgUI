@@ -9,7 +9,7 @@ An Electron, React app for the plotgardener R package.
 
 ## For testing plotgardener
 
-Follow steps in [Install R](#install-r), [Install Node Modules](#install-node-modules), [Building for Distribution](#building-for-distribution), and [Accessing Installers](#accessing-installers)
+First clone this repo. Then follow steps in [Install R](#install-r), [Install Node Modules](#install-node-modules), [Building for Distribution](#building-for-distribution), and [Accessing Installers](#accessing-installers).
 
 ## Install R
 
