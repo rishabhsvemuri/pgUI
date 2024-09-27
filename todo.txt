@@ -10,3 +10,6 @@ Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Raster
 Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Segments, Signal, MultiSignal, Polygon, Text, Rect
     Abiye: Add classes to all shape and basic elements plotting functions (Class: Data, Aesthetic, Positional)
 RUN devtools::document() IN CONSOLE TO CONVERT .R to .Rd
+
+Clear elements after changing the plot
+palette

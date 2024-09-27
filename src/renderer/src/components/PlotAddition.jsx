@@ -111,6 +111,10 @@ function PlotAddition() {
           options = options.split(',')
         }
       }
+      let fileInput = false
+      if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path')) {
+        fileInput = true
+      }
       return {
         variable: key,
         type: jsonData[key].type,
@@ -120,6 +124,7 @@ function PlotAddition() {
         section: jsonData[key].class,
         enteredValue: null,
         valid: true,
+        fileInput: fileInput,
         id: `${id}-${key}`,
       };
     }).filter(item => item !== null);
@@ -220,18 +225,28 @@ function PlotAddition() {
 
   const handleBlur = useCallback((event) => {
     const { dataset: { plotId }, name, value } = event.target;
+    let formattedValue = value;
+    if (value.includes('fakepath')) {
+      formattedValue = event.target.files[0].path
+    }
     if (plotId && name) {
-      window.electron.updateItemValue(plotId, name, value);
       setPlots(prevPlots =>
         prevPlots.map(plot => {
           if (plot.id === plotId) {
             return {
               ...plot,
-              formData: plot.formData.map(param => 
-                param.variable === name
-                ? {...param, enteredValue: value, valid: true}
-                : param,
-              ),
+              formData: plot.formData.map(param => {
+                if (param.variable === name) {
+                  // Format the value based on param type
+                  if (param.type === 'character' || param.type === 'string') {
+                    formattedValue = `\"${formattedValue}\"`;
+                  }
+                  window.electron.updateItemValue(plotId, name, formattedValue)
+      
+                  return { ...param, enteredValue: formattedValue, valid: true };
+                }
+                return param;
+              }),
             };
           }
           return plot; // Keep other plots unchanged
@@ -242,11 +257,19 @@ function PlotAddition() {
           if (annotation.id === plotId) {
             return {
               ...annotation,
-              formData: annotation.formData.map(param => 
-                param.variable === name
-                ? {...param, enteredValue: value, valid: true}
-                : param,
-              ),
+              formData: annotation.formData.map(param => {
+                if (param.variable === name) {
+      
+                  // Format the value based on param type
+                  if (param.type === 'character' || param.type === 'string') {
+                    formattedValue = `\"${formattedValue}\"`;
+                  }
+                  window.electron.updateItemValue(plotId, name, formattedValue)
+      
+                  return {...param, enteredValue: value, valid: true}
+                }
+                return param;
+              }),
             };
           }
           return annotation;
@@ -420,11 +443,12 @@ function PlotAddition() {
                             </select>
                           ) : (
                             <input
-                              className='half'                     
+                              className='half'
                               id={input.id}
                               name={input.variable}
                               placeholder={input.default}
                               data-plot-id={plot.id}
+                              type={input.fileInput ? 'file' : null}
                             />
                           )}
                           <div className='tooltip'>
@@ -479,6 +503,7 @@ function PlotAddition() {
                                     name={input.variable}
                                     placeholder={input.default}
                                     data-plot-id={annotation.id}
+                                    type={input.fileInput ? 'file' : null}
                                   />
                                 )}
                                 <div className='tooltip'>

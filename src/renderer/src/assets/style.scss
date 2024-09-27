@@ -206,11 +206,24 @@ body {
     input {
         flex: 2;
         text-align: left;
-        height: 30px;
-        width: 70px;
+
         margin: 5px;
         padding-left: 5px;
     }
+    input[type="file"] {
+        height: 30px;
+        width: 70px;
+        background-color:#ffffff00;
+    }
+    input[type=file]::file-selector-button {
+        border: 1px round black;
+        background-color: #007AFF;
+        color: white;
+        transition: 0.5s;
+    }
+    input[type=file]::file-selector-button:hover {
+        background-color: #4040;
+  }
   }
 
   .invalid-field {
