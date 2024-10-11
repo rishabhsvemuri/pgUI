@@ -30,10 +30,12 @@
     "electron-icon-maker": "^0.0.5",
     "icons": "^1.0.0",
     "loaders.css": "^0.1.2",
+    "monaco-editor": "^0.52.0",
     "react-codemirror2": "^8.0.0",
     "react-icons": "^5.2.1",
     "react-loaders": "^3.0.1",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "react-simple-code-editor": "^0.14.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",

@@ -17,4 +17,5 @@ contextBridge.exposeInMainWorld('electron', {
   getIconImagePath: (plotcategory) => ipcRenderer.send('icon-image-path', plotcategory),
   sendCheckValidResponse: (isValid) => ipcRenderer.send('check-valid-response', isValid),
   onCheckValid: (callback) => ipcRenderer.on('check-valid', (event) => callback()),
+  downloadCode: (codeContent) => ipcRenderer.send('download-code', codeContent),
 });

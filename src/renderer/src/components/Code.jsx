@@ -21,6 +21,10 @@ function Code() {
       setCode(value);
       window.electron.writeWrittenR(value);
     };
+
+    const handleDownload = () => {
+      window.electron.downloadCode(code)
+    };
   
     return (
       <div className='plot-div'>
@@ -38,6 +42,7 @@ function Code() {
           }}
         />
         </div>
+        <button onClick={handleDownload}>Download Code</button>
       </div>
 
     );

@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow, ipcMain, protocol, net } from 'electron';
+import { app, shell, BrowserWindow, ipcMain, protocol, net, dialog } from 'electron';
 import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import icon from '../../resources/icon.png?asset';
@@ -182,6 +182,18 @@ app.whenReady().then(() => {
       return false;
     }
   })
+
+  ipcMain.on('download-code', async (event, content) => {
+    const { filePath } = await dialog.showSaveDialog({
+      title: 'Save code file',
+      defaultPath: path.join(app.getPath('downloads'), 'code.txt'),
+      buttonLabel: 'Save',
+      filters: [{ name: 'Text Files', extensions: ['txt'] }]
+  });
+  fs.writeFile(filePath, content, (err) => {
+    console.log('done')
+  })
+})
 
   
 
