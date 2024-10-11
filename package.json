@@ -25,6 +25,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "chroma-js": "^3.1.1",
     "codemirror": "^5.65.16",
     "electron-icon-maker": "^0.0.5",
     "icons": "^1.0.0",

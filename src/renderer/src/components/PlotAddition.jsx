@@ -4,6 +4,7 @@ import { FaRegTrashCan } from "react-icons/fa6";
 import { BsInfoCircle } from "react-icons/bs";
 import { BsQuestionCircle } from "react-icons/bs";
 import '../assets/style.scss';
+import globals from '../assets/globalTest.json'
 import plotCircle from '../assets/plotIcons/plotCircle.png';
 import plotGenes from '../assets/plotIcons/plotGenes.png';
 import plotGenomeLabel from '../assets/plotIcons/plotGenomeLabel.png';
@@ -104,6 +105,7 @@ function PlotAddition() {
       }
       
       let options = jsonData[key].options;
+      let display
       if (options != null) {
         if (options.includes('c(')) {
           options = options.split(/,(?=(?:[^()"]|\([^()]*\)|"[^"]*")*$)/)
@@ -115,6 +117,10 @@ function PlotAddition() {
       if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path')) {
         fileInput = true
       }
+      if (globals.hasOwnProperty(key)) {
+        options = globals[key].options;
+        display = globals[key].display;
+      }
       return {
         variable: key,
         type: jsonData[key].type,
@@ -125,6 +131,7 @@ function PlotAddition() {
         enteredValue: null,
         valid: true,
         fileInput: fileInput,
+        display: display,
         id: `${id}-${key}`,
       };
     }).filter(item => item !== null);
@@ -438,7 +445,7 @@ function PlotAddition() {
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id}>
                               {input.options.map((option, idx) => (
-                                <option key={idx} value={option}>{option}</option>
+                                <option key={idx} value={option}>{input.variable === 'palette' ? input.display[idx] : option}</option>
                               ))}
                             </select>
                           ) : (
