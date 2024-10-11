@@ -186,9 +186,9 @@ app.whenReady().then(() => {
   ipcMain.on('download-code', async (event, content) => {
     const { filePath } = await dialog.showSaveDialog({
       title: 'Save code file',
-      defaultPath: path.join(app.getPath('downloads'), 'code.txt'),
+      defaultPath: path.join(app.getPath('downloads'), 'pgUICode.R'),
       buttonLabel: 'Save',
-      filters: [{ name: 'Text Files', extensions: ['txt'] }]
+      filters: [{ name: 'R Files', extensions: ['R'] }]
   });
   fs.writeFile(filePath, content, (err) => {
     console.log('done')
