@@ -18,4 +18,22 @@ contextBridge.exposeInMainWorld('electron', {
   sendCheckValidResponse: (isValid) => ipcRenderer.send('check-valid-response', isValid),
   onCheckValid: (callback) => ipcRenderer.on('check-valid', (event) => callback()),
   downloadCode: (codeContent) => ipcRenderer.send('download-code', codeContent),
+  getSessionsList: () => ipcRenderer.invoke('get-sessions-list'),
+  
+  // Synchronously get the current duplicatePlots and annotationsDuplicate
+  getPlotsDuplicate: () => ipcRenderer.sendSync('getPlotsDuplicate'),
+  getAnnotationsDuplicate: () => ipcRenderer.sendSync('getAnnotationsDuplicate'),
+
+  updatePlotsDuplicate: (plots) => ipcRenderer.send('updatePlotsDuplicate', plots),
+  updateAnnotationsDuplicate: (annotations) => ipcRenderer.send('updateAnnotationsDuplicate', annotations),
+
+  saveSession: (sessionData, sessionName) => ipcRenderer.invoke('saveSession', sessionData, sessionName),
+  loadSession: (sessionName) => ipcRenderer.invoke('loadSession', sessionName),
+
+  emitSessionSwitch: () => ipcRenderer.send('emitSessionSwitch'),
+  onSessionSwitch: (callback) => ipcRenderer.on('sessionSwitch', callback),
+  offSessionSwitch: (callback) => ipcRenderer.removeListener('sessionSwitch', callback),
+  createNewSession: (sessionName) => ipcRenderer.invoke('createNewSession', sessionName),
+
+
 });

@@ -1,9 +1,9 @@
+import React, { useEffect, useState, useCallback } from 'react';
 import { FaFile } from "react-icons/fa";
 import { BsBoundingBoxCircles } from "react-icons/bs";
 import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
 import { MdIosShare } from "react-icons/md";
-import { useState } from 'react';
 import { BsInfoCircle } from "react-icons/bs";
 import PathEntry from './PathEntry';
 import PlotAddition from './PlotAddition';
@@ -17,10 +17,32 @@ import Header from '.././assets/pg-wordmark.png'
 function Sidebar(){
     const [activeTab, setActiveTab] = useState('PathEntry');
     const [numRunScript, setNumRunScript] = useState(0);
+    const [plotAdditionKey, setPlotAdditionKey] = useState(0);
 
     const handleRunScript = () => {
         window.electron.runScript();
         setNumRunScript(numRunScript + 1)
+    };
+
+    useEffect(() => {
+        // Listener for session switch in Nodes
+        const handleSessionSwitch = () => {
+            // Update the key to remount PlotAddition
+            setPlotAdditionKey(prevKey => prevKey + 1);
+        };
+
+        window.electron.onSessionSwitch(handleSessionSwitch);
+
+        // Cleanup listener on unmount
+        return () => {
+            window.electron.offSessionSwitch(handleSessionSwitch);
+        };
+    }, []);
+
+    const handleCheckDup = () => {
+        let dup = window.electron.getPlotsDuplicate();
+        console.log(dup)
+        console.log(typeof dup)
     };
 
     return (
@@ -58,7 +80,7 @@ function Sidebar(){
                             <PathEntry />
                         </div>
                         <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
-                            <PlotAddition />
+                            <PlotAddition key={plotAdditionKey} />
                         </div>
                         <div className={`tab-content ${activeTab === 'Nodes' ? 'active' : ''}`}>
                             <Nodes />

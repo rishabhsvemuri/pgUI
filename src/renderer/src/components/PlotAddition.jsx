@@ -24,7 +24,7 @@ import plotText from '../assets/plotIcons/plotText.png';
 import plotTranscripts from '../assets/plotIcons/plotTranscripts.png';
 
 function PlotAddition() {
-  const [plots, setPlots] = useState([]);
+  const [plots, setPlots] = useState(window.electron.getPlotsDuplicate());
   const [inputValue, setInputValue] = useState('');
   const [editingPlotId, setEditingPlotId] = useState(null);
   const [newPlotName, setNewPlotName] = useState('');
@@ -51,6 +51,36 @@ function PlotAddition() {
     ["plotText", plotText],
     ["plotTranscripts", plotTranscripts],
   ]);
+
+  //Update PlotsDuplicate to plots whenever plots duplicate is changed
+  useEffect(() => {
+    window.electron.updatePlotsDuplicate(plots);
+    console.log(window.electron.getPlotsDuplicate())
+  }, [plots]);
+
+  // useEffect(() => {
+  //   // Load data from duplicatePlots whenever the session changes
+  //   const updatePlotsFromSession = () => {
+  //     console.log('Session switch detected, updating plots'); // Debug log
+  //     const sessionPlots = window.electron.getPlotsDuplicate();
+  //     console.log('Plots from duplicate after switch:', sessionPlots); // Debug log
+  //     setPlots(sessionPlots); // Reinitialize plots with the latest session data
+  //   };
+  
+  //   // Listener for session change in Nodes
+  //   window.electron.onSessionSwitch(updatePlotsFromSession);
+  
+  //   // Cleanup listener on unmount
+  //   return () => {
+  //     window.electron.offSessionSwitch(updatePlotsFromSession);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    console.log("PlotAddition mounted with plots:", plots);
+  }, []);
+
+
 
   useEffect(() => {
     const handleJSONGen = (event, jsonData, id) => {
