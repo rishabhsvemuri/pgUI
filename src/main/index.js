@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
-const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\nif (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\nif (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")'
+const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\nif (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\nif (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData") \nif (!requireNamespace("TxDb.Hsapiens.UCSC.hg19.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene")\nif (!requireNamespace("org.Hs.eg.db", quietly = TRUE)) BiocManager::install("org.Hs.eg.db")'
 let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
@@ -227,7 +227,7 @@ async function startScript() {
   await fs.appendFile(writePath, `${pgInstall}\n`);
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
   const library = `library(plotgardener)\n`
-  const genes = `library(plotgardenerData)\ndata("IMR90_HiC_10kb")\n`
+  const genes = `library(plotgardenerData)\ndata("IMR90_HiC_10kb")\nlibrary("TxDb.Hsapiens.UCSC.hg19.knownGene")\nlibrary("org.Hs.eg.db") \n`
   await fs.appendFile(writePath, pather);
   await fs.appendFile(writePath, library);
   await fs.appendFile(writePath, genes);

@@ -114,9 +114,9 @@ function PlotAddition() {
         }
       }
       let fileInput = false
-      if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path')) {
-        fileInput = true
-      }
+      // if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path')) {
+      //   fileInput = true
+      // }
       if (globals.hasOwnProperty(key)) {
         options = globals[key].options;
         display = globals[key].display;
@@ -245,9 +245,9 @@ function PlotAddition() {
               formData: plot.formData.map(param => {
                 if (param.variable === name) {
                   // Format the value based on param type
-                  if (param.type === 'character' || param.type === 'string') {
-                    formattedValue = `\"${formattedValue}\"`;
-                  }
+                  // if (param.type === 'character' || param.type === 'string') {
+                  //   formattedValue = `\"${formattedValue}\"`;
+                  // }
                   window.electron.updateItemValue(plotId, name, formattedValue)
       
                   return { ...param, enteredValue: formattedValue, valid: true };
@@ -374,7 +374,11 @@ function PlotAddition() {
   const handleDeleteAnno = (id) => {
     setAnnotations(prevAnnotations => prevAnnotations.filter(annotation => annotation.id !== id));
     window.electron.updateCategory(null, null, id);
-  };  
+  };
+
+  const handleGradient = (codes) => {
+    
+  }
 
   return (
     <div id="container">
@@ -442,10 +446,17 @@ function PlotAddition() {
                       <li>
                         <div className={input.valid ? 'input-field' : 'invalid-field'}>
                           <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
-                          {input.options ? (
-                            <select id={input.id} name={input.variable} data-plot-id={plot.id}>
+                          {input.options && input.variable !== 'palette'? (
+                            <select
+                              id={input.id}
+                              name={input.variable}
+                              data-plot-id={plot.id}
+                              style={input.variable === 'palette' ? { background: `linear-gradient(to right, ${input.display[1]})` } : null}
+                            >
                               {input.options.map((option, idx) => (
-                                <option key={idx} value={option}>{input.variable === 'palette' ? input.display[idx] : option}</option>
+                                <option key={idx} value={option}>
+                                  {input.variable === 'palette' ? '' : option}
+                                </option>
                               ))}
                             </select>
                           ) : (

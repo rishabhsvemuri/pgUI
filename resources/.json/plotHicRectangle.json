@@ -64,7 +64,7 @@
     },
     "palette": {
         "type": "function",
-        "default": null,
+        "default": "colorRampPalette(brewer.pal(n = 9, \"YlGnBu\"))",
         "options": null,
         "class": "Aesthetic",
         "description": "A function describing the color palette to use forrepresenting scale of interaction scores"
