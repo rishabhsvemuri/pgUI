@@ -233,6 +233,9 @@ function PlotAddition() {
   const handleBlur = useCallback((event) => {
     const { dataset: { plotId }, name, value } = event.target;
     let formattedValue = value;
+    if (name == 'name') {
+      return;
+    }
     if (value.includes('fakepath')) {
       formattedValue = event.target.files[0].path
     }
