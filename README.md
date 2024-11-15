@@ -14,7 +14,7 @@ First install [Node.js](https://nodejs.org/en/download/package-manager). Then cl
 ## Install R
 
 Check if your machine has R installed. If it is installed, these commands will return where it is installed.
-Install at [cran](https://cran.r-project.org/mirrors.html) if not already on machine.
+Install at [cran](https://cran.r-project.org/mirrors.html) if not already on machine. Run these commands in your terminal.
 
 ```bash
 # For macOS
@@ -28,11 +28,15 @@ $ where R
 
 ### Install Node Modules
 
+Run this command in your terminal within the project directory.
+
 ```bash
 $ npm install
 ```
 
 ### Development
+
+Run this command in your terminal within the project directory.
 
 ```bash
 $ npm run dev
@@ -40,7 +44,9 @@ $ npm run dev
 
 ## Building for Distribution
 
-Run the command corresponding with your OS.
+Run the command corresponding with your OS. 
+
+Run this command in your terminal within the project directory.
 
 ```bash
 # For windows
