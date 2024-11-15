@@ -268,9 +268,9 @@ function PlotAddition() {
                 if (param.variable === name) {
       
                   // Format the value based on param type
-                  if (param.type === 'character' || param.type === 'string') {
-                    formattedValue = `\"${formattedValue}\"`;
-                  }
+                  // if (param.type === 'character' || param.type === 'string') {
+                  //   formattedValue = `\"${formattedValue}\"`;
+                  // }
                   window.electron.updateItemValue(plotId, name, formattedValue)
       
                   return {...param, enteredValue: value, valid: true}
