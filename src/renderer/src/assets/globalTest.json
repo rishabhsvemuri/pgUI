@@ -1,6 +1,6 @@
 {
     "palette": {
-        "display": ["YGB", "RYB", "RWB"],
+        "display": ["YGB", "RYB", "RWB"], 
         "options": ["colorRampPalette(brewer.pal(n = 9, \"YlGnBu\"))", "colorRampPalette(brewer.pal(n = 9, \"RdYlBu\"))", "colorRampPalette(c(\"red\", \"white\", \"blue\"))"]
 
     }
