@@ -238,6 +238,10 @@ app.whenReady().then(() => {
   })
 });
 
+
+ipcMain.on('getPlotsBackEnd', (event) => {
+  event.returnValue = plots; // Send back duplicatePlots synchronously
+});
 // Get current plots and annotations duplicate data
 ipcMain.on('getPlotsDuplicate', (event) => {
   event.returnValue = duplicatePlots; // Send back duplicatePlots synchronously
@@ -263,6 +267,7 @@ ipcMain.handle('createNewSession', async (event, sessionName) => {
     // Reset duplicatePlots and annotationsDuplicate to empty arrays
     duplicatePlots = [];
     annotationsDuplicate = [];
+    plots = new Map()
 
     // Create an empty JSON file for the new session
     await fs.writeFile(sessionPath, JSON.stringify({ plots: [], annotations: [] }, null, 2));
@@ -278,6 +283,16 @@ ipcMain.handle('createNewSession', async (event, sessionName) => {
 async function saveSession(sessionData, sessionName) {
   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
   try {
+    const serializedPlots = Array.from(plots.entries()).map(([id, dataMap]) => {
+      const serializedData = {};
+      dataMap.forEach((value, key) => {
+        serializedData[key] = value;
+      });
+      return { id, data: serializedData };
+    });
+
+    sessionData.backEndPlots = serializedPlots;
+
     await fs.writeFile(sessionPath, JSON.stringify(sessionData, null, 2));
     return { success: true };
   } catch (error) {
@@ -291,27 +306,85 @@ ipcMain.handle('saveSession', async (event, sessionData, sessionName) => {
   return await saveSession(sessionData, sessionName);
 });
 
-// Load session data from a file
+//Load session data from a file
+// ipcMain.handle('loadSession', async (event, sessionName) => {
+//   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
+
+//   try {
+
+//     const data = await fs.readFile(sessionPath, 'utf8');
+//     const sessionData = JSON.parse(data);
+//     duplicatePlots = sessionData.plots || [];
+//     annotationsDuplicate = sessionData.annotations || [];
+//     plots = sessionData.backEndPlots || new Map();
+    
+//     return sessionData;
+
+//   } catch (error) {
+//     console.error('Failed to load session:', error);
+//     return null;
+//   }
+// });
+
 ipcMain.handle('loadSession', async (event, sessionName) => {
-  console.log("Start of Load Session")
-  const sessionPath = path.join(app.getPath('userData'), `${sessionName}.json`);
-  console.log("Got Session Path")
+  const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
+
   try {
-    console.log("About to readFile")
     const data = await fs.readFile(sessionPath, 'utf8');
-    console.log("Got Data")
     const sessionData = JSON.parse(data);
-    console.log("Parsed Data")
     duplicatePlots = sessionData.plots || [];
-    console.log("Set Dup Plots")
     annotationsDuplicate = sessionData.annotations || [];
-    console.log("Set Annotations")
+
+    // Deserialize plots back into the Map structure
+    const deserializedPlots = new Map();
+    if (sessionData.backEndPlots) {
+      sessionData.backEndPlots.forEach(({ id, data }) => {
+        const dataMap = new Map(Object.entries(data));
+        deserializedPlots.set(id, dataMap);
+      });
+    }
+    plots = deserializedPlots;
+
     return sessionData;
   } catch (error) {
     console.error('Failed to load session:', error);
     return null;
   }
 });
+
+// ipcMain.handle('loadSession', async (event, sessionName) => {
+
+//   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
+
+//   try {
+//     const data = await fs.readFile(sessionPath, 'utf8');
+//     const sessionData = JSON.parse(data);
+
+//     // Update duplicate plots and annotations
+//     duplicatePlots = sessionData.plots || [];
+//     annotationsDuplicate = sessionData.annotations || [];
+
+//     // Clear and repopulate the plots Map
+//     plots.clear();
+//     duplicatePlots.forEach((plot) => {
+//       plots.set(plot.id, new Map());
+//       for (const [key, value] of Object.entries(plot.formData)) {
+//         if (value.enteredValue) {
+//           plots.get(plot.id).set(key, value.enteredValue);
+//         }
+//       }
+//       // Add the category/maker to the plot
+//       plots.get(plot.id).set('maker', `${plot.category}(`);
+//     });
+
+//     console.log("Plots Map repopulated");
+//     return sessionData;
+//   } catch (error) {
+//     console.error('Failed to load session:', error);
+//     return null;
+//   }
+// });
+
 
 // Emit an event to notify of a session switch
 ipcMain.on('emitSessionSwitch', () => {
@@ -331,6 +404,19 @@ ipcMain.handle('get-sessions-list', async () => {
     return { success: false, message: 'Failed to read sessions list.' };
   }
 });
+
+
+ipcMain.handle('deleteSession', async (event, sessionName) => {
+  const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
+  try {
+    await fs.unlink(sessionPath); // Delete the session file
+    return { success: true };
+  } catch (error) {
+    console.error('Failed to delete session:', error);
+    return { success: false, message: error.message };
+  }
+});
+
 
 
 

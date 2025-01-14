@@ -121,7 +121,7 @@ select {
     
     
     overflow-y: auto;
-    overflow-x: auto;
+    // overflow-x: auto;
 
 
 
@@ -510,4 +510,16 @@ $primary-color: lightgray;
     button {
         margin-top: 10px;
     }
+}
+
+.delete-Session-Button{
+    color: black;
+    background-color: red;
+
+
+    :hover{
+        background-color: red;
+        color: black;
+    }
+
 }

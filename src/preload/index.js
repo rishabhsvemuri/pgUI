@@ -2,7 +2,7 @@ import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('electron', {
   runScript: () => ipcRenderer.send('run-script'),
-  addItem: (newItem) => ipcRenderer.send('add-item', newItem),
+  addItem: (newItem) => ipcRenderer.send('add-item', newItem), //Useless
   onItemAdded: (callback) => ipcRenderer.on('item-added', (event, newItem) => callback(newItem)),
   updateItemValue: (itemId, field, val) => ipcRenderer.send('update-item', itemId, field, val),
   updateCategory: (selectedItem, selectedCategory, itemId) => ipcRenderer.send('update-category', selectedItem, selectedCategory, itemId),
@@ -23,6 +23,7 @@ contextBridge.exposeInMainWorld('electron', {
   // Synchronously get the current duplicatePlots and annotationsDuplicate
   getPlotsDuplicate: () => ipcRenderer.sendSync('getPlotsDuplicate'),
   getAnnotationsDuplicate: () => ipcRenderer.sendSync('getAnnotationsDuplicate'),
+  getPlotsBackEnd: () => ipcRenderer.sendSync('getPlotsBackEnd'),
 
   updatePlotsDuplicate: (plots) => ipcRenderer.send('updatePlotsDuplicate', plots),
   updateAnnotationsDuplicate: (annotations) => ipcRenderer.send('updateAnnotationsDuplicate', annotations),
@@ -34,6 +35,8 @@ contextBridge.exposeInMainWorld('electron', {
   onSessionSwitch: (callback) => ipcRenderer.on('sessionSwitch', callback),
   offSessionSwitch: (callback) => ipcRenderer.removeListener('sessionSwitch', callback),
   createNewSession: (sessionName) => ipcRenderer.invoke('createNewSession', sessionName),
+  deleteSession: (sessionName) => ipcRenderer.invoke('deleteSession', sessionName),
+
 
 
 });

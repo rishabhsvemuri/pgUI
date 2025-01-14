@@ -18,6 +18,7 @@ function Sidebar(){
     const [activeTab, setActiveTab] = useState('PathEntry');
     const [numRunScript, setNumRunScript] = useState(0);
     const [plotAdditionKey, setPlotAdditionKey] = useState(0);
+    const [pathEntryKey, setPathEntryKey] = useState(0);
 
     const handleRunScript = () => {
         window.electron.runScript();
@@ -29,6 +30,7 @@ function Sidebar(){
         const handleSessionSwitch = () => {
             // Update the key to remount PlotAddition
             setPlotAdditionKey(prevKey => prevKey + 1);
+            setPathEntryKey(prevKey => prevKey + 1);
         };
 
         window.electron.onSessionSwitch(handleSessionSwitch);
@@ -77,7 +79,7 @@ function Sidebar(){
                     <div className="tab-div">
                         <img className = 'header' src = {Header} alt="Header"/>
                         <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
-                            <PathEntry />
+                            <PathEntry key={pathEntryKey} />
                         </div>
                         <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
                             <PlotAddition key={plotAdditionKey} />

@@ -58,29 +58,6 @@ function PlotAddition() {
     console.log(window.electron.getPlotsDuplicate())
   }, [plots]);
 
-  // useEffect(() => {
-  //   // Load data from duplicatePlots whenever the session changes
-  //   const updatePlotsFromSession = () => {
-  //     console.log('Session switch detected, updating plots'); // Debug log
-  //     const sessionPlots = window.electron.getPlotsDuplicate();
-  //     console.log('Plots from duplicate after switch:', sessionPlots); // Debug log
-  //     setPlots(sessionPlots); // Reinitialize plots with the latest session data
-  //   };
-  
-  //   // Listener for session change in Nodes
-  //   window.electron.onSessionSwitch(updatePlotsFromSession);
-  
-  //   // Cleanup listener on unmount
-  //   return () => {
-  //     window.electron.offSessionSwitch(updatePlotsFromSession);
-  //   };
-  // }, []);
-
-  useEffect(() => {
-    console.log("PlotAddition mounted with plots:", plots);
-  }, []);
-
-
 
   useEffect(() => {
     const handleJSONGen = (event, jsonData, id) => {
@@ -239,7 +216,7 @@ function PlotAddition() {
       };
       setPlots([...plots, newPlot]);
       setInputValue('');
-      window.electron.addItem(newPlot);
+      // window.electron.addItem(newPlot);
     }
   };
 
@@ -409,6 +386,7 @@ function PlotAddition() {
   return (
     <div id="container">
       <div id="plotListContainer" onBlur={handleBlur} onChange={handleBlur}>
+
         <ul id="plotList">
           {plots.map((plot) => (
             <li key={plot.id}>
@@ -473,7 +451,7 @@ function PlotAddition() {
                         <div className={input.valid ? 'input-field' : 'invalid-field'}>
                           <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
-                            <select id={input.id} name={input.variable} data-plot-id={plot.id}>
+                            <select id={input.id} name={input.variable} data-plot-id={plot.id} value={input.enteredValue !== null ? input.enteredValue: null} onChange={(e) => handleBlur(e)}>
                               {input.options.map((option, idx) => (
                                 <option key={idx} value={option}>{input.variable === 'palette' ? input.display[idx] : option}</option>
                               ))}
@@ -484,6 +462,8 @@ function PlotAddition() {
                               id={input.id}
                               name={input.variable}
                               placeholder={input.default}
+                              value={input.enteredValue !== null ? input.enteredValue: null}
+                              onChange={(e) => handleBlur(e)}
                               data-plot-id={plot.id}
                               type={input.fileInput ? 'file' : null}
                             />
