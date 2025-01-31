@@ -124,15 +124,14 @@ app.whenReady().then(() => {
     try {
       console.log('Generating and writing commands');
       mainWindow?.webContents.send('message', 'Generating and writing commands');
-      // rSession.stdin.write('rm(list = ls())\n');
       await writeScript();
   
       mainWindow?.webContents.send('message', 'Running commands in R session...');
   
       // Pass commands to the R session
       const scriptContent = await fs.readFile(writePath, 'utf8');
+      rSession.stdin.write('rm(list = ls())\n');
       rSession.stdin.write(`${scriptContent}\n`);
-      rSession.stdin.write('dev.off()\n'); // Close PDF device after commands
   
       mainWindow?.webContents.send('message', 'Commands executed successfully');
       mainWindow?.webContents.send('refresh-pdf', savePath);
