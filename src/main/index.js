@@ -2,7 +2,7 @@ import { app, shell, BrowserWindow, ipcMain, protocol, net, dialog } from 'elect
 import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import icon from '../../resources/icon.png?asset';
-const { exec } = require('child_process');
+const { exec, spawn } = require('child_process');
 const url = require('url')
 const path = require('path');
 const fs = require('fs').promises;
@@ -11,6 +11,35 @@ let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
 const writePath = path.join(app.getPath('temp'), 'written.R');
+
+let rSession;
+
+function startRSession() {
+  rSession = spawn("R", ["--vanilla"], { stdio: ["pipe", "pipe", "pipe"] });
+
+  rSession.stdout.on("data", (data) => {
+      console.log(data.toString())
+  });
+
+  rSession.stderr.on("data", (data) => {
+      console.log(data.toString())
+  });
+
+  rSession.on("close", (code) => {
+      console.log(`R process exited with code ${code}`);
+  });
+
+  // Load necessary libraries on startup
+  rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\n')
+  rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\n')
+  rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")\n')
+  rSession.stdin.write('library(plotgardener)\n')
+  rSession.stdin.write('library(plotgardenerData)\n')
+  rSession.stdin.write('data("IMR90_HiC_10kb")\n')
+  rSession.stdin.write('print("Libraries Loaded")\n');
+}
+
+
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -60,6 +89,7 @@ app.whenReady().then(() => {
   });
 
   createWindow();
+  startRSession();
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
@@ -72,47 +102,45 @@ app.whenReady().then(() => {
   });
 
   ipcMain.on('run-script', async (event) => {
-    if (!mainWindow) {
-      console.error('mainWindow is not defined');
+    if (!rSession) {
+      console.error('R session is not active');
+      mainWindow?.webContents.send('message', 'Error: R session is not active');
       return;
     }
-    await mainWindow.webContents.send('check-valid');
   
-    // Create a promise to wait for the check-valid response
+    await mainWindow?.webContents.send('check-valid');
+  
     const isValid = await new Promise((resolve) => {
       ipcMain.once('check-valid-response', (event, isValid) => {
-        console.log(isValid);
-        resolve(isValid); // Resolve the promise with the validity status
+        resolve(isValid);
       });
     });
   
-    // Check the validity and handle invalid case
     if (!isValid) {
-      mainWindow.webContents.send('message', 'Error: Invalid inputs');
+      mainWindow?.webContents.send('message', 'Error: Invalid inputs');
       return;
     }
-
+  
     try {
-      console.log('Generating and writing commands')
-      mainWindow.webContents.send('message', 'Generating and writing commands');
+      console.log('Generating and writing commands');
+      mainWindow?.webContents.send('message', 'Generating and writing commands');
+      // rSession.stdin.write('rm(list = ls())\n');
       await writeScript();
-      mainWindow.webContents.send('message', 'Command generated, written to file, running R Script...');
-      const command = `/usr/local/bin/Rscript "${writePath}"`;
-      exec(command, (error, stdout) => {
-        if (error) {
-          console.error(`Error executing R script: ${error.message}`);
-          mainWindow.webContents.send('message', `Error executing R script: ${error.message}`);
-          return;
-        }
-        if(stdout){
-          mainWindow.webContents.send('refresh-pdf', savePath);
-          mainWindow.webContents.send('message', '');
-        }
-      });
+  
+      mainWindow?.webContents.send('message', 'Running commands in R session...');
+  
+      // Pass commands to the R session
+      const scriptContent = await fs.readFile(writePath, 'utf8');
+      rSession.stdin.write(`${scriptContent}\n`);
+      rSession.stdin.write('dev.off()\n'); // Close PDF device after commands
+  
+      mainWindow?.webContents.send('message', 'Commands executed successfully');
+      mainWindow?.webContents.send('refresh-pdf', savePath);
     } catch (err) {
-      console.error('Error writing script or running R script:', err);
+      console.error('Error running commands in R session:', err);
+      mainWindow?.webContents.send('message', `Error: ${err.message}`);
     }
-  });
+  });  
 
   ipcMain.on('add-item', (event, newItem) => {
     if (!mainWindow) {
@@ -224,13 +252,8 @@ async function writeScript() {
 async function startScript() {
   const width = plots.get('a0').get('width') === undefined || plots.get('a0').get('width') === '' ? Number(8.5) : Number(plots.get('a0').get('width'));
   const height = plots.get('a0').get('height') === undefined || plots.get('a0').get('height') === '' ? Number(11) : Number(plots.get('a0').get('height'));
-  await fs.appendFile(writePath, `${pgInstall}\n`);
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
-  const library = `library(plotgardener)\n`
-  const genes = `library(plotgardenerData)\ndata("IMR90_HiC_10kb")\n`
   await fs.appendFile(writePath, pather);
-  await fs.appendFile(writePath, library);
-  await fs.appendFile(writePath, genes);
 }
 
 async function writeCommands() {
