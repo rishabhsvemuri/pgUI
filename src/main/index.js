@@ -14,11 +14,18 @@ const writePath = path.join(app.getPath('temp'), 'written.R');
 
 let rSession;
 
+app.disableHardwareAcceleration();
+
 function startRSession() {
   rSession = spawn("R", ["--vanilla"], { stdio: ["pipe", "pipe", "pipe"] });
 
   rSession.stdout.on("data", (data) => {
       console.log(data.toString())
+      if (data.toString().includes('null device')) {
+        mainWindow?.webContents.send('refresh-pdf', savePath);
+      }
+      // listen for 1 for dev.off() load pdf then
+      // print unique string after dev off for loading
   });
 
   rSession.stderr.on("data", (data) => {
@@ -130,11 +137,10 @@ app.whenReady().then(() => {
   
       // Pass commands to the R session
       const scriptContent = await fs.readFile(writePath, 'utf8');
-      rSession.stdin.write('rm(list = ls())\n');
-      rSession.stdin.write(`${scriptContent}\n`);
+      await rSession.stdin.write(`${scriptContent}\n`);
   
       mainWindow?.webContents.send('message', 'Commands executed successfully');
-      mainWindow?.webContents.send('refresh-pdf', savePath);
+      // Use R output null device code to show pdf
     } catch (err) {
       console.error('Error running commands in R session:', err);
       mainWindow?.webContents.send('message', `Error: ${err.message}`);
@@ -249,6 +255,8 @@ async function writeScript() {
 }
 
 async function startScript() {
+  await fs.appendFile(writePath, `rm(list = ls())\n`)
+  await fs.appendFile(writePath, `while (dev.cur() > 1) dev.off()\n`)
   const width = plots.get('a0').get('width') === undefined || plots.get('a0').get('width') === '' ? Number(8.5) : Number(plots.get('a0').get('width'));
   const height = plots.get('a0').get('height') === undefined || plots.get('a0').get('height') === '' ? Number(11) : Number(plots.get('a0').get('height'));
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
