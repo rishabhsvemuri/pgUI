@@ -255,8 +255,8 @@ async function writeScript() {
 }
 
 async function startScript() {
-  await fs.appendFile(writePath, `rm(list = ls())\n`)
-  await fs.appendFile(writePath, `while (dev.cur() > 1) dev.off()\n`)
+  await fs.appendFile(writePath, `rm(list = ls())\n`) // clear all the previous commands
+  await fs.appendFile(writePath, `while (dev.cur() > 1) dev.off()\n`) // check if any pdfs are open and close them
   const width = plots.get('a0').get('width') === undefined || plots.get('a0').get('width') === '' ? Number(8.5) : Number(plots.get('a0').get('width'));
   const height = plots.get('a0').get('height') === undefined || plots.get('a0').get('height') === '' ? Number(11) : Number(plots.get('a0').get('height'));
   const pather = `pdf("${savePath}", width = ${width + 2}, height = ${height + 2})\n`;
