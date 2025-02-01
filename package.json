@@ -28,6 +28,7 @@
     "chroma-js": "^3.1.1",
     "codemirror": "^5.65.16",
     "electron-icon-maker": "^0.0.5",
+    "electron-store": "^10.0.0",
     "icons": "^1.0.0",
     "loaders.css": "^0.1.2",
     "monaco-editor": "^0.52.0",
