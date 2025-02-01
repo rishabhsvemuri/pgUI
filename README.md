@@ -26,7 +26,15 @@ $ where R
 
 ## Project Setup
 
+### Install Node.js
+
+Install Node.js [here](https://nodejs.org/en/download).
+
+### Clone this Repository
+
 ### Install Node Modules
+
+Move into the pgUI directory and run the following command to install all Node dependencies.
 
 ```bash
 $ npm install
@@ -34,13 +42,15 @@ $ npm install
 
 ### Development
 
+Use this command to launch the app through the command line as a development project to test.
+
 ```bash
 $ npm run dev
 ```
 
 ## Building for Distribution
 
-Run the command corresponding with your OS.
+Run the command corresponding with your OS to build an installer for Plotgardener.
 
 ```bash
 # For windows
@@ -53,5 +63,5 @@ $ npm run build:mac
 $ npm run build:linux
 ```
 
-## Accessing Installers
+### Accessing Installers
 Within the cloned pgUI repo, navigate to pgUI/dist/plotgardener-1.0.0.(dmg or exe)
