@@ -11,10 +11,7 @@ let mainWindow;
 let plots = new Map();
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
 const writePath = path.join(app.getPath('temp'), 'written.R');
-
-let rSession;
-
-app.disableHardwareAcceleration();
+let rSession; // persistent r session
 
 function startRSession() {
   rSession = spawn("R", ["--vanilla"], { stdio: ["pipe", "pipe", "pipe"] });
@@ -24,16 +21,19 @@ function startRSession() {
       if (data.toString().includes('null device')) {
         mainWindow?.webContents.send('refresh-pdf', savePath);
       }
-      // listen for 1 for dev.off() load pdf then
-      // print unique string after dev off for loading
   });
 
   rSession.stderr.on("data", (data) => {
       console.log(data.toString())
+      if (!(data.toString().includes('masked') || data.toString().includes('plotgardener'))) {
+        mainWindow?.webContents.send('message', `Error: ${data.toString()}`);
+      }
   });
 
   rSession.on("close", (code) => {
       console.log(`R process exited with code ${code}`);
+      console.log('Restarting')
+      startRSession();
   });
 
   // Load necessary libraries on startup
@@ -45,8 +45,6 @@ function startRSession() {
   rSession.stdin.write('data("IMR90_HiC_10kb")\n')
   rSession.stdin.write('print("Libraries Loaded")\n');
 }
-
-
 
 function createWindow() {
   mainWindow = new BrowserWindow({
