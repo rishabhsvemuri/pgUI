@@ -14,7 +14,7 @@ const writePath = path.join(app.getPath('temp'), 'written.R');
 let rSession; // persistent r session
 
 function startRSession() {
-  rSession = spawn("R", ["--vanilla"], { stdio: ["pipe", "pipe", "pipe"] });
+  rSession = spawn("/usr/local/bin/R", ["--vanilla"], { stdio: ["pipe", "pipe", "pipe"] });
 
   rSession.stdout.on("data", (data) => {
       console.log(data.toString())
