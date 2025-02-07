@@ -24,7 +24,7 @@ import plotText from '../assets/plotIcons/plotText.png';
 import plotTranscripts from '../assets/plotIcons/plotTranscripts.png';
 
 function PlotAddition() {
-  const [plots, setPlots] = useState([]);
+  const [plots, setPlots] = useState(window.electron.getPlotsDuplicate());
   const [inputValue, setInputValue] = useState('');
   const [editingPlotId, setEditingPlotId] = useState(null);
   const [newPlotName, setNewPlotName] = useState('');
@@ -51,6 +51,13 @@ function PlotAddition() {
     ["plotText", plotText],
     ["plotTranscripts", plotTranscripts],
   ]);
+
+  //Update PlotsDuplicate to plots whenever plots duplicate is changed
+  useEffect(() => {
+    window.electron.updatePlotsDuplicate(plots);
+    console.log(window.electron.getPlotsDuplicate())
+  }, [plots]);
+
 
   useEffect(() => {
     const handleJSONGen = (event, jsonData, id) => {
@@ -209,7 +216,7 @@ function PlotAddition() {
       };
       setPlots([...plots, newPlot]);
       setInputValue('');
-      window.electron.addItem(newPlot);
+      // window.electron.addItem(newPlot);
     }
   };
 
@@ -382,6 +389,7 @@ function PlotAddition() {
   return (
     <div id="container">
       <div id="plotListContainer" onBlur={handleBlur} onChange={handleBlur}>
+
         <ul id="plotList">
           {plots.map((plot) => (
             <li key={plot.id}>
@@ -446,7 +454,7 @@ function PlotAddition() {
                         <div className={input.valid ? 'input-field' : 'invalid-field'}>
                           <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
-                            <select id={input.id} name={input.variable} data-plot-id={plot.id}>
+                            <select id={input.id} name={input.variable} data-plot-id={plot.id} value={input.enteredValue !== null ? input.enteredValue: null} onChange={(e) => handleBlur(e)}>
                               {input.options.map((option, idx) => (
                                 <option key={idx} value={option}>{input.variable === 'palette' ? input.display[idx] : option}</option>
                               ))}
@@ -457,6 +465,8 @@ function PlotAddition() {
                               id={input.id}
                               name={input.variable}
                               placeholder={input.default}
+                              value={input.enteredValue !== null ? input.enteredValue: null}
+                              onChange={(e) => handleBlur(e)}
                               data-plot-id={plot.id}
                               type={input.fileInput ? 'file' : null}
                             />
