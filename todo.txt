@@ -1,15 +1,6 @@
-Error: Warning: Each child in a list should have a unique "key" prop.
-Better solution for code page (styling and call for output only after run script is called)
-Correct class division for params to make sure different instances of classes are merged (look at plotManhattan)
+Deal with string inputs: do we want to automatically format strings or let users enter quotes
+NLTK parser to avoid future issues with edits to the package
+Session saving for pageCreate and annotations
+    move creating and saving sessions to the toolbar header?
+Fix code page
 Convert share page to info page
-convert px to % to account for differing screen sizes
-
-
-Both: Add required or optional (i.e. A required string or An optional int)
-Rishabh: Genes, GenomeLabel, HiCs, Ideogram, Manhattan, Raster
-Abiye: Pairs, PairsArches, Ranges, Circle, Legend, Segments, Signal, MultiSignal, Polygon, Text, Rect
-    Abiye: Add classes to all shape and basic elements plotting functions (Class: Data, Aesthetic, Positional)
-RUN devtools::document() IN CONSOLE TO CONVERT .R to .Rd
-
-Clear elements after changing the plot
-palette
