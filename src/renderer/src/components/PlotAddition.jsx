@@ -28,7 +28,7 @@ function PlotAddition() {
   const [inputValue, setInputValue] = useState('');
   const [editingPlotId, setEditingPlotId] = useState(null);
   const [newPlotName, setNewPlotName] = useState('');
-  const [annotations, setAnnotations] = useState([]);
+  const [annotations, setAnnotations] = useState(window.electron.getAnnotationsDuplicate());
   const [valid, setValid] = useState(true);
   const inputSections = ['Data', 'Positional', 'Aesthetic'];
 
@@ -57,6 +57,11 @@ function PlotAddition() {
     window.electron.updatePlotsDuplicate(plots);
     console.log(window.electron.getPlotsDuplicate())
   }, [plots]);
+
+  useEffect(() => {
+    window.electron.updateAnnotationsDuplicate(annotations);
+    console.log(window.electron.getAnnotationsDuplicate())
+  }, [annotations]);
 
 
   useEffect(() => {
@@ -522,6 +527,7 @@ function PlotAddition() {
                                     id={input.id}
                                     name={input.variable}
                                     placeholder={input.default}
+                                    value={input.enteredValue !== null ? input.enteredValue: null}
                                     data-plot-id={annotation.id}
                                     type={input.fileInput ? 'file' : null}
                                   />
