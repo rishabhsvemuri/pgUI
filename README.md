@@ -14,11 +14,11 @@ Install at [cran](https://cran.r-project.org/mirrors.html) if not already on mac
 
 **__For macOS__**
 ```bash
-$ which R
+which R
 ```
 **__For Windows__**
 ```bash
-$ where R
+where R
 ```
 
 ## Project Setup
@@ -35,7 +35,7 @@ Open your IDE and clone this Repository in your desired directory.
 git clone https://github.com/rishabhsvemuri/pgUI.git
 ```
 
-Then, move into the pgUI directory.
+Then, move into the pgUI project directory (if not already there)
 ```bash
 cd pgUI
 ``` 
