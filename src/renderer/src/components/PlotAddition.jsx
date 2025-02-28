@@ -239,12 +239,15 @@ function PlotAddition() {
 
   const handleBlur = useCallback((event) => {
     const { dataset: { plotId }, name, value } = event.target;
-    let formattedValue = value;
+    let formattedValue;
     if (name == 'name') {
       return;
     }
     if (value.includes('fakepath')) {
-      formattedValue = event.target.files[0].path
+      formattedValue = `\"${event.target.files[0].path}\"`
+      console.log(formattedValue)
+    } else {
+      formattedValue = value
     }
     if (plotId && name) {
       setPlots(prevPlots =>
@@ -254,12 +257,7 @@ function PlotAddition() {
               ...plot,
               formData: plot.formData.map(param => {
                 if (param.variable === name) {
-                  // Format the value based on param type
-                  // if (param.type === 'character' || param.type === 'string') {
-                  //   formattedValue = `\"${formattedValue}\"`;
-                  // }
                   window.electron.updateItemValue(plotId, name, formattedValue)
-      
                   return { ...param, enteredValue: formattedValue, valid: true };
                 }
                 return param;
@@ -276,14 +274,8 @@ function PlotAddition() {
               ...annotation,
               formData: annotation.formData.map(param => {
                 if (param.variable === name) {
-      
-                  // Format the value based on param type
-                  if (param.type === 'character' || param.type === 'string') {
-                    formattedValue = `\"${formattedValue}\"`;
-                  }
                   window.electron.updateItemValue(plotId, name, formattedValue)
-      
-                  return {...param, enteredValue: value, valid: true}
+                  return {...param, enteredValue: formattedValue, valid: true}
                 }
                 return param;
               }),
@@ -465,7 +457,7 @@ function PlotAddition() {
                               id={input.id}
                               name={input.variable}
                               placeholder={input.default}
-                              value={input.enteredValue !== null ? input.enteredValue: null}
+                              value={input.enteredValue !== null && !input.fileInput ? input.enteredValue : null} // cannot set value for a file input
                               onChange={(e) => handleBlur(e)}
                               data-plot-id={plot.id}
                               type={input.fileInput ? 'file' : null}
