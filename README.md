@@ -27,9 +27,10 @@ $ where R
 
 Install Node.js [here](https://nodejs.org/en/download).
 
-### Install Node Modules
+### Clone his Project Install Node Modules
 
-Clone this Repository in your desired directory.
+Open your IDE and clone this Repository in your desired directory.
+
 ```bash
 git clone https://github.com/rishabhsvemuri/pgUI.git
 ```
@@ -38,8 +39,9 @@ Then, move into the pgUI directory.
 ```bash
 cd pgUI
 ``` 
+### Install Node Modules
 
-Run the following command to install all Node dependencies.
+Open a terminal in your project directory and run the following command to install all Node dependencies.
 
 ```bash
 npm install
