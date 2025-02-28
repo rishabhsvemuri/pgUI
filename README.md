@@ -42,7 +42,7 @@ cd pgUI
 Run the following command to install all Node dependencies.
 
 ```bash
-$ npm install
+npm install
 ```
 
 ### Development
