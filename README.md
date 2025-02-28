@@ -57,7 +57,7 @@ npm run dev
 
 ## Building for Distribution
 
-Run the command corresponding with your OS to build an installer for Plotgardener.
+Run the command corresponding with your OS to build an installer for Plotgardener. This will create an application shortcut.
 
 **__For Windows__**
 ```bash
