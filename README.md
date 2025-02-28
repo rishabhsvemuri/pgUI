@@ -49,7 +49,7 @@ npm install
 
 ### Development
 
-Use this command to launch the app through the command line as a development project to test.
+Run this command to launch the app through the command line as a development project to test.
 
 ```bash
 npm run dev
@@ -76,7 +76,7 @@ npm run build:linux
 
 ### Accessing Installers
 
-To quicly open pgUI directory in your Finder/Files, run this command:
+To quicly open pgUI directory in your Finder/Files, run this command in your project directory terminal:
 ```bash
 open .
 ```
