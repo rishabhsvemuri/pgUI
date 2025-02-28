@@ -12,11 +12,12 @@ An Electron, React app for the plotgardener R package.
 Check if your machine has R installed. If it is installed, these commands will return where it is installed.
 Install at [cran](https://cran.r-project.org/mirrors.html) if not already on machine.
 
+**__For macOS__**
 ```bash
-# For macOS
 $ which R
-
-# For Windows
+```
+**__For Windows__**
+```bash
 $ where R
 ```
 
@@ -28,7 +29,17 @@ Install Node.js [here](https://nodejs.org/en/download).
 
 ### Install Node Modules
 
-Clone this Repository. Then, move into the pgUI directory and run the following command to install all Node dependencies.
+Clone this Repository in your desired directory.
+```bash
+git clone https://github.com/rishabhsvemuri/pgUI.git
+```
+
+Then, move into the pgUI directory.
+```bash
+cd pgUI
+``` 
+
+Run the following command to install all Node dependencies.
 
 ```bash
 $ npm install
@@ -39,23 +50,37 @@ $ npm install
 Use this command to launch the app through the command line as a development project to test.
 
 ```bash
-$ npm run dev
+npm run dev
 ```
 
 ## Building for Distribution
 
 Run the command corresponding with your OS to build an installer for Plotgardener.
 
+**__For Windows__**
 ```bash
-# For windows
-$ npm run build:win
+npm run build:win
+```
 
-# For macOS
-$ npm run build:mac
+**__For macOS__**
+```bash
+npm run build:mac
+```
 
-# For Linux
-$ npm run build:linux
+**__For Linux__**
+```bash
+npm run build:linux
 ```
 
 ### Accessing Installers
+
+To quicly open pgUI directory in your Finder/Files, run this command:
+```bash
+open .
+```
+
 Within the cloned pgUI repo, navigate to pgUI/dist/plotgardener-1.0.0.(dmg or exe)
+
+- If on **Windows** open the **plotgardener-1.0.0.exe** file
+
+- If on **macOS** open the **plotgardener-1.0.0.dmg** file
