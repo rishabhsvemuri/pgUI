@@ -5,12 +5,23 @@ import { BsInfoCircle } from "react-icons/bs";
 
 function PathEntry() {
   const [pageCreateData, setPageCreateData] = useState({});
+  const [a0, setA0] = useState(() => {
+    const plots = window.electron.getPlotsBackEnd();
+    return plots.has('a0') ? Object.fromEntries(plots.get('a0')) : {};
+  });
+
+  const printHashMap = () => {
+    console.log("Plots Hashmap:", window.electron.getPlotsBackEnd());
+  };
 
   useEffect(() => {
     const runOnStart = () => {
+      const plots = window.electron.getPlotsBackEnd();
       const id = 'a0';
       const category = 'pageCreate';
-      window.electron.updateCategory(category, category, id);
+      if (plots.size === 0) {
+        window.electron.updateCategory(category, category, id);
+      }
       window.electron.loadJson(category, id);
     };
     runOnStart();
@@ -36,6 +47,7 @@ function PathEntry() {
 
   const handleInputBlur = (event, id) => {
     if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'select') {
+      setA0(prev => ({ ...prev, [event.target.name]: event.target.value }));
       window.electron.updateItemValue(id, event.target.name, event.target.value);
     }
   };
@@ -61,7 +73,8 @@ function PathEntry() {
                     id={`${id}-${variable}`}
                     name={variable}
                     data-plot-id={id}
-                    onBlur={(event) => handleInputBlur(event, id)}
+                    onChange={(event) => handleInputBlur(event, id)}
+                    value={a0 && a0.hasOwnProperty(key) ? a0[key] : null}
                   >
                     {options.split(',').map((option) => (
                       <option key={option} value={option}>
@@ -75,7 +88,8 @@ function PathEntry() {
                     name={variable}
                     placeholder={defaultArg}
                     data-plot-id={id}
-                    onBlur={(event) => handleInputBlur(event, id)}
+                    onChange={(event) => handleInputBlur(event, id)}
+                    value={a0 && a0.hasOwnProperty(key) ? a0[key] : null}
                   />
                 )}
                 <div className='tooltip'>
@@ -96,7 +110,8 @@ function PathEntry() {
           <h2>Create a page:</h2>
           <a href={`https://phanstiellab.github.io/plotgardener/reference/pageCreate.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
         </div>
-        {generatePageCreate()} {/* Call generatePageCreate here */}
+        {generatePageCreate()}
+        <button onClick={printHashMap}>Click</button>
       </div>
     </div>
   );

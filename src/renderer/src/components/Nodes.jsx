@@ -44,29 +44,6 @@ function Nodes() {
     }
   };
   
-
-  // const handleSessionSelect = async (e) => {
-  //   console.log("Start of load session")
-  //   const selected = e.target.value;
-  //   console.log("got selected session")
-  //   setSelectedSession(selected);
-  //   console.log("Set Selected Session")
-
-  //   // Load the selected session data from file
-  //   const sessionData = await window.electron.loadSession(selected);
-  //   console.log("After load session")
-  //   if (sessionData) {
-  //     alert("Loaded Session Successfully");
-  //     // Update duplicatePlots and annotationsDuplicate with the loaded session data
-  //     window.electron.updatePlotsDuplicate(sessionData.plots || []);
-  //     window.electron.updateAnnotationsDuplicate(sessionData.annotations || []);
-
-  //     // Notify PlotAddition to reload the session data
-  //     window.electron.emitSessionSwitch();
-  //   } else {
-  //     alert('Failed to load session')
-  //   }
-  // };
   const handleSessionSelect = async (e) => {
     console.log("Start of load session");
     const selected = e.target.value;
