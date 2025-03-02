@@ -64,6 +64,7 @@ function Nodes() {
   
       // Notify PlotAddition to reload the session data
       window.electron.emitSessionSwitch();
+      window.electron.runScript();
     } else {
       alert('Failed to load session');
     }

@@ -312,7 +312,7 @@ ipcMain.handle('createNewSession', async (event, sessionName) => {
 // Refactor saveSession function to be callable directly within main/index.js
 async function saveSession(sessionData, sessionName) {
   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
-  try {
+  try { 
     const serializedPlots = Array.from(plots.entries()).map(([id, dataMap]) => {
       const serializedData = {};
       dataMap.forEach((value, key) => {
@@ -336,25 +336,6 @@ ipcMain.handle('saveSession', async (event, sessionData, sessionName) => {
   return await saveSession(sessionData, sessionName);
 });
 
-//Load session data from a file
-// ipcMain.handle('loadSession', async (event, sessionName) => {
-//   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
-
-//   try {
-
-//     const data = await fs.readFile(sessionPath, 'utf8');
-//     const sessionData = JSON.parse(data);
-//     duplicatePlots = sessionData.plots || [];
-//     annotationsDuplicate = sessionData.annotations || [];
-//     plots = sessionData.backEndPlots || new Map();
-    
-//     return sessionData;
-
-//   } catch (error) {
-//     console.error('Failed to load session:', error);
-//     return null;
-//   }
-// });
 
 ipcMain.handle('loadSession', async (event, sessionName) => {
   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
@@ -381,39 +362,6 @@ ipcMain.handle('loadSession', async (event, sessionName) => {
     return null;
   }
 });
-
-// ipcMain.handle('loadSession', async (event, sessionName) => {
-
-//   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
-
-//   try {
-//     const data = await fs.readFile(sessionPath, 'utf8');
-//     const sessionData = JSON.parse(data);
-
-//     // Update duplicate plots and annotations
-//     duplicatePlots = sessionData.plots || [];
-//     annotationsDuplicate = sessionData.annotations || [];
-
-//     // Clear and repopulate the plots Map
-//     plots.clear();
-//     duplicatePlots.forEach((plot) => {
-//       plots.set(plot.id, new Map());
-//       for (const [key, value] of Object.entries(plot.formData)) {
-//         if (value.enteredValue) {
-//           plots.get(plot.id).set(key, value.enteredValue);
-//         }
-//       }
-//       // Add the category/maker to the plot
-//       plots.get(plot.id).set('maker', `${plot.category}(`);
-//     });
-
-//     console.log("Plots Map repopulated");
-//     return sessionData;
-//   } catch (error) {
-//     console.error('Failed to load session:', error);
-//     return null;
-//   }
-// });
 
 
 // Emit an event to notify of a session switch
