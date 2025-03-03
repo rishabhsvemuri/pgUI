@@ -111,7 +111,6 @@ function PathEntry() {
           <a href={`https://phanstiellab.github.io/plotgardener/reference/pageCreate.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
         </div>
         {generatePageCreate()}
-        <button onClick={printHashMap}>Click</button>
       </div>
     </div>
   );
