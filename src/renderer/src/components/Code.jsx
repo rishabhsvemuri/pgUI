@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Controlled as CodeMirror} from 'react-codemirror2'
+import { BsArrowsAngleExpand } from "react-icons/bs";
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/theme/icecoder.css';
@@ -7,6 +8,8 @@ import 'codemirror/mode/r/r';
 
 function Code() {
     const [code, setCode] = useState('');
+    const [isExpanded, setIsExpanded] = useState(false);
+    
   
     useEffect(() => {
       const fetchData = async () => {
@@ -25,10 +28,20 @@ function Code() {
     const handleDownload = () => {
       window.electron.downloadCode(code)
     };
+
+    const handleExpand = () => {
+
+    }
   
     return (
-      <div className='plot-div'>
-        <h2>Generated R Script</h2>
+      <div className={`plot-div ${isExpanded ? "expanded" : ""}`}>
+        <div className='expand-header'>
+          <h2 className='gen-r-script'>Generated R Script</h2> 
+          <BsArrowsAngleExpand 
+            className="expand-code" 
+            onClick={() => setIsExpanded(!isExpanded)} 
+          />
+        </div>
         <div className='code-editor'>
         <CodeMirror
           value={code}
@@ -41,8 +54,9 @@ function Code() {
             handleChange(editor, data, value);
           }}
         />
-        </div>
         <button onClick={handleDownload}>Download Code</button>
+        </div>
+        
       </div>
 
     );

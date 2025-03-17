@@ -5,6 +5,7 @@
     overflow: visible;
     height: 100%;
     max-height: none;
+    transition: all 0.5s linear;
 
     select {
         border-radius: 0;
@@ -32,6 +33,63 @@
     }
     
 }
+
+// Expanded mode for full-screen effect
+.plot-div.expanded {
+    position: fixed; // Take it out of normal layout
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); // Darken background
+    z-index: 1000;
+    margin-left: 5%;
+    padding-left: 1;
+    box-sizing: border-box;
+    overflow: auto; // Enable scrolling if needed
+    transition: all 0.5s linear;
+
+  
+    .code-editor {
+      height: 90vh; // Allow it to take most of the screen
+    }
+    .expand-code {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+        position: absolute;
+        right: 100px;
+        top: 10px;
+    }
+    .gen-r-script {
+        font-size: 5vh;
+    }
+
+
+    // Ensure CodeMirror expands with the div
+  .code-editor {
+    height: 100%;
+    width: 96%;
+    font-size: 10px;
+    .CodeMirror {
+      height: 100%;
+      width: 100%;
+      font-size: inherit;
+      color: #d8dee9;
+      min-height: 100px;
+      margin-bottom: 10px;
+    }
+    .CodeMirror-scroll {
+      height: 100%;
+    }
+    }
+  }
+  
+  
+  
+
+  
+  
 
 select {
     height: 30px;
@@ -121,7 +179,7 @@ select {
     
     
     overflow-y: auto;
-    // overflow-x: auto;
+    // overflow-x: visible;
 
 
 
@@ -321,6 +379,15 @@ body {
     }
 }
 
+.gen-r-script {
+    float: left;
+    margin-right: 25%;
+}
+
+.expand-code{
+    margin-top: 2%;
+}
+
 .code-editor {
     height: 100%;
     width: 100%;
@@ -348,8 +415,7 @@ body {
     .CodeMirror-linenumber {
       color: #d8dee9; /* Example line number color */
     }
-  }
-
+}
 /* Tooltip container */
 .tooltip {
     position: relative;
