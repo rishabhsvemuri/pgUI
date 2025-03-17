@@ -5,10 +5,10 @@ import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
 import { MdIosShare } from "react-icons/md";
 import { BsInfoCircle } from "react-icons/bs";
-import PathEntry from './PathEntry';
+import PageCreate from './PageCreate';
 import PlotAddition from './PlotAddition';
 import Code from './Code';
-import Nodes from './Nodes';
+import Sessions from './Sessions';
 import Info from './Info';
 import Logo from '.././assets/PlotgardenerLogo.png';
 import '.././assets/style.scss';
@@ -62,7 +62,7 @@ function Sidebar(){
                     </div>
                     <div className="tooltip">
                         <LuNetwork className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#232323' } : {}}/>
-                        <span className="tooltiptext">Nodes</span>
+                        <span className="tooltiptext">Sessions</span>
                     </div>
                     <div className="tooltip">
                         <FaCode className='icon-images' onClick={() => setActiveTab('Code')} style={activeTab === 'Code' ? { backgroundColor: '#232323' } : {}}/>
@@ -79,13 +79,13 @@ function Sidebar(){
                     <div className="tab-div">
                         <img className = 'header' src = {Header} alt="Header"/>
                         <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
-                            <PathEntry key={pathEntryKey} />
+                            <PageCreate key={pathEntryKey} />
                         </div>
                         <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
                             <PlotAddition key={plotAdditionKey} />
                         </div>
                         <div className={`tab-content ${activeTab === 'Nodes' ? 'active' : ''}`}>
-                            <Nodes />
+                            <Sessions />
                         </div>
                         <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
                             <Code nrs={numRunScript}/>
