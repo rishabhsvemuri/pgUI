@@ -5,7 +5,9 @@
     overflow: visible;
     height: 100%;
     max-height: none;
-
+    transition: all 0.5s linear;
+ 
+ 
     select {
         border-radius: 0;
         margin-right: 5px;
@@ -13,14 +15,16 @@
         color: white;
         border: 0;
     }
-
+ 
+ 
     label {
         font-size: 14px;
         color: white;
         margin-bottom: 5px;
         padding: 5px;
     }
-
+ 
+ 
     input {
         background-color: #232323;
         color: white;
@@ -30,21 +34,82 @@
         margin-right: 5px;
         padding-left: 5px;
     }
-    
-}
-
-select {
+   
+ }
+ 
+ 
+ // Expanded mode for full-screen effect
+ .plot-div.expanded {
+    position: fixed; // Take it out of normal layout
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); // Darken background
+    z-index: 1000;
+    margin-left: 5%;
+    padding-left: 1;
+    box-sizing: border-box;
+    overflow: auto; // Enable scrolling if needed
+    transition: all 0.5s linear;
+ 
+ 
+     .code-editor {
+      height: 90vh; // Allow it to take most of the screen
+    }
+    .expand-code {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+        position: absolute;
+        right: 100px;
+        top: 10px;
+    }
+    .gen-r-script {
+        font-size: 5vh;
+    }
+ 
+ 
+ 
+ 
+    // Ensure CodeMirror expands with the div
+  .code-editor {
+    height: 100%;
+    width: 96%;
+    font-size: 10px;
+    .CodeMirror {
+      height: 100%;
+      width: 100%;
+      font-size: inherit;
+      color: #d8dee9;
+      min-height: 100px;
+      margin-bottom: 10px;
+    }
+    .CodeMirror-scroll {
+      height: 100%;
+    }
+    }
+  }
+  
+ 
+ 
+  
+ 
+ 
+ select {
     height: 30px;
-}
-
-.header {
+ }
+ 
+ 
+ .header {
     width: 90%;
     height: 90%;
     margin-top: 5%;
     margin-bottom: 5%;
-}
-
-.nav-bar {
+ }
+ 
+ 
+ .nav-bar {
     background: #2c2c2c;
     width: 4%;
     height: 100%;
@@ -53,11 +118,13 @@ select {
     left: 0;
     z-index: 3;
     min-height: 500px;
-
+ 
+ 
     .logo {
         display: block;
         padding: 0px 0;
-
+ 
+ 
         img {
             display: block;
             margin: 5% auto;
@@ -65,20 +132,23 @@ select {
             margin-bottom: 15px;
         }
     }
-
+ 
+ 
     nav {
         display: block;
         text-align: center;
         top: 30%;
         width: 100%;
     }
-}
-
-.place-holder {
+ }
+ 
+ 
+ .place-holder {
     width: 50px;
-}
-
-.icon-images {
+ }
+ 
+ 
+ .icon-images {
     width: 75%;
     height: 75%;
     color: lightgray;
@@ -88,14 +158,16 @@ select {
     margin-left: -10%;
     box-sizing: content-box;
     transition: background-color 0.3s, transform 0.3s;
-
+ 
+ 
     &:hover {
         background-color: #232323;
         // transform: scale(1.1);
     }
-}
-
-.logo-image {
+ }
+ 
+ 
+ .logo-image {
     display: block;
     padding: 0px 0;
     display: block;
@@ -103,13 +175,15 @@ select {
     margin-bottom: 15%;
     margin-left: 20%;
     width: 80%;
-}
-
-.page {
+ }
+ 
+ 
+ .page {
     margin-left: 3.40%;
-}
-
-.container {
+ }
+ 
+ 
+ .container {
     background-color: #232323;
     width: 23.75%;
     height: 100%;
@@ -117,82 +191,103 @@ select {
     position: fixed;
     padding-left: 1.5%;
     padding-right: 1.5%;
-    
-    
-    
+   
+   
+   
     overflow-y: auto;
-    // overflow-x: auto;
-
-
-
+    // overflow-x: visible;
+ 
+ 
+ 
+ 
+ 
+ 
     h1, h2, h3, h4, h5 {
         color: white;
     }
-
+ 
+ 
     p {
         color: white;
         margin-bottom: 1px;
     }
-
+ 
+ 
     /* Tab content styles */
-
+ 
+ 
     .tab-div{
         margin-bottom: 75px;
     }
-
+ 
+ 
     .tab-content {
         display: none;
     }
-
+ 
+ 
     .tab-content.active {
         display: block;
     }
-    
+   
     .rbtn {
         margin-top: 10px;
         margin-bottom: 15px;
         width: 100%;
-        
+       
     }
-}
-
-.output-div {
+ }
+ 
+ 
+ .output-div {
     margin-left: 35%;
     margin-top: 6%;
     color: white;
     justify-content: center;
-}
-
-
-
-
-
-body {
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ body {
     background-color: #2c2c2c;
-}
-
-
-
-.rbtn-div{
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .rbtn-div{
     position: fixed;
     bottom: 0;
     background-color: #232323;
     width: 23.75%;
-}
-
-#path{
+ }
+ 
+ 
+ #path{
     color: white;
-}
-
-.field-content {
+ }
+ 
+ 
+ .field-content {
     // display: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-}
-
-
-.input-field {
+ }
+ 
+ 
+ 
+ 
+ .input-field {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -201,12 +296,13 @@ body {
         flex: 1;
         margin-right: 10px;
     }
-    
+   
     select,
     input {
         flex: 2;
         text-align: left;
-
+ 
+ 
         margin: 5px;
         padding-left: 5px;
     }
@@ -225,7 +321,8 @@ body {
         background-color: #4040;
   }
   }
-
+ 
+ 
   .invalid-field {
     display: flex;
     justify-content: space-between;
@@ -236,7 +333,7 @@ body {
         margin-right: 10px;
         color: red;
     }
-    
+   
     select,
     input {
         flex: 2;
@@ -248,44 +345,50 @@ body {
         border: 2px solid red;
     }
   }
-
-.field-content.active {
+ 
+ 
+ .field-content.active {
     // display: block;
     max-height: 100%; // Adjust this value based on your content height
     transition: max-height 0.5s ease;
-    
-}
-
-.plot-header {
+   
+ }
+ 
+ 
+ .plot-header {
     display: flex;
     justify-content: space-between;
     align-items: center; /* Vertically center the items */
     margin-top: 2px;
     margin-bottom: 4px;
     height: 100%;
-}
-
-.left-items {
+ }
+ 
+ 
+ .left-items {
     display: flex;
     align-items: center;
     gap: 10px; /* Adjust gap as needed */
-}
-
-.right-items {
+ }
+ 
+ 
+ .right-items {
     display: flex;
     align-items: center;
     gap: 10px; /* Adjust gap as needed */
-}
-
-.plot-name {
+ }
+ 
+ 
+ .plot-name {
     display: inline-block;
     margin-left: 0px;
     font-family: 'Rubik', sans-serif; /* Added comma */
     cursor: pointer;
     text-align: left;
-}
-
-.plot-icon-image {
+ }
+ 
+ 
+ .plot-icon-image {
     display: inline-block;
     text-align: right;
     width: 25px;
@@ -293,41 +396,57 @@ body {
     background-color: white;
     color: black;
     border: 2px solid #232323;
-}
-
-.delete-button, .collapseButton {
+ }
+ 
+ 
+ .delete-button, .collapseButton {
     cursor: pointer;
     color: white;
-}
-
-.delete-button:hover, .collapseButton:hover {
+ }
+ 
+ 
+ .delete-button:hover, .collapseButton:hover {
     color: #232323; /* Adjust hover color */
-}
-
-
-.half {
+ }
+ 
+ 
+ 
+ 
+ .half {
     width: 30%;
     margin-left: 2%;
     &:first-child {
         margin-left: 0;
     }
-}
-
-.full{
+ }
+ 
+ 
+ .full{
     width: 100%;
     margin-left: 2%;
     &:first-child {
         margin-left: 0;
     }
-}
-
-.code-editor {
+ }
+ 
+ 
+ .gen-r-script {
+    float: left;
+    margin-right: 25%;
+ }
+ 
+ 
+ .expand-code{
+    margin-top: 2%;
+ }
+ 
+ 
+ .code-editor {
     height: 100%;
     width: 100%;
     font-size: 10px;
-    
-  
-    .CodeMirror {
+   
+     .CodeMirror {
       height: 1000%;
       width: 100%;
       font-size: inherit;
@@ -335,29 +454,24 @@ body {
       min-height: 100px;
       margin-bottom: 10px
     }
-  
-    .CodeMirror-scroll {
+     .CodeMirror-scroll {
       height: 100%;
     }
-  
-    .CodeMirror-gutters {
+     .CodeMirror-gutters {
       background-color: #3b4252; /* Example gutter background color */
       border-right: 1px solid #4c566a; /* Example gutter border color */
     }
-  
-    .CodeMirror-linenumber {
+     .CodeMirror-linenumber {
       color: #d8dee9; /* Example line number color */
     }
-  }
-
-/* Tooltip container */
-.tooltip {
+ }
+ /* Tooltip container */
+ .tooltip {
     position: relative;
     display: inline-block;
     cursor: pointer;
   }
-  
-  /* Tooltip text */
+   /* Tooltip text */
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 100px; /* Adjust width as needed */
@@ -375,13 +489,15 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-
+ 
+ 
   /* Show tooltip text on hover */
   .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
   }
-
+ 
+ 
   /* Tooltip text */
   .tooltip .tooltipdescription {
     visibility: hidden;
@@ -400,14 +516,14 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  
-  /* Show tooltip text on hover */
+   /* Show tooltip text on hover */
   .tooltip:hover .tooltipdescription {
     visibility: visible;
     opacity: 1;
   }
-
-#pdf-text{
+ 
+ 
+ #pdf-text{
     text-align: center;
     color: #888787;
     font-size: xx-large;
@@ -415,56 +531,65 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 40vh;
-}
-#output-text{
+ }
+ #output-text{
     text-align: center;
     color: #888787;
     font-size: xx-large;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#output-hr{
+ }
+ 
+ 
+ #output-hr{
     color: #888787;
-}
-
-$primary-color: lightgray;
-// @import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
-@import 'loaders.css/src/animations/square-spin.scss';
-// @import 'loaders.css/src/animations/ball-grid-pulse.scss';
-// @import 'loaders.css/src/animations/ball-spin-fade-loader.scss';
-
-.loader-container {
+ }
+ 
+ 
+ $primary-color: lightgray;
+ // @import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
+ @import 'loaders.css/src/animations/square-spin.scss';
+ // @import 'loaders.css/src/animations/ball-grid-pulse.scss';
+ // @import 'loaders.css/src/animations/ball-spin-fade-loader.scss';
+ 
+ 
+ .loader-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-}
-
-.loader-hidden {
+ }
+ 
+ 
+ .loader-hidden {
   display: none;
-}
-
-.loader-active {
+ }
+ 
+ 
+ .loader-active {
   display: block;
-}
-
-.pdfOrLoader {
+ }
+ 
+ 
+ .pdfOrLoader {
     display: none;
-}
-
-.pdfOrLoader.active {
+ }
+ 
+ 
+ .pdfOrLoader.active {
     display: block;
-}
-
-.loaderIconSpinner{
+ }
+ 
+ 
+ .loaderIconSpinner{
     position: absolute;
     left: 65%;
     margin-top: 21%;
-}
-
-.dropdown-container {
+ }
+ 
+ 
+ .dropdown-container {
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -478,8 +603,9 @@ $primary-color: lightgray;
         }
     }
   }
-
-.page-create {
+ 
+ 
+ .page-create {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -497,9 +623,10 @@ $primary-color: lightgray;
     h2 {
         margin: 0;
     }
-}
-
-.anno-div {
+ }
+ 
+ 
+ .anno-div {
     // display: flex;
     // align-items: center;
     height: 100%;
@@ -510,16 +637,18 @@ $primary-color: lightgray;
     button {
         margin-top: 10px;
     }
-}
-
-.delete-Session-Button{
+ }
+ 
+ 
+ .delete-Session-Button{
     color: black;
     background-color: red;
-
-
+ 
+ 
+ 
+ 
     :hover{
         background-color: red;
         color: black;
     }
-
-}
+ } 
