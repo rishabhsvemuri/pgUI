@@ -1,5 +1,5 @@
 
-# Electron App with R Plotgardener Integration
+# ./main/index.js
 
 This manual provides a comprehensive breakdown of the main process logic for an Electron-based desktop app that communicates with an R session to dynamically render plots using the **plotgardener** R package.
 
