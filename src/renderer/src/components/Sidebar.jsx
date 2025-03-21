@@ -5,20 +5,20 @@ import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
 import { MdIosShare } from "react-icons/md";
 import { BsInfoCircle } from "react-icons/bs";
-import PathEntry from './PathEntry';
 import PlotAddition from './PlotAddition';
 import Code from './Code';
-import Nodes from './Nodes';
 import Info from './Info';
 import Logo from '.././assets/PlotgardenerLogo.png';
 import '.././assets/style.scss';
 import Header from '.././assets/pg-wordmark.png'
+import PageCreate from './PageCreate';
+import Sessions from './Sessions';
 
 function Sidebar(){
     const [activeTab, setActiveTab] = useState('PathEntry');
     const [numRunScript, setNumRunScript] = useState(0);
     const [plotAdditionKey, setPlotAdditionKey] = useState(0);
-    const [pathEntryKey, setPathEntryKey] = useState(0);
+    const [pageCreateKey, setPageCreateKey] = useState(0);
 
     const handleRunScript = () => {
         window.electron.runScript();
@@ -30,7 +30,7 @@ function Sidebar(){
         const handleSessionSwitch = () => {
             // Update the key to remount PlotAddition
             setPlotAdditionKey(prevKey => prevKey + 1);
-            setPathEntryKey(prevKey => prevKey + 1);
+            setPageCreateKey(prevKey => prevKey + 1);
         };
 
         window.electron.onSessionSwitch(handleSessionSwitch);
@@ -79,13 +79,13 @@ function Sidebar(){
                     <div className="tab-div">
                         <img className = 'header' src = {Header} alt="Header"/>
                         <div className={`tab-content ${activeTab === 'PathEntry' ? 'active' : ''}`}>
-                            <PathEntry key={pathEntryKey} />
+                            <PageCreate key={pageCreateKey} />
                         </div>
                         <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
                             <PlotAddition key={plotAdditionKey} />
                         </div>
                         <div className={`tab-content ${activeTab === 'Nodes' ? 'active' : ''}`}>
-                            <Nodes />
+                            <Sessions/>
                         </div>
                         <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
                             <Code nrs={numRunScript}/>
