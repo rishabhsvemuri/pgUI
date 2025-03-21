@@ -62,7 +62,7 @@ function Sidebar(){
                     </div>
                     <div className="tooltip">
                         <LuNetwork className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#232323' } : {}}/>
-                        <span className="tooltiptext">Nodes</span>
+                        <span className="tooltiptext">Sessions</span>
                     </div>
                     <div className="tooltip">
                         <FaCode className='icon-images' onClick={() => setActiveTab('Code')} style={activeTab === 'Code' ? { backgroundColor: '#232323' } : {}}/>
