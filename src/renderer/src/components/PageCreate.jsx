@@ -3,7 +3,7 @@ import '.././assets/style.scss';
 import { BsQuestionCircle } from "react-icons/bs";
 import { BsInfoCircle } from "react-icons/bs";
 
-function PathEntry() {
+function PageCreate() {
   const [pageCreateData, setPageCreateData] = useState({});
   const [a0, setA0] = useState(() => {
     const plots = window.electron.getPlotsBackEnd();
@@ -116,4 +116,4 @@ function PathEntry() {
   );
 }
 
-export default PathEntry;
+export default PageCreate;
