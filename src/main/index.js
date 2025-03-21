@@ -50,7 +50,9 @@ function startRSession() {
   rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\n')
   rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\n')
   rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")\n')
+  rSession.stdin.write('if (!requireNamespace("RColorBrewer", quietly = TRUE)) install("RColorBrewer")\n')
   rSession.stdin.write('library(plotgardener)\n')
+  rSession.stdin.write('library(RColorBrewer)\n') // load RColorBrewer for pallete options
   rSession.stdin.write('library(plotgardenerData)\n')
   rSession.stdin.write('data("IMR90_HiC_10kb")\n')
   rSession.stdin.write('print("Libraries Loaded")\n');
@@ -471,6 +473,7 @@ async function writeScript() {
 // Helper function to start the R script with necessary libraries
 async function startScript() {
   await fs.appendFile(writePath, `rm(list = ls())\n`) // clear all the previous commands
+  // await fs.appendFile(writePath, `data("IMR90_HiC_10kb")\n`) // used for testing to use the data
   await fs.appendFile(writePath, `while (dev.cur() > 1) dev.off()\n`) // check if any pdfs are open and close them
   const width = plots.get('a0').get('width') === undefined || plots.get('a0').get('width') === '' ? Number(8.5) : Number(plots.get('a0').get('width'));
   const height = plots.get('a0').get('height') === undefined || plots.get('a0').get('height') === '' ? Number(11) : Number(plots.get('a0').get('height'));
