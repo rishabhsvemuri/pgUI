@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { FaFile } from "react-icons/fa";
 import { BsBoundingBoxCircles } from "react-icons/bs";
+import { FaRegSave } from "react-icons/fa";
+
 import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
 import { MdIosShare } from "react-icons/md";
@@ -61,7 +63,7 @@ function Sidebar(){
                         <span className="tooltiptext">Plot Addition</span>
                     </div>
                     <div className="tooltip">
-                        <LuNetwork className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#232323' } : {}}/>
+                        <FaRegSave className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Sessions</span>
                     </div>
                     <div className="tooltip">

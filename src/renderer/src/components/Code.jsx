@@ -56,10 +56,7 @@ function Code() {
        />
        <button onClick={handleDownload}>Download Code</button>
        </div>
-      
      </div>
-
-
    );
  }
   export default Code;
