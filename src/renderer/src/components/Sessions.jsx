@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Nodes() {
+function Sessions() {
   const [sessionName, setSessionName] = useState('');
   const [savedSessions, setSavedSessions] = useState([]);
   const [selectedSession, setSelectedSession] = useState('');
@@ -137,4 +137,4 @@ function Nodes() {
   );
 }
 
-export default Nodes;
+export default Sessions;
