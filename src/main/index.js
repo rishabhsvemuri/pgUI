@@ -11,7 +11,7 @@ const fs = require('fs').promises;
 
 
 // R script installation commands for required packages
-const pgInstall = 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\nif (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\nif (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")'
+const pgLibs = `library(plotgardener)\nlibrary(RColorBrewer)\n`
 
 // Variables for the main window, plot map, and file paths
 let mainWindow;
@@ -21,6 +21,7 @@ let annotationsDuplicate = [];
 
 let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
 const writePath = path.join(app.getPath('temp'), 'written.R');
+const userCode = path.join(app.getPath('temp'), 'userCode.R');
 let rSession; // persistent r session
 
 function startRSession() {
@@ -162,6 +163,10 @@ app.whenReady().then(() => {
       // Pass commands to the R session
       const scriptContent = await fs.readFile(writePath, 'utf8');
       await rSession.stdin.write(`${scriptContent}\n`);
+
+      // Load libraries + scriptContent for user facing code
+      const userContent = `${pgLibs}\n${scriptContent}`
+      await fs.writeFile(userCode, userContent)
   
       mainWindow?.webContents.send('message', 'Commands executed successfully');
       // Use R output null device code to show pdf
@@ -219,7 +224,7 @@ app.whenReady().then(() => {
   // IPC handler to read the written R script file for code mirror
   ipcMain.handle('read-written.R', async () => {
     try {
-        const data = await fs.readFile(writePath, 'utf8');
+        const data = await fs.readFile(userCode, 'utf8');
         return data;
     } catch (error) {
         console.error('Error reading written.R file:', error);
@@ -227,16 +232,16 @@ app.whenReady().then(() => {
     }
   });
 
-  // IPC handler to save new content to the written R script file for code mirror
-  ipcMain.handle('save-written.R', async (event, newContent) => {
-    try {
-      await fs.writeFile(writePath, newContent, 'utf8');
-      return true; // Indicate success
-    } catch (error) {
-      console.error('Error writing to written.R file:', error);
-      return false; // Indicate failure
-    }
-  })
+  // // IPC handler to save new content to the written R script file for code mirror
+  // ipcMain.handle('save-written.R', async (event, newContent) => {
+  //   try {
+  //     await fs.writeFile(userCode, newContent, 'utf8');
+  //     return true; // Indicate success
+  //   } catch (error) {
+  //     console.error('Error writing to written.R file:', error);
+  //     return false; // Indicate failure
+  //   }
+  // })
 
   // IPC handler to get the icon image path for a plot category
   ipcMain.on('icon-image-path', (plotcatagory) => {
