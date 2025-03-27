@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { FaFile } from "react-icons/fa";
 import { BsBoundingBoxCircles } from "react-icons/bs";
+import { LuShovel } from "react-icons/lu";
 import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
+import { IoIosSave } from "react-icons/io";
 import { MdIosShare } from "react-icons/md";
 import { BsInfoCircle } from "react-icons/bs";
 import PathEntry from './PathEntry';
 import PlotAddition from './PlotAddition';
 import Code from './Code';
-import Nodes from './Nodes';
+import Save from './Save';
 import Info from './Info';
 import Logo from '.././assets/PlotgardenerLogo.png';
 import '.././assets/style.scss';
@@ -57,12 +59,12 @@ function Sidebar(){
                         <span className="tooltiptext">Create Page</span>
                     </div>
                     <div className="tooltip">
-                        <BsBoundingBoxCircles className='icon-images' onClick={() => setActiveTab('PlotAddition')} style={activeTab === 'PlotAddition' ? { backgroundColor: '#232323' } : {}}/>
+                        <LuShovel className='icon-images' onClick={() => setActiveTab('PlotAddition')} style={activeTab === 'PlotAddition' ? { backgroundColor: '#232323' } : {}}/>
                         <span className="tooltiptext">Plot Addition</span>
                     </div>
                     <div className="tooltip">
-                        <LuNetwork className='icon-images' onClick={() => setActiveTab('Nodes')} style={activeTab === 'Nodes' ? { backgroundColor: '#232323' } : {}}/>
-                        <span className="tooltiptext">Nodes</span>
+                        <IoIosSave className='icon-images' onClick={() => setActiveTab('Save')} style={activeTab === 'Save' ? { backgroundColor: '#232323' } : {}}/>
+                        <span className="tooltiptext">Save</span>
                     </div>
                     <div className="tooltip">
                         <FaCode className='icon-images' onClick={() => setActiveTab('Code')} style={activeTab === 'Code' ? { backgroundColor: '#232323' } : {}}/>
@@ -84,8 +86,8 @@ function Sidebar(){
                         <div className={`tab-content ${activeTab === 'PlotAddition' ? 'active' : ''}`}>
                             <PlotAddition key={plotAdditionKey} />
                         </div>
-                        <div className={`tab-content ${activeTab === 'Nodes' ? 'active' : ''}`}>
-                            <Nodes />
+                        <div className={`tab-content ${activeTab === 'Save' ? 'active' : ''}`}>
+                            <Save />
                         </div>
                         <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
                             <Code nrs={numRunScript}/>
