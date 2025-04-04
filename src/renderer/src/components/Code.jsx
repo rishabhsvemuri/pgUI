@@ -18,11 +18,6 @@ function Code() {
      };
       fetchData();
    });
-    const handleChange = (editor, data, value) => {
-     setCode(value);
-     window.electron.writeWrittenR(value);
-   };
-
 
    const handleDownload = () => {
      window.electron.downloadCode(code)
@@ -49,9 +44,6 @@ function Code() {
            mode: 'r',
            theme: 'icecoder',
            lineNumbers: true
-         }}
-         onBeforeChange={(editor, data, value) => {
-           handleChange(editor, data, value);
          }}
        />
        <button onClick={handleDownload}>Download Code</button>

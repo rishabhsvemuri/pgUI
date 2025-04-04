@@ -22,9 +22,14 @@ function Sidebar(){
     const [plotAdditionKey, setPlotAdditionKey] = useState(0);
     const [pathEntryKey, setPathEntryKey] = useState(0);
 
-    const handleRunScript = () => {
-        window.electron.runScript();
-        setNumRunScript(numRunScript + 1)
+    // const handleRunScript = () => {
+    //     (window.electron.runScript())
+    //     setNumRunScript(numRunScript => numRunScript + 1)
+    // };
+
+    const handleRunScript = async () => {
+        await window.electron.runScript(); 
+        setNumRunScript(prev => prev + 1);
     };
 
     useEffect(() => {
@@ -90,7 +95,7 @@ function Sidebar(){
                             <Save />
                         </div>
                         <div className={`tab-content ${activeTab === 'Code' ? 'active' : ''}`}>
-                            <Code nrs={numRunScript}/>
+                            <Code key={numRunScript}/>
                         </div>
                         <div className={`tab-content ${activeTab === 'Info' ? 'active' : ''}`}>
                             <Info />
