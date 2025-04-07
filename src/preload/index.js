@@ -28,13 +28,13 @@ contextBridge.exposeInMainWorld('electron', {
   updatePlotsDuplicate: (plots) => ipcRenderer.send('updatePlotsDuplicate', plots),
   updateAnnotationsDuplicate: (annotations) => ipcRenderer.send('updateAnnotationsDuplicate', annotations),
 
-  saveSession: (sessionData, sessionName) => ipcRenderer.invoke('saveSession', sessionData, sessionName),
-  loadSession: (sessionName) => ipcRenderer.invoke('loadSession', sessionName),
+  saveSession: (sessionData) => ipcRenderer.invoke('saveSession', sessionData),
+  loadSession: (sessonFile) => ipcRenderer.invoke('loadSession', sessonFile),
 
   emitSessionSwitch: () => ipcRenderer.send('emitSessionSwitch'),
   onSessionSwitch: (callback) => ipcRenderer.on('sessionSwitch', callback),
   offSessionSwitch: (callback) => ipcRenderer.removeListener('sessionSwitch', callback),
-  createNewSession: (sessionName) => ipcRenderer.invoke('createNewSession', sessionName),
+  createNewSession: () => ipcRenderer.invoke('createNewSession'),
   deleteSession: (sessionName) => ipcRenderer.invoke('deleteSession', sessionName),
 
 
