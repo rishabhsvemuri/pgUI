@@ -117,15 +117,15 @@ function Save() {
 
   return (
     <div>
-      <h2>Manage Sessions</h2>
+      {/* <h2>Manage Sessions</h2> */}
       
-      <input
+      {/* <input
         type="text"
         placeholder="Enter new session name"
         value={sessionName}
         onChange={handleSessionNameChange}
       />
-      <button onClick={handleCreateNewSession}>Create Session</button>
+      <button onClick={handleCreateNewSession}>Create Session</button> */}
 
       {/* <h3>Saved Sessions</h3> */}
       {/* <select value={selectedSession} onChange={handleSessionSelect}>
@@ -134,11 +134,12 @@ function Save() {
           <option key={session} value={session}>{session}</option>
         ))}
       </select> */}
+      {/* <h3>Save Session</h3> */}
+      <button onClick={handleSaveSession}>Save Current Session</button>
       <h3>Upload Session</h3>
       <input type='file' className='file-input' onChange={handleFileUpload}/>
 
-      <h3>Save Session</h3>
-      <button onClick={handleSaveSession}>Save</button>
+
       {/* <button onClick={handleDeleteSession} style={{ marginLeft: '10px', color: 'red' }}>Delete Session</button> */}
     </div>
   );
