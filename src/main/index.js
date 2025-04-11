@@ -61,6 +61,9 @@ function startRSession() {
 const sessionsFilePath = path.join(app.getPath('userData'), 'savedSessions.json');
 
 const userSessionsPath = path.join(app.getPath('userData'), 'user_sessions');
+const sessionDataPath = path.join(app.getPath('userData'), 'sessionData.json');
+
+
 
 // Create the folder if it doesn't exist using npfs
 if (!npfs.existsSync(userSessionsPath)) {
@@ -232,17 +235,7 @@ app.whenReady().then(() => {
     }
   });
 
-  // // IPC handler to save new content to the written R script file for code mirror
-  // ipcMain.handle('save-written.R', async (event, newContent) => {
-  //   try {
-  //     await fs.writeFile(userCode, newContent, 'utf8');
-  //     return true; // Indicate success
-  //   } catch (error) {
-  //     console.error('Error writing to written.R file:', error);
-  //     return false; // Indicate failure
-  //   }
-  // })
-
+  
   // IPC handler to get the icon image path for a plot category
   ipcMain.on('icon-image-path', (plotcatagory) => {
     try{
@@ -298,8 +291,8 @@ ipcMain.on('updateAnnotationsDuplicate', (event, annotations) => {
   annotationsDuplicate = annotations;
 });
 
-ipcMain.handle('createNewSession', async (event, sessionName) => {
-  const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
+ipcMain.handle('createNewSession', async (event) => {
+  // const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
   try {
     // Reset duplicatePlots and annotationsDuplicate to empty arrays
     duplicatePlots = [];
@@ -307,7 +300,7 @@ ipcMain.handle('createNewSession', async (event, sessionName) => {
     plots = new Map()
 
     // Create an empty JSON file for the new session
-    await fs.writeFile(sessionPath, JSON.stringify({ plots: [], annotations: [] }, null, 2));
+    await fs.writeFile(sessionDataPath, JSON.stringify({ plots: [], annotations: [] }, null, 2));
 
     return { success: true };
   } catch (error) {
@@ -317,9 +310,18 @@ ipcMain.handle('createNewSession', async (event, sessionName) => {
 });
 
 // Refactor saveSession function to be callable directly within main/index.js
-async function saveSession(sessionData, sessionName) {
-  const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
+async function saveSession(sessionData) {
   try {
+    const { filePath, canceled } = await dialog.showSaveDialog({
+      title: 'Save session file',
+      defaultPath: path.join(app.getPath('downloads'), 'session.json'),
+      filters: [{ name: 'JSON Files', extensions: ['json'] }]
+    });
+
+    if (canceled || !filePath) {
+      return { success: false, message: 'Save canceled' };
+    }
+
     const serializedPlots = Array.from(plots.entries()).map(([id, dataMap]) => {
       const serializedData = {};
       dataMap.forEach((value, key) => {
@@ -330,7 +332,7 @@ async function saveSession(sessionData, sessionName) {
 
     sessionData.backEndPlots = serializedPlots;
 
-    await fs.writeFile(sessionPath, JSON.stringify(sessionData, null, 2));
+    await fs.writeFile(filePath, JSON.stringify(sessionData, null, 2));
     return { success: true };
   } catch (error) {
     console.error('Failed to save session:', error);
@@ -339,36 +341,14 @@ async function saveSession(sessionData, sessionName) {
 }
 
 // Update ipcMain handler to use the refactored saveSession function
-ipcMain.handle('saveSession', async (event, sessionData, sessionName) => {
-  return await saveSession(sessionData, sessionName);
+ipcMain.handle('saveSession', async (event, sessionData) => {
+  return await saveSession(sessionData);
 });
 
-//Load session data from a file
-// ipcMain.handle('loadSession', async (event, sessionName) => {
-//   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
-
-//   try {
-
-//     const data = await fs.readFile(sessionPath, 'utf8');
-//     const sessionData = JSON.parse(data);
-//     duplicatePlots = sessionData.plots || [];
-//     annotationsDuplicate = sessionData.annotations || [];
-//     plots = sessionData.backEndPlots || new Map();
-    
-//     return sessionData;
-
-//   } catch (error) {
-//     console.error('Failed to load session:', error);
-//     return null;
-//   }
-// });
-
-ipcMain.handle('loadSession', async (event, sessionName) => {
-  const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
-
+ipcMain.handle('loadSession', async (event, sessionFile) => {
   try {
-    const data = await fs.readFile(sessionPath, 'utf8');
-    const sessionData = JSON.parse(data);
+    
+    const sessionData = JSON.parse(sessionFile);
     duplicatePlots = sessionData.plots || [];
     annotationsDuplicate = sessionData.annotations || [];
 
@@ -388,39 +368,6 @@ ipcMain.handle('loadSession', async (event, sessionName) => {
     return null;
   }
 });
-
-// ipcMain.handle('loadSession', async (event, sessionName) => {
-
-//   const sessionPath = path.join(userSessionsPath, `${sessionName}.json`);
-
-//   try {
-//     const data = await fs.readFile(sessionPath, 'utf8');
-//     const sessionData = JSON.parse(data);
-
-//     // Update duplicate plots and annotations
-//     duplicatePlots = sessionData.plots || [];
-//     annotationsDuplicate = sessionData.annotations || [];
-
-//     // Clear and repopulate the plots Map
-//     plots.clear();
-//     duplicatePlots.forEach((plot) => {
-//       plots.set(plot.id, new Map());
-//       for (const [key, value] of Object.entries(plot.formData)) {
-//         if (value.enteredValue) {
-//           plots.get(plot.id).set(key, value.enteredValue);
-//         }
-//       }
-//       // Add the category/maker to the plot
-//       plots.get(plot.id).set('maker', `${plot.category}(`);
-//     });
-
-//     console.log("Plots Map repopulated");
-//     return sessionData;
-//   } catch (error) {
-//     console.error('Failed to load session:', error);
-//     return null;
-//   }
-// });
 
 
 // Emit an event to notify of a session switch

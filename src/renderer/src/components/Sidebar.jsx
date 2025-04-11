@@ -28,7 +28,7 @@ function Sidebar(){
     };
 
     useEffect(() => {
-        // Listener for session switch in Nodes
+        // Listener for session switch in Save
         const handleSessionSwitch = () => {
             // Update the key to remount PlotAddition
             setPlotAdditionKey(prevKey => prevKey + 1);
