@@ -49,9 +49,9 @@ function startRSession() {
 
   // Load necessary libraries on startup
   rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\n')
-  rSession.stdin.write('BiocManager::install(version = "3.20")\n')
   rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\n')
   rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")\n')
+  rSession.stdin.write('if (!requireNamespace("org.Hs.eg.db", quietly = TRUE)) BiocManager::install("org.Hs.eg.db")')
   rSession.stdin.write('if (!requireNamespace("RColorBrewer", quietly = TRUE)) install("RColorBrewer")\n')
   rSession.stdin.write('library(plotgardener)\n')
   rSession.stdin.write('library(RColorBrewer)\n') // load RColorBrewer for pallete options
