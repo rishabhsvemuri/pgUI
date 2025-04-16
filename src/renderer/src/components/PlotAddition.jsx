@@ -31,7 +31,7 @@ function PlotAddition() {
   const [annotations, setAnnotations] = useState(window.electron.getAnnotationsDuplicate());
   const [valid, setValid] = useState(true);
   const inputSections = ['Data', 'Positional', 'Aesthetic'];
-  const [domUpdater, UpdateDom] = useState(0)
+  // const [domUpdater, UpdateDom] = useState(0)
 
   const plotImages = new Map([
     ["plotCircle", plotCircle],
@@ -99,10 +99,11 @@ function PlotAddition() {
       }
     };
   }, []);
-  useEffect(() => {
-    window.electron.runScript()
-    UpdateDom((domUpdater) => domUpdater + 1)
-  }, []);
+  
+  // useEffect(() => {
+  //   window.electron.runScript()
+  //   UpdateDom((domUpdater) => domUpdater + 1)
+  // }, []);
 
   const generateFormInputs = (jsonData, id) => {
     if (!jsonData) {
