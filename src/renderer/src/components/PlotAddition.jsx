@@ -237,7 +237,7 @@ function PlotAddition() {
   const handleCategoryChange = (id, event) => {
     const updatedPlots = plots.map((plot) => {
       if (plot.id === id) {
-        const updatedPlot = { ...plot, category: event.target.value };
+        const updatedPlot = { ...plot, category: event.target.value, formData: []};
         window.electron.updateCategory(updatedPlot.name, updatedPlot.category, updatedPlot.id);
         window.electron.loadJson(updatedPlot.category, plot.id);
         return updatedPlot;
