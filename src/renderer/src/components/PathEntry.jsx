@@ -21,6 +21,8 @@ function PathEntry() {
       const category = 'pageCreate';
       if (plots.size === 0) {
         window.electron.updateCategory(category, category, id);
+        window.electron.updateItemValue(id, 'name', 'Create the Page');
+
       }
       window.electron.loadJson(category, id);
     };

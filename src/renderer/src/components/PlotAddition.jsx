@@ -179,7 +179,7 @@ function PlotAddition() {
     setPlots(prevPlots =>
       prevPlots.map(plot => {
         const updatedFormData = plot.formData.map(param => {
-          const isValid = param.default || param.enteredValue; // Check if valid
+          const isValid = param.default || param.enteredValue || param.options; // Check if valid, if field has default or options it's always valid
           if (!isValid) {
             allValid = false; // Mark as invalid if any input fails
             return { ...param, valid: false }; // Return updated param
@@ -237,8 +237,9 @@ function PlotAddition() {
   const handleCategoryChange = (id, event) => {
     const updatedPlots = plots.map((plot) => {
       if (plot.id === id) {
-        const updatedPlot = { ...plot, category: event.target.value };
+        const updatedPlot = { ...plot, category: event.target.value, formData: []};
         window.electron.updateCategory(updatedPlot.name, updatedPlot.category, updatedPlot.id);
+        window.electron.updateItemValue(updatedPlot.id, 'name', updatedPlot.name);
         window.electron.loadJson(updatedPlot.category, plot.id);
         return updatedPlot;
       }
@@ -353,7 +354,7 @@ function PlotAddition() {
           if (annotation.id === annotationId) {
             window.electron.updateCategory(null, event.target.value, annotationId);
             window.electron.loadJson(event.target.value, annotationId);
-            return { ...annotation, type: event.target.value };
+            return { ...annotation, type: event.target.value, formData: []};
           }
           return annotation;
         });
@@ -412,7 +413,7 @@ function PlotAddition() {
                   )}
                 </div>
                 <div className='right-items'>
-                  <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
+                  <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' title="Delete Plot">Delete</FaRegTrashCan>
                   {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
                 </div>
               </div>
@@ -434,17 +435,17 @@ function PlotAddition() {
                 <option value="plotPairsArches">plotPairsArches</option>
                 <option value="plotRanges">plotRanges</option>
                 <option value="plotSignal">plotSignal</option>
-                <option value="plotMultiSignal">plotMultiSignal</option>
+                {/* <option value="plotMultiSignal">plotMultiSignal</option> */}
                 <option value="plotTranscripts">plotTranscripts</option>
                 <option value="plotCircle">plotCircle</option>
                 <option value="plotLegend">plotLegend</option>
-                <option value="plotPolygon">plotPolygon</option>
+                {/* <option value="plotPolygon">plotPolygon</option> */}
                 <option value="plotRaster">plotRaster</option>
                 <option value="plotRect">plotRect</option>
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
-              <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
+              <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton' title="More info @ Plotgardener site"><BsInfoCircle /></a>
               </div>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 {inputSections.map(section =>
@@ -454,7 +455,7 @@ function PlotAddition() {
                     {plot.formData && plot.formData.filter(formData => formData.section === section).map((input) => (
                       <li>
                         <div className={input.valid ? 'input-field' : 'invalid-field'}>
-                          <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
+                          <label htmlFor={input.id}>{input.default || input.options ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id} value={input.enteredValue !== null ? input.enteredValue: null} onChange={(e) => handleBlur(e)}>
                               {input.options.map((option, idx) => (
@@ -506,7 +507,8 @@ function PlotAddition() {
                             <option value="annoYaxis">annoYaxis</option>
                             <option value="annoZoomLines">annoZoomLines</option>
                           </select>
-                          <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)}> </FaRegTrashCan>
+                          <a href={`https://phanstiellab.github.io/plotgardener/reference/${annotation.type}.html`} target='_blank' className='infoButton' title="More info @ Plotgardener site"><BsInfoCircle /></a>
+                          <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)} title="Delete Annotation"> </FaRegTrashCan>
                         </div>
                         {annotation.formData && annotation.formData.map((input) => (
                             <li>

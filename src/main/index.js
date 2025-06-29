@@ -347,8 +347,13 @@ ipcMain.handle('saveSession', async (event, sessionData) => {
 
 ipcMain.handle('loadSession', async (event, sessionFile) => {
   try {
+    let sessionData = {}
+    if (sessionFile) {
+      sessionData = JSON.parse(sessionFile);
+    } else {
+      sessionData = {}
+    }
     
-    const sessionData = JSON.parse(sessionFile);
     duplicatePlots = sessionData.plots || [];
     annotationsDuplicate = sessionData.annotations || [];
 
@@ -436,9 +441,10 @@ async function startScript() {
 //Helper function to write commands baased of fields of plots in the plot map
 async function writeCommands() {
   for (let [id, plot] of plots) {
-    let command = `${id} <- ${plot.get('maker').toString()}`;
+    let comment = `\n# ${plot.get('name')}\n`;
+    let command = `${comment}${id} <- ${plot.get('maker').toString()}`;
     for (let [variable, value] of plot) {
-      if (value !== undefined && variable !== 'maker') {
+      if (value !== undefined && variable !== 'maker' && variable !== 'name') {
         const line = `${variable} = ${value.toString()}, `;
         command += line;
       }
