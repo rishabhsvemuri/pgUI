@@ -412,7 +412,7 @@ function PlotAddition() {
                   )}
                 </div>
                 <div className='right-items'>
-                  <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' >Delete</FaRegTrashCan>
+                  <FaRegTrashCan onClick={() => handleDeletePlot(plot.id)} className='delete-button' title="Delete Plot">Delete</FaRegTrashCan>
                   {plot.showFields ? <TiArrowSortedUp className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>: <TiArrowSortedDown className='collapseButton' onClick={() => handleFieldCollapse(plot.id)}/>}
                 </div>
               </div>
@@ -434,17 +434,17 @@ function PlotAddition() {
                 <option value="plotPairsArches">plotPairsArches</option>
                 <option value="plotRanges">plotRanges</option>
                 <option value="plotSignal">plotSignal</option>
-                <option value="plotMultiSignal">plotMultiSignal</option>
+                {/* <option value="plotMultiSignal">plotMultiSignal</option> */}
                 <option value="plotTranscripts">plotTranscripts</option>
                 <option value="plotCircle">plotCircle</option>
                 <option value="plotLegend">plotLegend</option>
-                <option value="plotPolygon">plotPolygon</option>
+                {/* <option value="plotPolygon">plotPolygon</option> */}
                 <option value="plotRaster">plotRaster</option>
                 <option value="plotRect">plotRect</option>
                 <option value="plotSegments">plotSegments</option>
                 <option value="plotText">plotText</option>
               </select>
-              <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton'><BsInfoCircle /></a>
+              <a href={`https://phanstiellab.github.io/plotgardener/reference/${plot.category}.html`} target='_blank' className='infoButton' title="More info @ Plotgardener site"><BsInfoCircle /></a>
               </div>
               <div className={`field-content ${plot.showFields ? 'active' : ''}`} >
                 {inputSections.map(section =>
@@ -506,7 +506,8 @@ function PlotAddition() {
                             <option value="annoYaxis">annoYaxis</option>
                             <option value="annoZoomLines">annoZoomLines</option>
                           </select>
-                          <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)}> </FaRegTrashCan>
+                          <a href={`https://phanstiellab.github.io/plotgardener/reference/${annotation.type}.html`} target='_blank' className='infoButton' title="More info @ Plotgardener site"><BsInfoCircle /></a>
+                          <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)} title="Delete Annotation"> </FaRegTrashCan>
                         </div>
                         {annotation.formData && annotation.formData.map((input) => (
                             <li>

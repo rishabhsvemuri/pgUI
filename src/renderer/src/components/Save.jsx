@@ -115,32 +115,30 @@ function Save() {
     }
   };
 
+  const handleClearSession = async () => {
+    const sessionData = await window.electron.loadSession(null);
+      
+    if (sessionData) {
+      alert("Session Cleared");
+  
+      // Update duplicatePlots and annotationsDuplicate with the loaded session data
+      window.electron.updatePlotsDuplicate(sessionData.plots || []);
+      window.electron.updateAnnotationsDuplicate(sessionData.annotations || []);
+  
+      // Notify PlotAddition to reload the session data
+      window.electron.emitSessionSwitch();
+    } else {
+      alert('Failed to clear session');
+    }
+  };
+
   return (
     <div>
-      {/* <h2>Manage Sessions</h2> */}
-      
-      {/* <input
-        type="text"
-        placeholder="Enter new session name"
-        value={sessionName}
-        onChange={handleSessionNameChange}
-      />
-      <button onClick={handleCreateNewSession}>Create Session</button> */}
-
-      {/* <h3>Saved Sessions</h3> */}
-      {/* <select value={selectedSession} onChange={handleSessionSelect}>
-        <option value="">Select a session</option>
-        {savedSessions.map((session) => (
-          <option key={session} value={session}>{session}</option>
-        ))}
-      </select> */}
-      {/* <h3>Save Session</h3> */}
       <button onClick={handleSaveSession}>Save Current Session</button>
       <h3>Upload Session</h3>
       <input type='file' className='file-input' onChange={handleFileUpload}/>
-
-
-      {/* <button onClick={handleDeleteSession} style={{ marginLeft: '10px', color: 'red' }}>Delete Session</button> */}
+      <hr></hr>
+      <button onClick={handleClearSession}>Clear Session</button>
     </div>
   );
 }

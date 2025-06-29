@@ -347,8 +347,13 @@ ipcMain.handle('saveSession', async (event, sessionData) => {
 
 ipcMain.handle('loadSession', async (event, sessionFile) => {
   try {
+    let sessionData = {}
+    if (sessionFile) {
+      sessionData = JSON.parse(sessionFile);
+    } else {
+      sessionData = {}
+    }
     
-    const sessionData = JSON.parse(sessionFile);
     duplicatePlots = sessionData.plots || [];
     annotationsDuplicate = sessionData.annotations || [];
 
