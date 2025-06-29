@@ -179,7 +179,7 @@ function PlotAddition() {
     setPlots(prevPlots =>
       prevPlots.map(plot => {
         const updatedFormData = plot.formData.map(param => {
-          const isValid = param.default || param.enteredValue; // Check if valid
+          const isValid = param.default || param.enteredValue || param.options; // Check if valid, if field has default or options it's always valid
           if (!isValid) {
             allValid = false; // Mark as invalid if any input fails
             return { ...param, valid: false }; // Return updated param
@@ -455,7 +455,7 @@ function PlotAddition() {
                     {plot.formData && plot.formData.filter(formData => formData.section === section).map((input) => (
                       <li>
                         <div className={input.valid ? 'input-field' : 'invalid-field'}>
-                          <label htmlFor={input.id}>{input.default ? `${input.variable}` : `${input.variable}*`}</label>
+                          <label htmlFor={input.id}>{input.default || input.options ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id} value={input.enteredValue !== null ? input.enteredValue: null} onChange={(e) => handleBlur(e)}>
                               {input.options.map((option, idx) => (

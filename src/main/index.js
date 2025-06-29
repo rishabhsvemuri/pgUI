@@ -207,7 +207,6 @@ app.whenReady().then(() => {
       curr = plots.set(itemId, null);
     }
     curr.set(field, val);
-    console.log(`${field}: ${val}`)
   });
 
   // IPC handler to load a JSON file and send its contents to the renderer
