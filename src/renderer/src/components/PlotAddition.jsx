@@ -239,6 +239,7 @@ function PlotAddition() {
       if (plot.id === id) {
         const updatedPlot = { ...plot, category: event.target.value, formData: []};
         window.electron.updateCategory(updatedPlot.name, updatedPlot.category, updatedPlot.id);
+        window.electron.updateItemValue(updatedPlot.id, 'name', updatedPlot.name);
         window.electron.loadJson(updatedPlot.category, plot.id);
         return updatedPlot;
       }
@@ -353,7 +354,7 @@ function PlotAddition() {
           if (annotation.id === annotationId) {
             window.electron.updateCategory(null, event.target.value, annotationId);
             window.electron.loadJson(event.target.value, annotationId);
-            return { ...annotation, type: event.target.value };
+            return { ...annotation, type: event.target.value, formData: []};
           }
           return annotation;
         });

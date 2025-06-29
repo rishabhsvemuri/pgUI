@@ -207,6 +207,7 @@ app.whenReady().then(() => {
       curr = plots.set(itemId, null);
     }
     curr.set(field, val);
+    console.log(`${field}: ${val}`)
   });
 
   // IPC handler to load a JSON file and send its contents to the renderer
@@ -441,9 +442,10 @@ async function startScript() {
 //Helper function to write commands baased of fields of plots in the plot map
 async function writeCommands() {
   for (let [id, plot] of plots) {
-    let command = `${id} <- ${plot.get('maker').toString()}`;
+    let comment = `\n# ${plot.get('name')}\n`;
+    let command = `${comment}${id} <- ${plot.get('maker').toString()}`;
     for (let [variable, value] of plot) {
-      if (value !== undefined && variable !== 'maker') {
+      if (value !== undefined && variable !== 'maker' && variable !== 'name') {
         const line = `${variable} = ${value.toString()}, `;
         command += line;
       }
