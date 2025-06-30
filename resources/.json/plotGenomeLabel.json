@@ -22,7 +22,7 @@
     },
     "assembly": {
         "type": "string",
-        "default": null,
+        "default": "\"hg38\"",
         "options": null,
         "class": "Data",
         "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
@@ -92,7 +92,7 @@
     },
     "at": {
         "type": "numeric",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Positional",
         "description": "A numeric vector of x-value locations for tick marks"

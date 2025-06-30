@@ -15,14 +15,14 @@
     },
     "chromstart": {
         "type": "integer",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Data",
         "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Data",
         "description": "An integer end position on chromosome to be plotted"
@@ -57,10 +57,10 @@
     },
     "archHeight": {
         "type": "numeric",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value, numeric vector, or column namein data specifying the arch heights"
+        "description": "A numeric value, numeric vector, or a string column namein data specifying the arch heights"
     },
     "fill": {
         "type": "character",
@@ -106,7 +106,7 @@
     },
     "range": {
         "type": "numeric",
-        "default": null,
+        "default": "c(0,1)",
         "options": null,
         "class": "Aesthetic",
         "description": "A numeric vector of length 2 specifying the y-rangeof \\code{archHeight} to plot (c(min, max))"

@@ -78,7 +78,7 @@
     },
     "range": {
         "type": "numeric",
-        "default": null,
+        "default": "c(0,1)",
         "options": null,
         "class": "Aesthetic",
         "description": "A numeric vector of length 2 specifying the y-rangeof data to plot (c(min, max))"

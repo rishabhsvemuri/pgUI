@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string specifying the BEDPE file path, a dataframein BEDPE format specifying data to be plotted, or a\\link[InteractionSet]{GInteractions} object"
+        "description": "A string specifying the BEDPE file path, a dataframein BEDPE format specifying data to be plotted, or txt file in BEDPE format"
     },
     "chrom": {
         "type": "string",
@@ -15,14 +15,14 @@
     },
     "chromstart": {
         "type": "integer",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Data",
         "description": "An integer start position on chromosome to be plotted"
     },
     "chromend": {
         "type": "integer",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Data",
         "description": "An integer end position on chromosome to be plotted"
