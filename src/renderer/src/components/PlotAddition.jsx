@@ -53,7 +53,8 @@ function PlotAddition() {
     ["plotTranscripts", plotTranscripts],
   ]);
 
-  //Update PlotsDuplicate to plots whenever plots duplicate is changed
+  // Update PlotsDuplicate to plots whenever plots duplicate is changed
+  
   useEffect(() => {
     window.electron.updatePlotsDuplicate(plots);
     console.log(window.electron.getPlotsDuplicate())
