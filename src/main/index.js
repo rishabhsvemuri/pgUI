@@ -11,7 +11,8 @@ const fs = require('fs').promises;
 
 
 // R script installation commands for required packages
-const pgLibs = `library(plotgardener)\nlibrary(RColorBrewer)\n`
+// const pgLibs = `library(plotgardener)\nlibrary(RColorBrewer)\nlibrary(plotgardenerData)\ndata("IMR90_HiC_10kb")\n`
+const pgLibs = `library(plotgardener)\nlibrary(RColorBrewer)`
 
 // Variables for the main window, plot map, and file paths
 let mainWindow;
@@ -48,14 +49,14 @@ function startRSession() {
   });
 
   // Load necessary libraries on startup
-  rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")\n')
-  rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener")\n')
-  rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData")\n')
-  rSession.stdin.write('if (!requireNamespace("RColorBrewer", quietly = TRUE)) install("RColorBrewer")\n')
+  rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager", repos="https://cloud.r-project.org/")\n')
+  rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener", ask=FALSE)\n')
+  // rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData", ask=FALSE)\n')
+  rSession.stdin.write('if (!requireNamespace("RColorBrewer", quietly = TRUE)) install.packages("RColorBrewer", repos="https://cloud.r-project.org/")\n')
   rSession.stdin.write('library(plotgardener)\n')
   rSession.stdin.write('library(RColorBrewer)\n') // load RColorBrewer for pallete options
-  rSession.stdin.write('library(plotgardenerData)\n')
-  rSession.stdin.write('data("IMR90_HiC_10kb")\n')
+  // rSession.stdin.write('library(plotgardenerData)\n')
+  // rSession.stdin.write('data("IMR90_HiC_10kb")\n')
   rSession.stdin.write('print("Libraries Loaded")\n');
 }
 const sessionsFilePath = path.join(app.getPath('userData'), 'savedSessions.json');

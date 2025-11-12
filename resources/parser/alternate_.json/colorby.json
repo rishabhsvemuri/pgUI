@@ -1,0 +1,30 @@
+{
+    "column": {
+        "type": "specifying",
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "String specifying name of data column to scale colors by"
+    },
+    "palette": {
+        "type": null,
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "(optional) A function describing the color palette to use forcolor scaling"
+    },
+    "range": {
+        "type": null,
+        "default": null,
+        "options": null,
+        "class": null,
+        "description": "(optional) A numeric vector specifying the range of values toapply a color scale to"
+    },
+    "scalePerRegion": {
+        "type": "logical",
+        "default": "FALSE",
+        "options": null,
+        "class": null,
+        "description": "A logical value indicating whether to adjustNULL range of numerical `colorby` values to subset of data in a plottedgenomic region"
+    }
+}
