@@ -92,7 +92,7 @@
     },
     "range": {
         "type": "numeric",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": "Positional",
         "description": "A numeric vector of length 2 specifying the y-rangeof p-values to plot (c(min, max))"

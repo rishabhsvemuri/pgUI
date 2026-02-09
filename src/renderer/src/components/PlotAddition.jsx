@@ -5,6 +5,7 @@ import { BsInfoCircle } from "react-icons/bs";
 import { BsQuestionCircle } from "react-icons/bs";
 import '../assets/style.scss';
 import globals from '../assets/globalTest.json'
+import globalConfig from '../../../../resources/global_config.json'
 import plotCircle from '../assets/plotIcons/plotCircle.png';
 import plotGenes from '../assets/plotIcons/plotGenes.png';
 import plotGenomeLabel from '../assets/plotIcons/plotGenomeLabel.png';
@@ -32,6 +33,7 @@ function PlotAddition() {
   const [valid, setValid] = useState(true);
   const inputSections = ['Data', 'Positional', 'Aesthetic'];
   const [domUpdater, UpdateDom] = useState(0)
+  const hiddenParams = new Set(globalConfig?.hide || []);
 
   const plotImages = new Map([
     ["plotCircle", plotCircle],
@@ -118,6 +120,10 @@ function PlotAddition() {
         return null; // Skip this key
       }
 
+      if (hiddenParams.has(key)) {
+        return null; // skip hidden params
+      }
+
       if (key === 'params' || key === '...') {
         return null; // skip params and ... params
       }
@@ -132,7 +138,7 @@ function PlotAddition() {
         }
       }
       let fileInput = false
-      if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path')) {
+      if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path') || key == "data") {
         fileInput = true
       }
       if (globals.hasOwnProperty(key)) {
