@@ -51,7 +51,7 @@
     "sequence": {
         "type": "logical",
         "default": null,
-        "options": null,
+        "options": "TRUE, FALSE",
         "class": null,
         "description": "A logical value indicating whether to include sequenceinformation above the label of an x-axis (only at appropriate resolutions)"
     },
@@ -71,7 +71,7 @@
     },
     "at": {
         "type": "numeric",
-        "default": null,
+        "default": "NULL",
         "options": null,
         "class": null,
         "description": "A numeric vector of x-value locations for tick marks"
