@@ -16,14 +16,14 @@
     "label": {
         "type": "logical",
         "default": null,
-        "options": "TRUE, FALSE",
+        "options": null,
         "class": null,
         "description": "A logical value indicating whether to draw the labelson the tick marks, or an expression or character vector which specifythe labels to use"
     },
     "main": {
         "type": "logical",
         "default": "TRUE",
-        "options": null,
+        "options": "TRUE, FALSE",
         "class": null,
         "description": "A logical value indicating whether to draw the y-axis atthe left of the plot"
     },

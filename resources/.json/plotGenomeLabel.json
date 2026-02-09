@@ -92,7 +92,7 @@
     },
     "at": {
         "type": "numeric",
-        "default": "NULL",
+        "default": null,
         "options": null,
         "class": "Positional",
         "description": "A numeric vector of x-value locations for tick marks"

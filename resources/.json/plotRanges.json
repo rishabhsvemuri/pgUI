@@ -51,7 +51,7 @@
     "order": {
         "type": "character",
         "default": "\"width\"",
-        "options": "\"width\", \"random\"",
+        "options": null,
         "class": "Aesthetic",
         "description": "A character value specifying how to order pileup databefore assigning rows"
     },

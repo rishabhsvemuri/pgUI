@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string specifying the BEDPE file path, a dataframein BEDPE format specifying data to be plotted, or txt file in BEDPE format"
+        "description": "A string specifying the BEDPE file path, a dataframe in BEDPE format specifying data to be plotted, or txt file in BEDPE format"
     },
     "chrom": {
         "type": "string",

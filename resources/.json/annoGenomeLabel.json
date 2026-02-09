@@ -53,7 +53,7 @@
         "default": null,
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value indicating whether to include sequenceinformation above the label of an x-axis (only at appropriate resolutions)"
+        "description": "A logical value indicating whether to include sequenceinformation above the label of an x-axis (only at appropriate resolutions) Options include: TRUE, FALSE"
     },
     "boxWidth": {
         "type": "numeric",
