@@ -86,3 +86,9 @@ Within the cloned pgUI repo, navigate to pgUI/dist/plotgardener-1.0.0.(dmg or ex
 - If on **Windows** open the **plotgardener-1.0.0.exe** file
 
 - If on **macOS** open the **plotgardener-1.0.0.dmg** file
+
+
+To use the currently released version run this command in your terminal after installing, it'll lift the quarantine and let you open the app.
+```bash
+xattr -dr com.apple.quarantine /Applications/plotgardener.app 
+```
