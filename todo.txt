@@ -1,0 +1,3 @@
+fix parser
+handle logging errors
+vectors

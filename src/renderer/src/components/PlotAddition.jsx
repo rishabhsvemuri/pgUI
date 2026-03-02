@@ -138,7 +138,7 @@ function PlotAddition() {
         }
       }
       let fileInput = false
-      if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path') || key == "data") {
+      if (jsonData[key].description.includes('path') || jsonData[key].description.includes('Path') || key == "data" || key == "image") {
         fileInput = true
       }
       if (globals.hasOwnProperty(key)) {
@@ -147,7 +147,7 @@ function PlotAddition() {
       }
       return {
         variable: key,
-        type: jsonData[key].type,
+        type: jsonData[key].type.toLowerCase(),
         options: options,
         default: jsonData[key].default,
         description: jsonData[key].description,
@@ -262,8 +262,7 @@ function PlotAddition() {
       return;
     }
     if (value.includes('fakepath')) {
-      formattedValue = `\"${event.target.files[0].path}\"`
-      console.log(formattedValue)
+      formattedValue = event.target.files[0].path
     } else {
       formattedValue = value
     }
@@ -275,7 +274,16 @@ function PlotAddition() {
               ...plot,
               formData: plot.formData.map(param => {
                 if (param.variable === name) {
-                  window.electron.updateItemValue(plotId, name, formattedValue)
+                  if (param.variable == "image") {
+                      window.electron.updateItemValue(plotId, name, `png::readPNG(\"${formattedValue}\")`)
+                  }
+                  else if ((param.type == "string" || param.type == "character" || param.type == "char") && !formattedValue.includes("\"")) {
+
+                    window.electron.updateItemValue(plotId, name, `\"${formattedValue}\"`)
+                  }
+                  else {
+                    window.electron.updateItemValue(plotId, name, formattedValue)
+                  }
                   return { ...param, enteredValue: formattedValue, valid: true };
                 }
                 return param;
@@ -512,7 +520,7 @@ function PlotAddition() {
                             <option value="annoText">annoText</option>
                             <option value="annoXaxis">annoXaxis</option>
                             <option value="annoYaxis">annoYaxis</option>
-                            <option value="annoZoomLines">annoZoomLines</option>
+                            {/* <option value="annoZoomLines">annoZoomLines</option> */}
                           </select>
                           <a href={`https://phanstiellab.github.io/plotgardener/reference/${annotation.type}.html`} target='_blank' className='infoButton' title="More info @ Plotgardener site"><BsInfoCircle /></a>
                           <FaRegTrashCan className='delete-button' onClick={() => handleDeleteAnno(annotation.id)} title="Delete Annotation"> </FaRegTrashCan>

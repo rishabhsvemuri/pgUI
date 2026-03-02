@@ -37,8 +37,8 @@ function startRSession() {
 
   rSession.stderr.on("data", (data) => {
       console.log(data.toString())
-      if (!(data.toString().includes('masked') || data.toString().includes('plotgardener'))) {
-        mainWindow?.webContents.send('message', `Error: ${data.toString()}`);
+      if (data.toString().includes('plotgardener')) {
+        mainWindow?.webContents.send('message', `${data.toString()}`);
       }
   });
 
@@ -51,13 +51,23 @@ function startRSession() {
   // Load necessary libraries on startup
   rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager", repos="https://cloud.r-project.org/")\n')
   rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener", ask=FALSE)\n')
-  // rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData", ask=FALSE)\n')
   rSession.stdin.write('if (!requireNamespace("RColorBrewer", quietly = TRUE)) install.packages("RColorBrewer", repos="https://cloud.r-project.org/")\n')
   rSession.stdin.write('library(plotgardener)\n')
+  // rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData", ask=FALSE)\n')
   rSession.stdin.write('library(RColorBrewer)\n') // load RColorBrewer for pallete options
+  // hg38
+  rSession.stdin.write('if (!requireNamespace("TxDb.Hsapiens.UCSC.hg38.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Hsapiens.UCSC.hg38.knownGene", ask=FALSE)\n')
+  rSession.stdin.write('if (!requireNamespace("BSgenome.Hsapiens.UCSC.hg38", quietly = TRUE)) BiocManager::install("BSgenome.Hsapiens.UCSC.hg38", ask=FALSE)\n')
+  // hg19
+  rSession.stdin.write('if (!requireNamespace("TxDb.Hsapiens.UCSC.hg19.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene", ask=FALSE)\n')
+  rSession.stdin.write('if (!requireNamespace("BSgenome.Hsapiens.UCSC.hg19", quietly = TRUE)) BiocManager::install("BSgenome.Hsapiens.UCSC.hg19", ask=FALSE)\n')
+  // mm10
+  rSession.stdin.write('if (!requireNamespace("TxDb.Hsapiens.UCSC.mm10.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Hsapiens.UCSC.mm10.knownGene", ask=FALSE)\n')
+  rSession.stdin.write('if (!requireNamespace("BSgenome.Mmusculus.UCSC.mm10", quietly = TRUE)) BiocManager::install("BSgenome.Mmusculus.UCSC.mm10", ask=FALSE)\n')
+
   // rSession.stdin.write('library(plotgardenerData)\n')
   // rSession.stdin.write('data("IMR90_HiC_10kb")\n')
-  rSession.stdin.write('print("Libraries Loaded")\n');
+  // rSession.stdin.write('print("Libraries Loaded")\n');
 }
 const sessionsFilePath = path.join(app.getPath('userData'), 'savedSessions.json');
 
