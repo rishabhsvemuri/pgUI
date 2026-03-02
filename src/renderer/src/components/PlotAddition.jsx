@@ -453,7 +453,7 @@ function PlotAddition() {
                 {/* <option value="plotMultiSignal">plotMultiSignal</option> */}
                 <option value="plotTranscripts">plotTranscripts</option>
                 <option value="plotCircle">plotCircle</option>
-                <option value="plotLegend">plotLegend</option>
+                {/* <option value="plotLegend">plotLegend</option> */}
                 {/* <option value="plotPolygon">plotPolygon</option> */}
                 <option value="plotRaster">plotRaster</option>
                 <option value="plotRect">plotRect</option>
