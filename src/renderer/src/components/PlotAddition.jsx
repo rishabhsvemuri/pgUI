@@ -274,11 +274,11 @@ function PlotAddition() {
               ...plot,
               formData: plot.formData.map(param => {
                 if (param.variable === name) {
+
                   if (param.variable == "image") {
                       window.electron.updateItemValue(plotId, name, `png::readPNG(\"${formattedValue}\")`)
                   }
-                  else if ((param.type == "string" || param.type == "character" || param.type == "char") && !formattedValue.includes("\"")) {
-
+                  else if ((param.type == "string" || param.type == "character" || param.type == "char") && !formattedValue.includes("\"") && formattedValue !== "") {
                     window.electron.updateItemValue(plotId, name, `\"${formattedValue}\"`)
                   }
                   else {
