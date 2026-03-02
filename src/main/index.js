@@ -62,7 +62,7 @@ function startRSession() {
   rSession.stdin.write('if (!requireNamespace("TxDb.Hsapiens.UCSC.hg19.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene", ask=FALSE)\n')
   rSession.stdin.write('if (!requireNamespace("BSgenome.Hsapiens.UCSC.hg19", quietly = TRUE)) BiocManager::install("BSgenome.Hsapiens.UCSC.hg19", ask=FALSE)\n')
   // mm10
-  rSession.stdin.write('if (!requireNamespace("TxDb.Hsapiens.UCSC.mm10.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Hsapiens.UCSC.mm10.knownGene", ask=FALSE)\n')
+  rSession.stdin.write('if (!requireNamespace("TxDb.Mmusculus.UCSC.mm10.knownGene", quietly = TRUE)) BiocManager::install("TxDb.Mmusculus.UCSC.mm10.knownGene", ask=FALSE)\n')
   rSession.stdin.write('if (!requireNamespace("BSgenome.Mmusculus.UCSC.mm10", quietly = TRUE)) BiocManager::install("BSgenome.Mmusculus.UCSC.mm10", ask=FALSE)\n')
 
   // rSession.stdin.write('library(plotgardenerData)\n')
