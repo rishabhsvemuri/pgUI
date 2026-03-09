@@ -4,35 +4,35 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector or unit object indicating thestarting x-values of the line segments"
+        "description": "A numeric vector or unit object indicating the starting x-values of the line segments"
     },
     "y0": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector, unit object, or a character vectorof values containing a \"b\" combined with a numeric value specifyingstarting y-values of the line segments"
+        "description": "A numeric vector, unit object, or a character vector of values containing a \"b\" combined with a numeric value specifying starting y-values of the line segments"
     },
     "x1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector or unit object indicating the stoppingx-values of the line segments"
+        "description": "A numeric vector or unit object indicating the stopping x-values of the line segments"
     },
     "y1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector, unit object, or a character vector of values containing a \"b\" combined with a numeric value specifyingstopping y-values of the line segments"
+        "description": "A numeric vector, unit object, or a character vector of v alues containing a \"b\" combined with a numeric value specifying stopping y-values of the line segments"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{x0}, \\code{y0}, \\code{x1}, or \\code{y1} are only given asnumeric vectors"
+        "description": "A string indicating the default units to use if x0, y0, x1, or y1 are only given as numeric vectors"
     },
     "linecolor": {
         "type": "character",
@@ -74,20 +74,20 @@
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "A list describing arrow heads to place at either end ofthe line segments, as produced by the \\link[grid]{arrow} function"
+        "description": "A list describing arrow heads to place at either end of the line segments, as produced by the grid arrow function"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

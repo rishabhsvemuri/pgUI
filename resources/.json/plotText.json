@@ -32,7 +32,7 @@
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value to indicate whether to checkfor and omit overlapping text"
+        "description": "A logical value to indicate whether to check for and omit overlapping text"
     },
     "x": {
         "type": "numeric",
@@ -46,7 +46,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector, unit object, or a character vector ofvalues containing a \"b\" combined with a numeric valuespecifying text y-locations"
+        "description": "A numeric vector, unit object, or a character vector of values containing a \"b\" combined with a numeric value specifying text y-locations"
     },
     "just": {
         "type": "of",
@@ -60,20 +60,20 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors"
+        "description": "A string indicating the default units to use if x or y are only given as numerics or numeric vectors"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

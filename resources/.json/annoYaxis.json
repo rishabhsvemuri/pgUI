@@ -18,21 +18,21 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether to draw the labelson the tick marks, or an expression or character vector which specifythe labels to use"
+        "description": "A logical value indicating whether to draw the labels on the tick marks, or an expression or character vector which specify the labels to use"
     },
     "main": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value indicating whether to draw the y-axis atthe left of the plot"
+        "description": "A logical value indicating whether to draw the y-axis at the left of the plot"
     },
     "scipen": {
         "type": "integer",
         "default": "999",
         "options": null,
         "class": null,
-        "description": "An integer indicating the penalty to be applied whendeciding to print numeric values in fixed or exponential notation"
+        "description": "An integer indicating the penalty to be applied when deciding to print numeric values in fixed or exponential notation"
     },
     "axisLine": {
         "type": "logical",
@@ -46,13 +46,13 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

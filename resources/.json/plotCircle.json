@@ -4,14 +4,14 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector or unit object specifying circlex-locations relative to center"
+        "description": "A numeric vector or unit object specifying circle x-locations relative to center"
     },
     "y": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector, unit object, or a character vectorof values containing a \"b\" combined with a numeric valuespecifying circle y-locations relative to center"
+        "description": "A numeric vector, unit object, or a character vector of values containing a \"b\" combined with a numeric value specifying circle y-locations relative to center"
     },
     "r": {
         "type": "numeric",
@@ -25,7 +25,7 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{r}, \\code{x}, or \\code{y} are only given as numerics ornumeric vectors"
+        "description": "A string indicating the default units to use if r, x, or y are only given as numerics or numeric vectors"
     },
     "linecolor": {
         "type": "character",
@@ -67,13 +67,13 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

@@ -11,7 +11,7 @@
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "If specified, this argument will produce boxes filled withthe specified colors to appear beside the legend text"
+        "description": "If specified, this argument will produce boxes filled with the specified colors to appear beside the legend text"
     },
     "pch": {
         "type": "numeric",
@@ -32,14 +32,14 @@
         "default": "\"v\"",
         "options": "\"v\", \"h\"",
         "class": null,
-        "description": "A string specifying legend orientation"
+        "description": "orientation"
     },
     "title": {
         "type": "character",
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value giving a title to be placed atthe top of the legend"
+        "description": "A character value giving a title to be placed at the top of the legend"
     },
     "fontsize": {
         "type": "numeric",
@@ -53,7 +53,7 @@
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to add a borderaround heatmap legend"
+        "description": "A logical value indicating whether to add a border around heatmap legend"
     },
     "bg": {
         "type": "character",
@@ -74,7 +74,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying legend y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying legend y-location"
     },
     "width": {
         "type": "numeric",
@@ -102,27 +102,27 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output shouldbe produced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

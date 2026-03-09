@@ -25,13 +25,13 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "An integer specifying the number of elements to generate rowpositions for"
+        "description": "An integer specifying the number of elements to generate row positions for"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{y}, \\code{h}, or \\code{s} are only given as numerics"
+        "description": "A string indicating the default units to use if y, h, or s are only given as numerics"
     }
 }

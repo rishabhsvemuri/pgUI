@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "ggplot, gtable, or grob object"
+        "description": "plot"
     },
     "x": {
         "type": "numeric",
@@ -18,7 +18,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying ggplot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying ggplot y-location"
     },
     "width": {
         "type": "numeric",
@@ -46,13 +46,13 @@
         "default": "\"inches\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     }
 }

@@ -25,7 +25,7 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string represnting the default genome assembly as a string or a\\link[plotgardener]{assembly} object"
+        "description": "A string represnting the default genome assembly as a string or a plotgardener assembly object"
     },
     "fontsize": {
         "type": "numeric",
@@ -39,56 +39,56 @@
         "default": "c(\"#669fd9\", \"#abcc8e\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string or vector of length 2 indicatingthe fontcolors for the plus strand and minus strand gene labels"
+        "description": "A string or vector of length 2 indicating the fontcolors for the plus strand and minus strand gene labels"
     },
     "fill": {
         "type": "string",
         "default": "c(\"#669fd9\", \"#abcc8e\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string or vector of length 2 indicating thestrand fill colors for the plus strand and minus strand plot elements"
+        "description": "A string or vector of length 2 indicating the strand fill colors for the plus strand and minus strand plot elements"
     },
     "geneOrder": {
         "type": "vector",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A vector (ordered character) of gene names toprioritize when labeling genes"
+        "description": "A vector (ordered character) of gene names to prioritize when labeling genes"
     },
     "geneHighlights": {
         "type": "dataframe",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A dataframe of two-columns with a column named \"gene\"containing gene names as strings to highlight and a named column \"color\"containing corresponding highlight colors"
+        "description": "A dataframe of two-columns with a column named \"gene\" containing gene names as strings to highlight and a named column \"color\" containing corresponding highlight colors"
     },
     "geneBackground": {
         "type": "string",
         "default": "\"grey\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string, if \\code{geneHighlights} is given, indicating the color for genes that are not highlighted"
+        "description": "A string, if geneHighlights is given, indicating the color for genes that are not highlighted"
     },
     "strandLabels": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include+ and - strand labels to the left of the gene track"
+        "description": "A logical value indicating whether to include + and - strand labels to the left of the gene track"
     },
     "stroke": {
         "type": "numeric",
         "default": "0.1",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value indicating the stroke width for genebody outlines"
+        "description": "A numeric value indicating the stroke width for gene body outlines"
     },
     "bg": {
         "type": "string",
         "default": "NA",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string indicating background color"
+        "description": "bg"
     },
     "x": {
         "type": "numeric",
@@ -102,7 +102,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying genes plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying genes plot y-location"
     },
     "width": {
         "type": "numeric",
@@ -130,20 +130,20 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics outputshould be produced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     }
 }

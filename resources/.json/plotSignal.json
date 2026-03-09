@@ -4,28 +4,28 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string bigwig file path to be plotted, or a dataframe in BED format, or a\\link[GenomicRanges]{GRanges} object with metadata column \\code{score}"
+        "description": "A string bigwig file path to be plotted, or a dataframe in BED format, or a GenomicRanges GRanges object with metadata column score"
     },
     "binSize": {
         "type": "numeric",
         "default": "NA",
         "options": null,
         "class": "Data",
-        "description": "A numeric specifying the length of each databin in basepairs"
+        "description": "A numeric specifying the length of each data bin in basepairs"
     },
     "binCap": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Data",
-        "description": "A logical value indicating whether the function willlimit the number of data bins to 8,000"
+        "description": "A logical value indicating whether the function will limit the number of data bins to 8,000"
     },
     "negData": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Data",
-        "description": "A logical value indicating whether the provided data hasnegative scores"
+        "description": "A logical value indicating whether the provided data has negative scores"
     },
     "chrom": {
         "type": "string",
@@ -53,49 +53,49 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string specifying the default genome assembly or a plotgardener assembly object"
     },
     "linecolor": {
         "type": "character",
         "default": "\"#37a7db\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value or vector of length 2 specifying theline color(s) outlining the signal track(s)"
+        "description": "A character value or vector of length 2 specifying the line color(s) outlining the signal track(s)"
     },
     "fill": {
         "type": "character",
         "default": "NA",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value or vector of length 2 specifyingthe fill color(s) of the signal track(s)"
+        "description": "A character value or vector of length 2 specifying the fill color(s) of the signal track(s)"
     },
     "ymax": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying the fraction of the max y-valueto set as the height of the plot"
+        "description": "A numeric specifying the fraction of the max y-value to set as the height of the plot"
     },
     "range": {
         "type": "numeric",
         "default": "c(0,1)",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric vector of length 2 specifying the y-rangeof data to plot (c(min, max))"
+        "description": "A numeric vector of length 2 specifying the y-range of data to plot (c(min, max))"
     },
     "scale": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include a datascale label in the top left corner of the plot"
+        "description": "A logical value indicating whether to include a data scale label in the top left corner of the plot"
     },
     "label": {
         "type": "optional",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "An optional character value to conveniently add a text labelto the plot"
+        "description": "An optional character value to conveniently add a text label to the plot"
     },
     "bg": {
         "type": "character",
@@ -109,21 +109,21 @@
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include abaseline along the x-axis"
+        "description": "A logical value indicating whether to include a baseline along the x-axis"
     },
     "baseline.color": {
         "type": "string",
         "default": "\"grey\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A string baseline color"
+        "description": "baseline.color"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric baseline line width"
+        "description": "baseline.lwd"
     },
     "orientation": {
         "type": "string",
@@ -144,7 +144,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying signal plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying signal plot y-location"
     },
     "width": {
         "type": "numeric",
@@ -172,27 +172,27 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": null,
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output should beproduced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

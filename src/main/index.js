@@ -37,7 +37,7 @@ function startRSession() {
 
   rSession.stderr.on("data", (data) => {
       console.log(data.toString())
-      if (data.toString().includes('plotgardener')) {
+      if (!(data.toString().includes('masked') || data.toString().includes('plotgardener'))) {
         mainWindow?.webContents.send('message', `${data.toString()}`);
       }
   });

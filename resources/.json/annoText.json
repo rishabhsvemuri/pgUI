@@ -32,7 +32,7 @@
         "default": "FALSE",
         "options": null,
         "class": null,
-        "description": "A logical value to indicate whether to check forand omit overlapping text"
+        "description": "A logical value to indicate whether to check for and omit overlapping text"
     },
     "plot": {
         "type": "plotgardener",
@@ -67,20 +67,20 @@
         "default": "\"native\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to use if\\code{x} or \\code{y} are only given as numerics or numeric vectors"
+        "description": "A string indicating the default units to use if x or y are only given as numerics or numeric vectors"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

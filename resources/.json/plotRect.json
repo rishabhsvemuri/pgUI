@@ -11,7 +11,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector, unit object, or a character vector of valuescontaining a \"b\" combined with a numeric value specifyingrectangle y-locations"
+        "description": "A numeric vector, unit object, or a character vector of values containing a \"b\" combined with a numeric value specifying rectangle y-locations"
     },
     "width": {
         "type": "numeric",
@@ -39,7 +39,7 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, and \\code{height} are only given asnumerics or numeric vectors"
+        "description": "A string indicating the default units to use if x, y, width, and height are only given as numerics or numeric vectors"
     },
     "linecolor": {
         "type": "character",
@@ -74,20 +74,20 @@
         "default": "1",
         "options": null,
         "class": "Aesthetic",
-        "description": "Numeric value specifying color transparency"
+        "description": "alpha"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

@@ -32,21 +32,21 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string specifying the default genome assembly or a plotgardener assembly object"
     },
     "fill": {
         "type": "character",
         "default": "\"#1f4297\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value, a vector, ora \\link[plotgardener]{colorby} object specifying fill colors ofpaired range elements"
+        "description": "A character value, a vector, or a plotgardener colorby object specifying fill colors of paired range elements"
     },
     "linecolor": {
         "type": "character",
         "default": "NA",
         "options": "NA, \"fill\"",
         "class": "Aesthetic",
-        "description": "A  character value, a vector, or a\\link[plotgardener]{colorby} object specifying the color of the linesoutlining paired range elements"
+        "description": "A character value, a vector, or a plotgardener colorby object specifying the color of the lines outlining paired range elements"
     },
     "bg": {
         "type": "character",
@@ -60,35 +60,35 @@
         "default": "unit(2, \"mm\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric or unit object specifying height of boxesat either end of paired range elements"
+        "description": "A numeric or unit object specifying height of boxes at either end of paired range elements"
     },
     "spaceWidth": {
         "type": "numeric",
         "default": "0.02",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying the width of spacing betweenpaired range elements, as a fraction of the plot's genomic range"
+        "description": "A numeric specifying the width of spacing between paired range elements, as a fraction of the plot's genomic range"
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric specifying the height of space betweenboxes of paired range elements on different rows"
+        "description": "A numeric specifying the height of space between boxes of paired range elements on different rows"
     },
     "limitLabel": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space"
+        "description": "A logical value indicating whether to draw a \"+\" when not all elements can be plotted in the plotting space"
     },
     "baseline": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include a baselinealong the x-axis"
+        "description": "A logical value indicating whether to include a baseline along the x-axis"
     },
     "baseline.color": {
         "type": "string",
@@ -116,7 +116,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying paired range plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying paired range plot y-location"
     },
     "width": {
         "type": "numeric",
@@ -137,34 +137,34 @@
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the hustification of paired range plot relativeto its (x, y) location"
+        "description": "A string specifying the hustification of paired range plot relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphicsoutput should be produced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

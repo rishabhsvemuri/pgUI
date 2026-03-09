@@ -4,21 +4,21 @@
         "default": "\"hg38\"",
         "options": null,
         "class": null,
-        "description": "String defining the genome build"
+        "description": "assembly"
     },
     "gene": {
         "type": null,
         "default": null,
         "options": null,
         "class": null,
-        "description": "(optional) String naming a gene used to set thechrom, chromstart, and chromend arguments"
+        "description": "(optional) String naming a gene used to set the chrom, chromstart, and chromend arguments"
     },
     "geneBuffer": {
         "type": null,
         "default": null,
         "options": null,
         "class": null,
-        "description": "(optional) Integer base-pairs to extend thestart and end of a gene defined by argument \\code{gene}"
+        "description": "(optional) Integer base-pairs to extend the start and end of a gene defined by argument gene"
     },
     "...": {
         "type": "function",

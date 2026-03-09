@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string representing the Chromosome of genome labelor a character vector of chromosomes for a whole genome Manhattan plot"
+        "description": "A string representing the Chromosome of genome label or a character vector of chromosomes for a whole genome Manhattan plot"
     },
     "chromstart": {
         "type": "integer",
@@ -25,7 +25,7 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string specifying the default genome assembly or a plotgardener assembly object"
     },
     "fontsize": {
         "type": "numeric",
@@ -46,49 +46,49 @@
         "default": "\"black\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value indicating the color ofthe genome label axis"
+        "description": "A character value indicating the color of the genome label axis"
     },
     "margin": {
         "type": "numeric",
         "default": "unit(1, \"mm\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric or unit vector specifying space between axisand coordinate labels"
+        "description": "A numeric or unit vector specifying space between axis and coordinate labels"
     },
     "scale": {
         "type": "character",
         "default": "\"bp\"",
         "options": "\"bp\", \"Kb\", \"Mb\"",
         "class": "Aesthetic",
-        "description": "A character value indicating the scale of the coordinatesalong the genome label"
+        "description": "A character value indicating the scale of the coordinates along the genome label"
     },
     "commas": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include commas instart and stop labels"
+        "description": "A logical value indicating whether to include commas in start and stop labels"
     },
     "sequence": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include sequenceinformation above the label of an x-axis (only at appropriate resolutions)"
+        "description": "A logical value indicating whether to include sequence information above the label of an x-axis (only at appropriate resolutions)"
     },
     "boxWidth": {
         "type": "numeric",
         "default": "0.5",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value indicating the width of the boxesrepresenting sequence information at appropriate resolutions"
+        "description": "A numeric value indicating the width of the boxes representing sequence information at appropriate resolutions"
     },
     "axis": {
         "type": "character",
         "default": "\"x\"",
         "options": "\"x\", \"y\"",
         "class": "Aesthetic",
-        "description": "A character value indicating along which axis toadd genome label"
+        "description": "A character value indicating along which axis to add genome label"
     },
     "at": {
         "type": "numeric",
@@ -102,7 +102,7 @@
         "default": "0.5",
         "options": null,
         "class": "Positional",
-        "description": "A numeric specifying the length of tickmarks as afraction of text height"
+        "description": "A numeric specifying the length of tickmarks as a fraction of text height"
     },
     "x": {
         "type": "numeric",
@@ -116,35 +116,35 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying genome label y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying genome label y-location"
     },
     "length": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying length ofgenome label axis"
+        "description": "A numeric or unit object specifying length of genome label axis"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the justification of genome label relative to its (x, y)location"
+        "description": "A string specifying the justification of genome label relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units touse if \\code{x}, \\code{y}, or \\code{length} are only given as numerics"
+        "description": "A string indicating the default units to use if x, y, or length are only given as numerics"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",

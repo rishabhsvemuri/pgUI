@@ -4,14 +4,14 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Vector to map to color"
+        "description": "vector"
     },
     "palette": {
         "type": "palette",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Color palette function"
+        "description": "palette"
     },
     "range": {
         "type": "of",

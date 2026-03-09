@@ -25,49 +25,49 @@
         "default": "\"black\"",
         "options": null,
         "class": null,
-        "description": "A character value indicating the color ofthe genome label axis"
+        "description": "A character value indicating the color of the genome label axis"
     },
     "margin": {
         "type": "numeric",
         "default": "unit(1, \"mm\")",
         "options": null,
         "class": null,
-        "description": "A numeric or unit vector specifying space between axisand coordinate labels"
+        "description": "A numeric or unit vector specifying space between axis and coordinate labels"
     },
     "scale": {
         "type": "character",
         "default": "\"bp\"",
         "options": null,
         "class": null,
-        "description": "A character value indicating the scale of the coordinatesalong the genome label"
+        "description": "A character value indicating the scale of the coordinates along the genome label"
     },
     "commas": {
         "type": "logical",
         "default": "TRUE",
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether to include commas instart and stop labels"
+        "description": "A logical value indicating whether to include commas in start and stop labels"
     },
     "sequence": {
         "type": "logical",
         "default": null,
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value indicating whether to include sequenceinformation above the label of an x-axis (only at appropriate resolutions) Options include: TRUE, FALSE"
+        "description": "A logical value indicating whether to include sequence information above the label of an x-axis (only at appropriate resolutions) Options include: TRUE, FALSE"
     },
     "boxWidth": {
         "type": "numeric",
         "default": "0.5",
         "options": null,
         "class": null,
-        "description": "A numeric value indicating the width of the boxesrepresenting sequence information at appropriate resolutions"
+        "description": "A numeric value indicating the width of the boxes representing sequence information at appropriate resolutions"
     },
     "axis": {
         "type": "character",
         "default": "\"x\"",
         "options": null,
         "class": null,
-        "description": "A character value indicating along which axis toadd genome label"
+        "description": "A character value indicating along which axis to add genome label"
     },
     "at": {
         "type": "numeric",
@@ -81,7 +81,7 @@
         "default": "0.5",
         "options": null,
         "class": null,
-        "description": "A numeric specifying the length of tickmarks as a fraction oftext height"
+        "description": "A numeric specifying the length of tickmarks as a fraction of text height"
     },
     "x": {
         "type": "numeric",
@@ -95,7 +95,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying genome label y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying genome label y-location"
     },
     "just": {
         "type": "of",
@@ -109,14 +109,14 @@
         "default": "\"inches\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x} or \\code{y} are only given as numerics"
+        "description": "A string indicating the default units to use if x or y are only given as numerics"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",

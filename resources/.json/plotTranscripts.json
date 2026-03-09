@@ -25,28 +25,28 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string specifying the default genome assembly or a plotgardener assembly object"
     },
     "fill": {
         "type": "character",
         "default": "c(\"#669fd9\", \"#abcc8e\")",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value(s) as a single value or vectorspecifying fill colors of transcripts"
+        "description": "A character value(s) as a single value or vector specifying fill colors of transcripts"
     },
     "colorbyStrand": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether tocolor plus and minus strands by the first two colors ina \\code{fill} vector, where plus strand transcripts will becolored by the first \\code{fill} color andminus strand transcripts will be colored by the second \\code{fill}color"
+        "description": "A logical value indicating whether to color plus and minus strands by the first two colors in a fill vector, where plus strand transcripts will be colored by the first fill color and minus strand transcripts will be colored by the second fill color"
     },
     "strandSplit": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether plus andminus-stranded transcripts should be separated, with plus strandtranscripts plotted above the x-axis and minus strand transcriptsplotted below the x-axis"
+        "description": "A logical value indicating whether plus and minus-stranded transcripts should be separated, with plus strand transcripts plotted above the x-axis and minus strand transcripts plotted below the x-axis"
     },
     "boxHeight": {
         "type": "numeric",
@@ -60,28 +60,28 @@
         "default": "0.02",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value specifying the width of minimum spacingbetween transcripts, as a fraction of the plot's genomic range"
+        "description": "A numeric value specifying the width of minimum spacing between transcripts, as a fraction of the plot's genomic range"
     },
     "spaceHeight": {
         "type": "numeric",
         "default": "0.3",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value specifying the height of spacingbetween transcripts on different rows, as a fraction of \\code{boxHeight}"
+        "description": "A numeric value specifying the height of spacing between transcripts on different rows, as a fraction of boxHeight"
     },
     "limitLabel": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to draw a \"+\"when not all elements can be plotted in the plotting space"
+        "description": "A logical value indicating whether to draw a \"+\" when not all elements can be plotted in the plotting space"
     },
     "transcriptHighlights": {
         "type": "two-column",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A two-column dataframe with a column named\"transcript\" or \"gene\" containing transcript names or their associated genenames as strings to highlight and a column named \"color\" containingcorresponding highlight colors"
+        "description": "A two-column dataframe with a column named \"transcript\" or \"gene\" containing transcript names or their associated gene names as strings to highlight and a column named \"color\" containing corresponding highlight colors"
     },
     "fontsize": {
         "type": "numeric",
@@ -95,14 +95,14 @@
         "default": "\"trancript\"",
         "options": "NULL, \"transcript\", \"gene\", \"both\"",
         "class": "Aesthetic",
-        "description": "A character value describing the format oftranscript text labels"
+        "description": "A character value describing the format of transcript text labels"
     },
     "stroke": {
         "type": "numeric",
         "default": "0.1",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric value indicating the stroke width fortranscript body outlines"
+        "description": "A numeric value indicating the stroke width for transcript body outlines"
     },
     "bg": {
         "type": "character",
@@ -123,7 +123,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying transcript plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying transcript plot y-location"
     },
     "width": {
         "type": "numeric",
@@ -144,27 +144,27 @@
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the justification of transcript plot relative toits (x, y) location"
+        "description": "A string specifying the justification of transcript plot relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output should beproduced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     }
 }

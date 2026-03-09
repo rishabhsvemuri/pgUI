@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string "
+        "description": "data"
     },
     "sigVal": {
         "type": "numeric",
@@ -39,14 +39,14 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string specifying the default genome assembly or a plotgardener assembly object"
     },
     "fill": {
         "type": "character",
         "default": "\"black\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value, a vector, or a\\link[plotgardener]{colorby} object specifying fill colors of data points"
+        "description": "A character value, a vector, or a plotgardener colorby object specifying fill colors of data points"
     },
     "pch": {
         "type": "numeric",
@@ -60,56 +60,56 @@
         "default": "0.25",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric indicating the amount by which points should bescaled relative to the default"
+        "description": "A numeric indicating the amount by which points should be scaled relative to the default"
     },
     "leadSNP": {
         "type": "list",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A list specifying the lead SNP in the desired region andany associated aesthetic features of the lead SNP data point and text label"
+        "description": "A list specifying the lead SNP in the desired region and any associated aesthetic features of the lead SNP data point and text label"
     },
     "sigLine": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to draw a line at thesignificance level indicated with \\code{sigVal}"
+        "description": "A logical value indicating whether to draw a line at the significance level indicated with sigVal"
     },
     "sigCol": {
         "type": "character",
         "default": "NULL",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value specifying the color ofsignificant data points"
+        "description": "A character value specifying the color of significant data points"
     },
     "trans": {
         "type": "character",
         "default": "\"-log10\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "A character value specifying the transformation to apply to the\"p\" column plotted along the y-axis"
+        "description": "A character value specifying the transformation to apply to the \"p\" column plotted along the y-axis"
     },
     "range": {
         "type": "numeric",
         "default": "NULL",
         "options": null,
         "class": "Positional",
-        "description": "A numeric vector of length 2 specifying the y-rangeof p-values to plot (c(min, max))"
+        "description": "A numeric vector of length 2 specifying the y-range of p-values to plot (c(min, max))"
     },
     "yscale_reverse": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether to reverse the y-scaleand order points from max to min"
+        "description": "A logical value indicating whether to reverse the y-scale and order points from max to min"
     },
     "space": {
         "type": "numeric",
         "default": "0.01",
         "options": null,
         "class": "Positional",
-        "description": "A numeric value indicating the space between eachchromosome as a fraction of the width of the plot, if plotting multiplechromosomes"
+        "description": "A numeric value indicating the space between each chromosome as a fraction of the width of the plot, if plotting multiple chromosomes"
     },
     "bg": {
         "type": "character",
@@ -123,21 +123,21 @@
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to include abaseline along the x-axis"
+        "description": "A logical value indicating whether to include a baseline along the x-axis"
     },
     "baseline.color": {
         "type": "baseline",
         "default": "\"grey\"",
         "options": null,
         "class": "Aesthetic",
-        "description": "String baseline color"
+        "description": "baseline.color"
     },
     "baseline.lwd": {
         "type": "numeric",
         "default": "1",
         "options": null,
         "class": "Aesthetic",
-        "description": "A numeric baseline line width"
+        "description": "baseline.lwd"
     },
     "x": {
         "type": "numeric",
@@ -151,7 +151,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying Manhattan plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying Manhattan plot y-location"
     },
     "width": {
         "type": "numeric",
@@ -172,41 +172,41 @@
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the justification of Manhattan plot relative to its (x, y)location"
+        "description": "A string specifying the justification of Manhattan plot relative to its (x, y) location"
     },
     "flip": {
         "type": "logical",
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether to reflect Manhattan plotover the x-axis"
+        "description": "A logical value indicating whether to reflect Manhattan plot over the x-axis"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output shouldbe produced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

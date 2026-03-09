@@ -11,35 +11,35 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string specifying the default genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string specifying the default genome assembly or a plotgardener assembly object"
     },
     "data": {
         "type": "cytoband",
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "Custom cytoband data, as a dataframe with the followingcolumns: \"seqnames\", \"start\", \"end\", \"width\", \"strand\",\"name\", \"gieStain\""
+        "description": "Custom cytoband data, as a dataframe with the following columns: \"seqnames\", \"start\", \"end\", \"width\", \"strand\", \"name\", \"gieStain\""
     },
     "orientation": {
         "type": "value",
         "default": "\"h\"",
         "options": "\"v\", \"h\"",
         "class": "Aesthetic",
-        "description": "Character value indicating the orientationof the ideogram"
+        "description": "Character value indicating the orientation of the ideogram"
     },
     "showBands": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical value indicating whether to drawcolored cytobands within ideogram"
+        "description": "A logical value indicating whether to draw colored cytobands within ideogram"
     },
     "fill": {
         "type": null,
         "default": null,
         "options": null,
         "class": "Aesthetic",
-        "description": "(optional) A vector specifying alternate colors for cytobandstains"
+        "description": "(optional) A vector specifying alternate colors for cytoband stains"
     },
     "x": {
         "type": "numeric",
@@ -53,7 +53,7 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\"combined with a numeric value specifying ideogram y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying ideogram y-location"
     },
     "width": {
         "type": "numeric",
@@ -81,20 +81,20 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to use if\\code{x}, \\code{y}, \\code{width}, or \\code{height} are only given asnumerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output should beproduced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     }
 }

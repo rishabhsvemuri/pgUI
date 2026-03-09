@@ -4,28 +4,28 @@
         "default": null,
         "options": null,
         "class": "Data",
-        "description": "A string path to "
+        "description": "data"
     },
     "resolution": {
         "type": "numeric",
         "default": "\"auto\"",
         "options": null,
         "class": "Data",
-        "description": "A numeric specifying the width in basepairsof each pixel"
+        "description": "A numeric specifying the width in basepairs of each pixel"
     },
     "zrange": {
         "type": "numeric",
         "default": "NULL",
         "options": null,
         "class": "Data",
-        "description": "A numeric vector of length 2 specifying the range ofinteraction scores to plot, where extreme values will be set to themax or min"
+        "description": "A numeric vector of length 2 specifying the range of interaction scores to plot, where extreme values will be set to the max or min"
     },
     "norm": {
         "type": "character",
         "default": "\"KR\"",
         "options": null,
         "class": "Data",
-        "description": "A character value specifying hic data normalization method,if giving "
+        "description": "A character value specifying hic data normalization method, if giving"
     },
     "matrix": {
         "type": "character",
@@ -60,14 +60,14 @@
         "default": "\"hg38\"",
         "options": null,
         "class": "Data",
-        "description": "A string representing the eefault genome assembly or a\\link[plotgardener]{assembly} object"
+        "description": "A string representing the eefault genome assembly or a plotgardener assembly object"
     },
     "palette": {
         "type": "function",
-        "default": null,
+        "default": "colorRampPalette(brewer.pal(n = 9, \"YlGnBu\"))",
         "options": null,
         "class": "Aesthetic",
-        "description": "A function describing the color palette to use forrepresenting scale of interaction scores"
+        "description": "A function describing the color palette to use for representing scale of interaction scores"
     },
     "colorTrans": {
         "type": "string",
@@ -81,7 +81,7 @@
         "default": "FALSE",
         "options": "TRUE, FALSE",
         "class": "Aesthetic",
-        "description": "A logical indicating whether to flip the orientation ofthe Hi-C matrix over the x-axis"
+        "description": "A logical indicating whether to flip the orientation of the Hi-C matrix over the x-axis"
     },
     "bg": {
         "type": "character",
@@ -95,56 +95,56 @@
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying rectangleHi-C plot x-location"
+        "description": "A numeric or unit object specifying rectangle Hi-C plot x-location"
     },
     "y": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying rectangle Hi-C plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying rectangle Hi-C plot y-location"
     },
     "width": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying the width of theHi-C plot rectangle"
+        "description": "A numeric or unit object specifying the width of the Hi-C plot rectangle"
     },
     "height": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "A numeric or unit object specifying the height of theHi-C plot rectangle"
+        "description": "A numeric or unit object specifying the height of the Hi-C plot rectangle"
     },
     "just": {
         "type": "string",
         "default": "c(\"left\", \"top\")",
         "options": "c(\"left\", \"top\"), c(\"left\", \"bottom\"), \"left\", c(\"right\", \"top\"), c(\"right\", \"bottom\"), \"right\", \"top\", \"bottom\", \"center\"",
         "class": "Positional",
-        "description": "A string specifying the justification of rectangle Hi-C plot relative toits (x, y) location"
+        "description": "A string specifying the justification of rectangle Hi-C plot relative to its (x, y) location"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": "Positional",
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are only givenas numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": "Positional",
-        "description": "A logical value indicating whether graphics output shouldbe produced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": "Positional",
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "quiet": {
         "type": "logical",

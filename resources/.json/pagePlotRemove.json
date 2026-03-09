@@ -4,6 +4,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Plot object to be removed, defined by the outputof a plotgardener plotting function"
+        "description": "Plot object to be removed, defined by the output of a plotgardener plotting function"
     }
 }

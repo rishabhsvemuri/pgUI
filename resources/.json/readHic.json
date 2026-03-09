@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A character value specifying the path to the "
+        "description": "A character value specifying the path to the"
     },
     "chrom": {
         "type": "of",
@@ -18,42 +18,42 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Integer start position on chromosome"
+        "description": "chromstart"
     },
     "chromend": {
         "type": "end",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Integer end position on chromosome"
+        "description": "chromend"
     },
     "altchrom": {
         "type": "chromosome",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Alternate chromosome for interchromosomal data,as a string"
+        "description": "Alternate chromosome for interchromosomal data, as a string"
     },
     "altchromstart": {
         "type": "chromosome",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Alternate chromosome integer start positionfor interchromosomal data"
+        "description": "Alternate chromosome integer start position for interchromosomal data"
     },
     "altchromend": {
         "type": "chromosome",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Alternate chromosome integer end positionfor interchromosomal data"
+        "description": "Alternate chromosome integer end position for interchromosomal data"
     },
     "assembly": {
         "type": "genome",
         "default": "\"hg38\"",
         "options": null,
         "class": null,
-        "description": "Default genome assembly as a string or a\\link[plotgardener]{assembly} object"
+        "description": "Default genome assembly as a string or a plotgardener assembly object"
     },
     "resolution": {
         "type": "numeric",
@@ -74,7 +74,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector of length 2 specifying the range ofinteraction scores, where extreme values will be set to the max or min"
+        "description": "A numeric vector of length 2 specifying the range of interaction scores, where extreme values will be set to the max or min"
     },
     "norm": {
         "type": "value",
@@ -95,7 +95,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "quiet": {
         "type": "logical",

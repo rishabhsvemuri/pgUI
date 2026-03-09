@@ -14,7 +14,8 @@ def parse_params(file_path, file_name):
                 items.append(line.strip())
             else:
                 if items:
-                    items[-1] = items[-1] + line.strip()
+                    # Preserve a word boundary when joining wrapped lines.
+                    items[-1] = items[-1] + ' ' + line.strip()
     output_path = texts + '/' + file_name
     filew = open(output_path, "w")
     for item in items:
@@ -27,6 +28,20 @@ def parse_to_JSON(file_path, file_name, root):
     pattern_options = r"Options include: \s*(.*?)\."
     pattern_class = r"Class:\s*(.*?)\."
     pattern_description = r"\}\{(.*?)\."
+
+    def normalize_description(text):
+        if text is None:
+            return None
+        text = text.replace("\n", " ").replace("\\n", " ")
+        # Some source strings omit whitespace before inline commands (e.g., "a\link{...}").
+        text = re.sub(r"(?<=\S)(?=\\(?:link|code)\b)", " ", text)
+        # Convert LaTeX-style markup like \link{xyz}, \code{xyz},
+        # and \link[pkg]{xyz} to plain text.
+        text = re.sub(r"\\link\[([^\]]+)\]\{([^}]*)\}", r"\1 \2", text)
+        text = re.sub(r"\\(?:link|code)\{([^}]*)\}", r"\1", text)
+        # Normalize any leftover mixed whitespace/newline runs to single spaces.
+        return re.sub(r"\s+", " ", text).strip()
+
     items = {}
     with open(file_path, 'r') as file:
         read = file.readlines()
@@ -50,7 +65,9 @@ def parse_to_JSON(file_path, file_name, root):
         if (re.search(pattern_class, line)):
             section = re.search(pattern_class, line).group(1)
         if (re.search(pattern_description, line)):
-            description = re.search(pattern_description, line).group(1)
+            description = normalize_description(re.search(pattern_description, line).group(1))
+            if len(description.split(" ")) <= 5:
+                description = var
         if (var != None):
             if ("code{" not in var):
                 items[var] = {

@@ -18,7 +18,7 @@
         "default": "\"inches\"",
         "options": "\"inches\", \"cm\", \"npc\", \"snpc\", \"native\", \"mm\", \"points\"",
         "class": null,
-        "description": "A string indicating the default units to use if\\code{width} or \\code{height} are only given as numerics"
+        "description": "A string indicating the default units to use if width or height are only given as numerics"
     },
     "bg": {
         "type": "character",
@@ -32,27 +32,27 @@
         "default": "0.5",
         "options": null,
         "class": null,
-        "description": "A numeric indicating the increment by which to placevertical gridlines"
+        "description": "A numeric indicating the increment by which to place vertical gridlines"
     },
     "ygrid": {
         "type": "numeric",
         "default": "0.5",
         "options": null,
         "class": null,
-        "description": "A numeric indicating the increment by which to placehorizontal gridlines"
+        "description": "A numeric indicating the increment by which to place horizontal gridlines"
     },
     "showGuides": {
         "type": "logical",
         "default": "TRUE",
         "options": "TRUE, FALSE",
         "class": null,
-        "description": "A logical value indicating whether to draw ablack border around the entire page and guiding rulers along the top andleft side of the page"
+        "description": "A logical value indicating whether to draw a black border around the entire page and guiding rulers along the top and left side of the page"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     }
 }

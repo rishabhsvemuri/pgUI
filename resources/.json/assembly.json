@@ -25,14 +25,14 @@
         "default": "\"ENTREZID\"",
         "options": null,
         "class": null,
-        "description": "String of the TxDb column name that refers tothe given TxDb gene IDs"
+        "description": "String of the TxDb column name that refers to the given TxDb gene IDs"
     },
     "display.column": {
         "type": "of",
         "default": "\"SYMBOL\"",
         "options": null,
         "class": null,
-        "description": "String of the OrgDb column name that refers tothe type of gene symbol to be displayed in plots"
+        "description": "String of the OrgDb column name that refers to the type of gene symbol to be displayed in plots"
     },
     "BSgenome": {
         "type": "of",

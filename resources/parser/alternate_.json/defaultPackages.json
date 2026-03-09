@@ -1,9 +1,0 @@
-{
-    "Genome": {
-        "type": "indicating",
-        "default": null,
-        "options": null,
-        "class": null,
-        "description": "String indicating the name of the genome assembly"
-    }
-}

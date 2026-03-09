@@ -4,7 +4,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Plot object to be placed, defined by theoutput of a plotgardener plotting function"
+        "description": "Plot object to be placed, defined by the output of a plotgardener plotting function"
     },
     "x": {
         "type": "numeric",
@@ -18,7 +18,7 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric, unit object, or character containing a \"b\" combinedwith a numeric value specifying plot y-location"
+        "description": "A numeric, unit object, or character containing a \"b\" combined with a numeric value specifying plot y-location"
     },
     "width": {
         "type": "numeric",
@@ -46,20 +46,20 @@
         "default": "\"inches\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x}, \\code{y}, \\code{width}, or \\code{height} are onlygiven as numerics"
+        "description": "A string indicating the default units to use if x, y, width, or height are only given as numerics"
     },
     "draw": {
         "type": "logical",
         "default": "TRUE",
         "options": null,
         "class": null,
-        "description": "A logical value indicating whether graphics outputshould be produced"
+        "description": "A logical value indicating whether graphics output should be produced"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     }
 }

@@ -4,14 +4,14 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Hi-C plot object from \\code{plotHicSquare} or\\code{plotHicTriangle} on which to annotate pixels"
+        "description": "Hi-C plot object from plotHicSquare or plotHicTriangle on which to annotate pixels"
     },
     "data": {
         "type": "string",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A string specifying the BEDPE file path, a dataframe in BEDPEformat specifying pixel positions, or a\\link[InteractionSet]{GInteractions} object specifying pixelpositions"
+        "description": "A string specifying the BEDPE file path, a dataframe in BEDPE format specifying pixel positions, or a InteractionSet GInteractions object specifying pixel positions"
     },
     "type": {
         "type": "value",
@@ -25,21 +25,21 @@
         "default": "\"inherit\"",
         "options": null,
         "class": null,
-        "description": "Character value specifying which half of hic plotsto annotate"
+        "description": "Character value specifying which half of hic plots to annotate"
     },
     "shift": {
         "type": "specifying",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Numeric specifying the number of pixels on either end ofmain pixel in a box or circle"
+        "description": "Numeric specifying the number of pixels on either end of main pixel in a box or circle"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} objectcontaining relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "quiet": {
         "type": "logical",
@@ -53,6 +53,6 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

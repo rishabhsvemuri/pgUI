@@ -4,42 +4,42 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the startingx-values of the line segments"
+        "description": "A numeric vector or unit object indicating the starting x-values of the line segments"
     },
     "y0": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the startingy-values of the line segments"
+        "description": "A numeric vector or unit object indicating the starting y-values of the line segments"
     },
     "x1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the stoppingx-values of the line segments"
+        "description": "A numeric vector or unit object indicating the stopping x-values of the line segments"
     },
     "y1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the stoppingy-values of the line segments"
+        "description": "A numeric vector or unit object indicating the stopping y-values of the line segments"
     },
     "plot": {
         "type": "plotgardener",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Input plotgardener plot to internally plot line segmentsrelative to"
+        "description": "Input plotgardener plot to internally plot line segments relative to"
     },
     "default.units": {
         "type": "string",
         "default": "\"native\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{x0}, \\code{y0}, \\code{x1}, or \\code{y1} are only givenas numeric vectors"
+        "description": "A string indicating the default units to use if x0, y0, x1, or y1 are only given as numeric vectors"
     },
     "linecolor": {
         "type": "character",
@@ -81,20 +81,20 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "A list describing arrow heads to place at eitherend of the line segments, as produced by the \\link[grid]{arrow} function"
+        "description": "A list describing arrow heads to place at either end of the line segments, as produced by the grid arrow function"
     },
     "params": {
         "type": "optional",
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams} object containingrelevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }

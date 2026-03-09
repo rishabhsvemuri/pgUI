@@ -18,49 +18,49 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "Integer start position on chromosome to drawzoom lines from"
+        "description": "Integer start position on chromosome to draw zoom lines from"
     },
     "chromend": {
         "type": "end",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Integer end position on chromosome to drawzoom lines from"
+        "description": "Integer end position on chromosome to draw zoom lines from"
     },
     "y0": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the startingy-values of the zoom line segments"
+        "description": "A numeric vector or unit object indicating the starting y-values of the zoom line segments"
     },
     "x1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the stoppingx-values of the zoom line segments"
+        "description": "A numeric vector or unit object indicating the stopping x-values of the zoom line segments"
     },
     "y1": {
         "type": "numeric",
         "default": null,
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the stoppingy-values of the zoom line segments"
+        "description": "A numeric vector or unit object indicating the stopping y-values of the zoom line segments"
     },
     "extend": {
         "type": "numeric",
         "default": "0",
         "options": null,
         "class": null,
-        "description": "A numeric vector or unit object indicating the lengthto extend straight lines from each endof the zoom line segments"
+        "description": "A numeric vector or unit object indicating the length to extend straight lines from each end of the zoom line segments"
     },
     "default.units": {
         "type": "string",
         "default": "\"inches\"",
         "options": null,
         "class": null,
-        "description": "A string indicating the default units to useif \\code{y0}, \\code{x1}, \\code{y1}, or \\code{extend} are only givenas numerics or numeric vectors"
+        "description": "A string indicating the default units to use if y0, x1, y1, or extend are only given as numerics or numeric vectors"
     },
     "linecolor": {
         "type": "character",
@@ -81,13 +81,13 @@
         "default": null,
         "options": null,
         "class": null,
-        "description": "An optional \\link[plotgardener]{pgParams}object containing relevant function parameters"
+        "description": "An optional plotgardener pgParams object containing relevant function parameters"
     },
     "...": {
         "type": "grid",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Additional grid graphical parameters"
+        "description": "..."
     }
 }
