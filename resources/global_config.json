@@ -5,8 +5,8 @@
 
     },
     "assembly": {
-        "display": ["hg38", "hg19", "mm10"],
-        "options": ["hg38", "hg19", "mm10"]
+        "display": ["", "hg38", "hg19", "mm10"],
+        "options": ["", "hg38", "hg19", "mm10"]
     },
     "hide": ["geneHighlights", "leadSNP", "arrow"]
 }

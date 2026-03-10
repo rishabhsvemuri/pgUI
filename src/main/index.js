@@ -455,7 +455,7 @@ async function writeCommands() {
     let comment = `\n# ${plot.get('name')}\n`;
     let command = `${comment}${id} <- ${plot.get('maker').toString()}`;
     for (let [variable, value] of plot) {
-      if (value !== undefined && variable !== 'maker' && variable !== 'name') {
+      if (value !== undefined && variable !== 'maker' && variable !== 'name' && value !== "") {
         const line = `${variable} = ${value.toString()}, `;
         command += line;
       }
