@@ -24,34 +24,65 @@ let savePath = path.join(app.getPath('temp'), 'pgUIOutput.pdf');
 const writePath = path.join(app.getPath('temp'), 'written.R');
 const userCode = path.join(app.getPath('temp'), 'userCode.R');
 let rSession; // persistent r session
+let currentRunActive = false;
+
+function emitConsoleOutput(payload) {
+  mainWindow?.webContents.send('console-output', payload);
+}
 
 function startRSession() {
   rSession = spawn("/usr/local/bin/R", ["--vanilla"], { stdio: ["pipe", "pipe", "pipe"] });
 
   rSession.stdout.on("data", (data) => {
-      console.log(data.toString())
-      if (data.toString().includes('null device')) {
+      const output = data.toString();
+      console.log(output)
+
+      if (currentRunActive) {
+        emitConsoleOutput({ type: 'stdout', text: output });
+      }
+
+      if (output.includes('null device')) {
         mainWindow?.webContents.send('refresh-pdf', savePath);
+        if (currentRunActive) {
+          emitConsoleOutput({ type: 'status', status: 'success', text: 'Run finished' });
+          currentRunActive = false;
+        }
       }
   });
 
   rSession.stderr.on("data", (data) => {
-      console.log(data.toString())
-      if (!(data.toString().includes('masked') || data.toString().includes('plotgardener'))) {
-        mainWindow?.webContents.send('message', `${data.toString()}`);
+      const output = data.toString();
+      console.log(output)
+
+      if (currentRunActive) {
+        emitConsoleOutput({ type: 'stderr', text: output });
+      }
+
+      if (!(output.includes('masked') || output.includes('plotgardener'))) {
+        mainWindow?.webContents.send('message', `${output}`);
+      }
+
+      if (currentRunActive && /(^|\n)\s*Error\b/.test(output)) {
+        emitConsoleOutput({ type: 'status', status: 'error', text: 'Run failed' });
+        currentRunActive = false;
       }
   });
 
   rSession.on("close", (code) => {
       console.log(`R process exited with code ${code}`);
+      if (currentRunActive) {
+        emitConsoleOutput({ type: 'status', status: 'error', text: `R process exited with code ${code}` });
+        currentRunActive = false;
+      }
       console.log('Restarting')
       startRSession();
   });
 
   // Load necessary libraries on startup
   rSession.stdin.write('if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager", repos="https://cloud.r-project.org/")\n')
-  rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener", ask=FALSE)\n')
+  rSession.stdin.write('if (!requireNamespace("Rcpp", quietly = TRUE)) install.packages("Rcpp", repos="https://cloud.r-project.org/")\n')
   rSession.stdin.write('if (!requireNamespace("RColorBrewer", quietly = TRUE)) install.packages("RColorBrewer", repos="https://cloud.r-project.org/")\n')
+  rSession.stdin.write('if (!requireNamespace("plotgardener", quietly = TRUE)) BiocManager::install("plotgardener", ask=FALSE, update=FALSE)\n')
   rSession.stdin.write('library(plotgardener)\n')
   // rSession.stdin.write('if (!requireNamespace("plotgardenerData", quietly = TRUE)) BiocManager::install("plotgardenerData", ask=FALSE)\n')
   rSession.stdin.write('library(RColorBrewer)\n') // load RColorBrewer for pallete options
@@ -151,6 +182,8 @@ app.whenReady().then(() => {
     if (!rSession) {
       console.error('R session is not active');
       mainWindow?.webContents.send('message', 'Error: R session is not active');
+      emitConsoleOutput({ type: 'clear' });
+      emitConsoleOutput({ type: 'status', status: 'error', text: 'R session is not active' });
       return;
     }
   
@@ -164,10 +197,15 @@ app.whenReady().then(() => {
   
     if (!isValid) {
       mainWindow?.webContents.send('message', 'Error: Invalid inputs');
+      emitConsoleOutput({ type: 'clear' });
+      emitConsoleOutput({ type: 'status', status: 'error', text: 'Invalid inputs' });
       return;
     }
   
     try {
+      currentRunActive = false;
+      emitConsoleOutput({ type: 'clear' });
+      emitConsoleOutput({ type: 'status', status: 'running', text: 'Run started' });
       console.log('Generating and writing commands');
       mainWindow?.webContents.send('message', 'Generating and writing commands');
       await writeScript();
@@ -176,6 +214,7 @@ app.whenReady().then(() => {
   
       // Pass commands to the R session
       const scriptContent = await fs.readFile(writePath, 'utf8');
+      currentRunActive = true;
       await rSession.stdin.write(`${scriptContent}\n`);
 
       // Load libraries + scriptContent for user facing code
@@ -185,8 +224,10 @@ app.whenReady().then(() => {
       mainWindow?.webContents.send('message', 'Commands executed successfully');
       // Use R output null device code to show pdf
     } catch (err) {
+      currentRunActive = false;
       console.error('Error running commands in R session:', err);
       mainWindow?.webContents.send('message', `Error: ${err.message}`);
+      emitConsoleOutput({ type: 'status', status: 'error', text: err.message });
     }
   });  
 
