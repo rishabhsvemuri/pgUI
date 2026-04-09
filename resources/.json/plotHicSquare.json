@@ -15,7 +15,7 @@
     },
     "zrange": {
         "type": "numeric",
-        "default": null,
+        "default": "",
         "options": null,
         "class": "Data",
         "description": "A numeric vector of length 2 specifying the range of interaction scores to plot, where extreme values will be set to the max or min"
@@ -57,21 +57,21 @@
     },
     "altchrom": {
         "type": "string",
-        "default": null,
+        "default": "",
         "options": null,
         "class": "Data",
         "description": "A string representing the alternate chromosome for off-diagonal plotting or interchromosomal plotting"
     },
     "altchromstart": {
         "type": "integer",
-        "default": null,
+        "default": "",
         "options": null,
         "class": "Data",
         "description": "An integer alternate chromosome start position for off-diagonal plotting or interchromosomal plotting"
     },
     "altchromend": {
         "type": "integer",
-        "default": null,
+        "default": "",
         "options": null,
         "class": "Data",
         "description": "An integer alternate chromosome end position for off-diagonal plotting or interchromosomal plotting"

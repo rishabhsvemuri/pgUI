@@ -15,7 +15,7 @@
     },
     "zrange": {
         "type": "numeric",
-        "default": "NULL",
+        "default": "",
         "options": null,
         "class": "Data",
         "description": "A numeric vector of length 2 specifying the range of interaction scores to plot, where extreme values will be set to the max or min"

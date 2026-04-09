@@ -29,21 +29,21 @@
     },
     "altchrom": {
         "type": "chromosome",
-        "default": null,
+        "default": "",
         "options": null,
         "class": null,
         "description": "Alternate chromosome for interchromosomal data, as a string"
     },
     "altchromstart": {
         "type": "chromosome",
-        "default": null,
+        "default": "",
         "options": null,
         "class": null,
         "description": "Alternate chromosome integer start position for interchromosomal data"
     },
     "altchromend": {
         "type": "chromosome",
-        "default": null,
+        "default": "",
         "options": null,
         "class": null,
         "description": "Alternate chromosome integer end position for interchromosomal data"
@@ -71,7 +71,7 @@
     },
     "zrange": {
         "type": "numeric",
-        "default": null,
+        "default": "",
         "options": null,
         "class": null,
         "description": "A numeric vector of length 2 specifying the range of interaction scores, where extreme values will be set to the max or min"

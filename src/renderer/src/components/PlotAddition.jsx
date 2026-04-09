@@ -469,7 +469,7 @@ function PlotAddition() {
                     {plot.formData && plot.formData.filter(formData => formData.section === section).map((input) => (
                       <li>
                         <div className={input.valid ? 'input-field' : 'invalid-field'}>
-                          <label htmlFor={input.id}>{input.default || input.options ? `${input.variable}` : `${input.variable}*`}</label>
+                          <label htmlFor={input.id}>{input.default || input.options || input.default == "" ? `${input.variable}` : `${input.variable}*`}</label>
                           {input.options ? (
                             <select id={input.id} name={input.variable} data-plot-id={plot.id} value={input.enteredValue !== null ? input.enteredValue: null} onChange={(e) => handleBlur(e)}>
                               {input.options.map((option, idx) => (

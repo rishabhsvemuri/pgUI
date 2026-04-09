@@ -94,7 +94,7 @@ os.mkdir(texts)
 os.mkdir(os.getcwd() + '/.json')
 
 # clone repo
-Repo.clone_from('git@github.com:rishabhsvemuri/plotgardener.git', path)
+Repo.clone_from('https://github.com/rishabhsvemuri/plotgardener.git', path)
 # navigate to man folder
 path += '/man' 
 
@@ -107,6 +107,24 @@ os.chdir(texts)
 for file in os.listdir():
     file_name = file[:-4] + '.json'
     parse_to_JSON(os.getcwd() + '/' + file, file_name, root)
+
+# set default to "" for optional params
+with open(root + '/resources/global_config.json', 'r') as gc_file:
+    global_config = json.load(gc_file)
+optional_params = global_config.get("optional", [])
+json_dir = root + '/.json'
+for json_file_name in os.listdir(json_dir):
+    json_path = json_dir + '/' + json_file_name
+    with open(json_path, 'r') as jf:
+        data = json.load(jf)
+    modified = False
+    for param in data:
+        if param in optional_params:
+            data[param]["default"] = ""
+            modified = True
+    if modified:
+        with open(json_path, 'w') as jf:
+            json.dump(data, jf, indent=4)
 
 # cleanup
 rmtree(texts)
