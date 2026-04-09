@@ -1,10 +1,10 @@
 {
     "label": {
-        "type": "or",
+        "type": "character",
         "default": null,
         "options": null,
         "class": null,
-        "description": "Character or expression of text to be plotted"
+        "description": "A character or expression of text to be plotted"
     },
     "fontcolor": {
         "type": "character",
