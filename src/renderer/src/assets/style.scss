@@ -437,12 +437,14 @@
  
  
  
+ .vector-input {
+    display: flex;
+    justify-content: flex-end;
+ }
+
  .half {
     width: 30%;
     margin-left: 2%;
-    &:first-child {
-        margin-left: 0;
-    }
  }
  
  

@@ -147,7 +147,7 @@ function PlotAddition() {
       const isVector = globals.vectors?.includes(key);
       return {
         variable: key,
-        type: jsonData[key].type.toLowerCase(),
+        type: jsonData[key].type ? jsonData[key].type.toLowerCase() : null,
         options: options,
         default: jsonData[key].default,
         description: jsonData[key].description,
