@@ -9,5 +9,6 @@
         "options": ["", "hg38", "hg19", "mm10"]
     },
     "hide": ["geneHighlights", "leadSNP", "arrow"],
-    "optional": ["zrange", "altchrom", "altchromstart", "altchromend"]
+    "optional": ["zrange", "altchrom", "altchromstart", "altchromend"],
+    "vectors": ["range, zrange"]
 }

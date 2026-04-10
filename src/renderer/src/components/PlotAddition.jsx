@@ -144,6 +144,7 @@ function PlotAddition() {
         options = globals[key].options;
         display = globals[key].display;
       }
+      const isVector = globals.vectors?.includes(key);
       return {
         variable: key,
         type: jsonData[key].type.toLowerCase(),
@@ -151,10 +152,11 @@ function PlotAddition() {
         default: jsonData[key].default,
         description: jsonData[key].description,
         section: jsonData[key].class,
-        enteredValue: null,
+        enteredValue: isVector ? ['', ''] : null,
         valid: true,
         fileInput: fileInput,
         display: display,
+        isVector: isVector,
         id: `${id}-${key}`,
       };
     }).filter(item => item !== null);
@@ -185,7 +187,8 @@ function PlotAddition() {
     setPlots(prevPlots =>
       prevPlots.map(plot => {
         const updatedFormData = plot.formData.map(param => {
-          const isValid = param.default || param.enteredValue || param.options; // Check if valid, if field has default or options it's always valid
+          const vectorFilled = param.isVector && Array.isArray(param.enteredValue) && param.enteredValue[0] !== '' && param.enteredValue[1] !== '';
+          const isValid = param.default || param.default == "" || param.options || (param.isVector ? vectorFilled : param.enteredValue); // Check if valid, if field has default or options it's always valid
           if (!isValid) {
             allValid = false; // Mark as invalid if any input fails
             return { ...param, valid: false }; // Return updated param
@@ -201,7 +204,8 @@ function PlotAddition() {
     setAnnotations(prevAnnos =>
       prevAnnos.map(annotation => {
         const updatedFormData = annotation.formData.map(param => {
-          const isValid = param.default || param.enteredValue; // Check if valid
+          const vectorFilled = param.isVector && Array.isArray(param.enteredValue) && param.enteredValue[0] !== '' && param.enteredValue[1] !== '';
+          const isValid = param.default || (param.isVector ? vectorFilled : param.enteredValue); // Check if valid
           if (!isValid) {
             allValid = false; // Mark as invalid if any input fails
             return { ...param, valid: false }; // Return updated param
@@ -255,7 +259,7 @@ function PlotAddition() {
   };
 
   const handleBlur = useCallback((event) => {
-    const { dataset: { plotId }, name, value } = event.target;
+    const { dataset: { plotId, vectorIndex }, name, value } = event.target;
     let formattedValue;
     if (name == 'name') {
       return;
@@ -273,6 +277,17 @@ function PlotAddition() {
               ...plot,
               formData: plot.formData.map(param => {
                 if (param.variable === name) {
+                  if (param.isVector) {
+                    const idx = Number(vectorIndex);
+                    const currentVector = Array.isArray(param.enteredValue) ? [...param.enteredValue] : ['', ''];
+                    currentVector[idx] = formattedValue;
+                    if (currentVector[0] !== '' && currentVector[1] !== '') {
+                      window.electron.updateItemValue(plotId, name, `c(${currentVector[0]}, ${currentVector[1]})`)
+                    } else {
+                      window.electron.updateItemValue(plotId, name, '')
+                    }
+                    return { ...param, enteredValue: currentVector, valid: true };
+                  }
 
                   if (param.variable == "image") {
                       window.electron.updateItemValue(plotId, name, `png::readPNG(\"${formattedValue}\")`)
@@ -299,7 +314,27 @@ function PlotAddition() {
               ...annotation,
               formData: annotation.formData.map(param => {
                 if (param.variable === name) {
-                  window.electron.updateItemValue(plotId, name, formattedValue)
+                  if (param.isVector) {
+                    const idx = Number(vectorIndex);
+                    const currentVector = Array.isArray(param.enteredValue) ? [...param.enteredValue] : ['', ''];
+                    currentVector[idx] = formattedValue;
+                    if (currentVector[0] !== '' && currentVector[1] !== '') {
+                      window.electron.updateItemValue(plotId, name, `c(${currentVector[0]}, ${currentVector[1]})`)
+                    } else {
+                      window.electron.updateItemValue(plotId, name, '')
+                    }
+                    return { ...param, enteredValue: currentVector, valid: true };
+                  }
+
+                  if (param.variable == "image") {
+                      window.electron.updateItemValue(plotId, name, `png::readPNG(\"${formattedValue}\")`)
+                  }
+                  else if ((param.type == "string" || param.type == "character" || param.type == "char") && !formattedValue.includes("\"") && formattedValue !== "") {
+                    window.electron.updateItemValue(plotId, name, `\"${formattedValue}\"`)
+                  }
+                  else {
+                    window.electron.updateItemValue(plotId, name, formattedValue)
+                  }
                   return {...param, enteredValue: formattedValue, valid: true}
                 }
                 return param;
@@ -476,6 +511,29 @@ function PlotAddition() {
                                 <option key={idx} value={option}>{input.variable === 'palette' ? input.display[idx] : option}</option>
                               ))}
                             </select>
+                          ) : input.isVector ? (
+                            <div className='vector-input'>
+                              <input
+                                className='half'
+                                id={`${input.id}-0`}
+                                name={input.variable}
+                                placeholder={input.default}
+                                value={Array.isArray(input.enteredValue) ? input.enteredValue[0] : ''}
+                                onChange={(e) => handleBlur(e)}
+                                data-plot-id={plot.id}
+                                data-vector-index="0"
+                              />
+                              <input
+                                className='half'
+                                id={`${input.id}-1`}
+                                name={input.variable}
+                                placeholder={input.default}
+                                value={Array.isArray(input.enteredValue) ? input.enteredValue[1] : ''}
+                                onChange={(e) => handleBlur(e)}
+                                data-plot-id={plot.id}
+                                data-vector-index="1"
+                              />
+                            </div>
                           ) : (
                             <input
                               className='half'
@@ -534,13 +592,34 @@ function PlotAddition() {
                                       <option key={idx} value={option}>{option}</option>
                                     ))}
                                   </select>
+                                ) : input.isVector ? (
+                                  <div className='vector-input'>
+                                    <input
+                                      className='half'
+                                      id={`${input.id}-0`}
+                                      name={input.variable}
+                                      placeholder={input.default}
+                                      value={Array.isArray(input.enteredValue) ? input.enteredValue[0] : ''}
+                                      data-plot-id={annotation.id}
+                                      data-vector-index="0"
+                                    />
+                                    <input
+                                      className='half'
+                                      id={`${input.id}-1`}
+                                      name={input.variable}
+                                      placeholder={input.default}
+                                      value={Array.isArray(input.enteredValue) ? input.enteredValue[1] : ''}
+                                      data-plot-id={annotation.id}
+                                      data-vector-index="1"
+                                    />
+                                  </div>
                                 ) : (
                                   <input
-                                    className='half'                     
+                                    className='half'
                                     id={input.id}
                                     name={input.variable}
                                     placeholder={input.default}
-                                    value={input.enteredValue !== null ? input.enteredValue: null}
+                                    value={input.enteredValue !== null && !input.fileInput ? input.enteredValue : null} // cannot set value for a file input
                                     data-plot-id={annotation.id}
                                     type={input.fileInput ? 'file' : null}
                                   />
