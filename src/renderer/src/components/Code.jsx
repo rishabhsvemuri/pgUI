@@ -34,6 +34,7 @@ function Code() {
 
    }
     return (
+     <>
      <div className={`plot-div ${isExpanded ? "expanded" : ""}`}>
        <div className='expand-header'>
          <h2 className='gen-r-script'>Generated R Script</h2>
@@ -55,9 +56,9 @@ function Code() {
          }}
        />
        <button onClick={handleDownload}>Download Code</button>
-       </div>
-      
+       </div> 
      </div>
+     </> 
 
 
    );

@@ -1,0 +1,91 @@
+{
+  "plots": [],
+  "annotations": [],
+  "backEndPlots": [
+    {
+      "id": "a0",
+      "data": {
+        "maker": "pageCreate(",
+        "width": "7",
+        "height": "4.25",
+        "default.units": "\"inches\""
+      }
+    },
+
+    { "id": "labelA", "data": { "maker": "plotText(", "label": "\"A\"", "fontsize": "12", "x": "0.25", "y": "0.25", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "labelB", "data": { "maker": "plotText(", "label": "\"B\"", "fontsize": "12", "x": "3.5",  "y": "0.25", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "labelC", "data": { "maker": "plotText(", "label": "\"C\"", "fontsize": "12", "x": "3.5",  "y": "1.0",  "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "labelD", "data": { "maker": "plotText(", "label": "\"D\"", "fontsize": "12", "x": "5.25", "y": "1.0",  "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+
+    {
+      "id": "params_a",
+      "data": {
+        "maker": "pgParams(",
+        "chrom": "\"chr21\"",
+        "chromstart": "28000000",
+        "chromend": "30300000",
+        "assembly": "\"hg19\"",
+        "x": "0.25",
+        "width": "2.75",
+        "just": "c(\"left\",\"top\")",
+        "default.units": "\"inches\""
+      }
+    },
+    { "id": "hic_top_A", "data": { "maker": "plotHicSquare(", "data": "GM12878_HiC_10kb", "params": "params_a", "zrange": "c(0,200)", "resolution": "10000", "half": "\"top\"",    "y": "0.5", "height": "2.75" } },
+    { "id": "hic_bot_A", "data": { "maker": "plotHicSquare(", "data": "IMR90_HiC_10kb",  "params": "params_a", "zrange": "c(0,70)",  "resolution": "10000", "half": "\"bottom\"", "y": "0.5", "height": "2.75" } },
+    { "id": "legend_bot_A", "data": { "maker": "annoHeatmapLegend(", "plot": "hic_bot_A", "fontsize": "7", "x": "3.05", "y": "0.5", "width": "0.07", "height": "0.5", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "legend_top_A", "data": { "maker": "annoHeatmapLegend(", "plot": "hic_top_A", "fontsize": "7", "x": "0.125", "y": "0.5", "width": "0.07", "height": "0.5", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "genes_a", "data": { "maker": "plotGenes(", "params": "params_a", "stroke": "1", "fontsize": "6", "y": "3.35", "height": "0.4" } },
+    { "id": "label_genome_a", "data": { "maker": "annoGenomeLabel(", "plot": "genes_a", "params": "params_a", "scale": "\"Mb\"", "fontsize": "7", "y": "3.85" } },
+
+    { "id": "ideo", "data": { "maker": "plotIdeogram(", "chrom": "\"chr21\"", "assembly": "\"hg19\"", "x": "3.5", "y": "0.5", "width": "3.25", "height": "0.15", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "label_chr21", "data": { "maker": "plotText(", "label": "\"Chromosome 21\"", "fontsize": "8", "fontcolor": "\"darkgrey\"", "x": "6.75", "y": "0.4", "just": "\"right\"", "default.units": "\"inches\"" } },
+
+    {
+      "id": "params_c",
+      "data": {
+        "maker": "pgParams(",
+        "chrom": "\"chr21\"",
+        "chromstart": "28150000",
+        "chromend": "29150000",
+        "assembly": "\"hg19\"",
+        "x": "3.5",
+        "width": "1.5",
+        "default.units": "\"inches\""
+      }
+    },
+    { "id": "range_ctcf", "data": { "maker": "pgParams(", "range": "c(0,77)",   "assembly": "\"hg19\"" } },
+    { "id": "range_hk",   "data": { "maker": "pgParams(", "range": "c(0,32.6)", "assembly": "\"hg19\"" } },
+
+    { "id": "hic_tri_gm", "data": { "maker": "plotHicTriangle(", "data": "GM12878_HiC_10kb", "params": "params_c", "zrange": "c(0,200)", "resolution": "10000", "y": "1.75", "height": "0.75", "just": "c(\"left\",\"bottom\")" } },
+    { "id": "legend_c",   "data": { "maker": "annoHeatmapLegend(", "plot": "hic_tri_gm", "fontsize": "7", "x": "5.0", "y": "1.0", "width": "0.07", "height": "0.5", "just": "c(\"right\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "ctcf_label_c", "data": { "maker": "plotText(", "label": "\"CTCF\"", "fontsize": "8", "fontcolor": "\"#253494\"", "x": "3.5", "y": "1.95", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "ctcf_gm",    "data": { "maker": "plotSignal(", "data": "GM12878_ChIP_CTCF_signal",     "params": "c(params_c,range_ctcf)", "fill": "\"#253494\"", "linecolor": "\"#253494\"", "y": "1.95", "height": "0.6" } },
+    { "id": "hk_label_c", "data": { "maker": "plotText(", "label": "\"H3K27ac\"", "fontsize": "8", "fontcolor": "\"#37a7db\"", "x": "3.5", "y": "2.65", "just": "c(\"left\",\"top\")", "default.units": "\"inches\"" } },
+    { "id": "hk_gm",      "data": { "maker": "plotSignal(", "data": "GM12878_ChIP_H3K27ac_signal",  "params": "c(params_c,range_hk)",  "fill": "\"#37a7db\"", "linecolor": "\"#37a7db\"", "y": "3.25", "height": "0.6", "just": "c(\"left\",\"bottom\")" } },
+    { "id": "genes_c",    "data": { "maker": "plotGenes(", "params": "params_c", "stroke": "1", "fontsize": "6", "strandLabels": "FALSE", "y": "3.35", "height": "0.4" } },
+    { "id": "label_genome_c", "data": { "maker": "annoGenomeLabel(", "plot": "genes_c", "params": "params_c", "scale": "\"Kb\"", "fontsize": "7", "y": "3.85" } },
+
+    {
+      "id": "params_d",
+      "data": {
+        "maker": "pgParams(",
+        "chrom": "\"chr21\"",
+        "chromstart": "28150000",
+        "chromend": "29150000",
+        "assembly": "\"hg19\"",
+        "x": "6.75",
+        "width": "1.5",
+        "default.units": "\"inches\""
+      }
+    },
+    { "id": "hic_tri_imr", "data": { "maker": "plotHicTriangle(", "data": "IMR90_HiC_10kb", "params": "params_d", "zrange": "c(0,70)", "resolution": "10000", "y": "1.75", "height": "0.75", "just": "c(\"right\",\"bottom\")" } },
+    { "id": "legend_d",    "data": { "maker": "annoHeatmapLegend(", "plot": "hic_tri_imr", "fontsize": "7", "digits": "0", "x": "6.75", "y": "1.0", "width": "0.07", "height": "0.5", "just": "c(\"right\",\"top\")" } },
+    { "id": "ctcf_imr",    "data": { "maker": "plotSignal(", "data": "IMR90_ChIP_CTCF_signal",    "params": "c(params_d,range_ctcf)", "fill": "\"#253494\"", "linecolor": "\"#253494\"", "y": "1.95", "height": "0.6", "just": "c(\"right\",\"top\")" } },
+    { "id": "hk_imr",      "data": { "maker": "plotSignal(", "data": "IMR90_ChIP_H3K27ac_signal", "params": "c(params_d,range_hk)",  "fill": "\"#37a7db\"", "linecolor": "\"#37a7db\"", "y": "3.25", "height": "0.6", "just": "c(\"right\",\"bottom\")" } },
+    { "id": "genes_d",     "data": { "maker": "plotGenes(", "params": "params_d", "stroke": "1", "fontsize": "6", "strandLabels": "FALSE", "y": "3.35", "height": "0.4", "just": "c(\"right\",\"top\")" } },
+    { "id": "label_genome_d", "data": { "maker": "annoGenomeLabel(", "plot": "genes_d", "params": "params_d", "scale": "\"Kb\"", "fontsize": "7", "digits": "0", "y": "3.85", "just": "c(\"right\",\"top\")" } },
+
+    { "id": "hide_guides", "data": { "maker": "pageGuideHide(" } }
+  ]
+}

@@ -1,3 +1,13 @@
+.workspace-panel {
+    margin-left: 35%;
+    padding: 3.5% 2.5% 2% 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-sizing: border-box;
+}
+
 .plot-div {
     background-color: #404040;
     padding: 3%;
@@ -241,10 +251,15 @@
  
  
  .output-div {
-    margin-left: 35%;
-    margin-top: 6%;
     color: white;
     justify-content: center;
+    width: auto;
+    display: flex;
+    position: fixed;
+    left: 35%;
+    right: 50px;
+    top: 3.5%;
+    bottom: 0;
  }
  
  
@@ -584,18 +599,177 @@
  
  .pdfOrLoader {
     display: none;
+    width: 100%;
+    height: 100%;
  }
  
  
  .pdfOrLoader.active {
     display: block;
  }
+
+ .pdf {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border: 0;
+    background-color: white;
+ }
  
  
  .loaderIconSpinner{
     position: absolute;
-    left: 65%;
-    margin-top: 21%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(2);
+ }
+
+ .console-shell {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    border-left: 1px solid #3a3a3a;
+    box-sizing: border-box;
+    transition: width 0.25s ease;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: -4px 0 28px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: row;
+ }
+
+ .console-toggle {
+    width: 50px;
+    min-width: 50px;
+    height: 100%;
+    border: 0;
+    background: #202020;
+    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 0;
+    font-size: 14px;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    border-right: 1px solid #2a2a2a;
+    transition: background 0.15s ease, color 0.15s ease;
+ }
+
+ .console-toggle:hover {
+    background: #2a2a2a;
+    color: white;
+ }
+
+ .console-collapsed-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    transition: color 0.15s ease;
+ }
+
+ .console-toggle:hover .console-collapsed-label {
+    color: #ccc;
+ }
+
+ .console-toggle-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    writing-mode: vertical-rl;
+ }
+
+ .console-chevron {
+    font-size: 16px;
+    flex-shrink: 0;
+ }
+
+ .console-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+ }
+
+ .console-status {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: #3a3a3a;
+    color: #d3d3d3;
+    writing-mode: horizontal-tb;
+    rotate: 90deg;
+    white-space: nowrap;
+ }
+
+ .console-status.running {
+    background: #4d3c0f;
+    color: #ffd76b;
+ }
+
+ .console-status.success {
+    background: #143e28;
+    color: #7de2a8;
+ }
+
+ .console-status.error {
+    background: #4a1f24;
+    color: #ff9ba5;
+ }
+
+ .console-body {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    background: #151515;
+    color: #e8e8e8;
+    font-family: 'Menlo', 'Monaco', monospace;
+    font-size: 12px;
+ }
+
+ .console-lines {
+    padding: 10px 14px 14px;
+ }
+
+ .console-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 3px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+ }
+
+ .console-prefix {
+    color: #8a8a8a;
+    text-transform: uppercase;
+    font-size: 10px;
+    min-width: 24px;
+    margin-top: 2px;
+ }
+
+ .console-line.stderr .console-prefix,
+ .console-line.stderr .console-text {
+    color: #ff9ba5;
+ }
+
+ .console-line.status .console-prefix,
+ .console-line.status .console-text {
+    color: #7db8ff;
+ }
+
+ .console-empty {
+    color: #8a8a8a;
+    font-size: 12px;
+    padding: 12px 14px;
+    margin: 0;
  }
  
  
