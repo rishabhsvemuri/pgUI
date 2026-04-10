@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
+import { BsChevronRight } from 'react-icons/bs';
 import '.././assets/style.scss';
 
-const COLLAPSED_HEIGHT = 42;
-const EXPANDED_HEIGHT = 260;
+const COLLAPSED_WIDTH = 42;
+const EXPANDED_WIDTH = 400;
 
 function Console() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -93,16 +93,25 @@ function Console() {
   return (
     <div
       className={`console-shell ${isExpanded ? 'expanded' : ''}`}
-      style={{ height: isExpanded ? EXPANDED_HEIGHT : COLLAPSED_HEIGHT }}
+      style={{ width: isExpanded ? EXPANDED_WIDTH : COLLAPSED_WIDTH }}
     >
       <button
         type="button"
         className="console-toggle"
         onClick={() => setIsExpanded((prev) => !prev)}
       >
-        <span className="console-title">Console</span>
-        <span className={`console-status ${runStatus}`}>{statusLabel}</span>
-        {isExpanded ? <BsChevronDown /> : <BsChevronUp />}
+        {isExpanded ? (
+          <>
+            <BsChevronRight className="console-chevron" />
+            <span className={`console-status ${runStatus}`}>{statusLabel}</span>
+          </>
+        ) : (
+          runStatus !== 'idle' ? (
+            <span className={`console-status ${runStatus}`}>{statusLabel}</span>
+          ) : (
+            <span className="console-collapsed-label">CONSOLE</span>
+          )
+        )}
       </button>
       <div className="console-body">
         {lines.length === 0 ? (
