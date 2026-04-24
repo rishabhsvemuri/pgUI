@@ -5,3 +5,4 @@ out
 .venv
 .vscode
 *.log*
+.env.mac-release
